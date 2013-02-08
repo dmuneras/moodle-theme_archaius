@@ -1,0 +1,634 @@
+/** -------------------------------------------
+   Main styles 
+---------------------------------------------*/
+
+/* Layout */
+
+html, body {
+    font: medium "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+    color: #222;
+    min-width: 910px;   
+    background: [[setting:bgcolor]] !important;
+}
+
+
+h1,h2,h3,h4,h5{
+    font-weight:normal !important;
+    margin:0 0 20px 0;
+}
+
+a:link, a:visited {
+    color: #222;
+    
+}
+
+a:hover{
+   text-decoration:underline;
+}
+
+#page-content{
+    min-height:500px;
+}
+
+h3.page-subtitle{
+    margin-left:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.navbar{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top:10px;
+    padding-bottom: 10px;
+    padding: 5px;
+    background: whitesmoke;
+    border: 1px solid #ccc;
+}
+.navbar a {
+   font-weight: bold;
+   padding: 5px;
+   color: #222;
+}
+
+div.region-content div.header {
+    background: none repeat scroll 0 0 [[setting:headercolor]];
+    color: #FFFFFF;
+    line-height: 1;
+    border-bottom: 1px solid whiteSmoke;
+    cursor: pointer !important;
+    min-height:20px;
+}
+
+div.region-content div.commands{
+    border-bottom: 1px solid #fff;
+}
+
+div.region-content div.header h2{ 
+    cursor: pointer !important;
+    color: whiteSmoke;
+}
+
+div.noregionpre{
+    margin-left: 0 !important;
+    margin-right:0 !important;
+}
+div#region-post div.region-content div.current , div#region-pre div.region-content div.current{
+    background-color: [[setting:currentcolor]];
+}
+
+div#tabs-pre .com, div#tabs-post .com{
+    text-align:center;
+    background-color: #eee;
+}
+
+
+/* Header */
+
+#page-header {
+    top: 0;
+    background: [[setting:themecolor]];
+    color: #fff;
+    box-shadow: 1px 1px 2px 0px #888;
+    height:150px;
+    width:100%;
+    min-width:980px;
+    float: none;    
+}
+.adminsearchform{
+    display:none;
+}
+
+#page-header .adminsearchform{
+    right: 7%;
+    top: 20px;
+    position: absolute;
+    display:block;
+}
+
+#page-header form input#adminsearchquery{
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 120px;
+    height: 25px;
+    padding-left: 18px;
+    background: white url([[pix:theme|search]]) 4px 8px no-repeat;
+  
+}
+
+.nobackground{
+    background:none !important;
+}
+
+#logo img{
+    max-width:500px;
+    cursor: pointer;
+    margin: 30px 0px 0px 10px;
+}
+
+#logo{
+    width:500px;
+    height:100%;
+    cursor: pointer;
+}
+.headermenu{
+    position: absolute;
+    top: 58px;
+    right: 6%;
+
+}
+
+.select.menulang{
+    height:20px;
+    border:0;
+    padding:0;
+}
+
+#page-header a:link,
+#page-header a:visited {
+    color: whitesmoke;
+}
+
+#page-header h1.headermain {
+    color: #fff;
+    font-weight: bold;
+    font-size: 2em;
+    margin:20px !important;
+}
+
+
+/* Sideblock */
+
+#move-region-right{
+    background: -10px url([[pix:theme|arrow_right]]);
+    height: 40px;
+    width: 30px;
+    float: right;
+    margin-right: -30px;
+    margin-top: -5px;
+    -moz-box-shadow: 3px 1px 4px 1px #888;
+    -webkit-box-shadow: 3px 1px 4px 1px #888;
+    box-shadow:         3px 1px 4px 1px #888;
+    border-radius: 0px 5px 5px 0px;
+    -moz-border-radius: 0px 5px 5px 0px;
+    -webkit-border-radius: 0px 5px 5px 0px;
+    background-color: #fff;
+}
+
+#move-region-right.hidden-region{
+     background: -10px url([[pix:theme|arrow_left]]) !important; 
+}
+
+#move-region{
+    background: -10px url([[pix:theme|arrow_left]]); 
+    height: 40px;
+    width: 30px;
+    margin-left: -30px;
+    margin-top: -5px;
+    -webkit-box-shadow:  -3px 0px 3px 0px #888888;
+    -moz-box-shadow:  -3px 0px 3px 0px #888888;
+    box-shadow:  -3px 0px 3px 0px #888888; 
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #fff;
+}
+#move-region.hidden-region{
+    background: -10px url([[pix:theme|arrow_right]]) !important;   
+}
+
+.block {
+    border: none;
+}
+
+.block .header {
+    background: #8DA5B3;
+    padding: 2px 5px;
+}
+
+.block .header h2 {
+    color: #fff;
+    font-size: 1.3em;
+    line-height: 1; 
+}
+
+.block .content {
+    background:#EDF0EE;
+    padding: 5px 10px;
+    border:none;
+    -moz-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.block .content select {
+    width: 150px;
+    background: transparent;
+}
+
+.header .title {
+    text-align:center;
+}
+.header .title h2 {
+    padding:3px;
+    font-size:small;
+    margin-bottom: 0;
+}
+
+.block .content a{ 
+    color: #222;
+}
+
+.block_js_expansion .block_tree {
+    overflow: auto;
+}
+
+.block_recent_activity h2,main,
+.block_recent_activity h3.main {
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+.block_calendar_month .content h3.eventskey {
+    font-size: 1em;
+    margin: 0.25em 0;
+}
+
+.block_action img {
+   width:16px;
+   border:none;
+}
+
+.block_action{
+    border:none;
+    background-color: whiteSmoke;
+
+}
+
+td.eventskey {
+    padding: 0 5px 3px;
+}
+
+.minicalendar td,
+.minicalendar th {
+    border-color: #f3f8ed;
+}
+
+.block_comments textarea {
+    width: 95%;
+    margin-bottom: 1em;
+}
+
+.block_comments .comment-area a {
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #e5e5e5;
+}
+
+.comment-delete-confirm {
+    background: #fff;
+}
+
+.block_messages .content {
+    font-size: 0.95em;
+}
+
+.block_messages .footer {
+    text-align: center;
+    
+}
+
+/* Forum */
+
+.forumpost {
+    border: none;
+}
+
+.forumpost div.header{
+    background: #efefef !important;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 2px 0px #888;
+}
+.forumpost  {
+    border: 1px dashed #ddd;
+    padding: 10px 10px;
+}
+
+.forumpost .starter {
+    background: #efefef;
+}
+
+.forumpost .subject {
+    font-size: 1.2em;
+    color: #222;
+    margin-left: 10px;
+}
+
+.forumpost .author {
+    font-style: italic;
+    color: #555;
+    font-size: 0.95em;
+    margin-left: 10px;
+}
+
+.forumpost .author a:link,
+.forumpost .author a:visited {
+    text-decoration: underline;
+}
+
+.forumpost .author a:hover {
+    text-decoration: none;
+}
+
+.forumpost .no-overflow,
+.forumpost .options {
+    border: 1px solid #ccc;
+}
+
+.forumpost .options,
+.forumpost .content .posting {
+    padding: 5px 10px;
+}
+
+.forumaddnew,
+.forumnodiscuss {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.path-mod-forum .forumheaderlist .picture {
+    border-right-width: 0;
+    padding-right: 0;
+    padding-top: 10px;
+}
+
+.path-mod-forum .forumheaderlist .replies {
+    text-align: center;
+}
+
+.path-mod-forum .forumheaderlist .replies .read {
+    background: #fcffd8;
+    padding: 2px;
+}
+
+.path-mod-forum .unread .content {
+    background: #f3f8ed;
+}
+
+.path-course-view .headingblock {
+    text-align:center;
+}
+.path-course-view .section .forum .unread {
+    margin-left: 20px;
+}
+
+.path-course-view .section .forum .unread a:link,
+.path-course-view .section .forum .unread a:visited {
+    color: #888;
+    background: #fcffd8;
+    font-size: small;
+}
+.generalbox {
+    border: none;
+}
+#page-mod-forum-search .generalbox {
+    width: 85%;
+}
+
+#page-mod-forum-search .searchbox {
+    margin: 25px auto;
+}
+
+#page-mod-forum-search .searchbox .submit {
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Footer */
+
+#page-footer {
+    padding-top: 10px;
+    background: [[setting:themecolor]];
+    color: #fff;
+    min-height: 150px;
+    width: 100%;
+}
+
+#page-footer a {
+    color: white;
+}
+
+#page-footer a:hover {
+    color: #fff;
+}
+
+#page-footer .logininfo{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+#page-footer .sitelink{
+    clear:both;
+}
+
+#page-footer .sitelink img {
+    width:auto !important;
+    height: auto !important;
+}
+#page-footer-bottom {
+    text-align: center;
+    margin: 10px 20%;
+}
+
+#page-mod-assignment-view .singlebutton {
+    margin: 15px;
+}
+
+#page-mod-assignment-view #online {
+    margin: 10px auto;
+    width: 90%;
+}
+
+#page-mod-assignment-view #online fieldset .fitem {
+    width: 100%;
+}
+
+#page-mod-assignment-view #online fieldset .fitem .fitemtitle {
+    width: 15%;
+}
+
+.performanceinfo span {
+    display: block;
+}
+
+.validators {
+    margin-top: 40px;
+    padding-top: 5px;
+    border-top: 1px dotted gray;
+}
+
+.validators ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.validators ul li {
+    display: inline;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.myclear {
+	clear: both;
+}
+
+#custommenu{
+    background-color: [[setting:themecolor]];
+    border-top: 1px solid #666;
+    padding: 5px;
+}
+
+.has-custom-menu #wrapper,
+#custommenu .yui3-menu-horizontal .yui3-menu-content,
+#custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content,
+#custommenu .yui3-menu-horizontal .yui3-menu-content ul,
+#custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content ul,
+#custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content li li:hover > a,
+#custommenu .yui3-menu-horizontal .yui3-menu-label,
+#custommenu .yui3-menuitem,
+#custommenu .yui3-menuitem .yui3-menuitem-content {
+    border-width: 0;
+}
+
+#custommenu .custom_menu_submenu .yui3-menu-label-active,
+#custommenu .custom_menu_submenu .yui3-menu-label-menuvisible,
+#custommenu .yui3-menu .yui3-menu .yui3-menuitem-active .yui3-menuitem-content,
+div.logininfo a.login,
+#custommenu .yui3-menuitem-content:hover ,
+#custommenu .yui3-menu-label-menuvisible:hover{
+    background-color: [[setting:currentcustommenucolor]] ;
+}
+
+#custommenu .custom_menu_submenu .yui3-menu-content {
+    border-radius: 3px;
+    box-shadow: 0px 2px 3px 0px #888;
+}
+
+
+#custommenu .custom_menu_submenu .yui3-menu-content,
+#custommenu .yui3-menu-label-active,
+#custommenu .yui3-menu-label-menuvisible {
+    background-color: [[setting:themecolor]];
+}
+
+#custommenu .yui3-menu-horizontal .yui3-menu-content ul ul,
+ #custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content ul ul{
+    padding-bottom:3px;
+}
+
+.yui3-skin-sam .yui3-menu li, .yui3-skin-sam .yui3-menu .yui3-menu li{
+    background-color: [[setting:themecolor]] !important;
+}
+
+#custommenu .yui3-menu-horizontal .yui3-menu-content li a {
+    cursor:pointer;
+    padding: 5px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-right: 3px;
+    margin-left:3px;
+}
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;  
+    border-left: 10px solid [[setting:themecolor]];
+    margin-top: 3px;
+}
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent; 
+    border-bottom: 10px solid [[setting:themecolor]];
+    margin: auto;
+    margin-top:3px;
+
+}
+/* Login info */
+
+div.logininfo{
+    margin-bottom: 20px;
+}
+
+div.logininfo a {
+  color: #fff;
+}
+
+div.logininfo a.login {
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+}
+
+
+/* Quiz*/
+.que div.formulation {
+ background-color: #EDF0EE;
+}
+
+#page-mod-quiz-attempt .submitbtns, #page-mod-quiz-review div.submitbtns{
+   text-align: center;
+}
+
+.loginbox .loginform .form-input{
+    margin-bottom:5px;
+    text-align: center;
+    width:auto;
+    float: none;
+}
+
+
+/* Login page */
+.loginbox .loginform .form-input #loginbtn{
+   display: block;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5px;
+}
+.loginbox .loginform .form-label {
+    text-align:center;
+    float:none;
+    width:auto;
+}
+
+.loginbox{
+    border: 1px solid #ccc;
+}
+
+/* Question Bank*/
+#page-mod-quiz-edit .questionbankwindow div.header{
+    background-color: #444 !important;
+}
+
+#page-mod-quiz-edit .questionbankwindow div.header h2{
+    color: white;
+}
+
+#page-mod-quiz-edit div.questionbank{
+    background-color: #efefef;
+}
+
+/** Custom CSS **/
+[[setting:customcss]]
+
+
