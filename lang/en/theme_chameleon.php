@@ -16,29 +16,29 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'theme_macondo', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'theme_chameleon', language 'en', branch 'MOODLE_20_STABLE'
  *
- * @package   theme_macondo
+ * @package   theme_chameleon
  * @copyright 2012 onwards Daniel Munera Sanchez  {@link http://moodle.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$string['pluginname'] = 'Macondo';
+$string['pluginname'] = 'chameleon';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
-$string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><h2>Macondo</h2>                                                                                      
-<img src="macondo/pix/screenshot.png" />                                                                                                                                             
+$string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><h2>chameleon</h2>                                                                                      
+<img src="chameleon/pix/screenshot.png" />                                                                                                                                             
 <h3>Theme Credits</h3><p><a href="http://docs.moodle.org/en/Theme_credits">http://docs.moodle.org/en/Theme_credits</a></p>                                                           
 <h3>Theme Documentation:</h3><p><a href="http://docs.moodle.org/en/Themes">http://docs.moodle.org/en/Themes</a></p>                                                                  
 <h3>Report a bug:</h3><p><a href="http://tracker.moodle.org">http://tracker.moodle.org</a></p></div>                                                                                 
-<div class="theme_description"><h2>About</h2><p>Macondo is a fluid-width, three-column Moodle 2.x theme with rounded corners and tabs.
+<div class="theme_description"><h2>About</h2><p>chameleon is a fluid-width, three-column Moodle 2.x theme with rounded corners and tabs.
 It is extremely flexible and very useful for people with some knowledge of web design and web development.</p>
 <p>I propose other solution for docking of blocks.</p>                         
-<p>The Macondo settings page has multiple options that allow you to customize your site.</p>                                                                                         
+<p>The chameleon settings page has multiple options that allow you to customize your site.</p>                                                                                         
 <h2>Tweaks</h2><p>If you want to modify this theme, I recommend that you first duplicate it,                                                                                         
 then rename it before making your changes. This will prevent your customized theme from being overwritten by future Moodle upgrades, and you\'ll still have the original files if you make a mess.                                                                                                                                                                       
 More information on modifying themes can be found in the <a href="http://docs.moodle.org/en/Theme">MoodleDocs</a>.</p>                                                               
 <h2>Credits</h2><p>This theme is based on anomaly themes, it was                                                                                                                     
-originally designed for Moodle 1.9 by Patrick Malley. Macondo was created by Daniel Munera Sanchez using the open source libraries: jQuery, jQuerytools, PIE.js.
+originally designed for Moodle 1.9 by Patrick Malley. chameleon was created by Daniel Munera Sanchez using the open source libraries: jQuery, jQuerytools, PIE.js.
  He can be contacted at dmunera119@gmail.com</p>';
 $string['logo'] = 'logo';
 $string['logodesc'] = 'logo URL';
@@ -59,7 +59,7 @@ $string['bgcolordesc'] = "Background color";
 $string['currentcustommenucolor'] = "Color of the current item of custom menu.";
 $string['currentcustommenucolordesc'] = "Color of the current item of custom menu.";
 $string["collapsibleTopics"] = "Collapsible Topics effect";
-$string["collasibleTopicsdesc"] = "Activate or desactivate the collapsible effect for course with topics format. If you select the checkbox the effect is going to be deactivated.";
+$string["collasibleTopicsdesc"] = "Activate or desactivate the collapsible effect for course with topics format.";
 
 
 

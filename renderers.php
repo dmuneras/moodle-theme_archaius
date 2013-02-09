@@ -1,6 +1,6 @@
 <?php
 
-class theme_macondo_core_renderer extends core_renderer {
+class theme_chameleon_core_renderer extends core_renderer {
 
     /**
      * Prints a nice side block with an optional header.

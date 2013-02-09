@@ -5,9 +5,9 @@
 /// how Moodle uses this theme.
 ////////////////////////////////////////////////////////////////////////////////
 
-$THEME->name = 'macondo';
+$THEME->name = 'chameleon';
 
-$THEME->sheets = array('base','macondo' ,'course','slideshow','boilerplate');
+$THEME->sheets = array('base','chameleon' ,'course','slideshow','boilerplate');
 /// This variable is an array containing the names of all the
 /// stylesheet files you want included in this theme, and in what order
 ////////////////////////////////////////////////////////////////////////////////
@@ -131,4 +131,4 @@ $THEME->javascripts   = array('jquery-1.7.1.min','jquery.tools.min', 'general','
 $THEME->enable_dock = false;
 
 $THEME->editor_sheets = array('editor');
-$THEME->csspostprocess = 'macondo_process_css';
+$THEME->csspostprocess = 'chameleon_process_css';
