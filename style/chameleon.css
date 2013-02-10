@@ -74,11 +74,6 @@ div.region-content .header-tab h2{
     padding-bottom: 5px;
 }
 
-#region-pre div.region-content .header ,
-#region-post div.region-content .header {
-    position:absolute;
-    right: 20px;
-}
 #region-pre div.region-content .header h2,
 #region-post div.region-content .header h2{
     display: none;
