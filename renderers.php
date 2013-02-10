@@ -12,7 +12,7 @@ class theme_chameleon_core_renderer extends core_renderer {
      * @param string $region the region the block is appearing in.
      * @return string the HTML to be output.
      */
-    function block($bc, $region) {
+    function block(block_contents $bc, $region) {
 
         $bc = clone($bc); // Avoid messing up the object passed in.
         if (empty($bc->blockinstanceid) || !strip_tags($bc->title)) {
@@ -34,19 +34,18 @@ class theme_chameleon_core_renderer extends core_renderer {
             $skipdest = html_writer::tag('span', '', array('id' => 'sb-' . $bc->skipid, 'class' => 'skip-block-to'));
         }
 
-        $output .= html_writer::start_tag('div', $bc->attributes);
-        
-        /** Rounded corners **/
-        $output .= html_writer::start_tag('div', array('class'=>'corner-box'));
-        $output .= html_writer::start_tag('div', array('class'=>'rounded-corner top-left')).html_writer::end_tag('div');
-        $output .= html_writer::start_tag('div', array('class'=>'rounded-corner top-right')).html_writer::end_tag('div');
-
-        $controlshtml = $this->block_controls($bc->controls);
-
-        $title = '';
+         $title = '';
         if ($bc->title) {
             $title = html_writer::tag('h2', $bc->title);
         }
+
+        if ($title || $controlshtml) {
+            $output .= html_writer::tag('div', html_writer::tag('div',  $title , array('class' => 'title')), array('class' => 'header-tab'));
+        }
+
+        $output .= html_writer::start_tag('div', $bc->attributes);
+
+        $controlshtml = $this->block_controls($bc->controls);
 
         if ($title || $controlshtml) {
             $output .= html_writer::tag('div', html_writer::tag('div', html_writer::tag('div', '', array('class'=>'block_action')). $title . $controlshtml, array('class' => 'title')), array('class' => 'header'));
@@ -64,11 +63,7 @@ class theme_chameleon_core_renderer extends core_renderer {
 
         $output .= html_writer::end_tag('div');
 
-                /** Four rounded corner ends **/
-        $output .= html_writer::start_tag('div', array('class'=>'rounded-corner bottom-left')).html_writer::end_tag('div');
-        $output .= html_writer::start_tag('div', array('class'=>'rounded-corner bottom-right')).html_writer::end_tag('div');
-        $output .= html_writer::end_tag('div');
-
+ 
         $output .= html_writer::end_tag('div');
 
         if ($bc->annotation) {
@@ -80,5 +75,4 @@ class theme_chameleon_core_renderer extends core_renderer {
 
         return $output;
     }
-
 }

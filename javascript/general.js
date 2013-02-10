@@ -28,50 +28,47 @@ $.tools.tabs.addEffect("slide", function(i, done) {
 });
 
 //Script to modify the moodle menu, adding the accodion effect with all tabs on top
-function customize_menu(region,region_location){
+function customizeMenu(region,regionLocation){
     $('#mod_quiz_navblock').attr('id', 'inst'); //to add quiz navigation mod to the menu.
-    var $tabsId = "tabs-" + region_location;
+    var $tabsId = "tabs-" + regionLocation;
     region.find('.region-content').attr('id',$tabsId);
     region.find('.block.block_adminblock').attr('id','inst');
     var tabs = $("#" + $tabsId);
-    tabs.find('div:regex(id,inst)').find('div.header').parent().parent().parent().prepend($('div.header', region));
+    tabs.prepend($('div.header-tab', region));
     var subcont = region.find("div:regex(id, inst)",tabs);
-    tabs.tabs(subcont, {tabs: 'div.header', effect: 'slide', initialIndex: null});
+    tabs.tabs(subcont, {tabs: 'div.header-tab', effect: 'slide', initialIndex: 0});
+    
     //Avoid first efect when the page is loaded
     $(subcont).css("display","none");
     subcont.first().css("display","block");
-    region.find(".header").first().addClass("current");
     //add Rounded borders to the first tab                                                                                            
-    $('div.header:first',tabs).css({
+    $('div.header-tab:first',tabs).css({
 	    '-moz-border-radius':'5px 5px 0px 0px',
 		'border-radius':'5px 5px 0px 0px'
      });
-    // Create div for editing options and append after the title of the block                                                         
-    $(' div.header',tabs).after('<div class= "com"></div>');
-    $('div.header div.commands', tabs).each(function(){$(this).parent().parent().next().append($(this));});
+    $.map($(".header .commands") , function(item , index){ 
+        $(".header-tab").eq(index).append(item);
+    });
 
 }
 
-//Function to hide and show the blocks where these are on the page
-function hide_show_block(){
+function hideShowBlocks(){
 	if($("#region-pre").length > 0 ){
 		$("#page").prepend("<div id='move-region' width= " + $("#region-pre").css("width") + "></div>");
 		$("#move-region").on("click",function(){
 			if(!($(this).hasClass("hidden-region"))){
+                $("#move-region").addClass("hidden-region");
 				$("#region-pre").animate({
 			    	'left' : '-=' + $("#move-region").attr("width")
-	        	},400,function(){
-	        		$("#move-region").addClass("hidden-region");
-	        	});
+	        	},400,null);
 	        	$("#region-main").animate({
 			    	'margin-left' : "-=" + $("#move-region").attr("width")
 	        	},400,null);
 			}else{
+                $("#move-region").removeClass("hidden-region");
 				$("#region-pre").animate({
 			    	'left' : "+=" +  $("#move-region").attr("width")
-	        	},400,function(){
-	        		$("#move-region").removeClass("hidden-region");
-	        	});
+	        	},400, null);
 	        	$("#region-main").animate({
 			    	'margin-left' : "+=" + $("#move-region").attr("width")
 	        	},400,null);
@@ -82,20 +79,18 @@ function hide_show_block(){
 		$("#page").prepend("<div id='move-region-right' width=" + $("#region-post").css("width") + "></div>");
 		$("#move-region-right").on("click",function(){
 		if(!($(this).hasClass("hidden-region"))){
+            $("#move-region-right").addClass("hidden-region");  
 			$("#region-post").animate({
 		    	'left' : '+=' + $("#move-region").attr("width")
-        	},400,function(){
-        		$("#move-region-right").addClass("hidden-region");
-        	});
+        	},400,null);
         	$("#region-main").animate({
 		    	'margin-right' : "-=" + $("#move-region-right").attr("width")
         	},400,null);
 		}else{
+            $("#move-region-right").removeClass("hidden-region");
 			$("#region-post").animate({
 		    	'left' : "-=" + $("#move-region-right").attr("width")
-        	},400,function(){
-        		$("#move-region-right").removeClass("hidden-region");
-        	});
+        	},400,null);
         	$("#region-main").animate({
 		    	'margin-right' : "+=" + $("#move-region-right").attr("width")
         	},400,null);
@@ -104,6 +99,7 @@ function hide_show_block(){
 		});
 	}
 }
+
 
 //Function to expand and shrink the question bank div. 
 function expandBank(questionBank){
@@ -156,21 +152,24 @@ function organize_block_summary(){
     }
 
 }
+
+
 $('document').ready(function(){ 
 	
 	//Execute PIE for main objects                                                                                                                                               
 	apply_PIE("#page , .images, #adminsearchquery,div.logininfo a.login" +
       "#custommenu .yui3-menu-horizontal .yui3-menu-content li a , h2.pretty");
-	var regionpre = $('#region-pre');
-	var regionpost = $('#region-post');
+	var regionPre = $('#region-pre');
+	var regionPost = $('#region-post');
 	organize_block_summary();
-	if($('#region-pre').length != 0){
-	    customize_menu(regionpre,"pre");
+	if(regionPre.length != 0){
+	    customizeMenu(regionPre,"pre");
 	}
-	if($('#region-post').length != 0){
-	    customize_menu(regionpost,"post");
-	}	
-    hide_show_block();
+	if(regionPost.length != 0){
+	    customizeMenu(regionPost,"post");        	
+    }
+
+    hideShowBlocks();
 
     if($(".questionbankwindow.block").length > 0){
 		expandBank($(".questionbankwindow.block"));
@@ -207,3 +206,4 @@ $('document').ready(function(){
 	$("#adminsearchquery").attr("placeholder","search"); //add placeholder to search input                                                                                           
     $('#region-post-box').prepend($('.blogsearchform')); //put blog search in a better position        
 });
+

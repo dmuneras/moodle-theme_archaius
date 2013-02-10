@@ -50,7 +50,7 @@ h3.page-subtitle{
    color: #222;
 }
 
-div.region-content div.header {
+div.region-content div.header-tab {
     background: none repeat scroll 0 0 [[setting:headercolor]];
     color: #FFFFFF;
     line-height: 1;
@@ -59,11 +59,38 @@ div.region-content div.header {
     min-height:20px;
 }
 
-div.region-content div.commands{
-    border-bottom: 1px solid #fff;
+#region-pre div.region-content .header,
+#region-post div.region-content .header{
+    background-color: #EDF0EE;
 }
 
-div.region-content div.header h2{ 
+div.region-content .header-tab .title {
+    text-align:center;
+}
+
+div.region-content .header-tab h2{
+    color: #fff;
+    font-size: small;
+    padding-bottom: 5px;
+}
+
+#region-pre div.region-content .header ,
+#region-post div.region-content .header {
+    position:absolute;
+    right: 20px;
+}
+#region-pre div.region-content .header h2,
+#region-post div.region-content .header h2{
+    display: none;
+}
+
+div.region-content div.commands{
+    border-bottom: 1px solid #fff;
+    text-align:center;
+    background-color: #eee;
+}
+
+div.region-content div.header-tab h2{ 
     cursor: pointer !important;
     color: whiteSmoke;
 }
@@ -75,12 +102,6 @@ div.noregionpre{
 div#region-post div.region-content div.current , div#region-pre div.region-content div.current{
     background-color: [[setting:currentcolor]];
 }
-
-div#tabs-pre .com, div#tabs-post .com{
-    text-align:center;
-    background-color: #eee;
-}
-
 
 /* Header */
 
@@ -204,17 +225,6 @@ div#tabs-pre .com, div#tabs-post .com{
     border: none;
 }
 
-.block .header {
-    background: #8DA5B3;
-    padding: 2px 5px;
-}
-
-.block .header h2 {
-    color: #fff;
-    font-size: 1.3em;
-    line-height: 1; 
-}
-
 .block .content {
     background:#EDF0EE;
     padding: 5px 10px;
@@ -228,14 +238,6 @@ div#tabs-pre .com, div#tabs-post .com{
     background: transparent;
 }
 
-.header .title {
-    text-align:center;
-}
-.header .title h2 {
-    padding:3px;
-    font-size:small;
-    margin-bottom: 0;
-}
 
 .block .content a{ 
     color: #222;
@@ -256,11 +258,14 @@ div#tabs-pre .com, div#tabs-post .com{
     margin: 0.25em 0;
 }
 
+
 .block_action img {
-   width:16px;
    border:none;
 }
 
+.block_action img.block-hider-hide {
+    display:none;
+}
 .block_action{
     border:none;
     background-color: whiteSmoke;
