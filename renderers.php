@@ -39,13 +39,13 @@ class theme_chameleon_core_renderer extends core_renderer {
             $title = html_writer::tag('h2', $bc->title);
         }
 
+        $controlshtml = $this->block_controls($bc->controls);
+
         if ($title || $controlshtml) {
             $output .= html_writer::tag('div', html_writer::tag('div',  $title , array('class' => 'title')), array('class' => 'header-tab'));
         }
 
         $output .= html_writer::start_tag('div', $bc->attributes);
-
-        $controlshtml = $this->block_controls($bc->controls);
 
         if ($title || $controlshtml) {
             $output .= html_writer::tag('div', html_writer::tag('div', html_writer::tag('div', '', array('class'=>'block_action')). $title . $controlshtml, array('class' => 'title')), array('class' => 'header'));

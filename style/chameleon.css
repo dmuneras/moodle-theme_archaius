@@ -62,6 +62,7 @@ div.region-content div.header-tab {
 #region-pre div.region-content .header,
 #region-post div.region-content .header{
     background-color: #EDF0EE;
+    height: 10px;
 }
 
 div.region-content .header-tab .title {
@@ -137,7 +138,7 @@ div#region-post div.region-content div.current , div#region-pre div.region-conte
 }
 
 #logo img{
-    max-width:500px;
+    max-height:110px;
     cursor: pointer;
     margin: 30px 0px 0px 10px;
 }
@@ -618,9 +619,16 @@ div.logininfo a.login {
 /* Question Bank*/
 #page-mod-quiz-edit .questionbankwindow div.header{
     background-color: #444 !important;
+    text-align: center;
+    cursor: pointer;
 }
 
 #page-mod-quiz-edit .questionbankwindow div.header h2{
+    color: white;
+    font-size: small;
+}
+
+#expand-bank{
     color: white;
 }
 

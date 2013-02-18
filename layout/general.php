@@ -58,7 +58,9 @@ echo $OUTPUT->doctype() ?>
                         <img class="sitelogo" src="<?php echo $logourl;?>" alt="Custom logo here" />
                    </div>
         <?php } else { ?>
-                <div id="logo"  onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '"></div>
+                <div id="logo"  onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '">
+                    <img class="sitelogo" src="<?php echo $OUTPUT->pix_url('logo','theme')?>" alt="Custom logo here" />
+                </div>
         <?php } ?>
         <div class="headermenu"><?php
 	     echo $OUTPUT->login_info();

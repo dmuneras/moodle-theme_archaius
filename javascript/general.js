@@ -29,13 +29,12 @@ $.tools.tabs.addEffect("slide", function(i, done) {
 
 //Script to modify the moodle menu, adding the accodion effect with all tabs on top
 function customizeMenu(region,regionLocation){
-    $('#mod_quiz_navblock').attr('id', 'inst'); //to add quiz navigation mod to the menu.
     var $tabsId = "tabs-" + regionLocation;
     region.find('.region-content').attr('id',$tabsId);
     region.find('.block.block_adminblock').attr('id','inst');
     var tabs = $("#" + $tabsId);
     tabs.prepend($('div.header-tab', region));
-    var subcont = region.find("div:regex(id, inst)",tabs);
+    var subcont = region.find("div.block",tabs);
     tabs.tabs(subcont, {tabs: 'div.header-tab', effect: 'slide', initialIndex: 0});
     
     //Avoid first efect when the page is loaded
@@ -154,7 +153,7 @@ function organize_block_summary(){
 }
 
 
-$('document').ready(function(){ 
+$(function(){ 
 	
 	//Execute PIE for main objects                                                                                                                                               
 	apply_PIE("#page , .images, #adminsearchquery,div.logininfo a.login" +

@@ -4,9 +4,9 @@
   Ps. tomos == sections.
 */
 
-activateTopicsCourseMenu = true;
+//activateTopicsCourseMenu = true;
 
-$('document').ready(function(){
+$(function(){
 
 	//Script to modify the course content view, add the collapsible list effect.
 	var topics = $('ul.topics'); //unordered list of topics.
