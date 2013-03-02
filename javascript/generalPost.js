@@ -23,3 +23,50 @@
     		}
     	});
     }
+if($("#region-pre").length > 0 ){
+    $("#page").prepend("<div id='move-region' width= " +
+                             $("#region-pre").css("width") + "></div>");
+    $("#move-region").on("click",function(){
+        if(!($(this).hasClass("hidden-region"))){
+            $("#move-region").addClass("hidden-region");
+            $("#region-pre").animate({
+                'left' : '-=' + $("#move-region").attr("width")
+            },400,null);
+            $("#region-main").animate({
+                'margin-left' : "-=" + $("#move-region").attr("width")
+            },400,null);
+        }else{
+            $("#move-region").removeClass("hidden-region");
+            $("#region-pre").animate({
+                'left' : "+=" +  $("#move-region").attr("width")
+            },400, null);
+            $("#region-main").animate({
+                'margin-left' : "+=" + $("#move-region").attr("width")
+            },400,null);
+        }
+    });
+}
+if($("#region-post").length > 0){
+    $("#page").prepend("<div id='move-region-right' width=" +
+                             $("#region-post").css("width") + "></div>");
+    $("#move-region-right").on("click",function(){
+    if(!($(this).hasClass("hidden-region"))){
+        $("#move-region-right").addClass("hidden-region");  
+        $("#region-post").animate({
+            'left' : '+=' + $("#move-region").attr("width")
+        },400,null);
+        $("#region-main").animate({
+            'margin-right' : "-=" + $("#move-region-right").attr("width")
+        },400,null);
+    }else{
+        $("#move-region-right").removeClass("hidden-region");
+        $("#region-post").animate({
+            'left' : "-=" + $("#move-region-right").attr("width")
+        },400,null);
+        $("#region-main").animate({
+            'margin-right' : "+=" + $("#move-region-right").attr("width")
+        },400,null);
+    }
+
+    });
+}

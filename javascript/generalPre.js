@@ -32,7 +32,6 @@ $.tools.tabs.addEffect("slide", function(i, done) {
 function customizeMenu(region,regionLocation){
     var $tabsId = "tabs-" + regionLocation;
     region.find('.region-content').attr('id',$tabsId);
-    region.find('.block.block_adminblock').attr('id','inst');
     var tabs = $("#" + $tabsId);
     tabs.prepend($('div.header-tab', region));
     var subcont = region.find("div.block",tabs);
@@ -47,63 +46,15 @@ function customizeMenu(region,regionLocation){
 	    '-moz-border-radius':'5px 5px 0px 0px',
 		'border-radius':'5px 5px 0px 0px'
      });
-    $.map(region.find(".header .commands") , function(item , index){ 
-        region.find(".header-tab").eq(index).after("<div class='com'></div>");
-        region.find(".header-tab").eq(index).next().append(item);
-    });
+    
+    if($('span.commands').length == 0){
+        $.map(region.find(".header .commands") , function(item , index){ 
+            region.find(".header-tab").eq(index).after("<div class='com'></div>");
+            region.find(".header-tab").eq(index).next().append(item);
+        });
+    }
 
 }
-
-function hideShowBlocks(){
-	if($("#region-pre").length > 0 ){
-		$("#page").prepend("<div id='move-region' width= " +
-                                 $("#region-pre").css("width") + "></div>");
-		$("#move-region").on("click",function(){
-			if(!($(this).hasClass("hidden-region"))){
-                $("#move-region").addClass("hidden-region");
-				$("#region-pre").animate({
-			    	'left' : '-=' + $("#move-region").attr("width")
-	        	},400,null);
-	        	$("#region-main").animate({
-			    	'margin-left' : "-=" + $("#move-region").attr("width")
-	        	},400,null);
-			}else{
-                $("#move-region").removeClass("hidden-region");
-				$("#region-pre").animate({
-			    	'left' : "+=" +  $("#move-region").attr("width")
-	        	},400, null);
-	        	$("#region-main").animate({
-			    	'margin-left' : "+=" + $("#move-region").attr("width")
-	        	},400,null);
-			}
-		});
-	}
-	if($("#region-post").length > 0){
-		$("#page").prepend("<div id='move-region-right' width=" +
-                                 $("#region-post").css("width") + "></div>");
-		$("#move-region-right").on("click",function(){
-		if(!($(this).hasClass("hidden-region"))){
-            $("#move-region-right").addClass("hidden-region");  
-			$("#region-post").animate({
-		    	'left' : '+=' + $("#move-region").attr("width")
-        	},400,null);
-        	$("#region-main").animate({
-		    	'margin-right' : "-=" + $("#move-region-right").attr("width")
-        	},400,null);
-		}else{
-            $("#move-region-right").removeClass("hidden-region");
-			$("#region-post").animate({
-		    	'left' : "-=" + $("#move-region-right").attr("width")
-        	},400,null);
-        	$("#region-main").animate({
-		    	'margin-right' : "+=" + $("#move-region-right").attr("width")
-        	},400,null);
-		}
-
-		});
-	}
-}
-
 
 //Function to expand and shrink the question bank div. 
 function expandBank(questionBank){
@@ -161,11 +112,6 @@ function organize_block_summary(){
 
 $(function(){ 
 
-    $('#page-header').prepend($('div.footer form.adminsearchform')); //add search form to the header page                                                                      
-    $("#page-header form.adminsearchform input:regex(type,submit)").remove(); //remove search button                                                                                      
-    $("#adminsearchquery").attr("placeholder","search"); //add placeholder to search input                                                                                           
-    $('#region-post-box').prepend($('.blogsearchform')); //put blog search in a better position 
-	
 	//Execute PIE for main objects                                                                                                                                               
 	apply_PIE("#page , .images, #adminsearchquery,div.logininfo a.login" +
       "#custommenu .yui3-menu-horizontal .yui3-menu-content li a");
@@ -184,11 +130,13 @@ $(function(){
         (siteRoot == document.location.href || 
                 siteRootL == document.location.href  ))
         $("#region-main").addClass("nouser-home");
-    
-    hideShowBlocks();
 
     if($(".questionbankwindow.block").length > 0){
 		expandBank($(".questionbankwindow.block"));
     }       
+    $('#page-header').prepend($('div.footer form.adminsearchform')); //add search form to the header page                                                                      
+    $("#page-header form.adminsearchform input:regex(type,submit)").remove(); //remove search button                                                                                      
+    $("#adminsearchquery").attr("placeholder","search"); //add placeholder to search input                                                                                           
+    $('#region-post-box').prepend($('.blogsearchform')); //put blog search in a better position 
 });
 
