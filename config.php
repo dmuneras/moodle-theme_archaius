@@ -128,7 +128,7 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->javascripts   = array('jquery-1.7.1.min','jquery.tools.min', 'general','course');
 
 
-$THEME->enable_dock = true;
+$THEME->enable_dock = false;
 
 $THEME->editor_sheets = array('editor');
 $THEME->csspostprocess = 'chameleon_process_css';

@@ -41,12 +41,13 @@ function customizeMenu(region,regionLocation){
     $(subcont).css("display","none");
     subcont.first().css("display","block");
     //add Rounded borders to the first tab                                                                                            
-    $('div.header-tab:first',tabs).css({
+    region.find('div.header-tab:first',tabs).css({
 	    '-moz-border-radius':'5px 5px 0px 0px',
 		'border-radius':'5px 5px 0px 0px'
      });
-    $.map($(".header .commands") , function(item , index){ 
-        $(".header-tab").eq(index).append(item);
+    $.map(region.find(".header .commands") , function(item , index){ 
+        region.find(".header-tab").eq(index).after("<div class='com'></div>");
+        region.find(".header-tab").eq(index).next().append(item);
     });
 
 }
@@ -164,7 +165,7 @@ $(function(){
 	if(regionPre.length != 0){
 	    customizeMenu(regionPre,"pre");
 	}
-	if(regionPost.length != 0){
+	if(regionPost.length != 0 ){
 	    customizeMenu(regionPost,"post");        	
     }
 
