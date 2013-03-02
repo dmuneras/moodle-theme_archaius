@@ -91,9 +91,9 @@ div.region-content div.header-tab h2{
     color: whiteSmoke;
 }
 
-div.noregionpre{
-    margin-left: 0 !important;
-    margin-right:0 !important;
+div.nouser-home{
+    margin-left: 200px !important;
+    width: 100%;
 }
 div#region-post div.region-content div.current , div#region-pre div.region-content div.current{
     background-color: [[setting:currentcolor]];
@@ -636,6 +636,9 @@ div.logininfo a.login {
     background-color: #efefef;
 }
 
+span.error{
+    color:red;
+}
 /** Custom CSS **/
 [[setting:customcss]]
 

@@ -42,7 +42,8 @@ echo $OUTPUT->doctype() ?>
         <?php if (!empty($PAGE->theme->settings->customjs)) {
             echo $PAGE->theme->settings->customjs;
         } ?>
-        activateTopicsCourseMenu = <?php echo $PAGE->theme->settings->collasibleTopics ?>;
+        activateTopicsCourseMenu = '<?php echo $PAGE->theme->settings->collasibleTopics ?>';
+        siteRoot =  '<?php echo $CFG->wwwroot ?>';
         //]]>
 
     </script>
