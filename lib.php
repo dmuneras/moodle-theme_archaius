@@ -123,7 +123,7 @@ function chameleon_set_themecolor($css, $themecolor) {
     $tag = '[[setting:themecolor]]';
     $replacement = $themecolor;
     if (is_null($replacement)) {
-        $replacement = '#444';
+        $replacement = '#2E3332';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -133,7 +133,7 @@ function chameleon_set_headercolor($css, $headercolor) {
     $tag = '[[setting:headercolor]]';
     $replacement = $headercolor;
     if (is_null($replacement)) {
-        $replacement = '#999';
+        $replacement = '#A7A39B';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -143,7 +143,7 @@ function chameleon_set_currentcolor($css, $currentcolor) {
     $tag = '[[setting:currentcolor]]';
     $replacement = $currentcolor;
     if (is_null($replacement)) {
-        $replacement = '#444';
+        $replacement = '#2E3332';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -153,7 +153,7 @@ function chameleon_set_currentcustommenucolor($css, $currentcustommenucolor) {
     $tag = '[[setting:currentcustommenucolor]]';
     $replacement = $currentcustommenucolor;
     if (is_null($replacement)) {
-        $replacement = '#999';
+        $replacement = '#342917';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;

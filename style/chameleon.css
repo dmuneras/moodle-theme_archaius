@@ -52,7 +52,6 @@ h3.page-subtitle{
 
 div.region-content div.header-tab {
     background: none repeat scroll 0 0 [[setting:headercolor]];
-    color: #FFFFFF;
     line-height: 1;
     border-bottom: 1px solid whiteSmoke;
     cursor: pointer !important;
@@ -70,7 +69,6 @@ div.region-content .header-tab .title {
 }
 
 div.region-content .header-tab h2{
-    color: #fff;
     font-size: small;
     padding-bottom: 5px;
 }
@@ -88,15 +86,20 @@ div.region-content div.commands{
 
 div.region-content div.header-tab h2{ 
     cursor: pointer !important;
-    color: whiteSmoke;
 }
 
 div.nouser-home{
     margin-left: 200px !important;
     width: 100%;
 }
-div#region-post div.region-content div.current , div#region-pre div.region-content div.current{
+div#region-post div.region-content div.current ,
+div#region-pre div.region-content div.current{
     background-color: [[setting:currentcolor]];
+}
+
+div#region-post div.region-content div.current h2 , 
+div#region-pre div.region-content div.current h2{
+    color: whiteSmoke;
 }
 
 /* Header */
@@ -486,9 +489,17 @@ td.eventskey {
 }
 
 #custommenu{
-    background-color: [[setting:themecolor]];
-    border-top: 1px solid #666;
+    background-color: #A7A39B;
+    border-top: 2px solid #000;
     padding: 5px;
+}
+
+#custommenu ul li{
+    border-right: 1px solid #222;
+}
+
+#custommenu .custom_menu_submenu li{
+    border-right: 0px;
 }
 
 .has-custom-menu #wrapper,
@@ -521,7 +532,7 @@ div.logininfo a.login,
 #custommenu .custom_menu_submenu .yui3-menu-content,
 #custommenu .yui3-menu-label-active,
 #custommenu .yui3-menu-label-menuvisible {
-    background-color: [[setting:themecolor]];
+    background-color: #A7A39B;
 }
 
 #custommenu .yui3-menu-horizontal .yui3-menu-content ul ul,
@@ -530,7 +541,7 @@ div.logininfo a.login,
 }
 
 .yui3-skin-sam .yui3-menu li, .yui3-skin-sam .yui3-menu .yui3-menu li{
-    background-color: [[setting:themecolor]] !important;
+    background-color: #A7A39B !important;
 }
 
 #custommenu .yui3-menu-horizontal .yui3-menu-content li a {
@@ -541,14 +552,23 @@ div.logininfo a.login,
     border-radius: 2px;
     margin-right: 3px;
     margin-left:3px;
+    color: #000;
 }
+
+#custommenu .yui3-menu-horizontal .yui3-menu-content li.yui3-menuitem-active a,
+a.yui3-menu-label-active,
+a.yui3-menu-label-menuvisible {
+  color:white !important;
+}
+
+
 
 .arrow-right {
     width: 0; 
     height: 0; 
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;  
-    border-left: 10px solid [[setting:themecolor]];
+    border-left: 10px solid #A7A39B;
     margin-top: 3px;
 }
 
@@ -557,7 +577,7 @@ div.logininfo a.login,
     height: 0; 
     border-left: 8px solid transparent;
     border-right: 8px solid transparent; 
-    border-bottom: 10px solid [[setting:themecolor]];
+    border-bottom: 10px solid #A7A39B;
     margin: auto;
     margin-top:3px;
 
@@ -624,7 +644,6 @@ div.logininfo a.login {
 }
 
 #page-mod-quiz-edit .questionbankwindow div.header h2{
-    color: white;
     font-size: small;
 }
 
