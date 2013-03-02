@@ -1,10 +1,7 @@
-/*
-==========================================================                                                                                                                                                                                     
-| Author: Daniel Munera Sanchez                          |                                                                                                                                                              
-| Description: Adding accordion effect to blocks moodle. |
-|                                                        |
-==========================================================
-*/
+/* --------------------------------------------------------------                                                                                                                                                                                    
+    Adding accordion effect to blocks moodle.        
+-------------------------------------------------------------- */
+
 
 //REGEX BY JAMES PADOLSEY
 $.expr[':'].regex = function(elem, index, match) {

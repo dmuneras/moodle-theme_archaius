@@ -9,7 +9,7 @@ $(function(){
 
 	//Verify if we are in the man view of chapters.
 	if(($("div.summary").length > 2) && (topics.length != 0) 
-										&& (activateTopicsCourseMenu == true)){
+							&& (activateTopicsCourseMenu == true)){
 		// course sections.
 		var sections = topics.find('li.section.main'); 
 		//General information.
