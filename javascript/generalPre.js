@@ -1,7 +1,9 @@
-/*                                                                                                                                                                                           
-  Author: Daniel Munera Sanchez                                                                                                                                                              
-  Description: Adding accordion effect to blocks moodle and overlay to login page,
-               Slider to the home page and fixing small details
+/*
+==========================================================                                                                                                                                                                                     
+| Author: Daniel Munera Sanchez                          |                                                                                                                                                              
+| Description: Adding accordion effect to blocks moodle. |
+|                                                        |
+==========================================================
 */
 
 //REGEX BY JAMES PADOLSEY

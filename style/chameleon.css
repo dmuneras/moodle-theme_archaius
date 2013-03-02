@@ -1,10 +1,8 @@
-/** -------------------------------------------
-   Main styles 
----------------------------------------------*/
-
-/* Layout */
-
-html, body {
+/* -------------------------------------------------------------- 
+   Layout 
+-------------------------------------------------------------- */
+html, 
+body {
     font: medium "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
     color: #222;
     min-width: 910px;   
@@ -12,12 +10,17 @@ html, body {
 }
 
 
-h1,h2,h3,h4,h5{
+h1,
+h2,
+h3,
+h4,
+h5{
     font-weight:normal !important;
     margin:0 0 20px 0;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: #222;
     
 }
@@ -35,74 +38,14 @@ h3.page-subtitle{
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.navbar{
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top:10px;
-    padding-bottom: 10px;
-    padding: 5px;
-    background: whitesmoke;
-    border: 1px solid #ccc;
-}
-.navbar a {
-   font-weight: bold;
-   padding: 5px;
-   color: #222;
+
+span.error{
+    color:red;
 }
 
-div.region-content div.header-tab {
-    background: none repeat scroll 0 0 [[setting:headercolor]];
-    line-height: 1;
-    border-bottom: 1px solid whiteSmoke;
-    cursor: pointer !important;
-    min-height:20px;
-}
-
-#region-pre div.region-content .header,
-#region-post div.region-content .header{
-    background-color: #EDF0EE;
-    height: 10px;
-}
-
-div.region-content .header-tab .title {
-    text-align:center;
-}
-
-div.region-content .header-tab h2{
-    font-size: small;
-    padding-bottom: 5px;
-}
-
-#region-pre div.region-content .header h2,
-#region-post div.region-content .header h2{
-    display: none;
-}
-
-div#tabs-pre .com, div#tabs-post .com {
-    text-align: center;
-    background-color: whiteSmoke;
-    border: 1px solid #ddd;
-}
-
-div.region-content div.header-tab h2{ 
-    cursor: pointer !important;
-}
-
-div.nouser-home{
-    margin-left: 200px !important;
-    width: 100%;
-}
-div#region-post div.region-content div.current ,
-div#region-pre div.region-content div.current{
-    background-color: [[setting:currentcolor]];
-}
-
-div#region-post div.region-content div.current h2 , 
-div#region-pre div.region-content div.current h2{
-    color: whiteSmoke;
-}
-
-/* Header */
+/* -------------------------------------------------------------- 
+   Page Header
+-------------------------------------------------------------- */
 
 #page-header {
     top: 0;
@@ -135,7 +78,6 @@ div#region-pre div.region-content div.current h2{
     background: white url([[pix:theme|search]]) 4px 8px no-repeat;
   
 }
-
 .nobackground{
     background:none !important;
 }
@@ -176,8 +118,78 @@ div#region-pre div.region-content div.current h2{
     margin:20px !important;
 }
 
+.navbar{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top:10px;
+    padding-bottom: 10px;
+    padding: 5px;
+    background: whitesmoke;
+    border: 1px solid #ccc;
+}
+.navbar a {
+   font-weight: bold;
+   padding: 5px;
+   color: #222;
+}
 
-/* Sideblock */
+/* -------------------------------------------------------------- 
+   Blocks 
+-------------------------------------------------------------- */
+
+div.region-content 
+div.header-tab {
+    background: none repeat scroll 0 0 [[setting:headercolor]];
+    line-height: 1;
+    border-bottom: 1px solid whiteSmoke;
+    cursor: pointer !important;
+    min-height:20px;
+}
+
+#region-pre div.region-content .header,
+#region-post div.region-content .header{
+    background-color: #EDF0EE;
+    height: 10px;
+}
+
+div.region-content .header-tab .title {
+    text-align:center;
+}
+
+div.region-content .header-tab h2{
+    font-size: small;
+    padding-bottom: 5px;
+}
+
+#region-pre div.region-content .header h2,
+#region-post div.region-content .header h2{
+    display: none;
+}
+
+div#tabs-pre .com,
+div#tabs-post .com {
+    text-align: center;
+    background-color: whiteSmoke;
+    border: 1px solid #ddd;
+}
+
+div.region-content div.header-tab h2{ 
+    cursor: pointer !important;
+}
+
+div.nouser-home{
+    margin-left: 200px !important;
+    width: 100%;
+}
+div#region-post div.region-content div.current ,
+div#region-pre div.region-content div.current{
+    background-color: [[setting:currentcolor]];
+}
+
+div#region-post div.region-content div.current h2 , 
+div#region-pre div.region-content div.current h2{
+    color: whiteSmoke;
+}
 
 #move-region-right{
     background: -10px url([[pix:theme|arrow_right]]);
@@ -304,7 +316,10 @@ td.eventskey {
     
 }
 
-/* Forum */
+
+/* -------------------------------------------------------------- 
+   Forum 
+-------------------------------------------------------------- */
 
 .forumpost {
     border: none;
@@ -410,7 +425,10 @@ td.eventskey {
     text-align: center;
 }
 
-/* Footer */
+
+/* -------------------------------------------------------------- 
+   Page Footer 
+-------------------------------------------------------------- */
 
 #page-footer {
     padding-top: 10px;
@@ -444,6 +462,11 @@ td.eventskey {
     text-align: center;
     margin: 10px 20%;
 }
+
+
+/* -------------------------------------------------------------- 
+   Assigment 
+-------------------------------------------------------------- */
 
 #page-mod-assignment-view .singlebutton {
     margin: 15px;
@@ -487,6 +510,11 @@ td.eventskey {
 .myclear {
 	clear: both;
 }
+
+
+/* -------------------------------------------------------------- 
+   Custom menu 
+-------------------------------------------------------------- */
 
 #custommenu{
     background-color: #A7A39B;
@@ -582,7 +610,11 @@ a.yui3-menu-label-menuvisible {
     margin-top:3px;
 
 }
-/* Login info */
+
+
+/* -------------------------------------------------------------- 
+   Login
+-------------------------------------------------------------- */
 
 div.logininfo{
     margin-bottom: 20px;
@@ -600,16 +632,6 @@ div.logininfo a.login {
   -webkit-border-radius:5px;
 }
 
-
-/* Quiz*/
-.que div.formulation {
- background-color: #EDF0EE;
-}
-
-#page-mod-quiz-attempt .submitbtns, #page-mod-quiz-review div.submitbtns{
-   text-align: center;
-}
-
 .loginbox .loginform .form-input{
     margin-bottom:5px;
     text-align: center;
@@ -617,8 +639,6 @@ div.logininfo a.login {
     float: none;
 }
 
-
-/* Login page */
 .loginbox .loginform .form-input #loginbtn{
    display: block;
    text-align: center;
@@ -636,7 +656,27 @@ div.logininfo a.login {
     border: 1px solid #ccc;
 }
 
-/* Question Bank*/
+
+/* -------------------------------------------------------------- 
+   Quiz 
+-------------------------------------------------------------- */
+
+.que div.formulation {
+ background-color: #EDF0EE;
+}
+
+#page-mod-quiz-attempt .submitbtns,
+#page-mod-quiz-review div.submitbtns{
+   text-align: center;
+}
+
+
+
+
+/* -------------------------------------------------------------- 
+   Question bank
+-------------------------------------------------------------- */
+
 #page-mod-quiz-edit .questionbankwindow div.header{
     background-color: #444 !important;
     text-align: center;
@@ -655,10 +695,10 @@ div.logininfo a.login {
     background-color: #efefef;
 }
 
-span.error{
-    color:red;
-}
-/** Custom CSS **/
+
+/* -------------------------------------------------------------- 
+   Custom css
+-------------------------------------------------------------- */
 [[setting:customcss]]
 
 
