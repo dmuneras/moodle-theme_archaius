@@ -95,7 +95,6 @@ echo $OUTPUT->doctype() ?>
                         </div>
                     </div>
                 </div>
-  <?php if ($USER->id != 0){ ?>
 	        <?php if ($hassidepre){ ?>
                 <div id="region-pre" class="block-region">
                     <div class="region-content">
@@ -111,7 +110,6 @@ echo $OUTPUT->doctype() ?>
                     </div>
                 </div>
                 <?php } ?>
-       <?php } ?>
             </div>
         </div>
     </div>

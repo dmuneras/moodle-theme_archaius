@@ -124,11 +124,6 @@ $(function(){
 	if(regionPost.length != 0 ){
 	    customizeMenu(regionPost,"post");        	
     }
-    siteRootL = siteRoot + "/"
-    if(regionPre.length == 0 &&  regionPost.length == 0 && 
-        (siteRoot == document.location.href || 
-                siteRootL == document.location.href  ))
-        $("#region-main").addClass("nouser-home");
 
     if($(".questionbankwindow.block").length > 0){
 		expandBank($(".questionbankwindow.block"));

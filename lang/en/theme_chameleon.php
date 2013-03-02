@@ -39,7 +39,8 @@ then rename it before making your changes. This will prevent your customized the
 More information on modifying themes can be found in the <a href="http://docs.moodle.org/en/Theme">MoodleDocs</a>.</p>                                                               
 <h2>Credits</h2><p>This theme is based on anomaly themes, it was                                                                                                                     
 originally designed for Moodle 1.9 by Patrick Malley. chameleon was created by Daniel Munera Sanchez using the open source libraries: jQuery, jQuerytools, PIE.js.
- He can be contacted at dmunera119@gmail.com</p>';
+ He can be contacted at dmunera119@gmail.com</p>
+ <p>The logo was a contribution of Juan Pablo londono.</p>';
 $string['logo'] = 'logo';
 $string['logodesc'] = 'logo URL';
 $string['customcss'] = 'Custom CSS';

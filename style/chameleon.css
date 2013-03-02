@@ -177,10 +177,6 @@ div.region-content div.header-tab h2{
     cursor: pointer !important;
 }
 
-div.nouser-home{
-    margin-left: 200px !important;
-    width: 100%;
-}
 div#region-post div.region-content div.current ,
 div#region-pre div.region-content div.current{
     background-color: [[setting:currentcolor]];
