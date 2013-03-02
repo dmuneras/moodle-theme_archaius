@@ -14,7 +14,8 @@ $.expr[':'].regex = function(elem, index, match) {
 	property: matchParams.shift().replace(validLabels,'')
     },
     regexFlags = 'ig',
-    regex = new RegExp(matchParams.join('').replace(/^\s+|\s+$/g,''), regexFlags);
+    regex = new RegExp(matchParams.join('')
+                                    .replace(/^\s+|\s+$/g,''), regexFlags);
     return regex.test($(elem)[attr.method](attr.property));
 }
 
@@ -35,7 +36,8 @@ function customizeMenu(region,regionLocation){
     var tabs = $("#" + $tabsId);
     tabs.prepend($('div.header-tab', region));
     var subcont = region.find("div.block",tabs);
-    tabs.tabs(subcont, {tabs: 'div.header-tab', effect: 'slide', initialIndex: 0});
+    tabs.tabs(subcont, {tabs: 'div.header-tab', effect: 'slide',
+                                                         initialIndex: 0});
     
     //Avoid first efect when the page is loaded
     $(subcont).css("display","none");
@@ -53,7 +55,8 @@ function customizeMenu(region,regionLocation){
 
 function hideShowBlocks(){
 	if($("#region-pre").length > 0 ){
-		$("#page").prepend("<div id='move-region' width= " + $("#region-pre").css("width") + "></div>");
+		$("#page").prepend("<div id='move-region' width= " +
+                                 $("#region-pre").css("width") + "></div>");
 		$("#move-region").on("click",function(){
 			if(!($(this).hasClass("hidden-region"))){
                 $("#move-region").addClass("hidden-region");
@@ -75,7 +78,8 @@ function hideShowBlocks(){
 		});
 	}
 	if($("#region-post").length > 0){
-		$("#page").prepend("<div id='move-region-right' width=" + $("#region-post").css("width") + "></div>");
+		$("#page").prepend("<div id='move-region-right' width=" +
+                                 $("#region-post").css("width") + "></div>");
 		$("#move-region-right").on("click",function(){
 		if(!($(this).hasClass("hidden-region"))){
             $("#move-region-right").addClass("hidden-region");  
@@ -102,7 +106,8 @@ function hideShowBlocks(){
 
 //Function to expand and shrink the question bank div. 
 function expandBank(questionBank){
-    questionBank.find('.header').first().find(".title").append("<span id = 'expand-bank' class='shrink'>expand</span>");
+    questionBank.find('.header').first().find(".title")
+                .append("<span id = 'expand-bank' class='shrink'>expand</span>");
     var page = $('#page-mod-quiz-edit div.quizcontents');
     $('#expand-bank').on("click",function(){
             var $this = $(this);
@@ -167,6 +172,12 @@ $(function(){
 	if(regionPost.length != 0){
 	    customizeMenu(regionPost,"post");        	
     }
+    siteRootL = siteRoot + "/"
+    if(regionPre.length == 0 &&  regionPost.length == 0 && 
+        (siteRoot == document.location.href || 
+                siteRootL == document.location.href  ))
+        $("#region-main").addClass("nouser-home");
+    
 
     hideShowBlocks();
 
