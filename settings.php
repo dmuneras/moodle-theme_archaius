@@ -33,7 +33,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_chameleon/themecolor';
     $title = get_string('themecolor','theme_chameleon');
     $description = get_string('themecolordesc', 'theme_chameleon');
-    $default = '#444';
+    $default = '#2E3332';
     $previewconfig = array('selector'=>'#page-header', 'style'=>'header');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $settings->add($setting);
@@ -42,7 +42,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_chameleon/headercolor';
     $title = get_string('headercolor','theme_chameleon');
     $description = get_string('headercolordesc', 'theme_chameleon');
-    $default = '#999';
+    $default = '#A7A39B';
     $previewconfig = array('selector'=> 'div.region-content div.header', 'style'=>'header');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $settings->add($setting);
@@ -51,7 +51,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_chameleon/currentcolor';
     $title = get_string('currentcolor','theme_chameleon');
     $description = get_string('currentcolordesc', 'theme_chameleon');
-    $default = '#444';
+    $default = '#2E3332';
     $previewconfig = array('selector'=> 'div.region-content div.header.current', 'style'=>'header');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $settings->add($setting);
@@ -60,7 +60,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_chameleon/currentcustommenucolor';
     $title = get_string('currentcustommenucolor','theme_chameleon');
     $description = get_string('currentcustommenucolor', 'theme_chameleon');
-    $default = '#999';
+    $default = '#342917';
     $previewconfig = array('selector'=> 'div.region-content div.header.current', 'style'=>'header');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $settings->add($setting);
