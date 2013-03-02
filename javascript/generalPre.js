@@ -47,7 +47,7 @@ function customizeMenu(region,regionLocation){
 		'border-radius':'5px 5px 0px 0px'
      });
     
-    if($('span.commands').length == 0){
+    if($('span.commands').length > 0){
         $.map(region.find(".header .commands") , function(item , index){ 
             region.find(".header-tab").eq(index).after("<div class='com'></div>");
             region.find(".header-tab").eq(index).next().append(item);

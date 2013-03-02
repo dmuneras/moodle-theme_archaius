@@ -78,10 +78,10 @@ div.region-content .header-tab h2{
     display: none;
 }
 
-div.region-content div.commands{
-    border-bottom: 1px solid #fff;
-    text-align:center;
-    background-color: #eee;
+div#tabs-pre .com, div#tabs-post .com {
+    text-align: center;
+    background-color: whiteSmoke;
+    border: 1px solid #ddd;
 }
 
 div.region-content div.header-tab h2{ 
