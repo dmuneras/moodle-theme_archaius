@@ -46,7 +46,7 @@ function customizeMenu(region,regionLocation){
 		'border-radius':'5px 5px 0px 0px'
      });
     
-    if($('span.commands').length > 0){
+    if($('.commands').length > 0){
         $.map(region.find(".header .commands") , function(item , index){ 
             region.find(".header-tab").eq(index).after("<div class='com'></div>");
             region.find(".header-tab").eq(index).next().append(item);
@@ -98,12 +98,12 @@ function apply_PIE(selector){
 }
 
 function organize_block_summary(){
-    var blockSummary = $('#inst2 .corner-box');
-    if(blockSummary.find(".header").length == 0){
-	var header = $('#region-post .header:first');
+    var blockSummary = $('#inst2');
+    if(blockSummary.prev(".header-tab").length == 0){
+	var header = $('#region-post .header-tab:first');
 	var clon = header.clone();
 	clon.find("h2").html("");
-	blockSummary.prepend(clon);
+	blockSummary.before(clon);
     }
 
 }
@@ -113,7 +113,7 @@ $(function(){
 
 	//Execute PIE for main objects                                                                                                                                               
 	apply_PIE("#page , .images, #adminsearchquery,div.logininfo a.login" +
-      "#custommenu .yui3-menu-horizontal .yui3-menu-content li a");
+		  "#custommenu .yui3-menu-horizontal .yui3-menu-content li a");
 
 	var regionPre = $('#region-pre');
 	var regionPost = $('#region-post');
@@ -123,14 +123,14 @@ $(function(){
 	}
 	if(regionPost.length != 0 ){
 	    customizeMenu(regionPost,"post");        	
-    }
+	}
 
-    if($(".questionbankwindow.block").length > 0){
-		expandBank($(".questionbankwindow.block"));
-    }       
-    $('#page-header').prepend($('div.footer form.adminsearchform')); //add search form to the header page                                                                      
-    $("#page-header form.adminsearchform input:regex(type,submit)").remove(); //remove search button                                                                                      
-    $("#adminsearchquery").attr("placeholder","search"); //add placeholder to search input                                                                                           
-    $('#region-post-box').prepend($('.blogsearchform')); //put blog search in a better position 
+	if($(".questionbankwindow.block").length > 0){
+	    expandBank($(".questionbankwindow.block"));
+	}       
+	$('#page-header').prepend($('div.footer form.adminsearchform')); //add search form to the header page                                                                      
+	$("#page-header form.adminsearchform input:regex(type,submit)").remove(); //remove search button                                                                                      
+	$("#adminsearchquery").attr("placeholder","search"); //add placeholder to search input                                                                                           
+	$('#region-post-box').prepend($('.blogsearchform')); //put blog search in a better position 
 });
 
