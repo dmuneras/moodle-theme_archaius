@@ -125,8 +125,8 @@ $THEME->layouts = array(
     ),
 );
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->javascripts   = array('jquery-1.7.1.min','jquery.tools.min', 'generalPre','course');
-$THEME->javascripts_footer = array('generalPost');
+$THEME->javascripts   = array('jquery-1.7.1.min','jquery.tools.min');
+$THEME->javascripts_footer = array('chameleon');
 
 
 $THEME->enable_dock = false;
