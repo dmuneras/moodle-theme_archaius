@@ -140,10 +140,10 @@ $(function(){
         $('#region-post-box').prepend($('.blogsearchform'));
 
     /* --------------------------------------------------------------                               
-          COURSE 
+      COURSE 
       To modify the course content view and add the collapsible                                                                                              
-          list effect.                                                                                                                                             
-        ----------------------------------------------------------------*/
+      list effect.                                                                                                                                             
+    ----------------------------------------------------------------*/
 
     var topics = $('ul.topics'); //unordered list of topics.              
         //Verify if we are in the man view of chapters.                                                                                                                               
@@ -252,7 +252,7 @@ $(function(){
 
     /* --------------------------------------------------------------                             
        Custommenu
-        ----------------------------------------------------------------*/
+    ----------------------------------------------------------------*/
     //Adding arrow to custom sub menu and binding event 
     var customMenu = $("#custommenu .custom_menu_submenu");                                                                                                                
     if(customMenu.length > 0 ){
