@@ -2,13 +2,13 @@
 
 /*
 *
- * Functions needed by the chameleon theme should be put here.
+ * Functions needed by the archaius theme should be put here.
  *
  * Any functions that get created here should ALWAYS contain the theme name
  * to reduce complications for other theme designers who may be copying this theme.
  */
 
-function chameleon_process_css($css, $theme) {
+function archaius_process_css($css, $theme) {
 
     // Set the background image for the logo
     if (!empty($theme->settings->logo)) {
@@ -16,7 +16,7 @@ function chameleon_process_css($css, $theme) {
     } else {
         $logo = null;
     }
-    $css = chameleon_set_logo($css, $logo);
+    $css = archaius_set_logo($css, $logo);
 
     // Set custom CSS
     if (!empty($theme->settings->customcss)) {
@@ -24,7 +24,7 @@ function chameleon_process_css($css, $theme) {
     } else {
         $customcss = null;
     }
-    $css = chameleon_set_customcss($css, $customcss);
+    $css = archaius_set_customcss($css, $customcss);
 
     if (!empty($theme->settings->themecolor)) {
         $themecolor = $theme->settings->themecolor;
@@ -32,7 +32,7 @@ function chameleon_process_css($css, $theme) {
         $themecolor = null;
     }
 
-    $css = chameleon_set_themecolor($css,$themecolor);
+    $css = archaius_set_themecolor($css,$themecolor);
 
     if (!empty($theme->settings->bgcolor)) {
       $bgcolor = $theme->settings->bgcolor;
@@ -40,7 +40,7 @@ function chameleon_process_css($css, $theme) {
       $bgcolor = null;
     }
 
-    $css = chameleon_set_bgcolor($css,$bgcolor);
+    $css = archaius_set_bgcolor($css,$bgcolor);
     
     if (!empty($theme->settings->headercolor)) {
         $headercolor = $theme->settings->headercolor;
@@ -48,7 +48,7 @@ function chameleon_process_css($css, $theme) {
         $headercolor = null;
     }
 
-    $css = chameleon_set_headercolor($css,$headercolor);
+    $css = archaius_set_headercolor($css,$headercolor);
 
     if (!empty($theme->settings->currentcolor)) {
         $currentcolor = $theme->settings->currentcolor;
@@ -56,7 +56,7 @@ function chameleon_process_css($css, $theme) {
         $currentcolor = null;
     }
 
-    $css = chameleon_set_currentcolor($css,$currentcolor);
+    $css = archaius_set_currentcolor($css,$currentcolor);
 
     if (!empty($theme->settings->currentcustommenucolor)) {
         $currentcustommenucolor = $theme->settings->currentcustommenucolor;
@@ -64,12 +64,12 @@ function chameleon_process_css($css, $theme) {
         $currentcustommenucolor = null;
     }
 
-    $css = chameleon_set_currentcustommenucolor($css,$currentcustommenucolor);
+    $css = archaius_set_currentcustommenucolor($css,$currentcustommenucolor);
 
     return $css;
 }
 
-function chameleon_set_logo($css, $logo) {
+function archaius_set_logo($css, $logo) {
     global $OUTPUT;
     $tag = '[[setting:logo]]';
     $replacement = $logo;
@@ -83,7 +83,7 @@ function chameleon_set_logo($css, $logo) {
 }
 
 
-function chameleon_set_customcss($css, $customcss) {
+function archaius_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     if (is_null($replacement) ) {
@@ -95,7 +95,7 @@ function chameleon_set_customcss($css, $customcss) {
     return $css;
 }
 
-function chameleon_set_customjs($js, $customjs) {
+function archaius_set_customjs($js, $customjs) {
     $tag = '[[setting:customjs]]';
     $replacement = $customjs;
     if (is_null($replacement)) {
@@ -107,8 +107,8 @@ function chameleon_set_customjs($js, $customjs) {
     return $js;
 }
 
-function chameleon_set_theme_collasibleTopics($js, $collasible) {
-    $tag = '[[theme_chameleon/collasibleTopics]]';
+function archaius_set_theme_collasibleTopics($js, $collasible) {
+    $tag = '[[theme_archaius/collasibleTopics]]';
     $replacement = $collasible;
     if (is_null($replacement)) {
         $replacement = '';
@@ -119,7 +119,7 @@ function chameleon_set_theme_collasibleTopics($js, $collasible) {
     return $js;
 }
 
-function chameleon_set_themecolor($css, $themecolor) {
+function archaius_set_themecolor($css, $themecolor) {
     $tag = '[[setting:themecolor]]';
     $replacement = $themecolor;
     if (is_null($replacement)) {
@@ -129,7 +129,7 @@ function chameleon_set_themecolor($css, $themecolor) {
     return $css;
 }
 
-function chameleon_set_headercolor($css, $headercolor) {
+function archaius_set_headercolor($css, $headercolor) {
     $tag = '[[setting:headercolor]]';
     $replacement = $headercolor;
     if (is_null($replacement)) {
@@ -139,7 +139,7 @@ function chameleon_set_headercolor($css, $headercolor) {
     return $css;
 }
 
-function chameleon_set_currentcolor($css, $currentcolor) {
+function archaius_set_currentcolor($css, $currentcolor) {
     $tag = '[[setting:currentcolor]]';
     $replacement = $currentcolor;
     if (is_null($replacement)) {
@@ -149,7 +149,7 @@ function chameleon_set_currentcolor($css, $currentcolor) {
     return $css;
 }
 
-function chameleon_set_currentcustommenucolor($css, $currentcustommenucolor) {
+function archaius_set_currentcustommenucolor($css, $currentcustommenucolor) {
     $tag = '[[setting:currentcustommenucolor]]';
     $replacement = $currentcustommenucolor;
     if (is_null($replacement)) {
@@ -159,7 +159,7 @@ function chameleon_set_currentcustommenucolor($css, $currentcustommenucolor) {
     return $css;
 }
 
-function chameleon_set_bgcolor($css, $bgcolor) {
+function archaius_set_bgcolor($css, $bgcolor) {
   $tag = '[[setting:bgcolor]]';
   $replacement = $bgcolor;
   if (is_null($replacement)) {

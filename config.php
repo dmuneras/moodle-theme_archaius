@@ -5,9 +5,9 @@
 /// how Moodle uses this theme.
 ////////////////////////////////////////////////////////////////////////////////
 
-$THEME->name = 'chameleon';
+$THEME->name = 'archaius';
 
-$THEME->sheets = array('base','chameleon' ,'course','slideshow','boilerplate');
+$THEME->sheets = array('base','archaius' ,'course','slideshow','boilerplate');
 /// This variable is an array containing the names of all the
 /// stylesheet files you want included in this theme, and in what order
 ////////////////////////////////////////////////////////////////////////////////
@@ -125,11 +125,11 @@ $THEME->layouts = array(
     ),
 );
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->javascripts   = array('jquery-1.7.1.min','jquery.tools.min', 'generalPre','course');
-$THEME->javascripts_footer = array('generalPost');
+$THEME->javascripts   = array('jquery-1.7.1.min','jquery.tools.min');
+$THEME->javascripts_footer = array('archaius');
 
 
 $THEME->enable_dock = false;
 
 $THEME->editor_sheets = array('editor');
-$THEME->csspostprocess = 'chameleon_process_css';
+$THEME->csspostprocess = 'archaius_process_css';
