@@ -124,7 +124,6 @@ echo $OUTPUT->doctype() ?>
         <p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')) ?></p>
         <?php
         echo $OUTPUT->login_info();
-        //echo $OUTPUT->home_link();
         ?>
         <p>Supported by 
         <a href="http://moodle.org" title="Moodle">
