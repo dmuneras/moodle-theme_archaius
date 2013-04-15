@@ -145,16 +145,19 @@ $(function(){
         $("#adminsearchquery").attr("placeholder","search"); //add placeholder to search input                                                   
         $('#region-post-box').prepend($('.blogsearchform'));
 
-    /* --------------------------------------------------------------                               
-      COURSE 
-      To modify the course content view and add the collapsible                                                                                              
-      list effect.                                                                                                                                             
-    ----------------------------------------------------------------*/
-
-    var topics = $('ul.topics'); //unordered list of topics.              
-        //Verify if we are in the man view of chapters.                                                                                                                               
+	/* --------------------------------------------------------------                               
+	   COURSE 
+	   To modify the course content view and add the collapsible                                                                                              
+	   list effect.                                                                                                                                             
+	   ----------------------------------------------------------------*/
+    
+	var topics = $('ul.topics'); //unordered list of topics.
+	var isEditing = $("span.commands").length != 0;
+	//Verify if we are in the main view of chapters.
+	//Verify is we are not editing because is more confortable editing
+	//without tags.
         if(($("div.summary").length > 2) && (topics.length != 0)
-           && (activateTopicsCourseMenu == true)){
+           && (activateTopicsCourseMenu == true) && isEditing == false){
             // course sections.                                                                         
             var sections = topics.find('li.section.main');
             //General information.                                                                                          
