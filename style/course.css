@@ -40,6 +40,11 @@ h2.headingblock {
     font-size: 1.75em;
 }
 
+.topic-tab.current{
+    padding: 5px;
+    background: whitesmoke;
+    border: 1px solid #ccc;
+}
 .topics .topic-tab{
     border-bottom: 1px solid #ccc;
     margin-bottom:10px;
