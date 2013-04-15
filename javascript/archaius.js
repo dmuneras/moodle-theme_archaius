@@ -31,7 +31,7 @@ $.tools.tabs.addEffect("slide", function(i, done) {
 ----------------------------------------------------------------*/
 
 //Script to modify the moodle menu, adding the accodion effect with all tabs on top                                     
-function customizeMenu(region,regionLocation){
+function customizeMenu(region,regionLocation,callback){
     var $tabsId = "tabs-" + regionLocation;
     region.find('.region-content').attr('id',$tabsId);
     var tabs = $("#" + $tabsId);
@@ -55,6 +55,8 @@ function customizeMenu(region,regionLocation){
         region.find(".header-tab").eq(index).next().append(item);
         });
     }
+    if($.isFunction(callback))
+        callback();
 
 }
 
@@ -126,10 +128,14 @@ $(function(){
                   "#custommenu .yui3-menu-horizontal .yui3-menu-content li a");
         organizeBlockSummary();
         if(regionPre.length != 0){
-            customizeMenu(regionPre,"pre");
+            customizeMenu(regionPre,"pre",function(){
+                regionPre.show();
+            });
         }
         if(regionPost.length != 0 ){
-            customizeMenu(regionPost,"post");
+            customizeMenu(regionPost,"post",function(){
+                regionPost.show();
+            });
         }
         if($(".questionbankwindow.block").length > 0){
             expandBank($(".questionbankwindow.block"));

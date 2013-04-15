@@ -145,6 +145,10 @@ div.header-tab {
     min-height:20px;
 }
 
+#region-pre ,
+#region-post{
+    display: none;
+}
 #region-pre div.region-content .header,
 #region-post div.region-content .header{
     background-color: #EDF0EE;

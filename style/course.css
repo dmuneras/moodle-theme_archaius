@@ -217,3 +217,7 @@ a.pretty{
     float: left;
     margin-top: 8px;
 }
+
+img.hide{
+    display:block;
+}
