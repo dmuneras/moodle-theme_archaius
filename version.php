@@ -18,7 +18,7 @@
  * Theme version info
  *
  * @package    theme
- * @subpackage chameleon
+ * @subpackage archaius
  * @copyright  2013 Daniel Munera Sanchez
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
