@@ -3,7 +3,7 @@
 -------------------------------------------------------------- */
 html, 
 body {
-    font: medium "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+    font: medium "Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #222;
     min-width: 910px;   
     background: [[setting:bgcolor]] !important;
@@ -15,7 +15,6 @@ h2,
 h3,
 h4,
 h5{
-    font-weight:normal !important;
     margin:0 0 20px 0;
 }
 
@@ -163,11 +162,13 @@ div.region-content .header-tab .title {
 div.region-content .header-tab h2{
     cursor: pointer !important;
     font-size: small;
-    padding-bottom: 5px;
 <<<<<<< HEAD
-    padding-top: 5px;
+    padding: 5px;
+
 =======
->>>>>>> parent of b5dc399... fixing custommenu and js
+    padding-bottom: 5px;
+    padding-top: 5px;
+>>>>>>> a0e9b494bd7f7c2f556259f28ff7b5f476be8ba6
 }
 
 #region-pre div.region-content .header h2,
@@ -520,21 +521,27 @@ td.eventskey {
 #custommenu{
     background-color: #A7A39B;
     border-top: 2px solid #000;
-<<<<<<< HEAD
     padding: 2px;
+<<<<<<< HEAD
+=======
     padding-left: 4%;
     width: 95.85%;
-=======
-    padding: 5px;
->>>>>>> parent of b5dc399... fixing custommenu and js
+>>>>>>> a0e9b494bd7f7c2f556259f28ff7b5f476be8ba6
 }
 
-#custommenu ul li{
-    border-right: 1px solid #222;
+#custom_menu_1{
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
+    
 }
 
 #custommenu .custom_menu_submenu li{
     border-right: 0px;
+}
+
+#custommenu .custom_menu_submenu li {
+   min-width: 150px;
 }
 
 .has-custom-menu #wrapper,
@@ -582,20 +589,15 @@ div.logininfo a.login,
 #custommenu .yui3-menu-horizontal .yui3-menu-content li a {
     cursor:pointer;
 <<<<<<< HEAD
+    color: #000;
+    padding: 10px;
+=======
     padding: 10px;
     margin-right: 0px;
     margin-left:0px;
     color: #000;
     font-weight:bold;
-=======
-    padding: 5px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    margin-right: 3px;
-    margin-left:3px;
-    color: #000;
->>>>>>> parent of b5dc399... fixing custommenu and js
+>>>>>>> a0e9b494bd7f7c2f556259f28ff7b5f476be8ba6
 }
 
 #custommenu .yui3-menu-horizontal .yui3-menu-content li.yui3-menuitem-active a,
@@ -707,6 +709,7 @@ div.logininfo a.login {
 #page-mod-quiz-edit div.questionbank{
     background-color: #efefef;
 }
+
 
 
 /* -------------------------------------------------------------- 

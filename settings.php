@@ -60,7 +60,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_archaius/currentcustommenucolor';
     $title = get_string('currentcustommenucolor','theme_archaius');
     $description = get_string('currentcustommenucolor', 'theme_archaius');
-    $default = '#2E3332';
+    $default = '#342917';
     $previewconfig = array('selector'=> 'div.region-content div.header.current', 'style'=>'header');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $settings->add($setting);
