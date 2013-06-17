@@ -31,7 +31,7 @@ $.tools.tabs.addEffect("slide", function(i, done) {
 ----------------------------------------------------------------*/
 
 //Script to modify the moodle menu, adding the accodion effect with all tabs on top                                     
-function customizeMenu(region,regionLocation,callback){
+function customizeMenu(region,regionLocation){
     var $tabsId = "tabs-" + regionLocation;
     region.find('.region-content').attr('id',$tabsId);
     var tabs = $("#" + $tabsId);
@@ -55,8 +55,6 @@ function customizeMenu(region,regionLocation,callback){
         region.find(".header-tab").eq(index).next().append(item);
         });
     }
-    if($.isFunction(callback))
-        callback();
 
 }
 
@@ -128,14 +126,10 @@ $(function(){
                   "#custommenu .yui3-menu-horizontal .yui3-menu-content li a");
         organizeBlockSummary();
         if(regionPre.length != 0){
-            customizeMenu(regionPre,"pre",function(){
-                regionPre.show();
-            });
+            customizeMenu(regionPre,"pre");
         }
         if(regionPost.length != 0 ){
-            customizeMenu(regionPost,"post",function(){
-                regionPost.show();
-            });
+            customizeMenu(regionPost,"post");
         }
         if($(".questionbankwindow.block").length > 0){
             expandBank($(".questionbankwindow.block"));
@@ -145,81 +139,54 @@ $(function(){
         $("#adminsearchquery").attr("placeholder","search"); //add placeholder to search input                                                   
         $('#region-post-box').prepend($('.blogsearchform'));
 
-	/* --------------------------------------------------------------                               
-	   COURSE 
-	   To modify the course content view and add the collapsible                                                                                              
-	   list effect.                                                                                                                                             
-	   ----------------------------------------------------------------*/
-    
-	var topics = $('ul.topics'); //unordered list of topics.
-	var isEditing = $("span.commands").length != 0;
-	//Verify if we are in the main view of chapters.
-	//Verify is we are not editing because is more confortable editing
-	//without tags.
-        if(($("div.summary").length > 2) && (topics.length != 0)
-           && (activateTopicsCourseMenu == true) && isEditing == false){
-            // course sections.                                                                         
-            var sections = topics.find('li.section.main');
-            //General information.                                                                                          
-            var general =  sections.first();
-            //fix on the top general information of the course.                                              
-            topics.parent().prepend(general);
-            general.show();
-            var tabSelector = "h3.sectionname";
-            if(topics.find(tabSelector).length != topics.find("li.section.main").length ){
-                tabSelector = "div.summary";
-                sections.each(function(){
-                        $this = $(this);
-                        if($this.find("h3.sectionname").length == 0){
-                            $this.find("div.summary").prepend("<h3> " + $this.find(".left").html() + "</h3>");
-                        }else{
-                            $this.find("div.summary").prepend($this.find("h3.sectionname"));
-                        }
+    /* --------------------------------------------------------------                               
+      COURSE 
+      To modify the course content view and add the collapsible                                                                                              
+      list effect.                                                                                                                                             
+    ----------------------------------------------------------------*/
 
-<<<<<<< HEAD
-=======
-    var topics = $('ul.topics'); //unordered list of topics.              
-        //Verify if we are in the man view of chapters.                                                                                                                               
-        if(($("div.summary").length > 2) && (topics.length != 0)
-           && (activateTopicsCourseMenu == true)){
-            // course sections.                                                                         
-            var sections = topics.find('li.section.main');
-            //General information.                                                                                          
-            var general =  sections.first();
-            //fix on the top general information of the course.                                              
-            topics.parent().prepend(general);
-            general.show();
-            var tabSelector = "h3.sectionname";
-            if(topics.find(tabSelector).length != topics.find("li.section.main").length ){
-                tabSelector = "div.summary";
-                sections.each(function(){
-                        $this = $(this);
-                        if($this.find("h3.sectionname").length == 0){
-                            $this.find("div.summary").prepend("<h3> " + $this.find(".left").html() + "</h3>");
-                        }else{
-                            $this.find("div.summary").prepend($this.find("h3.sectionname"));
-                        }
-
->>>>>>> parent of b5dc399... fixing custommenu and js
-                    });
-            }
-            var topicTab = topics.find(tabSelector);
-            topicTab.addClass("topic-tab");
-            topicTab.prepend("<span class='triangle'></span>");
-            //update the sections variable after prepend the first section.                                                                                                                   
-            sections = topics.find('li.section.main');
-            //put each summary as a tab (outside of the container).                                                                                                                           
-            sections.each(function(){$(this).before($(this).find(tabSelector))});
-            topicTab.bind("click", function(){
-                    var content = $(this).next();
-                    if($(this).hasClass("current")){
-                        $(this).removeClass("current");
-                        content.slideUp();
-                    } else {
-                        $(this).addClass("current");
-                        content.slideDown();
+    var topics = $('ul.topics'); //unordered list of topics.  
+    var editing = $('div.commands').length > 0;            
+    //Verify if we are in the man view of chapters.                                                                                                                               
+    if(($("div.summary").length > 2) && (topics.length != 0)
+       && (activateTopicsCourseMenu == true) && !(editing)){
+        // course sections.                                                                         
+        var sections = topics.find('li.section.main');
+        //General information.                                                                                          
+        var general =  sections.first();
+        //fix on the top general information of the course.                                              
+        topics.parent().prepend(general);
+        general.show();
+        var tabSelector = "h3.sectionname";
+        if(topics.find(tabSelector).length != topics.find("li.section.main").length ){
+            tabSelector = "div.summary";
+            sections.each(function(){
+                    $this = $(this);
+                    if($this.find("h3.sectionname").length == 0){
+                        $this.find("div.summary").prepend("<h3> " + $this.find(".left").html() + "</h3>");
+                    }else{
+                        $this.find("div.summary").prepend($this.find("h3.sectionname"));
                     }
+
                 });
+        }
+        var topicTab = topics.find(tabSelector);
+        topicTab.addClass("topic-tab");
+        topicTab.prepend("<span class='triangle'></span>");
+        //update the sections variable after prepend the first section.                                                                                                                   
+        sections = topics.find('li.section.main');
+        //put each summary as a tab (outside of the container).                                                                                                                           
+        sections.each(function(){$(this).before($(this).find(tabSelector))});
+        topicTab.bind("click", function(){
+                var content = $(this).next();
+                if($(this).hasClass("current")){
+                    $(this).removeClass("current");
+                    content.slideUp();
+                } else {
+                    $(this).addClass("current");
+                    content.slideDown();
+                }
+            });
     }else if(activateTopicsCourseMenu == false){
             topics.find('li.section.main').show();
         }else{

@@ -40,13 +40,8 @@ h2.headingblock {
     font-size: 1.75em;
 }
 
-.topics .topic-tab.current{
-    background-color: whitesmoke;
-    border: 1px solid #ccc;
-}
 .topics .topic-tab{
     border-bottom: 1px solid #ccc;
-    margin-top:5px;
     margin-bottom:10px;
     padding-top:10px;
     cursor:pointer;
@@ -221,8 +216,4 @@ a.pretty{
     margin-right: 5px;
     float: left;
     margin-top: 8px;
-}
-
-img.hide{
-    display:inline;
 }

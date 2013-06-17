@@ -11,17 +11,9 @@ h4 {
 h2{
     font-size: 1em;
 }
-
-#page,
-div,
-p,
-li,
-input,
-option,
-textarea {
+#page, div, p, li, input, option, textarea {
     line-height: 1.5em;
 }
-
 #page {
     min-width: 900px;
     max-width: 1200px;
@@ -39,31 +31,21 @@ textarea {
     border-radius: 5px;
     background-color: #fff;
 }
-h1.main,
-h2.main,
-h3.main,
-h4.main,
-h5.main,
-h6.main {
+h1.main, h2.main, h3.main, h4.main, h5.main, h6.main {
     text-align: center;
 }
-
 .generalbox {
     padding: 10px;
     margin-bottom: 15px;
 }
-
-#notice.generalbox,
-.generaltable,
-.userinfobox {
+#notice.generalbox, .generaltable, .userinfobox {
     margin-left: auto;
     margin-right: auto;
 }
 #notice.generalbox {
     width: 60%;
 }
-.notifyproblem, 
-.notifysuccess {
+.notifyproblem, .notifysuccess {
     padding: 10px;
 }
 .notifyproblem {
@@ -73,16 +55,13 @@ h6.main {
     color: #006600;
 }
 
-.notifyproblem,
-.notifysuccess,
-.paging {
+.notifyproblem, .notifysuccess, .paging {
     text-align: center;
 }
 
 /**
  * Tabs
  */
-
 .tabtree {
     position: relative;
     margin-bottom: 3.5em;

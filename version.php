@@ -18,13 +18,13 @@
  * Theme version info
  *
  * @package    theme
- * @subpackage archaius
+ * @subpackage chameleon
  * @copyright  2013 Daniel Munera Sanchez
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2013041500; // The current module version (Date: YYYYMMDDXX)
+$plugin->version   = 2013020500; // The current module version (Date: YYYYMMDDXX)
 $plugin->requires  = 2012062500; // Requires this Moodle version
 $plugin->component = 'theme_archaius'; // Full name of the plugin (used for diagnostics)
