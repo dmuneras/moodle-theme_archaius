@@ -158,7 +158,8 @@ div.region-content .header-tab .title {
 
 div.region-content .header-tab h2{
     font-size: small;
-    padding-bottom: 5px;
+    padding: 5px;
+
 }
 
 #region-pre div.region-content .header h2,
@@ -515,15 +516,22 @@ td.eventskey {
 #custommenu{
     background-color: #A7A39B;
     border-top: 2px solid #000;
-    padding: 5px;
+    padding: 2px;
 }
 
-#custommenu ul li{
-    border-right: 1px solid #222;
+#custom_menu_1{
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
+    
 }
 
 #custommenu .custom_menu_submenu li{
     border-right: 0px;
+}
+
+#custommenu .custom_menu_submenu li {
+   min-width: 150px;
 }
 
 .has-custom-menu #wrapper,
@@ -570,13 +578,8 @@ div.logininfo a.login,
 
 #custommenu .yui3-menu-horizontal .yui3-menu-content li a {
     cursor:pointer;
-    padding: 5px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    margin-right: 3px;
-    margin-left:3px;
     color: #000;
+    padding: 10px;
 }
 
 #custommenu .yui3-menu-horizontal .yui3-menu-content li.yui3-menuitem-active a,
@@ -690,6 +693,7 @@ div.logininfo a.login {
 #page-mod-quiz-edit div.questionbank{
     background-color: #efefef;
 }
+
 
 
 /* -------------------------------------------------------------- 
