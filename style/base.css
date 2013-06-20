@@ -8,21 +8,22 @@ h4 {
     margin-bottom:0px !important;
     margin-top:1em !important;
 }
+
 h2{
     font-size: 1em;
 }
+
 #page, div, p, li, input, option, textarea {
     line-height: 1.5em;
 }
+
 #page {
     min-width: 900px;
     max-width: 1200px;
     min-height: 700px;
     width:90%;
-    margin: 50px 3%;
+    margin: 50px auto 50px auto;
     padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
     -webkit-box-shadow: #888 0 0 5px 0;
     -moz-box-shadow:  #888 0 0 5px 0;
     box-shadow: #888 0 0 5px 0;
@@ -31,26 +32,40 @@ h2{
     border-radius: 5px;
     background-color: #fff;
 }
-h1.main, h2.main, h3.main, h4.main, h5.main, h6.main {
+
+h1.main, 
+h2.main, 
+h3.main, 
+h4.main, 
+h5.main, 
+h6.main {
     text-align: center;
 }
+
 .generalbox {
     padding: 10px;
     margin-bottom: 15px;
 }
-#notice.generalbox, .generaltable, .userinfobox {
+
+#notice.generalbox, 
+.generaltable,
+.userinfobox {
     margin-left: auto;
     margin-right: auto;
 }
+
 #notice.generalbox {
     width: 60%;
 }
+
 .notifyproblem, .notifysuccess {
     padding: 10px;
 }
+
 .notifyproblem {
     color: #660000;
 }
+
 .notifysuccess {
     color: #006600;
 }

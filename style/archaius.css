@@ -21,7 +21,7 @@ h5{
 
 a:link,
 a:visited {
-    color: #222;
+    color: #0088CC;
     
 }
 
@@ -137,8 +137,37 @@ span.error{
    Blocks 
 -------------------------------------------------------------- */
 
-div.region-content 
-div.header-tab {
+/* Blocks inside region main */
+
+#region-main div.header-tab {
+    background: none repeat scroll 0 0 [[setting:currentcolor]];
+    color:whiteSmoke;
+    line-height: 1;
+    border-bottom: 1px solid [[setting:currentcolor]];
+    min-height:20px;
+    border-radius: 5px 5px;
+    -moz-border-radius: 5px 5px;
+    -webkit-border-radius: 5px 5px;
+    -moz-box-shadow: 0px 2px 3px 0px #888;
+    -webkit-box-shadow: 0px 2px 3px 0px #888;
+    box-shadow: 0px 2px 3px 0px #888;
+}
+#region-main div.header-tab h2{
+    cursor: default !important;
+}
+
+
+#region-main .block div.content {
+    box-shadow: 0px 2px 3px 0px #888;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#region-main div.header{
+    display: none;
+}
+
+div.region-content div.header-tab {
     background: none repeat scroll 0 0 [[setting:headercolor]];
     line-height: 1;
     border-bottom: 1px solid whiteSmoke;
@@ -159,7 +188,6 @@ div.region-content .header-tab .title {
 div.region-content .header-tab h2{
     font-size: small;
     padding: 5px;
-
 }
 
 #region-pre div.region-content .header h2,
@@ -374,10 +402,20 @@ td.eventskey {
     margin-bottom: 15px;
 }
 
+.path-mod-forum .forumheaderlist{
+
+    border: none;
+}
+
+.path-mod-forum .forumheaderlist td, 
+.path-mod-forum .forumheaderlist th{
+    border: 1px dashed #888;
+}
+
 .path-mod-forum .forumheaderlist .picture {
-    border-right-width: 0;
     padding-right: 0;
     padding-top: 10px;
+    border:none;
 }
 
 .path-mod-forum .forumheaderlist .replies {
@@ -521,9 +559,7 @@ td.eventskey {
 
 #custom_menu_1{
     width:90%;
-    margin-right: auto;
-    margin-left: auto;
-    
+    margin: 0 auto;
 }
 
 #custommenu .custom_menu_submenu li{

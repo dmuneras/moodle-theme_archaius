@@ -43,6 +43,7 @@ echo $OUTPUT->doctype() ?>
             echo $PAGE->theme->settings->customjs;
         } ?>
         activateTopicsCourseMenu = '<?php echo $PAGE->theme->settings->collasibleTopics ?>';
+        activateHideAndShowBlocks = '<?php echo $PAGE->theme->settings->hideShowBlocks ?>';
         siteRoot =  '<?php echo $CFG->wwwroot ?>';
         //]]>
 

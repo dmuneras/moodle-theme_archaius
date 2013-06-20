@@ -46,7 +46,7 @@ $string['logodesc'] = 'logo URL';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'You can add new CSS rules';
 $string['customjs'] = 'Javascript';
-$string['customjsdesc'] = 'You can add new javascript code and desactive the course accordion effect(activateTopicsCourseMenu = false;)';
+$string['customjsdesc'] = 'You can add new javascript code, jQuery is available';
 $string['footnote'] = "Foot Note";
 $string['footnotedesc'] = "Foot Note";
 $string['themecolor'] = "Header and Footer color";
@@ -61,7 +61,8 @@ $string['currentcustommenucolor'] = "Color of the current item of custom menu.";
 $string['currentcustommenucolordesc'] = "Color of the current item of custom menu.";
 $string["collapsibleTopics"] = "Collapsible Topics effect";
 $string["collasibleTopicsdesc"] = "Activate or desactivate the collapsible effect for course with topics format.";
-
+$string["hideShowBlocks"] = "Activate hide and show blocks effect";
+$string["hideShowBlocksdesc"] = "Activate or desactivate the hide and how blocks effect, which is useful to see the main content using the 100% of the space of the main container";
 
 
 

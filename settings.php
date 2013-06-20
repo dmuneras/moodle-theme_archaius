@@ -65,19 +65,26 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $settings->add($setting);
 
-    // Custom CSS file
-    $name = 'theme_archaius/customcss';
-    $title = get_string('customcss','theme_archaius');
-    $description = get_string('customcssdesc', 'theme_archaius');
-    $default = '';
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
-    $settings->add($setting);
-
     //Activate 
     $name = "theme_archaius/collasibleTopics";
     $title = get_string("collapsibleTopics", 'theme_archaius');
     $description = get_string('collasibleTopicsdesc', 'theme_archaius');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $settings->add($setting);
+
+    //Activate 
+    $name = "theme_archaius/hideShowBlocks";
+    $title = get_string("hideShowBlocks", 'theme_archaius');
+    $description = get_string('hideShowBlocksdesc', 'theme_archaius');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $settings->add($setting);
+
+     // Custom CSS file
+    $name = 'theme_archaius/customcss';
+    $title = get_string('customcss','theme_archaius');
+    $description = get_string('customcssdesc', 'theme_archaius');
+    $default = '';
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $settings->add($setting);
 
     // Custom Javascript file
@@ -87,5 +94,6 @@ if ($ADMIN->fulltree) {
     $default = '';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $settings->add($setting);
+
 
 }

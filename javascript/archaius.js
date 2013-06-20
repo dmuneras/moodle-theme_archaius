@@ -200,7 +200,7 @@ $(function(){
 
     //Adding functionality to hide and show blocks
     var regionMain = $("#region-main");
-    if(regionPre.length > 0 ){
+    if(regionPre.length > 0 && activateHideAndShowBlocks == true){
         var widthRegion = regionPre.css("width");
         $("#page").prepend("<div id='move-region'></div>");
         $("#move-region").on("click", { region : regionPre 
@@ -225,28 +225,28 @@ $(function(){
             }
         });
     }
-    if(regionPost.length > 0){
+    if(regionPost.length > 0 && activateHideAndShowBlocks == true){
         $("#page").prepend("<div id='move-region-right'></div>");
         $("#move-region-right").on("click",{ region : regionPost 
             , wRegion : widthRegion , main : regionMain },function(event){
             var data = event.data;
             if(!($(this).hasClass("hidden-region"))){
-            $("#move-region-right").addClass("hidden-region");  
-            data.region.animate({
-                'left' : '+=' + data.wRegion
-                    },400,null);
-            data.main.animate({
-                'margin-right' : "-=" + data.wRegion
-                    },400,null);
+                $("#move-region-right").addClass("hidden-region");  
+                data.region.animate({
+                    'left' : '+=' + data.wRegion
+                        },400,null);
+                data.main.animate({
+                    'margin-right' : "-=" + data.wRegion
+                        },400,null);
             }else{
-            $("#move-region-right").removeClass("hidden-region");
-            data.region.animate({
-                'left' : "-=" + data.wRegion
-                    },400,null);
-            data.main.animate({
-                'margin-right' : "+=" + data.wRegion
-                    },400,null);
-            }
+                $("#move-region-right").removeClass("hidden-region");
+                data.region.animate({
+                    'left' : "-=" + data.wRegion
+                        },400,null);
+                data.main.animate({
+                    'margin-right' : "+=" + data.wRegion
+                        },400,null);
+                }
             
         });
     }

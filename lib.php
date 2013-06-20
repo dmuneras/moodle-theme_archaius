@@ -119,6 +119,18 @@ function archaius_set_theme_collasibleTopics($js, $collasible) {
     return $js;
 }
 
+function archaius_set_theme_hideShowBlocks($js, $collasible) {
+    $tag = '[[theme_archaius/hideShowBlocks]]';
+    $replacement = $collasible;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+
+    $js = str_replace($tag, $replacement, $js);
+
+    return $js;
+}
+
 function archaius_set_themecolor($css, $themecolor) {
     $tag = '[[setting:themecolor]]';
     $replacement = $themecolor;
