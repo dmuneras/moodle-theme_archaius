@@ -6,7 +6,8 @@ h2.headingblock {
     font-weight: normal;
 }
 
-.coursebox .info {
+.coursebox .info,
+.coursebox .info .name {
     width: 100%;
 }
 

@@ -227,6 +227,7 @@ $(function(){
     }
     if(regionPost.length > 0 && activateHideAndShowBlocks == true){
         $("#page").prepend("<div id='move-region-right'></div>");
+        var widthRegion = regionPost.css("width");
         $("#move-region-right").on("click",{ region : regionPost 
             , wRegion : widthRegion , main : regionMain },function(event){
             var data = event.data;
