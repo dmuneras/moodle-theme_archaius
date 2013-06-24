@@ -61,7 +61,7 @@ $THEME->layouts = array(
         'file' => 'general.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
-        'options' => array('langmenu' => true, 'nonavbar' => true)
+        'options' => array('langmenu' => true, 'nonavbar' => true, 'nosubtitle' => true)
     ),
     'admin' => array(
         'file' => 'general.php',

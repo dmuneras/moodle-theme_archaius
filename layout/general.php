@@ -1,5 +1,4 @@
 <?php
-
 $hasheading = ($PAGE->heading);
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
@@ -9,6 +8,7 @@ $showsidepre = $hassidepre && !$PAGE->blocks->region_completely_docked('side-pre
 $showsidepost = $hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT);
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
+$hassubtitle =  !($PAGE->layout_options['nosubtitle']);
 
 $bodyclasses = array();
 if ($showsidepre && !$showsidepost) {
@@ -80,7 +80,9 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page">
     <div id="page-content">
-          <h3 class = "page-subtitle"><?php echo $PAGE->heading ?></h3>  
+          <?php if($hassubtitle){?>
+            <h3 class = "page-subtitle"><?php echo $PAGE->heading;?></h3>
+          <?php } ?>
     	  <?php if ($hasnavbar) { ?>
             <div class="navbar clearfix">
 	      <div class="breadcrumb"><?php echo $OUTPUT->navbar(); ?></div>
