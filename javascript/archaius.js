@@ -150,6 +150,7 @@ $(function(){
     //Verify if we are in the man view of chapters.                                                                                                                               
     if(($("div.summary").length > 2) && (topics.length != 0)
        && (activateTopicsCourseMenu == true) && !(editing)){
+        
         // course sections.                                                                         
         var sections = topics.find('li.section.main');
         //General information.                                                                                          
@@ -199,59 +200,59 @@ $(function(){
     ----------------------------------------------------------------*/                             
 
     //Adding functionality to hide and show blocks
-    var regionMain = $("#region-main");
-    if(regionPre.length > 0 && activateHideAndShowBlocks == true){
-        var widthRegion = regionPre.css("width");
-        $("#page").prepend("<div id='move-region'></div>");
-        $("#move-region").on("click", { region : regionPre 
-            , wRegion : widthRegion , main : regionMain },function(event){
-            var data = event.data;
-            if(!($(this).hasClass("hidden-region"))){
-            $("#move-region").addClass("hidden-region");
-            data.region.animate({
-                'left' : '-=' + data.wRegion
-                    },400,null);
-            data.main.animate({
-                'margin-left' : "-=" + data.wRegion
-                    },400,null);
-            }else{
-            $("#move-region").removeClass("hidden-region");
-            data.region.animate({
-                'left' : "+=" +  data.wRegion
-                    },400, null);
-            data.main.animate({
-                'margin-left' : "+=" + data.wRegion
-                    },400,null);
-            }
-        });
+    if(activateHideAndShowBlocks == true){
+        var regionMain = $("#region-main");
+        if(regionPre.length > 0){
+            var widthRegion = regionPre.css("width");
+            $("#page").prepend("<div id='move-region'></div>");
+            $("#move-region").on("click", { region : regionPre 
+                , wRegion : widthRegion , main : regionMain },function(event){
+                var data = event.data;
+                if(!($(this).hasClass("hidden-region"))){
+                    $("#move-region").addClass("hidden-region");
+                    data.region.animate({
+                        'left' : '-=' + data.wRegion
+                            },400,null);
+                    data.main.animate({
+                        'margin-left' : "-=" + data.wRegion
+                            },400,null);
+                }else{
+                    $("#move-region").removeClass("hidden-region");
+                    data.region.animate({
+                        'left' : "+=" +  data.wRegion
+                            },400, null);
+                    data.main.animate({
+                        'margin-left' : "+=" + data.wRegion
+                            },400,null);
+                    }
+            });
+        }
+        if(regionPost.length > 0){
+            var widthRegion = regionPost.css("width");
+            $("#page").prepend("<div id='move-region-right'></div>");
+            $("#move-region-right").on("click",{ region : regionPost 
+                , wRegion : widthRegion , main : regionMain },function(event){
+                var data = event.data;
+                if(!($(this).hasClass("hidden-region"))){
+                    $("#move-region-right").addClass("hidden-region");  
+                    data.region.animate({
+                        'left' : '+=' + data.wRegion
+                            },400,null);
+                    data.main.animate({
+                        'margin-right' : "-=" + data.wRegion
+                            },400,null);
+                }else{
+                    $("#move-region-right").removeClass("hidden-region");
+                    data.region.animate({
+                        'left' : "-=" + data.wRegion
+                            },400,null);
+                    data.main.animate({
+                        'margin-right' : "+=" + data.wRegion
+                            },400,null);
+                    }
+            });
+        }
     }
-    if(regionPost.length > 0 && activateHideAndShowBlocks == true){
-        $("#page").prepend("<div id='move-region-right'></div>");
-        var widthRegion = regionPost.css("width");
-        $("#move-region-right").on("click",{ region : regionPost 
-            , wRegion : widthRegion , main : regionMain },function(event){
-            var data = event.data;
-            if(!($(this).hasClass("hidden-region"))){
-                $("#move-region-right").addClass("hidden-region");  
-                data.region.animate({
-                    'left' : '+=' + data.wRegion
-                        },400,null);
-                data.main.animate({
-                    'margin-right' : "-=" + data.wRegion
-                        },400,null);
-            }else{
-                $("#move-region-right").removeClass("hidden-region");
-                data.region.animate({
-                    'left' : "-=" + data.wRegion
-                        },400,null);
-                data.main.animate({
-                    'margin-right' : "+=" + data.wRegion
-                        },400,null);
-                }
-            
-        });
-    }
-
     /* --------------------------------------------------------------                             
        Custommenu
     ----------------------------------------------------------------*/
