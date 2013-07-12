@@ -150,7 +150,7 @@ $(function(){
     //Verify if we are in the man view of chapters.                                                                                                                               
     if(($("div.summary").length > 2) && (topics.length != 0)
        && (activateTopicsCourseMenu == true) && !(editing)){
-        
+
         // course sections.                                                                         
         var sections = topics.find('li.section.main');
         //General information.                                                                                          
@@ -201,6 +201,10 @@ $(function(){
 
     //Adding functionality to hide and show blocks
     if(activateHideAndShowBlocks == true){
+         /*
+            The left and margin is not the same in all mooodle modules,
+            Thats way I have to use '-=' and '+=' to move the regions.
+        */
         var regionMain = $("#region-main");
         if(regionPre.length > 0){
             var widthRegion = regionPre.css("width");
@@ -253,6 +257,7 @@ $(function(){
             });
         }
     }
+    
     /* --------------------------------------------------------------                             
        Custommenu
     ----------------------------------------------------------------*/

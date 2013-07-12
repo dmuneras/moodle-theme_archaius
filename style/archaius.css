@@ -388,6 +388,7 @@ td.eventskey {
 #searchforums{
     margin-left: 10px;
 }
+
 .forumpost {
     border: none;
 }
@@ -395,13 +396,16 @@ td.eventskey {
 .path-mod-forum .forumheaderlist{
     border: 1px solid #ccc;
 }
+
 .path-mod-forum .forumheaderlist td{
     border:none;
 }
-.forumpost div.header{
+
+#region-main .forumpost div.header{
     background: #efefef !important;
     margin-bottom: 5px;
     box-shadow: 1px 1px 2px 0px #888;
+    display: block;
 }
 .forumpost  {
     border: 1px dashed #ddd;
