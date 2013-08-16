@@ -63,6 +63,8 @@ $string["collapsibleTopics"] = "Collapsible Topics effect";
 $string["collasibleTopicsdesc"] = "Activate or desactivate the collapsible effect for course with topics format.";
 $string["hideShowBlocks"] = "Activate hide and show blocks effect";
 $string["hideShowBlocksdesc"] = "Activate or desactivate the hide and how blocks effect, which is useful to see the main content using the 100% of the space of the main container";
-
+$string["description"] = "Insert the HTML to create the slide";
+$string["position"] = "Position in the slider";
+$string["error_position"] = "The position is not a number or is equal to 0, 0 is not a valid position";
 
 

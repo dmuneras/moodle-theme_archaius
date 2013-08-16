@@ -1,16 +1,10 @@
 /*home div*/
-
-#home{
-    width:100%;
-    margin-right:auto;
-    margin-left:auto;
-}
 /* container for slides */
-.images {
+.slides {
     background-color:#F3F3F3;
     position:relative;
-    height:450px;
-    width:600px;
+    height:300px;
+    width:100%;
     margin:15px;
     cursor:pointer;
     margin-left: auto;
@@ -23,15 +17,10 @@
     border-radius: 5px;
     box-shadow:0 0 25px #666;
 }
-.images.bigger{
-    width:840px !important;
-}
 
-.images.bigger div {
-    width:750px;
-}
+
 /* single slide */
-.images div {
+.slides div.slide {
     display:none;
     position:absolute;
     top:0;

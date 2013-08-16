@@ -58,7 +58,7 @@ $THEME->layouts = array(
         'options' => array('langmenu' => true)
     ),
     'frontpage' => array(
-        'file' => 'general.php',
+        'file' => 'frontpage.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true, 'nonavbar' => true, 'nosubtitle' => true)
