@@ -20,7 +20,8 @@ h5{
 }
 
 input[type="submit"],
-button{
+button, 
+.pretty-button{
     color: #ffffff;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-color: #363636;

@@ -1,4 +1,7 @@
 <?php
+
+require_once($CFG->dirroot . '/theme/archaius/layout/gui_functions.php');
+
 $hasheading = ($PAGE->heading);
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
@@ -9,6 +12,7 @@ $showsidepost = $hassidepost && !$PAGE->blocks->region_completely_docked('side-p
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 $hassubtitle =  !($PAGE->layout_options['nosubtitle']);
+
 
 $bodyclasses = array();
 if ($showsidepre && !$showsidepost) {
@@ -78,8 +82,26 @@ echo $OUTPUT->doctype() ?>
            </div>        
            <?php } ?>
 <!-- END OF HEADER -->
+<h2 class="lonely-title"><?php echo get_string("welcome_home","theme_archaius");?></h2>
+<div id="home-page" class="main-content">
+    <a id="go-to-courses" class='pretty-button pretty-link-button' href="#">
+        <?php echo get_string("go_to_courses","theme_archaius")?>
+    </a>
+    <?php 
+        global $DB;
+        $slides= "SELECT * FROM {theme_archaius} ORDER BY position ASC";
+        $slides= $DB->get_records_sql($slides);
+        echo add_theme_archaius_slideshow($slides); 
+    ?>
+       
+    <?php if(isloggedin() && has_capability('moodle/site:config', $context, $USER->id, true)){ ?>
+           <div id ='toggle-admin-menu'><?php echo get_string("toggle_menu","theme_archaius");?></div>
+           <?php echo add_admin_options(get_string("addSlide","theme_archaius"),$slides); ?> 
+    <?php } ?>
 
-<div id="page">
+</div>
+<h2 id="moodle-page-title" class="lonely-title"><?php echo get_string("home_courses_title","theme_archaius");?></h2>
+<div id="page" class="main-content">
     <div id="page-content">
           <?php if($hassubtitle){?>
             <h3 class = "page-subtitle"><?php echo $PAGE->heading;?></h3>
@@ -95,31 +117,6 @@ echo $OUTPUT->doctype() ?>
                 <div id="region-main-wrap">
                     <div id="region-main">
                         <div class="region-content">
-                            <?php 
-                                if(isloggedin() && has_capability('moodle/site:config', $context, $USER->id, true)){
-                                    
-                                    global $DB,$CFG,$USER;
-                                    $slides= "SELECT * FROM {theme_archaius}";
-                                    $slides= $DB->get_records_sql($slides);
-                                    if(! empty($slides)){
-                                        echo "<div class='slides'>";
-                                        foreach ($slides as $slide) {
-                                            echo "<div class='slide'>" , $slide->description , "</div>";
-                                        } 
-                                        echo "</div>";
-                                        echo "<div class='slidetabs'>";
-                                        foreach ($slides as $slide) {
-                                            echo "<a href='#''></a>";
-                                        } 
-                                        echo "</div>";
-                                    }                                   
-                                    $context = context_course::instance($COURSE->id);
-                                    $contextid = $context->id;
-                                    echo "<a href=". $CFG->wwwroot ."/theme/archaius/addSlide.php?contextid=" . 
-                                        $contextid . "&userid=" . $USER->id . "&sectionid=2>Agregar carusel</a>";
-                                        
-                                }
-                              ?>
                             <?php echo $OUTPUT->main_content() ?>
                         </div>
                     </div>

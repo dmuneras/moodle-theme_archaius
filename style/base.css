@@ -17,13 +17,15 @@ h2{
     line-height: 1.5em;
 }
 
-#page {
+.main-content{
     min-width: 900px;
     max-width: 1200px;
-    min-height: 700px;
-    width:90%;
-    margin: 50px auto 50px auto;
+    width:90% !important;
+    margin: 20px auto 0px auto;
     padding: 5px;
+}
+#page {
+    min-height: 700px;
     -webkit-box-shadow: #888 0 0 5px 0;
     -moz-box-shadow:  #888 0 0 5px 0;
     box-shadow: #888 0 0 5px 0;
@@ -31,6 +33,40 @@ h2{
     -moz-border-radius: 5px;
     border-radius: 5px;
     background-color: #fff;
+    margin: 50px auto;
+}
+
+#toggle-admin-menu{
+    text-align: center;
+    cursor: pointer;
+    background: whitesmoke;
+    border: 1px solid #ccc;
+    margin-top: 10px;   
+    clear: both;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.pretty-link-button{
+    color: white !important;
+    text-decoration: none !important;
+    float:right;
+    margin-bottom: 10px;
+}
+
+.admin-options{
+    display: none;
+}
+
+
+h2.lonely-title {
+text-align: center;
+padding-bottom: 10px;
+border-bottom: 1px solid #ddd;
+margin-top: 60px;
+}
+#moodle-page-title{
+    margin-top: 20px;
 }
 
 h1.main, 

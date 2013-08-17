@@ -1,9 +1,9 @@
 <?php
 
 /* Imports */
-require_once('../../config.php');
+require_once('../../../config.php');
 require_once($CFG->dirroot . '/repository/lib.php');
-require_once($CFG->dirroot . '/theme/archaius/addSlideForm.php');
+require_once($CFG->dirroot . '/theme/archaius/slideshow/add_slide_form.php');
 require_once($CFG->libdir . '/gdlib.php');
 
 
@@ -20,7 +20,7 @@ $formdata->offset = optional_param('offset', null, PARAM_INT);
 $formdata->forcerefresh = optional_param('forcerefresh', null, PARAM_INT);
 $formdata->mode = optional_param('mode', null, PARAM_ALPHA);
 
-$url = new moodle_url('/theme/archaius/addSlide.php', array(
+$url = new moodle_url('/theme/archaius/slideshow/add_slide.php', array(
             'contextid' => $contextid,
             'id' => $id,
             'userid' => $formdata->userid,
@@ -38,7 +38,7 @@ $PAGE->set_context($context);
 
 
 
-$mform = new home_page_slide_form(null, array(
+$mform = new add_slide_form(null, array(
             'contextid' => $contextid,
             'userid' => $formdata->userid,
             'sectionid' => $sectionid,

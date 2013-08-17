@@ -78,7 +78,7 @@ echo $OUTPUT->doctype() ?>
            <?php } ?>
 <!-- END OF HEADER -->
 
-<div id="page">
+<div id="page" class="main-content">
     <div id="page-content">
           <?php if($hassubtitle){?>
             <h3 class = "page-subtitle"><?php echo $PAGE->heading;?></h3>
