@@ -37,6 +37,7 @@ $(function(){
 		$this = $(this);
 		if(confirm("Really. Do you want to delete slide:")){
 			$.get($this.attr("href"), function() {
+				var index = $(".delete-slide").index($this);
   				alert('slide number: '+ index +' was successfull deleted');
 			});
 		}
