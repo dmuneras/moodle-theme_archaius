@@ -84,15 +84,21 @@ echo $OUTPUT->doctype() ?>
 <!-- END OF HEADER -->
 <h2 class="lonely-title"><?php echo get_string("welcome_home","theme_archaius");?></h2>
 <div id="home-page" class="main-content">
-    <a id="go-to-courses" class='pretty-button pretty-link-button' href="#">
-        <?php echo get_string("go_to_courses","theme_archaius")?>
-    </a>
     <?php 
         global $DB;
         $slides= "SELECT * FROM {theme_archaius} ORDER BY position ASC";
         $slides= $DB->get_records_sql($slides);
-        echo add_theme_archaius_slideshow($slides); 
     ?>
+    <div id="home-content">
+        <div id="content-left"><?php echo add_theme_archaius_slideshow($slides); ?></div>
+        <div id="site-description">
+            <h2><?php echo $PAGE->title ?></h2>
+            <?php echo $PAGE->course->summary; ?>
+            <p><a id="go-to-courses" class='pretty-button pretty-link-button' href="#">
+                <?php echo get_string("go_to_courses","theme_archaius")?>
+            </a></p>
+        </div>
+    </div>
        
     <?php if(isloggedin() && has_capability('moodle/site:config', $context, $USER->id, true)){ ?>
            <div id ='toggle-admin-menu'><?php echo get_string("toggle_menu","theme_archaius");?></div>
