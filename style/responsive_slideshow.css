@@ -5,12 +5,15 @@
 
 .rslides li{
   list-style: none;
+  overflow: scroll;
+  height: 300px;
+  max-width: 100%;
 }
 .rslides_container {
   position: relative;
   float: left;
-  width: 70%;
-  height: 400px;
+  width: 75%;
+  height: 300px;
   padding: 0 60px;
 
   }

@@ -82,7 +82,7 @@ echo $OUTPUT->doctype() ?>
            </div>        
            <?php } ?>
 <!-- END OF HEADER -->
-<h2 class="lonely-title"><?php echo get_string("welcome_home","theme_archaius");?></h2>
+<h2 class="lonely-title"><?php echo $PAGE->title?></h2>
 <div id="home-page" class="main-content">
     <?php 
         global $DB;
@@ -92,7 +92,6 @@ echo $OUTPUT->doctype() ?>
     <div id="home-content">
         <div id="content-left"><?php echo add_theme_archaius_slideshow($slides); ?></div>
         <div id="site-description">
-            <h2><?php echo $PAGE->title ?></h2>
             <?php echo $PAGE->course->summary; ?>
             <p><a id="go-to-courses" class='pretty-button pretty-link-button' href="#">
                 <?php echo get_string("go_to_courses","theme_archaius")?>

@@ -13,6 +13,7 @@ $sectionid = required_param('sectionid', PARAM_INT);
 $id = optional_param('id', null, PARAM_INT);
 
 global $DB,$USER;
+
 /* No idea, copied this from an example. Sets form data options but I don't know what they all do exactly */
 $formdata = new stdClass();
 $formdata->userid = required_param('userid', PARAM_INT);

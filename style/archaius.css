@@ -335,15 +335,17 @@ div#region-pre div.region-content div.current h2{
     height: 40px;
     width: 30px;
     float: right;
-    margin-right: -30px;
+    /*margin-right: -30px;*/
+    /*margin-right: -5px;
     margin-top: -5px;
     -moz-box-shadow: 3px 1px 4px 1px #888;
     -webkit-box-shadow: 3px 1px 4px 1px #888;
     box-shadow:         3px 1px 4px 1px #888;
     border-radius: 0px 5px 5px 0px;
     -moz-border-radius: 0px 5px 5px 0px;
-    -webkit-border-radius: 0px 5px 5px 0px;
+    -webkit-border-radius: 0px 5px 5px 0px;*/
     background-color: #fff;
+    cursor: pointer;
 }
 
 #move-region-right.hidden-region{
@@ -354,7 +356,8 @@ div#region-pre div.region-content div.current h2{
     background: -10px url([[pix:theme|arrow_left]]); 
     height: 40px;
     width: 30px;
-    margin-left: -30px;
+    /*margin-left: -30px;*/
+    /*margin-left: -5px;
     margin-top: -5px;
     -webkit-box-shadow:  -3px 0px 3px 0px #888888;
     -moz-box-shadow:  -3px 0px 3px 0px #888888;
@@ -364,8 +367,9 @@ div#region-pre div.region-content div.current h2{
     -moz-border-radius-topleft: 5px;
     -moz-border-radius-bottomleft: 5px;
     border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;*/
     background-color: #fff;
+    cursor: pointer;
 }
 #move-region.hidden-region{
     background: -10px url([[pix:theme|arrow_right]]) !important;   

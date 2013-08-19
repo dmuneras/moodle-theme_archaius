@@ -70,5 +70,4 @@ $string["addSlide"] = "Add new slide";
 $string["toggle_menu"] = "Show slideshow admin menu";
 $string["go_to_courses"] = "Go to courses section";
 $string["home_courses_title"] = "Moodle courses";
-$string["welcome_home"] = "Welcome to Archaius";
-
+$string["update_description"] = "Update description";

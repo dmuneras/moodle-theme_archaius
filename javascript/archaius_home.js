@@ -1,30 +1,18 @@
 function startSlideShow(){
-	if((".slidetabs").length > 0){
-        $(".slidetabs").tabs(".slides > div.slide", {
-        // enable "cross-fading" effect
-        effect: 'fade',
-        fadeOutSpeed: "slow",
-     
-        // start from the beginning after the last tab
-        rotate: true
-     
-        // use the slideshow plugin. It accepts its own configuration
-        }).slideshow();
-    }
-}
-
-$(function(){
-
-	$(".rslides").responsiveSlides({
+	if((".rslides").length > 0){
+       $(".rslides").responsiveSlides({
         auto: false,
         pager: true,
         nav: true,
         speed: 500,
         maxwidth: 800,
         namespace: "large-btns"
-      });
+      }); 
+    }
+}
 
-	//startSlideShow();
+$(function(){
+	startSlideShow();
 	$("#toggle-admin-menu").on("click",function(){
 		$(this).next().slideToggle();
 	});
@@ -35,10 +23,14 @@ $(function(){
 	$(".delete-slide").on("click",function(event){
 		event.preventDefault();
 		$this = $(this);
-		if(confirm("Really. Do you want to delete slide:")){
-			$.get($this.attr("href"), function() {
+		if(confirm("Really. Do you want to delete this slide?")){
+			var url = $this.attr("href") + "&ajax=1";
+			$.get(url , function(data) {
+				$(".rslides_container").remove();
+				$('#content-left').html(data);
+				startSlideShow();
 				var index = $(".delete-slide").index($this);
-  				alert('slide number: '+ index +' was successfull deleted');
+				$this.closest("tr").remove();
 			});
 		}
 	});
