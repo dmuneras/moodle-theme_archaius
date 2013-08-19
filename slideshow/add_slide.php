@@ -14,7 +14,6 @@ $id = optional_param('id', null, PARAM_INT);
 
 global $DB,$USER;
 
-/* No idea, copied this from an example. Sets form data options but I don't know what they all do exactly */
 $formdata = new stdClass();
 $formdata->userid = required_param('userid', PARAM_INT);
 $formdata->offset = optional_param('offset', null, PARAM_INT);
@@ -37,12 +36,17 @@ if (isguestuser()) {
 $PAGE->set_url($url);
 $PAGE->set_context($context);
 
+$maxfiles = 99;                
+$maxbytes = $course->maxbytes; 
 
+$definitionoptions = array('trusttext'=>true, 
+    'subdirs'=>false, 'maxfiles'=>$maxfiles, 'maxbytes'=>$maxbytes, 'context'=>$context);
 
 $mform = new add_slide_form(null, array(
             'contextid' => $contextid,
             'userid' => $formdata->userid,
             'sectionid' => $sectionid,
+            'definitionoptions'=>$definitionoptions,
             'options' => none));
 
 if ($mform->is_cancelled()) {

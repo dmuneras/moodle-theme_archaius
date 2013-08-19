@@ -29,6 +29,12 @@
 .admin-options th{
     border:1px dashed #888;
 }
+
+.admin-options table img{
+    max-width: 100px;
+    height: auto;
+}
+
 h2.lonely-title {
     text-align: center;
     padding-bottom: 10px;
@@ -65,6 +71,11 @@ h2.lonely-title {
 
 .main-control a{
     margin-right: 5px;    
+}
+
+.notice{
+    color: #51a351;
+    text-align: center;
 }
 
 

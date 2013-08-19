@@ -275,10 +275,11 @@ $(function(){
                     var item = $(this);
                     if(item.find("div.custom_menu_submenu").length > 0){
                         item.on("hover",function(){
-                            $(this).find("div.custom_menu_submenu .yui3-menu-content").css({
+                            $this = $(this);
+                            $this.find("div.custom_menu_submenu .yui3-menu-content").css({
                                 "position" : "absolute" ,
                                 "left" : "8px" ,
-                                "margin-top" : (parseInt($(this).css("height") + 20) * (-1)) + "px"
+                                "margin-top" : (parseInt($this.css("height") + 20) * (-1)) + "px"
                             });
                         
                         });

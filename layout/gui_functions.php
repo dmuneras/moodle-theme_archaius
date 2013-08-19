@@ -28,12 +28,14 @@ function add_admin_options($link_text,$slides){
     $context = context_course::instance($COURSE->id);
     $contextid = $context->id;
     $base_link = $CFG->wwwroot;
-    $link_to_add = "<div class='main-control'><a class='pretty-button pretty-link-button'".
+    $link_to_add = "<div class='main-control'>".
+        "<a class='pretty-button pretty-link-button'".
         " href= '". $base_link ."/theme/archaius/slideshow/add_slide.php?contextid=" . 
         $contextid . "&userid=" . $USER->id . "&sectionid=2'>". $link_text ."</a>".
         "<a class= 'pretty-button pretty-link-button' href= ' ". $base_link .
         "/admin/settings.php?section=frontpagesettings' >" . 
-        get_string("update_description","theme_archaius") . "</a></div>";
+        get_string("update_description","theme_archaius") . "</a></div>".
+        "<div class='notice'></div>";
     $html_admin_options .= $link_to_add;
 
     $table = new html_table();
@@ -45,9 +47,8 @@ function add_admin_options($link_text,$slides){
 
     	$edit_link = $base_link . "edit_slide.php?contextid=" . $contextid . "&userid=" . $USER->id . 
     	"&sectionid=2&id=". $slide->id . " class=' btn-warning btn pretty-link-button'>Edit</a>";
-
-    	$row = new html_table_row(array($slide->position, mb_substr($slide->description,0,80) .
-             "...", $edit_link,$delete_link));
+  
+    	$row = new html_table_row(array($slide->position, $slide->description, $edit_link,$delete_link));
 
 		$row->attributes['data-id'] = '1';
 		$table->data[] = $row;

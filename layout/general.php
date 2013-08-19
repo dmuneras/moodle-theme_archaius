@@ -38,10 +38,7 @@ echo $OUTPUT->doctype() ?>
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <script type = "text/javascript">
         //<![CDATA[
-        
-        <?php if (!empty($PAGE->theme->settings->customjs)) {
-            echo $PAGE->theme->settings->customjs;
-        } ?>
+
         activateTopicsCourseMenu = '<?php echo $PAGE->theme->settings->collasibleTopics ?>';
         activateHideAndShowBlocks = '<?php echo $PAGE->theme->settings->hideShowBlocks ?>';
         siteRoot =  '<?php echo $CFG->wwwroot ?>';
@@ -140,5 +137,13 @@ echo $OUTPUT->doctype() ?>
     </div>
     <?php } ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+<script type = "text/javascript">
+    //<![CDATA[
+    
+    <?php if (!empty($PAGE->theme->settings->customjs)) {
+        echo $PAGE->theme->settings->customjs;
+    } ?>
+    //]]>
+</script>
 </body>
 </html>

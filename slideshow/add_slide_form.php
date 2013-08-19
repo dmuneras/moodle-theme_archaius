@@ -5,21 +5,28 @@ global $CFG;
 require_once("{$CFG->libdir}/formslib.php");
 
 class add_slide_form extends moodleform {
+
     function definition() {
+
         $mform = $this->_form;
         $instance = $this->_customdata; 
         $slide = $this->_customdata['slide'];
         $slide = $slide[$instance['id']];
         $attributes=array('size'=>'20');
+        $definitionoptions = $this->_customdata['definitionoptions'];
+
+        // visible elements
         $mform->addElement('text', 'position', get_string('position', 'theme_archaius'), $attributes);  
         $mform->setType('position',PARAM_INT);
+
         if(! empty($slide->position)){
             $mform->setDefault('position', $slide->position);    
         }
         
-        // visible elements
-        $mform->addElement('editor', 'description', get_string('description', 'theme_archaius'));
+        $mform->addElement('editor', 'description', get_string('description', 'theme_archaius'),null,
+            $definitionoptions);
         $mform->setType('description', PARAM_RAW);
+
         if(! empty($slide->description)){
             $mform->setDefault('description', array( 'text' => $slide->description, 'format' =>  FORMAT_HTML));
         }

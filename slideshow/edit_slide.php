@@ -36,6 +36,12 @@ if (isguestuser()) {
 $PAGE->set_url($url);
 $PAGE->set_context($context);
 
+$maxfiles = 99;                
+$maxbytes = $course->maxbytes; 
+
+$definitionoptions = array('trusttext'=>true, 
+    'subdirs'=>false, 'maxfiles'=>$maxfiles, 'maxbytes'=>$maxbytes, 'context'=>$context);
+
 $slide = array();
 if( sizeof($_POST) == 0 ){
     $slide = "SELECT * FROM {theme_archaius} WHERE id = {$id}";
@@ -48,6 +54,7 @@ $mform = new add_slide_form(null, array(
             'userid' => $formdata->userid,
             'sectionid' => $sectionid,
             'slide' => $slide,
+            'definitionoptions'=>$definitionoptions,
             'options' => none));
 
 if ($mform->is_cancelled()) {

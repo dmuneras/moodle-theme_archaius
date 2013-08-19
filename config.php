@@ -125,8 +125,9 @@ $THEME->layouts = array(
     ),
 );
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->javascripts   = array('jquery-1.7.1.min');
-$THEME->javascripts_footer = array('jquery.tools.min','responsiveslides.min','archaius','archaius_home');
+
+$THEME->javascripts_footer = array('jquery-1.7.1.min',
+    'jquery.tools.min','responsiveslides.min','archaius','archaius_home');
 
 
 $THEME->enable_dock = false;
