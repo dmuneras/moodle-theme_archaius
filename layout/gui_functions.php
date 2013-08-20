@@ -1,12 +1,12 @@
 <?php
 
-
 /**
  * Prints archaius theme slideshow.
  * @return string the HTML to be output.
  */
 function add_theme_archaius_slideshow($slides){
-	$html_slider = "<div class='rslides_container'><ul id='slider3' class='rslides'>";
+	$html_slider = "<div class='rslides_container'>".
+        "<ul id='slider3' class='rslides'>";
 	$html_options = "";
 	if(! empty($slides)){
 	    foreach ($slides as $slide) {
@@ -22,7 +22,7 @@ function add_theme_archaius_slideshow($slides){
  * Prints an admin options to manage the slideshow.
  * @return string the HTML to be output.
  */
-function add_admin_options($link_text,$slides){
+function add_theme_archaius_admin_options($link_text,$slides){
 	global $CFG,$USER,$COURSE;
 	$html_admin_options = "<div class='admin-options'>";	
     $context = context_course::instance($COURSE->id);
@@ -42,14 +42,15 @@ function add_admin_options($link_text,$slides){
     $table->head = array('Position', 'Content', 'Edit','Delete');
     foreach ($slides as $slide) {
     	$base_link = "<a href=". $CFG->wwwroot ."/theme/archaius/slideshow/"; 
-    	$delete_link =  $base_link . "delete_slide.php?id=" . $slide->id ."&contextid=". $contextid .
+    	$delete_link =  $base_link . "delete_slide.php?id=" . $slide->id .
+        "&contextid=". $contextid .
     	" class='delete-slide btn-danger btn pretty-link-button'>Delete</a>";
 
     	$edit_link = $base_link . "edit_slide.php?contextid=" . $contextid . "&userid=" . $USER->id . 
     	"&sectionid=2&id=". $slide->id . " class=' btn-warning btn pretty-link-button'>Edit</a>";
   
-    	$row = new html_table_row(array($slide->position, $slide->description, $edit_link,$delete_link));
-
+    	$row = new html_table_row(array($slide->position,
+             $slide->description, $edit_link,$delete_link));
 		$row->attributes['data-id'] = '1';
 		$table->data[] = $row;
     }

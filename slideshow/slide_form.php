@@ -4,7 +4,7 @@ defined('MOODLE_INTERNAL') || die();
 global $CFG;
 require_once("{$CFG->libdir}/formslib.php");
 
-class add_slide_form extends moodleform {
+class slide_form extends moodleform {
 
     function definition() {
 

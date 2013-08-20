@@ -3,17 +3,17 @@
 /* Imports */
 require_once('../../../config.php');
 require_once($CFG->dirroot . '/repository/lib.php');
-require_once($CFG->dirroot . '/theme/archaius/slideshow/add_slide_form.php');
+require_once($CFG->dirroot . '/theme/archaius/slideshow/slide_form.php');
 require_once($CFG->libdir . '/gdlib.php');
 
+global $DB,$USER;
 
 /* Page parameters */
 $contextid = required_param('contextid', PARAM_INT);
 $sectionid = required_param('sectionid', PARAM_INT);
 $id = optional_param('id', null, PARAM_INT);
 
-global $DB,$USER;
-/* No idea, copied this from an example. Sets form data options but I don't know what they all do exactly */
+//Parameters for form
 $formdata = new stdClass();
 $formdata->userid = required_param('userid', PARAM_INT);
 $formdata->offset = optional_param('offset', null, PARAM_INT);
@@ -40,7 +40,8 @@ $maxfiles = 99;
 $maxbytes = $course->maxbytes; 
 
 $definitionoptions = array('trusttext'=>true, 
-    'subdirs'=>false, 'maxfiles'=>$maxfiles, 'maxbytes'=>$maxbytes, 'context'=>$context);
+    'subdirs'=>false, 'maxfiles'=>$maxfiles, 
+    'maxbytes'=>$maxbytes, 'context'=>$context);
 
 $slide = array();
 if( sizeof($_POST) == 0 ){
@@ -48,7 +49,7 @@ if( sizeof($_POST) == 0 ){
     $slide = $DB->get_records_sql($slide);     
 }
 
-$mform = new add_slide_form(null, array(
+$mform = new slide_form(null, array(
             'id' => $id,
             'contextid' => $contextid,
             'userid' => $formdata->userid,
@@ -66,7 +67,6 @@ if ($mform->is_cancelled()) {
         $record->description = $formdata->description['text'];
         $record->userid = $formdata->userid;
         $record->id = $formdata->id;
-        print_r($record);
         if($formdata->position > 0){
             $record->position = $formdata->position;       
         }else{

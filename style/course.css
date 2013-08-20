@@ -2,10 +2,6 @@
    Course Styles 
 ---------------------------------------------*/
 
-h2.headingblock {
-    font-weight: normal;
-}
-
 .coursebox .info,
 .coursebox .info .name {
     width: 100%;
@@ -113,88 +109,13 @@ h2.headingblock {
 .course-content .current{
     background-color:#fff;
 }
-.course-content .current .left {
-    color: #fff;
-}
-.course-content .main .content {
-    background-color: #fff;
-}
+
 .course-content .activity.label.modtype_label {
-    margin-bottom:5px;
-    margin-top:5px;
-    
-}
-
-#search-chapter-content{
-    text-align:right;
-}
-
-#search-chapter-content span{ 
-    color: gray;
-}
-
-#search-chapter{
-    margin-bottom:10px;
-    border: 1px solid #BBB;
-    font-size: medium;
-    width: 200px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-}
-
-div#main-course-container div#region-pre {
-    left:-5px !important;
-    width: 230px;
-}
-div#main-course-container div#region-pre div.header{
-    border:none;
-    background-color: #efefef;
-
-}
-
-div#main-course-container div#region-pre div.header:first-child{
-    border:none !important;
-    -moz-border-radius:0px !important;
-    border-radius: 0px !important;
-    border-top: 1px solid #888;
-
-}
-div#main-course-container div#region-pre div.current{
-    background-color: #888 ;
-}
-
-div#main-course-container div#region-pre div.current h2{
-    color:#222 !important;
-}
-
-div#main-course-container div#region-pre div.header h2{
-    color: #456 !important;
+    margin:5px auto;
 }
 
 #section-0{
-    list-style-type: none;
-}
-
-#region-pre.inside-course{
-    margin-left:-10px !important;
-}
-
-#region-pre.inside-course .header .title{
-    text-align:left;
-}
-
-.pretty{
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    padding:5px;
-    background-color: #215C75;
-    color:whiteSmoke !important;
-    cursor:pointer;
-}
-
-a.pretty{
-    text-decoration:none !important;
+   list-style-type: none;
 }
 
 .triangle {

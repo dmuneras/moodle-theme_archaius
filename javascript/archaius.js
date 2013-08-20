@@ -61,7 +61,7 @@ function customizeMenu(region,regionLocation){
 //Function to expand and shrink the question bank div.   
 function expandBank(questionBank){
     questionBank.find('.header').first().find(".title")
-    .append("<span id = 'expand-bank' class='shrink'>expand</span>");
+    .append("<a id = 'expand-bank' class='shrink btn-warning btn pretty-link-button'>expand</input>");
     var page = $('#page-mod-quiz-edit div.quizcontents');
     $('#expand-bank').on("click",function(){
             var $this = $(this);
@@ -131,7 +131,9 @@ $(function(){
         if(regionPost.length != 0 ){
             customizeMenu(regionPost,"post");
         }
-        if($(".questionbankwindow.block").length > 0){
+
+        var questionBank = $(".questionbankwindow.block");
+        if(questionBank.length > 0 && !(questionBank.hasClass("collapsed"))){
             expandBank($(".questionbankwindow.block"));
         }
         $('#page-header').prepend($('div.footer form.adminsearchform')); //add search form to the header page               
@@ -208,7 +210,7 @@ $(function(){
         var regionMain = $("#region-main");
         if(regionPre.length > 0){
             var widthRegion = regionPre.css("width");
-            $("#page").prepend("<div id='move-region'></div>");
+            $("#regions-control").append("<div id='move-region' class='move'></div>");
             $("#move-region").on("click", { region : regionPre 
                 , wRegion : widthRegion , main : regionMain },function(event){
                 var data = event.data;
@@ -233,7 +235,7 @@ $(function(){
         }
         if(regionPost.length > 0){
             var widthRegion = regionPost.css("width");
-            $("#page").prepend("<div id='move-region-right'></div>");
+            $("#regions-control").append("<div id='move-region-right' class='move'></div>");
             $("#move-region-right").on("click",{ region : regionPost 
                 , wRegion : widthRegion , main : regionMain },function(event){
                 var data = event.data;

@@ -7,7 +7,7 @@
 
 $THEME->name = 'archaius';
 
-$THEME->sheets = array('base','archaius' ,'course','responsive_slideshow', 'home','boilerplate');
+$THEME->sheets = array('base','archaius' ,'course','slideshow', 'home','boilerplate');
 /// This variable is an array containing the names of all the
 /// stylesheet files you want included in this theme, and in what order
 ////////////////////////////////////////////////////////////////////////////////
@@ -103,6 +103,7 @@ $THEME->layouts = array(
         'regions' => array(),
         'options' => array('nofooter'=>true, 'nonavbar'=>true, 'noblocks'=>true),
     ),
+    
     // Used during upgrade and install, and for the 'This site is undergoing maintenance' message.
     // This must not have any blocks, and it is good idea if it does not have links to
     // other places - for example there should not be a home link in the footer...
@@ -124,6 +125,7 @@ $THEME->layouts = array(
         'options' => array('langmenu' => false)
     ),
 );
+
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 $THEME->javascripts_footer = array('jquery-1.7.1.min',

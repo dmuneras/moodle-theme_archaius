@@ -3,16 +3,15 @@
 /* Imports */
 require_once('../../../config.php');
 require_once($CFG->dirroot . '/repository/lib.php');
-require_once($CFG->dirroot . '/theme/archaius/slideshow/add_slide_form.php');
+require_once($CFG->dirroot . '/theme/archaius/slideshow/slide_form.php');
 require_once($CFG->libdir . '/gdlib.php');
 
+global $DB,$USER;
 
 /* Page parameters */
 $contextid = required_param('contextid', PARAM_INT);
 $sectionid = required_param('sectionid', PARAM_INT);
 $id = optional_param('id', null, PARAM_INT);
-
-global $DB,$USER;
 
 $formdata = new stdClass();
 $formdata->userid = required_param('userid', PARAM_INT);
@@ -40,9 +39,10 @@ $maxfiles = 99;
 $maxbytes = $course->maxbytes; 
 
 $definitionoptions = array('trusttext'=>true, 
-    'subdirs'=>false, 'maxfiles'=>$maxfiles, 'maxbytes'=>$maxbytes, 'context'=>$context);
+    'subdirs'=>false, 'maxfiles'=>$maxfiles, 'maxbytes'=>$maxbytes,
+    'context'=>$context);
 
-$mform = new add_slide_form(null, array(
+$mform = new slide_form(null, array(
             'contextid' => $contextid,
             'userid' => $formdata->userid,
             'sectionid' => $sectionid,
@@ -70,8 +70,6 @@ if ($mform->is_cancelled()) {
         echo 'Caught exception: ',  $e->getMessage() , "\n";
     }
 }
-
-
 
 
 /* Draw the form */

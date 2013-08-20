@@ -1,152 +1,13 @@
 /* -------------------------------------------------------------- 
    Layout 
 -------------------------------------------------------------- */
+
 html, 
 body {
     font: medium "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
     color: #222;
     min-width: 910px;   
     background: [[setting:bgcolor]] !important;
-}
-
-
-h1,
-h2,
-h3,
-h4,
-h5{
-    font-weight:normal !important;
-    margin:0 0 20px 0;
-}
-
-/* --------------------------------------------------------------*/
-
-/*From bootstrap*/
-
-input[type="submit"],
-button, 
-.pretty-button,
-.delete-slide{
-    color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #363636;
-    background-image: -moz-linear-gradient(top, #444444, #222222);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222));
-    background-image: -webkit-linear-gradient(top, #444444, #222222);
-    background-image: -o-linear-gradient(top, #444444, #222222);
-    background-image: linear-gradient(to bottom, #444444, #222222);
-    background-repeat: repeat-x;
-    border-color: #222222 #222222 #000000;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444',
-     endColorstr='#ff222222', GradientType=0);
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-    padding: 5px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    cursor:pointer;
-}
-
-
-.btn-danger {
-    color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #da4f49;
-    background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
-    background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
-    background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
-    background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
-    background-repeat: repeat-x;
-    border-color: #bd362f #bd362f #802420;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b',
-     endColorstr='#ffbd362f', GradientType=0);
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-
-.btn-warning {
-    color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #faa732;
-    background-image: -moz-linear-gradient(top, #fbb450, #f89406);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
-    background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
-    background-image: -o-linear-gradient(top, #fbb450, #f89406);
-    background-image: linear-gradient(to bottom, #fbb450, #f89406);
-    background-repeat: repeat-x;
-    border-color: #f89406 #f89406 #ad6704;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450',
-     endColorstr='#fff89406', GradientType=0);
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-
-.btn {
-    display: inline-block;
-    padding: 4px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-repeat: repeat-x;
-    border: 1px solid #cccccc;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-/* --------------------------------------------------------------*/
-
-div.singlebutton{
-    padding: 10px;
-    text-align: center;
-}
-
-.navbutton input{
-    padding: 0px 5px;
-}
-table tr{
-    border: 1px solid #888;
-}
-
-table tr:nth-child(odd) td{
-    background-color: #f5f5f5;
-    padding: 5px;
-}
-
-table tr:nth-child(even) td{
-    background-color: white; 
-    padding: 5px;
-}
-
-a:link,
-a:visited {
-    color: #0088CC;
-    
-}
-
-a:hover{
-   text-decoration:underline;
-}
-
-#page-content{
-    min-height:500px;
-}
-
-h3.page-subtitle{
-    margin-left:10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-span.error{
-    color:red;
 }
 
 /* -------------------------------------------------------------- 
@@ -161,8 +22,10 @@ span.error{
     height:150px;
     width:100%;
     min-width:980px;
-    float: none;    
+    float: none; 
+    margin-bottom: 50px;   
 }
+
 .adminsearchform{
     display:none;
 }
@@ -184,6 +47,7 @@ span.error{
     background: white url([[pix:theme|search]]) 4px 8px no-repeat;
   
 }
+
 .nobackground{
     background:none !important;
 }
@@ -225,15 +89,13 @@ span.error{
 }
 
 .navbar{
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top:10px;
-    padding-bottom: 10px;
+    margin: 10px 10px 0px 0;
     padding: 5px;
     background: whitesmoke;
     border: 1px solid #ccc;
 }
-.navbar a {
+
+.navbar ul[role="navigation"] a {
    font-weight: bold;
    padding: 5px;
    color: #222;
@@ -242,6 +104,52 @@ span.error{
 img.icon{
     display: block;
 }
+
+div.singlebutton{
+    padding: 5px;
+}
+
+.navbutton input[type="submit"]{
+    padding: 0px 3px;
+}
+
+/*--------------------END PAGE-HEADER --------------------*/
+
+table tr{
+    border: 1px solid #efefef;
+    padding: 5px;
+}
+
+table tr:nth-child(odd) td{
+    background-color: #f5f5f5;
+}
+
+table tr:nth-child(even) td{
+    background-color: white; 
+}
+
+a:link,
+a:visited {
+    color: #0088CC;
+    
+}
+
+a:hover{
+   text-decoration:underline;
+}
+
+#page-content{
+    min-height:500px;
+}
+
+h3.page-subtitle{
+    margin: 10px 0px 10px 10px;
+}
+
+span.error{
+    color:red;
+}
+
 /* -------------------------------------------------------------- 
    Blocks 
 -------------------------------------------------------------- */
@@ -309,8 +217,8 @@ div.region-content .header-tab h2{
     display: none;
 }
 
-div#tabs-pre .com,
-div#tabs-post .com {
+#tabs-pre .com,
+#tabs-post .com {
     text-align: center;
     background-color: whiteSmoke;
     border: 1px solid #ddd;
@@ -320,56 +228,39 @@ div.region-content div.header-tab h2{
     cursor: pointer !important;
 }
 
-div#region-post div.region-content div.current ,
-div#region-pre div.region-content div.current{
+#region-post div.region-content div.current ,
+#region-pre div.region-content div.current{
     background-color: [[setting:currentcolor]];
 }
 
-div#region-post div.region-content div.current h2 , 
-div#region-pre div.region-content div.current h2{
+#region-post div.region-content div.current h2 , 
+#region-pre div.region-content div.current h2{
     color: whiteSmoke;
 }
 
-#move-region-right{
-    background: -10px url([[pix:theme|arrow_right]]);
-    height: 40px;
-    width: 30px;
-    float: right;
-    /*margin-right: -30px;*/
-    /*margin-right: -5px;
-    margin-top: -5px;
-    -moz-box-shadow: 3px 1px 4px 1px #888;
-    -webkit-box-shadow: 3px 1px 4px 1px #888;
-    box-shadow:         3px 1px 4px 1px #888;
-    border-radius: 0px 5px 5px 0px;
-    -moz-border-radius: 0px 5px 5px 0px;
-    -webkit-border-radius: 0px 5px 5px 0px;*/
+
+#regions-control{
+    position: absolute;
+    width: 100%;
+}
+.move{
     background-color: #fff;
     cursor: pointer;
+    height: 40px;
+    width: 30px;
+    margin: 0px 10px 0 10px;
 }
-
+#move-region-right{
+    background: -10px url([[pix:theme|arrow_right]]);
+    float: right;
+}
 #move-region-right.hidden-region{
-     background: -10px url([[pix:theme|arrow_left]]) !important; 
+     background: -22px url([[pix:theme|arrow_left]]) !important; 
 }
 
 #move-region{
-    background: -10px url([[pix:theme|arrow_left]]); 
-    height: 40px;
-    width: 30px;
-    /*margin-left: -30px;*/
-    /*margin-left: -5px;
-    margin-top: -5px;
-    -webkit-box-shadow:  -3px 0px 3px 0px #888888;
-    -moz-box-shadow:  -3px 0px 3px 0px #888888;
-    box-shadow:  -3px 0px 3px 0px #888888; 
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-bottom-left-radius: 5px;
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;*/
-    background-color: #fff;
-    cursor: pointer;
+    background: -22px url([[pix:theme|arrow_left]]);
+    float: left; 
 }
 #move-region.hidden-region{
     background: -10px url([[pix:theme|arrow_right]]) !important;   
@@ -596,9 +487,8 @@ td.eventskey {
     color: #fff;
 }
 
-#page-footer .logininfo{
-    margin-top: 10px;
-    margin-bottom: 15px;
+#page-footer .logininfo{  
+    margin: 10px auto 15px auto;
 }
 #page-footer .sitelink{
     clear:both;
@@ -686,16 +576,11 @@ td.eventskey {
    min-width: 150px;
 }
 
-.has-custom-menu #wrapper,
-#custommenu .yui3-menu-horizontal .yui3-menu-content,
-#custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content,
-#custommenu .yui3-menu-horizontal .yui3-menu-content ul,
-#custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content ul,
-#custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content li li:hover > a,
-#custommenu .yui3-menu-horizontal .yui3-menu-label,
-#custommenu .yui3-menuitem,
-#custommenu .yui3-menuitem .yui3-menuitem-content {
-    border-width: 0;
+#custommenu ul,
+#custommenu li,
+#custommenu a,
+#custommenu .yui3-menu-content{
+    border: none !important;
 }
 
 #custommenu .custom_menu_submenu .yui3-menu-label-active,
@@ -706,6 +591,7 @@ div.logininfo a.login,
 #custommenu .yui3-menu-label-menuvisible:hover{
     background-color: [[setting:currentcustommenucolor]] ;
 }
+
 
 #custommenu .custom_menu_submenu .yui3-menu-content {
     border-radius: 3px;
@@ -797,10 +683,9 @@ div.logininfo a.login {
 .loginbox .loginform .form-input #loginbtn{
    display: block;
    text-align: center;
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 5px;
+   margin: 5px auto 0px auto;
 }
+
 .loginbox .loginform .form-label {
     text-align:center;
     float:none;
@@ -828,11 +713,14 @@ div.logininfo a.login {
 /* -------------------------------------------------------------- 
    Question bank
 -------------------------------------------------------------- */
-
+#page-mod-quiz-edit input[type="submit"]{
+    margin: 5px;
+}
 #page-mod-quiz-edit .questionbankwindow div.header{
-    background-color: #444 !important;
+    background-color: [[setting:themecolor]]!important;
     text-align: center;
     cursor: pointer;
+    display: block;
 }
 
 #page-mod-quiz-edit .questionbankwindow div.header h2{
@@ -847,13 +735,16 @@ div.logininfo a.login {
     background-color: #efefef;
 }
 
-
-/* -------------------------------------------------------------- 
-   File picker
--------------------------------------------------------------- */
-button.fp-upload-btn{
-    color:white;
+#page-mod-quiz-edit div.question div.content div.points{
+    border-left:none;
+    background-color: #F9F9F9;
+    top:0;
 }
+
+#page-mod-quiz-edit div.editq div.question div.content{
+    padding-bottom: 15px;
+}
+
 
 /* -------------------------------------------------------------- 
   Calendar
@@ -865,6 +756,92 @@ table.minicalendar.calendartable tr{
 div.calendar-controls{
     background-color: #EDF0EE;
 }
+
+
+
+/* -------------------------------------------------------------- 
+   From bootstrap 
+-------------------------------------------------------------- */
+
+input[type="submit"],
+button, 
+.pretty-button,
+.delete-slide{
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #363636;
+    background-image: -moz-linear-gradient(top, #444444, #222222);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222));
+    background-image: -webkit-linear-gradient(top, #444444, #222222);
+    background-image: -o-linear-gradient(top, #444444, #222222);
+    background-image: linear-gradient(to bottom, #444444, #222222);
+    background-repeat: repeat-x;
+    border-color: #222222 #222222 #000000;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444',
+     endColorstr='#ff222222', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    padding: 3px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor:pointer;
+}
+
+
+.btn-danger {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #da4f49;
+    background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+    background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+    background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+    background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+    background-repeat: repeat-x;
+    border-color: #bd362f #bd362f #802420;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b',
+     endColorstr='#ffbd362f', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-warning {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #faa732;
+    background-image: -moz-linear-gradient(top, #fbb450, #f89406);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+    background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+    background-image: -o-linear-gradient(top, #fbb450, #f89406);
+    background-image: linear-gradient(to bottom, #fbb450, #f89406);
+    background-repeat: repeat-x;
+    border-color: #f89406 #f89406 #ad6704;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450',
+     endColorstr='#fff89406', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-repeat: repeat-x;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
 /* -------------------------------------------------------------- 
    Custom css
 -------------------------------------------------------------- */

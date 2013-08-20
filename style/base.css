@@ -1,17 +1,4 @@
-/**
- 
- Base CSS Chameleon theme 
-
- */
-
-h4 {
-    margin-bottom:0px !important;
-    margin-top:1em !important;
-}
-
-h2{
-    font-size: 1em;
-}
+/* Base CSS Archaius theme */
 
 #page, div, p, li, input, option, textarea {
     line-height: 1.5em;
@@ -24,6 +11,8 @@ h2{
     margin: 20px auto 0px auto;
     padding: 5px;
 }
+
+
 #page {
     min-height: 700px;
     -webkit-box-shadow: #888 0 0 5px 0;
@@ -33,7 +22,7 @@ h2{
     -moz-border-radius: 5px;
     border-radius: 5px;
     background-color: #fff;
-    margin: 50px auto;
+    margin: 20px auto 50px auto;
 }
 
 h1.main, 
@@ -48,6 +37,19 @@ h6.main {
 .generalbox {
     padding: 10px;
     margin-bottom: 15px;
+}
+
+/* File manager */
+
+.filemanager select, 
+.filemanager input, 
+.filemanager button, 
+.filemanager textarea, 
+.file-picker select, 
+.file-picker input, 
+.file-picker button, 
+.file-picker textarea{
+    color: white;
 }
 
 #notice.generalbox, 
