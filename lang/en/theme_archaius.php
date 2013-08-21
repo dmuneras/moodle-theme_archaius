@@ -67,6 +67,4 @@ $string["description"] = "Insert the HTML to create the slide";
 $string["position"] = "Position in the slider";
 $string["error_position"] = "The position is not a number or is equal to 0, 0 is not a valid position";
 $string["addSlide"] = "Add new slide";
-$string["go_to_courses"] = "Go to courses section";
-$string["home_courses_title"] = "Moodle courses";
 $string["update_description"] = "Update description";

@@ -5,6 +5,7 @@
  * @return string the HTML to be output.
  */
 function add_theme_archaius_slideshow($slides){
+    global $CFG;
 	$html_slider = "<div class='rslides_container'>".
         "<ul id='slider3' class='rslides'>";
 	$html_options = "";
@@ -14,8 +15,12 @@ function add_theme_archaius_slideshow($slides){
 	        $html_slider .= $aux; 
 	    } 
 	    $html_slider .= "</ul></div>";
-	    return $html_slider;
-	}
+	}else{
+        $aux = "<li><img src=". $CFG->wwwroot . 
+        "/theme/archaius/pix/defaultSlide.png /></li></ul></div>";
+        $html_slider .= $aux;
+    }
+    return $html_slider;
 }
 
 /**
@@ -38,23 +43,28 @@ function add_theme_archaius_admin_options($link_text,$slides){
         "<div class='notice'></div>";
     $html_admin_options .= $link_to_add;
 
-    $table = new html_table();
-    $table->head = array('Position', 'Content', 'Edit','Delete');
-    foreach ($slides as $slide) {
-    	$base_link = "<a href=". $CFG->wwwroot ."/theme/archaius/slideshow/"; 
-    	$delete_link =  $base_link . "delete_slide.php?id=" . $slide->id .
-        "&contextid=". $contextid .
-    	" class='delete-slide btn-danger btn pretty-link-button'>Delete</a>";
+    if(sizeof($slides) > 0){
+        $table = new html_table();
+        $table->head = array('Position', 'Content', 'Edit','Delete');
+        foreach ($slides as $slide) {
+            $base_link = "<a href=". $CFG->wwwroot ."/theme/archaius/slideshow/"; 
+            $delete_link =  $base_link . "delete_slide.php?id=" . $slide->id .
+            "&contextid=". $contextid .
+            " class='delete-slide btn-danger btn pretty-link-button'>Delete</a>";
 
-    	$edit_link = $base_link . "edit_slide.php?contextid=" . $contextid . "&userid=" . $USER->id . 
-    	"&sectionid=2&id=". $slide->id . " class=' btn-warning btn pretty-link-button'>Edit</a>";
-  
-    	$row = new html_table_row(array($slide->position,
-             $slide->description, $edit_link,$delete_link));
-		$row->attributes['data-id'] = '1';
-		$table->data[] = $row;
+            $edit_link = $base_link . "edit_slide.php?contextid=" . $contextid . "&userid=" . $USER->id . 
+            "&sectionid=2&id=". $slide->id . " class=' btn-warning btn pretty-link-button'>Edit</a>";
+      
+            $row = new html_table_row(array($slide->position,
+                 $slide->description, $edit_link,$delete_link));
+            $row->attributes['data-id'] = '1';
+            $table->data[] = $row;
+        }
+        $html_admin_options .= html_writer::table($table);
+
+    }else{
+        $html_admin_options .= "<h2>There are not slides at the moment</h2>";
     }
-	$html_admin_options .= html_writer::table($table);
 	$html_admin_options .= "</div>";
     return $html_admin_options;	        
 }

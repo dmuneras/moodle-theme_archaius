@@ -55,7 +55,7 @@ function customizeMenu(region,regionLocation){
         region.find(".header-tab").eq(index).next().append(item);
         });
     }
-    $(region).show();
+    region.show();
 }
 
 //Function to expand and shrink the question bank div.   
@@ -138,7 +138,7 @@ $(function(){
         }
         $('#page-header').prepend($('div.footer form.adminsearchform')); //add search form to the header page               
         $("#page-header form.adminsearchform input:regex(type,submit)").remove(); //remove search button                                                                                      
-        $("#adminsearchquery").attr("placeholder","search"); //add placeholder to search input                                                   
+        $("#adminsearchquery").attr("placeholder",searchTranslation); //add placeholder to search input                                                   
         $('#region-post-box').prepend($('.blogsearchform'));
 
     /* --------------------------------------------------------------                               

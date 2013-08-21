@@ -24,7 +24,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_archaius/bgcolor';
     $title = get_string('bgcolor','theme_archaius');
     $description = get_string('bgcolordesc', 'theme_archaius');
-    $default = 'f5f5f5';
+    $default = '#f5f5f5';
     $previewconfig = array('selector'=>'#page-header', 'style'=>'header');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $settings->add($setting);
@@ -42,7 +42,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_archaius/headercolor';
     $title = get_string('headercolor','theme_archaius');
     $description = get_string('headercolordesc', 'theme_archaius');
-    $default = '#A7A39B';
+    $default = '#697F6F';
     $previewconfig = array('selector'=> 'div.region-content div.header', 'style'=>'header');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $settings->add($setting);

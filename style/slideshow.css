@@ -8,7 +8,7 @@
 .rslides li{
   list-style: none;
   overflow: scroll;
-  height: 300px;
+  height: 400px;
   max-width: 100%;
 }
 .rslides li img,
@@ -18,8 +18,8 @@
 .rslides_container {
   position: relative;
   float: left;
-  width: 75%;
-  height: 300px;
+  width: 78%;
+  height: 380px;
   padding: 0 60px;
 }
 

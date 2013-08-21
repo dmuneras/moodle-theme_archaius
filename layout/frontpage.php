@@ -17,13 +17,15 @@
         </div>
         <div id="site-description">
             <?php echo $PAGE->course->summary; ?>
-            <p><a id="go-to-courses" class='pretty-button pretty-link-button' href="#">
-                <?php echo get_string("go_to_courses","theme_archaius")?>
+            <p class="go-to"><a id="go-to-courses" class='pretty-button pretty-link-button' href="#">
+                <?php echo get_string("courses")?>
             </a></p>
         </div>
     </div>      
     <?php if(isloggedin() && has_capability('moodle/site:config', $context, $USER->id, true)){ ?>
-           <div id ='toggle-admin-menu'><?php echo get_string("settings");?></div>
+           <div id ='toggle-admin-menu' class="pretty-button pretty-link-button">
+            <?php echo get_string("settings");?>
+           </div>
            <?php echo add_theme_archaius_admin_options(get_string("addSlide","theme_archaius"),$slides); ?> 
     <?php } ?>
 
@@ -31,7 +33,7 @@
 
 <!-- END HOME PAGE ELEMENTS -->
 
-<h2 id="moodle-page-title" class="lonely-title"><?php echo get_string("home_courses_title","theme_archaius");?></h2>
+<h2 id="moodle-page-title" class="lonely-title"><?php echo get_string("courses");?></h2>
 
 <?php include 'partials/page_content.php' ?>
 <?php include 'partials/footer.php' ?>

@@ -33,6 +33,10 @@ if (isguestuser()) {
     die();
 }
 
+if(!(isloggedin() && has_capability('moodle/site:config', $context, $USER->id, true))){
+    redirect(new moodle_url($CFG->wwwroot . '/index.php'));
+}
+
 $PAGE->set_url($url);
 $PAGE->set_context($context);
 

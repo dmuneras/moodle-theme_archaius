@@ -13,7 +13,6 @@ body {
 /* -------------------------------------------------------------- 
    Page Header
 -------------------------------------------------------------- */
-
 #page-header {
     top: 0;
     background: [[setting:themecolor]];
@@ -23,7 +22,7 @@ body {
     width:100%;
     min-width:980px;
     float: none; 
-    margin-bottom: 50px;   
+    margin-bottom: 60px;   
 }
 
 .adminsearchform{
@@ -157,10 +156,10 @@ span.error{
 /* Blocks inside region main */
 
 #region-main div.header-tab {
-    background: none repeat scroll 0 0 [[setting:currentcolor]];
+    background: none repeat scroll 0 0  [[setting:themecolor]];
     color:whiteSmoke;
     line-height: 1;
-    border-bottom: 1px solid [[setting:currentcolor]];
+    border-bottom: 1px solid  [[setting:themecolor]];
     min-height:20px;
     border-radius: 5px 5px;
     -moz-border-radius: 5px 5px;
@@ -190,6 +189,11 @@ div.region-content div.header-tab {
     border-bottom: 1px solid whiteSmoke;
     cursor: pointer !important;
     min-height:20px;
+
+}
+
+div.region-content div.header-tab {
+    color: whiteSmoke;
 }
 
 #region-post-box #region-pre , 
@@ -557,7 +561,7 @@ td.eventskey {
 -------------------------------------------------------------- */
 
 #custommenu{
-    background-color: #A7A39B;
+    background-color: #697F6F;
     border-top: 2px solid #000;
     padding: 1px;
     min-height: 36px;
@@ -586,7 +590,6 @@ td.eventskey {
 #custommenu .custom_menu_submenu .yui3-menu-label-active,
 #custommenu .custom_menu_submenu .yui3-menu-label-menuvisible,
 #custommenu .yui3-menu .yui3-menu .yui3-menuitem-active .yui3-menuitem-content,
-div.logininfo a.login,
 #custommenu .yui3-menuitem-content:hover ,
 #custommenu .yui3-menu-label-menuvisible:hover{
     background-color: [[setting:currentcustommenucolor]] ;
@@ -602,7 +605,7 @@ div.logininfo a.login,
 #custommenu .custom_menu_submenu .yui3-menu-content,
 #custommenu .yui3-menu-label-active,
 #custommenu .yui3-menu-label-menuvisible {
-    background-color: #A7A39B;
+    background-color: #697F6F;
 }
 
 #custommenu .yui3-menu-horizontal .yui3-menu-content ul ul,
@@ -611,12 +614,12 @@ div.logininfo a.login,
 }
 
 .yui3-skin-sam .yui3-menu li, .yui3-skin-sam .yui3-menu .yui3-menu li{
-    background-color: #A7A39B !important;
+    background-color: #697F6F !important;
 }
 
 #custommenu .yui3-menu-horizontal .yui3-menu-content li a {
     cursor:pointer;
-    color: #000;
+    color: white;
     padding: 10px;
 }
 
@@ -633,7 +636,7 @@ a.yui3-menu-label-menuvisible {
     height: 0; 
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;  
-    border-left: 10px solid #A7A39B;
+    border-left: 10px solid #697F6F;
     margin-top: 3px;
 }
 
@@ -642,7 +645,7 @@ a.yui3-menu-label-menuvisible {
     height: 0; 
     border-left: 8px solid transparent;
     border-right: 8px solid transparent; 
-    border-bottom: 10px solid #A7A39B;
+    border-bottom: 10px solid #697F6F;
     margin: auto;
     margin-top:3px;
 

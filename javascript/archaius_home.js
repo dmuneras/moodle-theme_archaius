@@ -28,7 +28,7 @@ $(function(){
 	//Scroll down to courses.
 	$("#go-to-courses").on("click",function(){
 		$("body").animate({ 
-			scrollTop: ($("#moodle-page-title").offset().top) - 10 },
+			scrollTop: ($("#moodle-page-title").offset().top) -30 },
 			 'slow'
 		);	
 	});
@@ -45,7 +45,14 @@ $(function(){
 				$('#content-left').html(data);
 				startSlideShow();
 				var index = $(".delete-slide").index($this);
-				$this.closest("tr").remove();
+				var slidesTable = $(".admin-options table"); 
+				if(slidesTable.find("tr").length > 2){
+					$this.closest("tr").remove();
+				}else{
+					slidesTable.remove();
+					$(".admin-options").append("<h2>There are not slides at the moment</h2>");
+				}
+				
 				$(".admin-options .notice").show().html("<p>Slide deleted</p>")
 					.delay( 1000 ).fadeOut('slow');
 			});
