@@ -1,34 +1,37 @@
 <?php
 
-/* Imports */
+/******************************************************************************
+|                     CONTROLER TO EDIT SLIDES                                |   
+******************************************************************************/
+
+//imports 
 require_once('../../../config.php');
 require_once($CFG->dirroot . '/repository/lib.php');
-require_once($CFG->dirroot . '/theme/archaius/slideshow/slide_form.php');
+require_once('slide_form.php');
 require_once($CFG->libdir . '/gdlib.php');
 
 global $DB,$USER;
 
-/* Page parameters */
-$contextid = required_param('contextid', PARAM_INT);
-$sectionid = required_param('sectionid', PARAM_INT);
+//Page parameters
 $id = optional_param('id', null, PARAM_INT);
+$userid = required_param('userid', PARAM_INT);
+$contextid = required_param('contextid', PARAM_INT);
+$mode = optional_param('mode', null, PARAM_ALPHA);
+$itemid = optional_param('itemid', null, PARAM_ALPHA);
 
-//Parameters for form
-$formdata = new stdClass();
-$formdata->userid = required_param('userid', PARAM_INT);
-$formdata->offset = optional_param('offset', null, PARAM_INT);
-$formdata->forcerefresh = optional_param('forcerefresh', null, PARAM_INT);
-$formdata->mode = optional_param('mode', null, PARAM_ALPHA);
-
-$url = new moodle_url('/theme/archaius/slideshow/edit_slide.php', array(
-            'contextid' => $contextid,
-            'id' => $id,
-            'userid' => $formdata->userid,
-            'mode' => $formdata->mode));
+//Creating URL which is going to be use as page URL.
+$url = new moodle_url('/theme/archaius/slideshow/edit_slide.php', 
+    array('id' => $id,
+        'userid' => $userid,
+        'mode' => $mode, 
+        'contextid' => $contextid
+    )
+);
 
 list($context, $course, $cm) = get_context_info_array($contextid);
 
 require_login($course, true, $cm);
+
 if (isguestuser()) {
     die();
 }
@@ -40,27 +43,36 @@ if(!(isloggedin() && has_capability('moodle/site:config', $context, $USER->id, t
 $PAGE->set_url($url);
 $PAGE->set_context($context);
 
-$maxfiles = 99;                
-$maxbytes = $course->maxbytes; 
 
-$definitionoptions = array('trusttext'=>true, 
-    'subdirs'=>false, 'maxfiles'=>$maxfiles, 
-    'maxbytes'=>$maxbytes, 'context'=>$context);
 
-$slide = array();
+$editing = true;
+
+
+$editoroptions = array(
+    'context'=> $context,
+    'trusttext'=> true, 
+    'maxfiles'=> EDITOR_UNLIMITED_FILES, 
+    'maxbytes'=> $CFG->maxbytes,
+    'noclean' => true
+);
+
+$slide = new stdClass();
 if( sizeof($_POST) == 0 ){
     $slide = "SELECT * FROM {theme_archaius} WHERE id = {$id}";
-    $slide = $DB->get_records_sql($slide);     
+    $slide = $DB->get_records_sql($slide); 
+    $slide = $slide[$id]; 
+    $slide->context = $context; 
+    $slide = file_prepare_standard_editor($slide, 
+        'description', $editoroptions, $context, 'theme_archaius',
+                                        'slides_images_'. $slide->id , $slide->itemid );
+    $itemid = $slide->itemid;
+
 }
 
-$mform = new slide_form(null, array(
-            'id' => $id,
-            'contextid' => $contextid,
-            'userid' => $formdata->userid,
-            'sectionid' => $sectionid,
-            'slide' => $slide,
-            'definitionoptions'=>$definitionoptions,
-            'options' => none));
+$mform = new slide_form(null, compact("id",
+    "definitionoptions","editing","userid","position","description",
+                                     "itemid","contextid","editoroptions"));
+$mform->set_data($slide);
 
 if ($mform->is_cancelled()) {
     //Someone has hit the 'cancel' button
@@ -68,27 +80,39 @@ if ($mform->is_cancelled()) {
 } else if ($formdata = $mform->get_data()) { //Form has been submitted    
     try{
         $record = new stdClass();
-        $record->description = $formdata->description['text'];
-        $record->userid = $formdata->userid;
         $record->id = $formdata->id;
+        $record->userid = $formdata->userid;
+        $record->itemid = $formdata->itemid;
         if($formdata->position > 0){
             $record->position = $formdata->position;       
         }else{
-             throw new Exception(get_string("error_position","theme_archaius"));
-        }
-          
-        $DB->update_record("theme_archaius", $record,false);
+             throw new Exception(get_string("error_position",
+                                                "theme_archaius"));
+        } 
+        //Set Description_editor variable on $record Object to be processed
+        //using file_postupdate standard function. 
+        $record->description_editor =  $formdata->description_editor;
+        unset($record->description);
+        $record = file_postupdate_standard_editor(
+            $record, 
+            'description', 
+            $editoroptions, 
+            $context, 
+            'theme_archaius', 
+            'slides_images_' . strval($record->id), 
+            $record->itemid
+        );
+        
+        //Update record on database to store description with rewrite urls
+        $DB->update_record("theme_archaius", $record);
         redirect($CFG->wwwroot . "/index.php");
-
     }catch(Exception $e){
         echo 'Caught exception: ',  $e->getMessage() , "\n";
     }
 }
 
 
-
-
-/* Draw the form */
+//Draw the form
 echo $OUTPUT->header();
 echo $OUTPUT->box_start('generalbox');
 $mform->display();

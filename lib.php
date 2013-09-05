@@ -182,4 +182,23 @@ function archaius_set_bgcolor($css, $bgcolor) {
 }
 
 
+function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
+                                     $forcedownload, array $options = array()) {
+
+    if ($context->contextlevel == CONTEXT_SYSTEM) {
+        $fs = get_file_storage();
+        $relativepath = implode('/', $args);
+        $fullpath = "/$context->id/theme_archaius/$filearea/$relativepath";
+        $hash = sha1($fullpath);
+        $file = $fs->get_file_by_hash($hash);
+        if (!$file or $file->is_directory()) {
+            return false;
+        
+        } else {
+            return send_stored_file($file, 86400, 0, $forcedownload, $options);
+        }
+    }
+}
+
+
 

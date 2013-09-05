@@ -18,6 +18,8 @@ function xmldb_theme_archaius_upgrade($oldversion){
         $table->add_field('description', XMLDB_TYPE_TEXT, null, null, XMLDB_NOTNULL, null, null);
         $table->add_field('userid', XMLDB_TYPE_INTEGER, '10', null, XMLDB_NOTNULL, null, '0');
         $table->add_field('position', XMLDB_TYPE_INTEGER, '10', null, XMLDB_NOTNULL, null, '0');
+        $table->add_field('descriptionformat', XMLDB_TYPE_INTEGER, '2', null, XMLDB_NOTNULL, null, '0');
+        $table->add_field('descriptiontrust', XMLDB_TYPE_INTEGER, '2', null, XMLDB_NOTNULL, null, '0');
 
         // Adding keys to table theme_archaius.
         $table->add_key('primary', XMLDB_KEY_PRIMARY, array('id'));

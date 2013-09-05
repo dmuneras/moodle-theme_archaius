@@ -33,7 +33,7 @@ echo $OUTPUT->doctype() ?>
     <title><?php echo $PAGE->title ?></title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" >
     <!--[if lt IE 10]>
-        <script type="text/javascript" src="<?php echo $CFG->wwwroot ?>/theme/macondo/javascript/PIE.js"></script>
+        <script type="text/javascript" src="<?php echo $CFG->wwwroot ?>/theme/archaius/javascript/PIE.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
     <?php echo $OUTPUT->standard_head_html() ?>

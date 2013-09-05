@@ -6,9 +6,11 @@
     <TABLE NAME="theme_archaius" COMMENT="List of slides" >
       <FIELDS>
             <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="itemid"/>
-            <FIELD NAME="itemid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="slide" />
-            <FIELD NAME="description" TYPE="text" LENGTH="big" NOTNULL="true" PREVIOUS="itemid"  NEXT="userid" SEQUENCE="false" />
-            <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="slide"  />
+            <FIELD NAME="itemid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="description"/>
+            <FIELD NAME="description" TYPE="text" LENGTH="big" NOTNULL="true" PREVIOUS="itemid"  NEXT="descriptionformat" SEQUENCE="false" />
+            <FIELD NAME="descriptionformat" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="description" NEXT="descriptiontrust"/>
+            <FIELD NAME="descriptiontrust" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="descriptionformat" NEXT="userid"/>
+            <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="description"  NEXT="position" />
             <FIELD NAME="position" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="userid"  />
       </FIELDS>
     

@@ -1,48 +1,59 @@
 <?php
 
 defined('MOODLE_INTERNAL') || die();
-global $CFG;
+
 require_once("{$CFG->libdir}/formslib.php");
 
 class slide_form extends moodleform {
 
     function definition() {
 
-        $mform = $this->_form;
-        $instance = $this->_customdata; 
-        $slide = $this->_customdata['slide'];
-        $slide = $slide[$instance['id']];
+        global $CFG;
+        $mform =& $this->_form;
         $attributes=array('size'=>'20');
-        $definitionoptions = $this->_customdata['definitionoptions'];
+        $default_values = $this->_customdata;
 
         // visible elements
-        $mform->addElement('text', 'position', get_string('position', 'theme_archaius'), $attributes);  
+        $mform->addElement('text', 'position', 
+            get_string('position', 'theme_archaius'), $attributes);  
         $mform->setType('position',PARAM_INT);
-
-        if(! empty($slide->position)){
-            $mform->setDefault('position', $slide->position);    
-        }
         
-        $mform->addElement('editor', 'description', get_string('description', 'theme_archaius'),null,
-            $definitionoptions);
-        $mform->setType('description', PARAM_RAW);
+        $mform->addElement('editor', 'description_editor', 
+            get_string('description', 'theme_archaius'),
+            null, $default_values['editoroptions']);
 
-        if(! empty($slide->description)){
-            $mform->setDefault('description', array( 'text' => $slide->description, 'format' =>  FORMAT_HTML));
-        }
+        $mform->setType('description_editor', PARAM_RAW);
 
-        // hidden params
-        $mform->addElement('hidden', 'contextid', $instance['contextid']);
-        $mform->setType('contextid', PARAM_INT);
-        
-        $mform->addElement('hidden', 'userid', $instance['userid']);
+
+        // hidden params        
+        $mform->addElement('hidden', 'userid', $default_values['userid']);
         $mform->setType('userid', PARAM_INT);
-        $mform->addElement('hidden', 'sectionid', $instance['sectionid']);
-        $mform->setType('sectionid', PARAM_INT);
 
-        $mform->addElement('hidden', 'id', $slide->id);
-        $mform->setType('id', PARAM_INT);
-        
+        $mform->addElement('hidden', 'contextid', $default_values['contextid']);
+        $mform->setType('contextid', PARAM_INT);
+
+        //set default values when the user is editing, I didnt use 
+        //file_prepare_standard_editor
+        // because that function doesn't draw the tinyMCE editor.
+        if($default_values['editing'] == true){
+            $mform->addElement('hidden', 'id', $default_values['id']);
+            $mform->setType('id', PARAM_INT);
+
+            $mform->addElement('hidden', 'itemid', $default_values['itemid']);
+            $mform->setType('itemid', PARAM_INT);
+  
+        }
+        if(! empty($default_values['description'])){
+
+            $mform->setDefault('description_editor', 
+                array( 'text' => $default_values['description'], 
+                'format' =>  FORMAT_HTML));
+        }
+
+        if(! empty($default_values['position'])){
+            $mform->setDefault('position', $default_values['position']);    
+        }
+
         // buttons
         $this->add_action_buttons(true, get_string('savechanges', 'admin'));
     }
