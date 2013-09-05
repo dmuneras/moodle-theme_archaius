@@ -12,13 +12,13 @@
         <div id="content-left">
             <?php 
                 $slides = get_slides();
-                echo add_theme_archaius_slideshow($slides); 
+                echo add_theme_archaius_slideshow($slides, $context->id); 
             ?>
         </div>
         <div id="site-description">
             <?php echo $PAGE->course->summary; ?>
-            <p class="go-to"><a id="go-to-courses" class='pretty-button pretty-link-button' href="#">
-                <?php echo get_string("courses")?>
+            <!-- <p class="go-to"><a id="go-to-courses" class='pretty-button pretty-link-button' href="#">
+                <?php echo get_string("courses")?> -->
             </a></p>
         </div>
     </div>      
@@ -26,7 +26,8 @@
            <div id ='toggle-admin-menu' class="pretty-button pretty-link-button">
             <?php echo get_string("settings");?>
            </div>
-           <?php echo add_theme_archaius_admin_options(get_string("addSlide","theme_archaius"),$slides); ?> 
+           <?php echo add_theme_archaius_admin_options(
+           get_string("addSlide","theme_archaius"),$slides, $context->id); ?> 
     <?php } ?>
 
 </div>

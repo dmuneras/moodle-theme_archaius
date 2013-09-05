@@ -7,7 +7,7 @@ function xmldb_theme_archaius_upgrade($oldversion){
     // Define table theme_archaius to be created.
     global $CFG, $THEME, $DB;
     
-	if ($oldversion < 2013081411) {
+	if ($oldversion < 2013090500) {
 
         $dbman = $DB->get_manager(); /// loads ddl manager and xmldb classes
         $table = new xmldb_table('theme_archaius');
@@ -30,7 +30,7 @@ function xmldb_theme_archaius_upgrade($oldversion){
         }
 
         // Archaius savepoint reached.
-        upgrade_plugin_savepoint(true, 2013081411, 'theme', 'archaius');
+        upgrade_plugin_savepoint(true, 2013090500, 'theme', 'archaius');
     }
     return true;
 }

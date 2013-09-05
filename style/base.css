@@ -41,14 +41,10 @@ h6.main {
 
 /* File manager */
 
-.filemanager select, 
-.filemanager input, 
-.filemanager button, 
-.filemanager textarea, 
-.file-picker select, 
-.file-picker input, 
-.file-picker button, 
-.file-picker textarea{
+.filemanager input[type="submit"], 
+.filemanager button,
+.file-picker input[type="submit"], 
+.file-picker button{
     color: white;
 }
 

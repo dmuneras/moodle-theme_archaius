@@ -51,7 +51,6 @@ h2.lonely-title {
     text-align: center;
     padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
-    margin-top: 60px;
 }
 
 /*#moodle-page-title{
@@ -64,17 +63,17 @@ h2.lonely-title {
 
 #home-content{
     width: 100%;
-    height: 410px;
+    height: 310px;
 }
 
 #content-left{
     float: left;
-    width: 70%;
+    width: 60%;
 }
 
 #site-description{
     float: right;
-    width: 30%;
+    width: 40%;
 }
 
 .delete-slide{
