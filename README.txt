@@ -16,3 +16,6 @@ Improvements:
 Better shape of block in the main content.
 New option in the setting page to activate and desactivate the hide and show blocks effect.
 Link inside main container are now blue to make them easier to find.
+
+09.09.2013
+New front page with a carousel of information that could be edited by admin users

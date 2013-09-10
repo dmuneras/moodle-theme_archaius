@@ -25,14 +25,6 @@ $(function(){
 		$(this).next().slideToggle();
 	});
 
-	//Scroll down to courses.
-	$("#go-to-courses").on("click",function(){
-		$("body").animate({ 
-			scrollTop: ($("#moodle-page-title").offset().top) -30 },
-			 'slow'
-		);	
-	});
-
 	//Delete slideshow using AJAX to avoid page reload.
 	$(".delete-slide").on("click",function(event){
 		event.preventDefault();

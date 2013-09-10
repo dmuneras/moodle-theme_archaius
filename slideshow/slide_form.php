@@ -32,9 +32,7 @@ class slide_form extends moodleform {
         $mform->addElement('hidden', 'contextid', $default_values['contextid']);
         $mform->setType('contextid', PARAM_INT);
 
-        //set default values when the user is editing, I didnt use 
-        //file_prepare_standard_editor
-        // because that function doesn't draw the tinyMCE editor.
+        //Set default values when the user is editing.
         if($default_values['editing'] == true){
             $mform->addElement('hidden', 'id', $default_values['id']);
             $mform->setType('id', PARAM_INT);

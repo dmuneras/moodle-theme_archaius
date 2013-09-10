@@ -182,6 +182,9 @@ function archaius_set_bgcolor($css, $bgcolor) {
 }
 
 
+
+//Callback function to get files related with the carousel of information on
+//the frontpage.
 function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
                                      $forcedownload, array $options = array()) {
 
@@ -200,5 +203,33 @@ function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
     }
 }
 
+
+//To translate items in the customenu, it is from:
+// http://docs.moodle.org/dev/Extending_the_theme_custom_menu
+class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
+    public function __construct(custom_menu_item $menunode) {
+        parent::__construct($menunode->get_text(), $menunode->get_url(), 
+            $menunode->get_title(), $menunode->get_sort_order(), $menunode->get_parent());
+        $this->children = $menunode->get_children();
+ 
+        $matches = array();
+        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', $this->text, $matches)) {
+            try {
+                $this->text = get_string($matches[1], 'theme_archaius');
+            } catch (Exception $e) {
+                $this->text = $matches[1];
+            }
+        }
+ 
+        $matches = array();
+        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', $this->title, $matches)) {
+            try {
+                $this->title = get_string($matches[1], 'theme_archaius');
+            } catch (Exception $e) {
+                $this->title = $matches[1];
+            }
+        }
+    }
+}
 
 

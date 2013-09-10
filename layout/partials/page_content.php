@@ -1,6 +1,11 @@
 <!-- PAGE CONTENT -->
 <?php
-    $hassubtitle =  !($PAGE->layout_options['nosubtitle']);
+    if ( ! empty($PAGE->layout_options['nosubtitle'])){
+        $hassubtitle =  !($PAGE->layout_options['nosubtitle']); 
+    }else{
+        $hassubtitle = true;
+    }
+    
     if(! isset($hasnavbar)){
         $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
     }

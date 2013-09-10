@@ -17,8 +17,6 @@
         </div>
         <div id="site-description">
             <?php echo $PAGE->course->summary; ?>
-            <!-- <p class="go-to"><a id="go-to-courses" class='pretty-button pretty-link-button' href="#">
-                <?php echo get_string("courses")?> -->
             </a></p>
         </div>
     </div>      
