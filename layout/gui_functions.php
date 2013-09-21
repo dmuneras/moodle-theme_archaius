@@ -46,10 +46,7 @@ function add_theme_archaius_admin_options($link_text,$slides, $contextid){
     $link_to_add = "<div class='main-control'>".
         "<a class='pretty-button pretty-link-button'".
         " href= '". $base_link ."/theme/archaius/slideshow/add_slide.php?contextid=" . 
-        $contextid . "&userid=" . $USER->id . "&sectionid=2'>". $link_text ."</a>".
-        "<a class= 'pretty-button pretty-link-button' href= ' ". $base_link .
-        "/admin/settings.php?section=frontpagesettings' >" . 
-        get_string("update_description","theme_archaius") . "</a></div>".
+        $contextid . "&userid=" . $USER->id . "&sectionid=2'>". $link_text ."</a></div>".
         "<div class='notice'></div>";
     $html_admin_options .= $link_to_add;
 

@@ -12,7 +12,7 @@ function startSlideShow(){
         pager: true,
         nav: true,
         speed: 500,
-        maxwidth: 800,
+        maxwidth: 'auto',
         namespace: "large-btns"
       }); 
     }
@@ -29,7 +29,7 @@ $(function(){
 	$(".delete-slide").on("click",function(event){
 		event.preventDefault();
 		$this = $(this);
-		//TODO: The message have to be multilanguage.
+		//TODO: The message has to be multilanguage.
 		if(confirm("Really. Do you want to delete this slide?")){
 			var url = $this.attr("href") + "&ajax=1";
 			$.get(url , function(data) {

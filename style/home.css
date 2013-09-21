@@ -3,7 +3,6 @@
 ---------------------------------------------*/
 
 #home-page{
-    height: 100%;
     margin-bottom: 20px;
 }
 
@@ -23,14 +22,6 @@
     float:none;
     padding: 10px;
 }
-
-.go-to{
-    text-align: center;
-    padding: 20px;
-    background-color: #697F6F;
-    border: 2px solid #888;
-}
-
 .admin-options{
     display: none;
     text-align: center;
@@ -52,14 +43,6 @@ h2.lonely-title {
     padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
 }
-
-/*#moodle-page-title{
-    background-color:[[setting:themecolor]];
-    color:white;  
-    padding: 15px; 
-    text-align: center;
-    border:3px solid #888;
-}*/
 
 #home-content{
     width: 100%;
