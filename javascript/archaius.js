@@ -155,20 +155,13 @@ $(function(){
 
         // course sections.                                                                         
         var sections = topics.find('li.section.main');
-        //General information.                                                                                          
-        var general =  sections.first();
-        //fix on the top general information of the course.                                              
-        topics.parent().prepend(general);
-        general.show();
         var tabSelector = "h3.sectionname";
         if(topics.find(tabSelector).length != topics.find("li.section.main").length ){
-            tabSelector = "div.summary";
-            sections.each(function(){
+            sections.each(function(index){
                     $this = $(this);
                     if($this.find("h3.sectionname").length == 0){
-                        $this.find("div.summary").prepend("<h3> " + $this.find(".left").html() + "</h3>");
-                    }else{
-                        $this.find("div.summary").prepend($this.find("h3.sectionname"));
+                        $this.find("div.summary").prepend(
+                            "<h3 class='sectionname'> Section " + index  + "</h3>");
                     }
 
                 });

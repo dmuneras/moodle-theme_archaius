@@ -78,22 +78,40 @@ class theme_archaius_core_renderer extends core_renderer {
 
 
     // http://docs.moodle.org/dev/Extending_the_theme_custom_menu
+    //http://docs.moodle.org/dev/Adding_courses_and_categories_to_the_custom_menu#How_to_add_.22My_Courses.22_to_the_Custom_Menu_Bar_for_Moodle_2.4
     protected function render_custom_menu(custom_menu $menu) {
  
-        $mycourses = $this->page->navigation->get('mycourses');
+        global $CFG;
+        require_once($CFG->dirroot.'/course/lib.php');
+
+        if (isloggedin() && !isguestuser() && 
+            $mycourses = enrol_get_my_courses(NULL, 'visible DESC, fullname ASC')) {  
  
-        if (isloggedin() && $mycourses && $mycourses->has_children()) {
-            $branchlabel = get_string('mycourses');
+            $branchlabel = get_string('mycourses') ;
             $branchurl   = new moodle_url('/course/index.php');
             $branchtitle = $branchlabel;
-            $branchsort  = 10000;
- 
+            $branchsort  = 8000 ;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
  
-            foreach ($mycourses->children as $coursenode) {
-                $branch->add($coursenode->get_content(), $coursenode->action, $coursenode->get_title());
+            foreach ($mycourses as $mycourse) {
+                $branch->add($mycourse->shortname, new moodle_url(
+                    '/course/view.php', 
+                    array('id' => $mycourse->id)), 
+                    $mycourse->fullname
+                );
             }
         }
+
+        $course_id = $this->page->course->id;
+        if (isloggedin() && $course_id > 1) {
+            $branchlabel = get_string('grades');
+            $branchurl   = new moodle_url('/grade/report/index.php?id='. $this->page->course->id);
+            $branchtitle = $branchlabel;
+            $branchsort  = 10000;
+            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+        }
+ 
+        
  
         return parent::render_custom_menu($menu);
     }
