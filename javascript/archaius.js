@@ -161,7 +161,7 @@ $(function(){
                     $this = $(this);
                     if($this.find("h3.sectionname").length == 0){
                         $this.find("div.summary").prepend(
-                            "<h3 class='sectionname'> Section " + index  + "</h3>");
+                            "<h3 class='sectionname'> Topic " + index  + "</h3>");
                     }
 
                 });

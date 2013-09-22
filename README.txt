@@ -19,3 +19,6 @@ Link inside main container are now blue to make them easier to find.
 
 09.09.2013
 New front page with a carousel of information that could be edited by admin users
+
+21.09.2013
+The creation of tabs for course topics was fixed. Dependencies between tabs and summaries have been erased (reported issue)
