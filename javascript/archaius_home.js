@@ -33,8 +33,8 @@ $(function(){
 		if(confirm("Really. Do you want to delete this slide?")){
 			var url = $this.attr("href") + "&ajax=1";
 			$.get(url , function(data) {
-				$(".rslides_container").remove();
-				$('#content-left').html(data);
+				$(".rslides_container").html("");
+				$('.rslides_container').html(data);
 				startSlideShow();
 				var index = $(".delete-slide").index($this);
 				var slidesTable = $(".admin-options table"); 

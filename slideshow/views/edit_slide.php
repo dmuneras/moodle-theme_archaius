@@ -4,29 +4,9 @@
 |                     EDIT SLIDES                                             |   
 ******************************************************************************/
 
-//imports 
-require_once('../../../config.php');
-require_once($CFG->dirroot . '/repository/lib.php');
 require_once('slide_form.php');
-require_once($CFG->libdir . '/gdlib.php');
 
 global $DB,$USER;
-
-//Page parameters
-$id = optional_param('id', null, PARAM_INT);
-$userid = required_param('userid', PARAM_INT);
-$contextid = required_param('contextid', PARAM_INT);
-$mode = optional_param('mode', null, PARAM_ALPHA);
-$itemid = optional_param('itemid', null, PARAM_ALPHA);
-
-//Creating URL which is going to be use as page URL.
-$url = new moodle_url('/theme/archaius/slideshow/edit_slide.php', 
-    array('id' => $id,
-        'userid' => $userid,
-        'mode' => $mode, 
-        'contextid' => $contextid
-    )
-);
 
 list($context, $course, $cm) = get_context_info_array($contextid);
 
@@ -69,7 +49,7 @@ if( sizeof($_POST) == 0 ){
 
 }
 
-$mform = new slide_form(null, compact("id",
+$mform = new slide_form(null, compact("action","id",
     "definitionoptions","editing","userid","position","description",
                                      "itemid","contextid","editoroptions"));
 $mform->set_data($slide);

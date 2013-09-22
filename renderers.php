@@ -78,12 +78,12 @@ class theme_archaius_core_renderer extends core_renderer {
 
 
     // http://docs.moodle.org/dev/Extending_the_theme_custom_menu
-    //http://docs.moodle.org/dev/Adding_courses_and_categories_to_the_custom_menu#How_to_add_.22My_Courses.22_to_the_Custom_Menu_Bar_for_Moodle_2.4
     protected function render_custom_menu(custom_menu $menu) {
  
         global $CFG;
         require_once($CFG->dirroot.'/course/lib.php');
 
+        //navigation mycourses is no supported since 2.4
         if (isloggedin() && !isguestuser() && 
             $mycourses = enrol_get_my_courses(NULL, 'visible DESC, fullname ASC')) {  
  

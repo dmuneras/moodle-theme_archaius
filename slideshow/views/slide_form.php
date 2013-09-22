@@ -32,6 +32,9 @@ class slide_form extends moodleform {
         $mform->addElement('hidden', 'contextid', $default_values['contextid']);
         $mform->setType('contextid', PARAM_INT);
 
+        $mform->addElement('hidden', 'action', $default_values['action']);
+        $mform->setType('action', PARAM_TEXT);
+
         //Set default values when the user is editing.
         if($default_values['editing'] == true){
             $mform->addElement('hidden', 'id', $default_values['id']);

@@ -1,7 +1,5 @@
 <?php
 
-require_once($CFG->dirroot . '/theme/archaius/layout/gui_functions.php');
-require_once($CFG->dirroot . '/theme/archaius/db/db_functions.php');
 
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);

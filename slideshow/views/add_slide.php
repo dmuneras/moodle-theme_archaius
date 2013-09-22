@@ -5,32 +5,12 @@
 ******************************************************************************/
 
 //imports 
-require_once('../../../config.php');
-require_once($CFG->dirroot . '/repository/lib.php');
 require_once('slide_form.php');
-require_once($CFG->libdir . '/gdlib.php');
 
 global $DB,$USER;
-
-//Page parameters
-$id = optional_param('id', null, PARAM_INT);
-$userid = required_param('userid', PARAM_INT);
-$contextid = required_param('contextid', PARAM_INT);
-$mode = optional_param('mode', null, PARAM_ALPHA);
-
-
-//Creating URL which is going to be use as page URL.
-$url = new moodle_url('/theme/archaius/slideshow/add_slide.php', 
-    array('id' => $id,
-        'userid' => $userid,
-        'mode' => $mode, 
-        'contextid' => $contextid
-    )
-);
-
 list($context, $course, $cm) = get_context_info_array($contextid);
 
-
+//Check is user has enough privileges
 require_login($course, true, $cm);
 
 //If the user is a guest die, because guest users can't update slides
@@ -65,6 +45,7 @@ $slide = new stdClass();
 $slide->context = $context;
 $editing = false;
 $slide->userid = $userid;
+$slide->action = $action;
 
 
 //Create the moodle form using slide_form and send extra information.
@@ -73,7 +54,8 @@ $mform = new slide_form(null,
         "editoroptions",
         "editing",
         "userid",
-        "contextid"
+        "contextid",
+        "action"
     )
 );
 $mform->set_data($slide);
