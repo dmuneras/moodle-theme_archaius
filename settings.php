@@ -79,6 +79,13 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $settings->add($setting);
 
+    //Activate 
+    $name = "theme_archaius/activateSlideshow";
+    $title = get_string("activateSlideshow", 'theme_archaius');
+    $description = get_string('activateSlideshowdesc', 'theme_archaius');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $settings->add($setting);
+
      // Custom CSS file
     $name = 'theme_archaius/customcss';
     $title = get_string('customcss','theme_archaius');

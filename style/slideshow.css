@@ -1,5 +1,8 @@
 /* -------------------------------------------
    Slideshow Styles 
+
+   This is from responsive slides. It is just
+   small modifications.
 ---------------------------------------------*/
 .rslides {
   margin: 0 auto;
@@ -19,29 +22,14 @@
 
 .rslides li img{
   width: auto;
-  max-height: 250px;
+  height: auto;
+  max-width: 100%;
 }
 
 .rslides_container {
   position: relative;
   width: 100%;
-  height: 310px;
-}
-
-.centered-btns_nav {
-  z-index: 3;
-  position: absolute;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  top: 50%;
-  left: 0;
-  opacity: 0.7;
-  text-indent: -9999px;
-  overflow: hidden;
-  text-decoration: none;
-  height: 61px;
-  width: 38px;
-  background: transparent url([[pix:theme|slideshow/themes]]) no-repeat left top;
-  margin-top: -45px;
+  height: auto;
 }
 
 .centered-btns_nav:active {
@@ -52,22 +40,6 @@
   left: auto;
   background-position: right top;
   right: 0;
-}
-
-.transparent-btns_nav {
-  z-index: 3;
-  position: absolute;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  top: 0;
-  left: 0;
-  display: block;
-  background: #fff; /* Fix for IE6-9 */
-  opacity: 0;
-  filter: alpha(opacity=1);
-  width: 48%;
-  text-indent: -9999px;
-  overflow: hidden;
-  height: 91%;
 }
 
 .transparent-btns_nav.next {
@@ -82,11 +54,12 @@
   opacity: 0.6;
   text-indent: -9999px;
   overflow: hidden;
-  top: 0;
+  top: 40%;
   bottom: 0;
   left: 0;
   background: #000 url([[pix:theme|slideshow/themes]]) no-repeat left 50%;
   width: 38px;
+  height: 61px;
 }
 
 .large-btns_nav:active {

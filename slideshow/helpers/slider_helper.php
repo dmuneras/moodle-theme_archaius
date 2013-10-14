@@ -18,7 +18,7 @@ function theme_archaius_get_slider(){
 
 /**
  * Prints archaius theme slideshow.
- * @return string the HTML to be output.
+ * @return HTML to be output.
  */
 
 function theme_archaius_add_slideshow($contextid,$slides){
@@ -42,7 +42,7 @@ function theme_archaius_add_slideshow($contextid,$slides){
 
 /**
  * Prints an admin options to manage the slideshow.
- * @return string the HTML to be output.
+ * @return HTML to be output.
  */
 function theme_archaius_admin_options($contextid,$slides){
     global $CFG,$USER,$COURSE;

@@ -15,6 +15,12 @@
     if(! isset($hassidepost)){
         $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);   
     }
+    if(! isset($hassidecenterpre)){
+        $hassidecenterpre = $PAGE->blocks->region_has_content('side-center-pre', $OUTPUT);   
+    }
+    if(! isset($hassidecenterpost)){
+        $hassidecenterpost = $PAGE->blocks->region_has_content('side-center-post', $OUTPUT);   
+    }
 ?>
 <div id="regions-control"></div>
 <div id="page" class="main-content">
@@ -33,7 +39,17 @@
                 <div id="region-main-wrap">
                     <div id="region-main">
                         <div class="region-content">
+                            <?php if ( $hassidecenterpre) { ?>
+                                <div id = "region-center-pre">
+                                    <?php echo $OUTPUT->blocks_for_region('side-center-pre') ?>
+                                </div>
+                            <?php } ?>
                             <?php echo $OUTPUT->main_content() ?>
+                            <?php if ( $hassidecenterpost) { ?>
+                                <div id = "region-center-post">
+                                    <?php echo $OUTPUT->blocks_for_region('side-center-post') ?>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

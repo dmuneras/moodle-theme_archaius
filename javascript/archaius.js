@@ -111,6 +111,18 @@ function organizeBlockSummary(){
 
 }
 
+function organizeRegionCenter(region){
+    if((region.length != 0) && ($(".commands").length == 0)){
+        region.find(".header-tab").on("click",function(){
+            $(this).next().slideToggle( "slow");
+        });              
+    }else{
+        region.find(".commands").each(function(){
+            $(this).appendTo($(this).parent().parent().parent().prev());
+        });
+        region.find("div:regex(id,inst)").show();
+    }    
+}
 /* --------------------------------------------------------------                             
    DOM is ready to execute everything
    The script is in the footer but is just to be sure
@@ -120,10 +132,18 @@ $(function(){
 
         var regionPre = $('#region-pre');
         var regionPost = $('#region-post');
+        var regionCenterPre = $('#region-center-pre');
+        var regionCenterPost = $('#region-center-post');        
 
         //Execute PIE for main objects                          
         applyPIE("#page , .images, #adminsearchquery,div.logininfo a.login" +
                   "#custommenu .yui3-menu-horizontal .yui3-menu-content li a");
+
+       //Move options to edit blocks to the header tab
+       organizeRegionCenter(regionCenterPre);
+       organizeRegionCenter(regionCenterPost);
+
+
         organizeBlockSummary();
         if(regionPre.length != 0){
             customizeMenu(regionPre,"pre");

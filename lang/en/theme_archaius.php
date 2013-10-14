@@ -68,3 +68,5 @@ $string["position"] = "Position in the slider";
 $string["error_position"] = "The position is not a number or is equal to 0, 0 is not a valid position";
 $string["addSlide"] = "Add new slide";
 $string["update_description"] = "Update description";
+$string["activateSlideshow"] = 'Activate slideshow';
+$string["activateSlideshowdesc"] = 'You can activate or desactivate the frontpage slideshow, the slide could be, a image or just HTML. The maximun height of the slide is 300px.';

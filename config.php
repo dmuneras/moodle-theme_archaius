@@ -40,7 +40,8 @@ $THEME->layouts = array(
     // Course page
     'course' => array(
         'file' => 'general.php',
-        'regions' => array('side-pre','side-post'),
+        'regions' => array('side-pre','side-post',
+            'side-center-pre','side-center-post'),
         'defaultregion' => 'side-pre', 
         'options' => array('langmenu' => true, 'nonavbar' => false)
     ),
@@ -59,7 +60,8 @@ $THEME->layouts = array(
     ),
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => array('side-pre', 'side-post',
+            'side-center-pre','side-center-post'),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true, 'nonavbar' => true, 'nosubtitle' => true)
     ),
@@ -71,7 +73,8 @@ $THEME->layouts = array(
     ),
     'mydashboard' => array(
         'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => array('side-pre', 'side-post',
+            'side-center-pre','side-center-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu' => true)
     ),

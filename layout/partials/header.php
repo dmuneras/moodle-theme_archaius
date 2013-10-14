@@ -4,6 +4,8 @@
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
 $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
+$hassidecenterpre = $PAGE->blocks->region_has_content('side-center-pre', $OUTPUT);
+$hassidecenterpost = $PAGE->blocks->region_has_content('side-center-post', $OUTPUT);
 $showsidepre = $hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT);
 $showsidepost = $hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT);
 $custommenu = $OUTPUT->custom_menu();
@@ -39,6 +41,7 @@ echo $OUTPUT->doctype() ?>
     <script type = "text/javascript">
         //<![CDATA[
         activateTopicsCourseMenu = '<?php echo $PAGE->theme->settings->collasibleTopics ?>';
+        activateSlideshow = '<?php  echo $PAGE->theme->settings->activateSlideshow ?>';
         activateHideAndShowBlocks = '<?php echo $PAGE->theme->settings->hideShowBlocks ?>';
         siteRoot =  '<?php echo $CFG->wwwroot ?>';
         searchTranslation = "<?php echo get_string('search')?>";
