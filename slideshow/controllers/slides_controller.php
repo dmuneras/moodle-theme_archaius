@@ -2,8 +2,6 @@
 
 //Imports
 require_once('../../../../config.php');
-require_once($CFG->dirroot . '/repository/lib.php');
-//require_once($CFG->libdir . '/gdlib.php');
 
 global $CFG;
 

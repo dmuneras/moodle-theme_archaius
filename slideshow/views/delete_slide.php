@@ -5,8 +5,8 @@
 ******************************************************************************/
 
 //imports
-require_once($CFG->dirroot . '/theme/archaius/slideshow/controllers/frontpage_controller.php');
-
+require_once($CFG->dirroot . '/theme/archaius/slideshow/helpers/slider_helper.php'); 
+require_once($CFG->dirroot . '/repository/lib.php');
 
 list($context, $course, $cm) = get_context_info_array($contextid);
 
@@ -28,8 +28,8 @@ if(isloggedin() && has_capability('moodle/site:config',
 		$file->delete();
 	}
 	if($ajax == 1){
-		$slider = ArchaiusSlider::Instance();
-    	echo $slider->add_slideshow($contextid); 
+		$slider = theme_archaius_get_slider();
+    	echo theme_archaius_add_slideshow($contextid,$slider->get_slides()); 
 	}else{
 		redirect($CFG->wwwroot . "/index.php");
 	}

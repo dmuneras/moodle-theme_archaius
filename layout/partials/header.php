@@ -30,7 +30,7 @@ echo $OUTPUT->doctype() ?>
 <head>
     <title><?php echo $PAGE->title ?></title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" >
-    <!--[if lt IE 10]>
+    <!--[if lt IE 9]>
         <script type="text/javascript" src="<?php echo $CFG->wwwroot ?>/theme/archaius/javascript/PIE.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />

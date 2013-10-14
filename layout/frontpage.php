@@ -1,5 +1,5 @@
 <?php include 'partials/header.php'; ?>
-<?php require_once($CFG->dirroot . '/theme/archaius/slideshow/controllers/frontpage_controller.php'); ?>
+<?php require_once($CFG->dirroot . '/theme/archaius/slideshow/helpers/slider_helper.php'); ?>
 
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
@@ -42,14 +42,17 @@
                         <div class="region-content">
                             <div id="home-page">
                                 <?php 
-                                    $slider = archaius_get_slider();
-                                    echo $slider->add_slideshow($context->id); 
+                                    $slider = theme_archaius_get_slider();
+                                    echo theme_archaius_add_slideshow($context->id,
+                                                                        $slider->get_slides()); 
                                 ?>    
-                                <?php if(isloggedin() && has_capability('moodle/site:config', $context, $USER->id, true)){ ?>
+                                <?php if(isloggedin() && has_capability('moodle/site:config',
+                                                                     $context, $USER->id, true)){ ?>
                                        <div id ='toggle-admin-menu' class="pretty-button pretty-link-button">
                                         <?php echo get_string("settings");?>
                                        </div>
-                                       <?php echo $slider->admin_options($context->id); ?> 
+                                       <?php echo theme_archaius_admin_options($context->id,
+                                                                            $slider->get_slides()); ?> 
                                 <?php } ?>
 
                             </div>
