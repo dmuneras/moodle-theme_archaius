@@ -38,7 +38,7 @@ It is extremely flexible and very useful for people with some knowledge of web d
 then rename it before making your changes. This will prevent your customized theme from being overwritten by future Moodle upgrades, and you\'ll still have the original files if you make a mess.                                                                                                                                                                       
 More information on modifying themes can be found in the <a href="http://docs.moodle.org/en/Theme">MoodleDocs</a>.</p>                                                               
 <h2>Credits</h2><p>This theme is based on anomaly themes, it was                                                                                                                     
-originally designed for Moodle 1.9 by Patrick Malley. archaius was created by Daniel Munera Sanchez using the open source libraries: jQuery, jQuerytools, PIE.js.
+originally designed for Moodle 1.9 by Patrick Malley. Archaius was created by Daniel Munera Sanchez using the open source libraries: jQuery, jQuerytools, PIE.js and responsiveslides.
  He can be contacted at dmunera119@gmail.com</p>
  <p>The logo was a contribution of Juan Pablo londono.</p>';
 $string['logo'] = 'logo';

@@ -22,3 +22,6 @@ New front page with a carousel of information that could be edited by admin user
 
 21.09.2013
 The creation of tabs for course topics was fixed. Dependencies between tabs and summaries have been erased (reported issue)
+
+14.10.2013
+Better slideshow: possibility to activate or deactivate it, side-center-[pre|post] added.

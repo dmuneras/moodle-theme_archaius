@@ -168,9 +168,6 @@ span.error{
     -webkit-box-shadow: 0px 2px 3px 0px #888;
     box-shadow: 0px 2px 3px 0px #888;
 }
-#region-main div.header-tab h2{
-    cursor: default !important;
-}
 
 #region-main div.header-tab .commands{
     float: right;

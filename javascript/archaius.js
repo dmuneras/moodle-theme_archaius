@@ -123,6 +123,7 @@ function organizeRegionCenter(region){
         region.find("div:regex(id,inst)").show();
     }    
 }
+
 /* --------------------------------------------------------------                             
    DOM is ready to execute everything
    The script is in the footer but is just to be sure
