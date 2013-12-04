@@ -17,15 +17,6 @@ $.expr[':'].regex = function(elem, index, match) {
     return regex.test($(elem)[attr.method](attr.property));
 }
 
-//Customize tabs effect jquerytools                                                                                                                                              
-$.tools.tabs.addEffect("slide", function(i, done) {
-    this.getPanes().slideUp().css({opacity: 0.5});
-    this.getPanes().eq(i).slideDown(function()  {
-        $(this).css({opacity: 1.0});
-        done.call();
-        });
-    });
-
 /* --------------------------------------------------------------                             
    Definition of functions
 ----------------------------------------------------------------*/
@@ -37,9 +28,18 @@ function customizeMenu(region,regionLocation){
     var tabs = $("#" + $tabsId);
     tabs.prepend($('div.header-tab', region));
     var subcont = region.find("div.block",tabs);
-    tabs.tabs(subcont, {tabs: 'div.header-tab', effect: 'slide',
-        initialIndex: 0});
 
+    $(".header-tab", region).on('click',function(){
+        var $this = $(this);
+        if(!($this.hasClass("current"))){
+            region.find(".header-tab").removeClass("current");
+            $this.addClass("current");
+            var index = region.find("div.header-tab").index($(this)); 
+            var blocks = region.find(".block");
+            blocks.slideUp();
+            blocks.eq(index).slideDown();
+        }
+    });
     //Avoid first efect when the page is loaded                                                                                                                
     $(subcont).css("display","none");
     subcont.first().css("display","block");

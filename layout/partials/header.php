@@ -25,8 +25,8 @@ if ($hascustommenu) {
 if ($hasnavbar) {
     $bodyclasses[] = 'hasnavbar';
 }
-$context = get_context_instance (CONTEXT_SYSTEM);
-
+//$context = get_context_instance (CONTEXT_SYSTEM);
+$context = context_system::instance();
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
