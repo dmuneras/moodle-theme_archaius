@@ -25,3 +25,7 @@ The creation of tabs for course topics was fixed. Dependencies between tabs and 
 
 14.10.2013
 Better slideshow: possibility to activate or deactivate it, side-center-[pre|post] added.
+
+
+05.12.2013
+Working on moodle 26 version and general improvements related with javascript.

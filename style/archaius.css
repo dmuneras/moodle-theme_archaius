@@ -597,13 +597,6 @@ td.eventskey {
     background-color: [[setting:currentcustommenucolor]] ;
 }
 
-
-#custommenu .custom_menu_submenu .yui3-menu-content {
-    border-radius: 3px;
-    box-shadow: 0px 2px 3px 0px #888;
-}
-
-
 #custommenu .custom_menu_submenu .yui3-menu-content,
 #custommenu .yui3-menu-label-active,
 #custommenu .yui3-menu-label-menuvisible {

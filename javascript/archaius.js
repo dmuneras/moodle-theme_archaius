@@ -29,25 +29,33 @@ function customizeMenu(region,regionLocation){
     tabs.prepend($('div.header-tab', region));
     var subcont = region.find("div.block",tabs);
 
-    $(".header-tab", region).on('click',function(){
+    $(".header-tab", region).on('click',
+                     { blocks : subcont } , function(event){
+        var data = event.data;
         var $this = $(this);
         if(!($this.hasClass("current"))){
             region.find(".header-tab").removeClass("current");
             $this.addClass("current");
             var index = region.find("div.header-tab").index($(this)); 
-            var blocks = region.find(".block");
-            blocks.slideUp();
-            blocks.eq(index).slideDown();
+            data.blocks
+                .slideUp()
+                .eq(index).slideDown();
         }
     });
+
+
     //Avoid first efect when the page is loaded                                                                                                                
-    $(subcont).css("display","none");
-    subcont.first().css("display","block");
-    //add Rounded borders to the first tab                         
-    region.find('div.header-tab:first',tabs).css({
+    $(subcont)
+        .css("display","none")
+        .first().css("display","block");
+
+    //add Rounded borders to the first tab and set as current
+    region.find('div.header-tab:first',tabs)
+        .css({
             '-moz-border-radius':'5px 5px 0px 0px',
                 'border-radius':'5px 5px 0px 0px'
-        });
+        })
+        .addClass("current");
 
     if($('.commands').length > 0){
         $.map(region.find(".header .commands") , function(item , index){
@@ -57,7 +65,6 @@ function customizeMenu(region,regionLocation){
     }
     region.show();
 }
-
 //Function to expand and shrink the question bank div.   
 function expandBank(questionBank){
     questionBank.find('.header').first().find(".title")
@@ -88,18 +95,6 @@ function expandBank(questionBank){
             }
         });
 }
-
-//Script to PIE project to add  CSS3 on IE                                                                                                                                                    
-function applyPIE(selector){
-    $(function() {
-            if (window.PIE) {
-                $(selector).each(function() {
-                        PIE.attach(this);
-                    });
-            }
-        });
-}
-
 function organizeBlockSummary(){
     var blockSummary = $('#inst2');
     if(blockSummary.prev(".header-tab").length == 0){
@@ -108,7 +103,6 @@ function organizeBlockSummary(){
         clon.find("h2").html("");
         blockSummary.before(clon);
     }
-
 }
 
 function organizeRegionCenter(region){
@@ -123,7 +117,6 @@ function organizeRegionCenter(region){
         region.find("div:regex(id,inst)").show();
     }    
 }
-
 /* --------------------------------------------------------------                             
    DOM is ready to execute everything
    The script is in the footer but is just to be sure
@@ -135,10 +128,6 @@ $(function(){
         var regionPost = $('#region-post');
         var regionCenterPre = $('#region-center-pre');
         var regionCenterPost = $('#region-center-post');        
-
-        //Execute PIE for main objects                          
-        applyPIE("#page , .images, #adminsearchquery,div.logininfo a.login" +
-                  "#custommenu .yui3-menu-horizontal .yui3-menu-content li a");
 
        //Move options to edit blocks to the header tab
        organizeRegionCenter(regionCenterPre);
@@ -272,36 +261,5 @@ $(function(){
                     }
             });
         }
-    }
-    
-    
-    /* --------------------------------------------------------------                             
-       Custommenu
-    ----------------------------------------------------------------*/
-    //Adding arrow to custom sub menu and binding event 
-    var customMenu = $("#custommenu .custom_menu_submenu");                                                                                                                
-    if(customMenu.length > 0 ){
-        customMenu.find(".custom_menu_submenu").each(function(){
-            $this = $(this);
-            if($this.parents().length == 8 ){
-                $this.prepend("<div class='arrow-up'></div>");
-            }else{
-                $this.prepend("<div class='arrow-right'></div>");
-                $(".custom_menu_submenu .yui3-menu-content li").each(function(){
-                    var item = $(this);
-                    if(item.find("div.custom_menu_submenu").length > 0){
-                        item.on("hover",function(){
-                            $this = $(this);
-                            $this.find("div.custom_menu_submenu .yui3-menu-content").css({
-                                "position" : "absolute" ,
-                                "left" : "8px" ,
-                                "margin-top" : (parseInt($this.css("height") + 20) * (-1)) + "px"
-                            });
-                        
-                        });
-                    }
-                });
-            }
-        });
-    }   
+    } 
 });

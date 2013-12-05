@@ -131,7 +131,7 @@ $THEME->layouts = array(
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
-$THEME->javascripts_footer = array('jquery-1.7.1.min','responsiveslides',
+$THEME->javascripts_footer = array('jquery-1.10.2.min','responsiveslideuglify',
     'archaius','archaius_home');
 
 
