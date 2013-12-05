@@ -10,7 +10,7 @@
 
 .rslides li{
   list-style: none;
-  overflow: scroll;
+  overflow: hidden;  
   width: 100%;
   min-height: 300px;
 }

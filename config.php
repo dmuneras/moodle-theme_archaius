@@ -12,15 +12,7 @@ $THEME->sheets = array('base','archaius' ,'course','slideshow', 'home','boilerpl
 /// stylesheet files you want included in this theme, and in what order
 ////////////////////////////////////////////////////////////////////////////////
 
-$THEME->parents = array('base');  // TODO: new themes can not be based on standardold, instead use 'base' as the base
-/// This variable can be set to the name of a parent theme
-/// which you want to have included before the current theme.
-/// This can make it easy to make modifications to another
-/// theme without having to actually change the files
-/// If this variable is empty or false then a parent theme
-/// is not used.
-////////////////////////////////////////////////////////////////////////////////
-
+$THEME->parents = array('base');  
 $THEME->parents_exclude_sheets = array('base'=>array('styles_moz'));
 
 $THEME->editor_sheets = array('editor');
