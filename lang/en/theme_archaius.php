@@ -25,6 +25,8 @@
 $string['pluginname'] = 'Archaius';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
+$string['region-side-center-pre'] = "Before center main content";
+$string['region-side-center-post'] = "After center main content";
 $string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><h2>Archaius</h2>                                                                                      
 <img src="archaius/pix/screenshot.png" />                                                                                                                                             
 <h3>Theme Credits</h3><p><a href="http://docs.moodle.org/en/Theme_credits">http://docs.moodle.org/en/Theme_credits</a></p>                                                           
