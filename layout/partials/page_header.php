@@ -26,9 +26,9 @@
     </div>
   <?php } ?>
   <div class="headermenu"><?php
-  echo $OUTPUT->login_info();
   global $USER,$COURSE;
   echo $OUTPUT->user_picture($USER, array('courseid'=>$COURSE->id));
+  echo $OUTPUT->login_info();
   if (!empty($PAGE->layout_options['langmenu'])) {
     echo $OUTPUT->lang_menu();
   }
