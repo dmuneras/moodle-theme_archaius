@@ -1,6 +1,15 @@
-/* -------------------------------------------
+/* ----------------------------------------
    Course Styles 
----------------------------------------------*/
+------------------------------------------*/
+
+/* ----------------------------------------
+ Course's list frontpage styles        
+-----------------------------------------*/
+
+#page-course-category .categorypicker {
+    text-align: center;
+    margin: 10px 0 20px;
+}
 
 .coursebox .info,
 .coursebox .info .name {
@@ -44,6 +53,9 @@
     font-size: 1.75em;
 }
 
+/* ----------------------------------------
+ Main page course styles        
+-----------------------------------------*/
 .topics .topic-tab{
     border-bottom: 1px solid #ccc;
     margin-bottom:10px;
@@ -51,22 +63,9 @@
     cursor:pointer;
     height:40px;
 }
-
-.topics h2.tomo-title{
-    text-align:center;
-    background-color: #0B7C5E;
-    padding: 12px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    cursor:pointer;
-    margin-bottom:5px;
-    color: whiteSmoke;
-}
-
-
 .topics .topic-tab.current {
-background-color: whitesmoke;
-border: 1px solid #ccc;
+    background-color: whitesmoke;
+    border: 1px solid #ccc;
 }
 
 .categorybox {
@@ -76,12 +75,6 @@ border: 1px solid #ccc;
 h2.headingblock {
     font-size: 1.5em;
 }
-
-#page-course-category .categorypicker {
-    text-align: center;
-    margin: 10px 0 20px;
-}
-
 .path-course-view .course-content li.section.main {
     background-color:#fff;
     display:none;
