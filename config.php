@@ -7,7 +7,7 @@
 
 $THEME->name = 'archaius';
 
-$THEME->sheets = array('base','archaius' ,'course','slideshow', 'home','boilerplate');
+$THEME->sheets = array('base','archaius' , 'archaius_screens','course','slideshow', 'home','boilerplate');
 /// This variable is an array containing the names of all the
 /// stylesheet files you want included in this theme, and in what order
 ////////////////////////////////////////////////////////////////////////////////
