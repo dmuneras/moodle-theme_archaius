@@ -169,6 +169,12 @@ span.error{
     box-shadow: 0px 2px 3px 0px #888;
 }
 
+#region-center-pre,
+#reion-center-post{
+    clear:both;
+    margin-bottom: 20px;
+}
+
 #region-main div.header-tab .commands{
     float: right;
     margin-top: -30px;
@@ -197,6 +203,14 @@ div.region-content div.header-tab {
 div.region-content div.header-tab {
     color: whiteSmoke;
 }
+
+#region-pre div.region-content div.header-tab:first-child,
+#region-post  div.region-content div.header-tab:first-child{
+     border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+}
+
 
 #region-post-box #region-pre , 
 #region-post-box #region-post{
@@ -246,7 +260,7 @@ div.region-content div.header-tab h2{
 
 
 #regions-control{
-    position: absolute;
+    position: fixed;
     width: 100%;
 }
 .move{

@@ -55,9 +55,9 @@ h6.main {
     margin-right: auto;
 }
 
-#notice.generalbox {
+/*#notice.generalbox {
     width: 60%;
-}
+}*/
 
 .notifyproblem, .notifysuccess {
     padding: 10px;

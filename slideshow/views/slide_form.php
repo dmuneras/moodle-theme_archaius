@@ -17,12 +17,15 @@ class slide_form extends moodleform {
         $mform->addElement('text', 'position', 
             get_string('position', 'theme_archaius'), $attributes);  
         $mform->setType('position',PARAM_INT);
+        $mform->addRule('position', 
+            get_string('positionException', 'theme_archaius'), 'required', null, 'client');
         
         $mform->addElement('editor', 'description_editor', 
             get_string('description', 'theme_archaius'),
             null, $default_values['editoroptions']);
-
         $mform->setType('description_editor', PARAM_RAW);
+        $mform->addRule('description_editor', 
+            get_string('descriptionEditorException', 'theme_archaius'), 'required', null, 'client');
 
 
         // hidden params        

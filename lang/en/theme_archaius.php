@@ -25,6 +25,8 @@
 $string['pluginname'] = 'Archaius';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
+$string['region-side-center-pre'] = 'Center previous';
+$string['region-side-center-post'] = 'Center After';
 $string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><h2>Archaius</h2>                                                                                      
 <img src="archaius/pix/screenshot.png" />                                                                                                                                             
 <h3>Theme Credits</h3><p><a href="http://docs.moodle.org/en/Theme_credits">http://docs.moodle.org/en/Theme_credits</a></p>                                                           
@@ -65,8 +67,12 @@ $string["hideShowBlocks"] = "Activate hide and show blocks effect";
 $string["hideShowBlocksdesc"] = "Activate or desactivate the hide and how blocks effect, which is useful to see the main content using the 100% of the space of the main container";
 $string["description"] = "Insert the HTML to create the slide";
 $string["position"] = "Position in the slider";
-$string["error_position"] = "The position is not a number or is equal to 0, 0 is not a valid position";
+$string["errorPosition"] = "<span class ='error'>Position is not a number or is equal to 0, 0 is not a valid position</span>";
 $string["addSlide"] = "Add new slide";
 $string["update_description"] = "Update description";
 $string["activateSlideshow"] = 'Activate slideshow';
 $string["activateSlideshowdesc"] = 'You can activate or desactivate the frontpage slideshow, the slide could be, a image or just HTML. The maximun height of the slide is 300px.';
+
+//Form exceptions
+$string["positionException"] = "Position is required and it must be higher than 0";
+$string["descriptionEditorException"] = "We don't want an empty slide.";

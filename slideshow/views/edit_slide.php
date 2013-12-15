@@ -66,7 +66,7 @@ if ($mform->is_cancelled()) {
         if($formdata->position > 0){
             $record->position = $formdata->position;       
         }else{
-             throw new Exception(get_string("error_position",
+             throw new Exception(get_string("errorPosition",
                                                 "theme_archaius"));
         } 
         //Set Description_editor variable on $record Object to be processed

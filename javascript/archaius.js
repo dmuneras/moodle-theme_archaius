@@ -50,17 +50,13 @@ function customizeMenu(region,regionLocation){
         .first().css("display","block");
 
     //add Rounded borders to the first tab and set as current
-    region.find('div.header-tab:first',tabs)
-        .css({
-            '-moz-border-radius':'5px 5px 0px 0px',
-                'border-radius':'5px 5px 0px 0px'
-        })
-        .addClass("current");
+    region.find('div.header-tab:first',tabs).addClass("current");
 
     if($('.commands').length > 0){
         $.map(region.find(".header .commands") , function(item , index){
-        region.find(".header-tab").eq(index).after("<div class='com'></div>");
-        region.find(".header-tab").eq(index).next().append(item);
+            region.find(".header-tab").eq(index)
+                .after("<div class='com'></div>")
+                .next().append(item);
         });
     }
     region.show();
