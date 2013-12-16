@@ -30,7 +30,7 @@
           <?php } ?>
     	  <?php if ($hasnavbar) { ?>
             <div class="navbar clearfix">
-	      <div class="breadcrumb"><?php echo $OUTPUT->navbar(); ?></div>
+	      <nav class="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
 	      <div class="navbutton"><?php echo $PAGE->button; ?></div>
             </div>
 				  <?php }?>

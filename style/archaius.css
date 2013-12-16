@@ -10,9 +10,6 @@ body {
     font: medium "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
     color: #222; 
     background: [[setting:bgcolor]] !important;
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
 }
 
 /* -------------------------------------------------------------- 
