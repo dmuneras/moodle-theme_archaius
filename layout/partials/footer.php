@@ -2,7 +2,7 @@
 <?php 
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
 if ($hasfooter) { ?>
-    <div id="page-footer" class="clearfix">
+    <footer id="page-footer" class="clearfix">
         <?php if (!empty($PAGE->theme->settings->footnote)) { ?>
             <?php echo $PAGE->theme->settings->footnote; ?>
         <?php }?>
@@ -19,6 +19,6 @@ if ($hasfooter) { ?>
             echo $OUTPUT->standard_footer_html();
         ?>
         <div class="clearfix"></div>
-    </div>
+    </footer>
 <?php } ?>
 <!-- END FOOTER-->
