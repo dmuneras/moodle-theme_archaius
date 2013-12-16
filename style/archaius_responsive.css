@@ -40,11 +40,11 @@ only screen and (min-device-pixel-ratio : 1.5){
         margin: 0 !important;
       }
       #logo{
-        width: 50%;
+        width: 100%;
       }
 
       #logo img.sitelogo{
         height: auto;
-        width: 100%
+        width: 80%
       }
  }

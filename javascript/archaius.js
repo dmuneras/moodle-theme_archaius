@@ -208,51 +208,49 @@ $(function(){
         */
         var regionMain = $("#region-main");
         if(regionPre.length > 0){
-            var widthRegion = regionPre.css("width");
             $("#regions-control").append("<div id='move-region' class='move'></div>");
-            $("#move-region").on("click", { region : regionPre 
-                , wRegion : widthRegion , main : regionMain },function(event){
+            $("#move-region").on("click", { region : regionPre,
+			main : regionMain },function(event){
                 var data = event.data;
                 if(!($(this).hasClass("hidden-region"))){
                     $("#move-region").addClass("hidden-region");
                     data.region.animate({
-                        'left' : '-=' + data.wRegion
+                        'left' : '-=200px'
                             },400,null);
                     data.main.animate({
-                        'margin-left' : "-=" + data.wRegion
+                        'margin-left' : '-=200px'
                             },400,null);
                 }else{
                     $("#move-region").removeClass("hidden-region");
                     data.region.animate({
-                        'left' : "+=" +  data.wRegion
+                        'left' : '+=200px'
                             },400, null);
                     data.main.animate({
-                        'margin-left' : "+=" + data.wRegion
+                        'margin-left' : '+=200px'
                             },400,null);
                     }
             });
         }
         if(regionPost.length > 0){
-            var widthRegion = regionPost.css("width");
             $("#regions-control").append("<div id='move-region-right' class='move'></div>");
-            $("#move-region-right").on("click",{ region : regionPost 
-                , wRegion : widthRegion , main : regionMain },function(event){
+            $("#move-region-right").on("click",{ region : regionPost, 
+			main : regionMain },function(event){
                 var data = event.data;
                 if(!($(this).hasClass("hidden-region"))){
                     $("#move-region-right").addClass("hidden-region");  
                     data.region.animate({
-                        'left' : '+=' + data.wRegion
+                        'left' : '+=200px'
                             },400,null);
                     data.main.animate({
-                        'margin-right' : "-=" + data.wRegion
+                        'margin-right' : '-=200px'
                             },400,null);
                 }else{
                     $("#move-region-right").removeClass("hidden-region");
                     data.region.animate({
-                        'left' : "-=" + data.wRegion
+                        'left' : '-=200px'
                             },400,null);
                     data.main.animate({
-                        'margin-right' : "+=" + data.wRegion
+                        'margin-right' : '+=200px'
                             },400,null);
                     }
             });
