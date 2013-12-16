@@ -7,11 +7,8 @@
 
 $THEME->name = 'archaius';
 
-$THEME->sheets = array('base','archaius' , 'archaius_screens','course','slideshow', 'home','boilerplate','bootstrap-responsive');
-/// This variable is an array containing the names of all the
-/// stylesheet files you want included in this theme, and in what order
-////////////////////////////////////////////////////////////////////////////////
-
+$THEME->sheets = array('base','archaius' , 'archaius_responsive','course','slideshow', 'home','boilerplate');
+$THEME->doctype = 'html5';
 $THEME->parents = array('base');  
 $THEME->parents_exclude_sheets = array('base'=>array('styles_moz'));
 

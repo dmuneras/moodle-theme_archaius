@@ -34,7 +34,11 @@ echo $OUTPUT->doctype() ?>
     <meta http-equiv="x-ua-compatible" content="IE=edge" >
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
     <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--[if lt IE 9]>
+       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
     <script type = "text/javascript">
         //<![CDATA[
         activateTopicsCourseMenu = '<?php echo $PAGE->theme->settings->collasibleTopics ?>';

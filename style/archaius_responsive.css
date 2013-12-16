@@ -4,7 +4,24 @@
 @media screen and (max-width: 768px),
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5){
-      .navbar,
+    html,
+    body { 
+	font-size: 2em; 
+	background: #fff !important;
+    }
+    .main-content{
+	width:100% !important;
+    }
+    #page {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	background-color: #fff;
+    }
+    .navbar,
       #regions-control{
         display: none;
       }
@@ -31,5 +48,3 @@ only screen and (min-device-pixel-ratio : 1.5){
         width: 100%
       }
  }
-
-   
