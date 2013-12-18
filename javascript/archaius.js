@@ -64,7 +64,8 @@ function customizeMenu(region,regionLocation){
 //Function to expand and shrink the question bank div.   
 function expandBank(questionBank){
     questionBank.find('.header').first().find(".title")
-    .append("<a id = 'expand-bank' class='shrink btn-warning btn pretty-link-button'>expand</input>");
+    .append("<a id = 'expand-bank' class='shrink"+
+        " btn-warning btn pretty-link-button'>expand</input>");
     var page = $('#page-mod-quiz-edit div.quizcontents');
     $('#expand-bank').on("click",function(){
             var $this = $(this);
@@ -114,28 +115,47 @@ function organizeRegionCenter(region){
     }    
 }
 
+function getDistanceToParent(item,parentSelector,KingOfParent){
+    return item.parents(KingOfParent).length;
+}
+
 function checkOnResize(){
     var viewPortWidth = $(window).width();
     var mobileCustommenu = $("#mobile-custommenu");
+    var pageHeader = $("#page-header");
     if(viewPortWidth <= 768){
         $("#custommenu").addClass("collapsed");
         if(mobileCustommenu.length == 0 ){
-            $("#page-header").append("<nav id='mobile-custommenu' class='collapsed'></nav>"); 
-            $("#page-header .headermenu").wrap("<div id='header-wrap'></div>");
+            pageHeader.append("<nav id='mobile-custommenu' class='collapsed'></nav>"); 
+            pageHeader.find(".headermenu").wrap("<div id='header-wrap'></div>");
             $("#header-wrap").append("<div class='menu-icon deactive'></div>");
-            var items = $("#custommenu ul li a").clone(); 
-            $.each(items,function(){
-                $(this).removeClass();
+            var items = $("#custommenu ul li a");
+            var clonedItems = items.clone();
+            $.each(items,function(index){
+                var $this = $(this);
+                var hierarchy = getDistanceToParent($this,"custommenu","div");
+                //Coefficient to calculate the hierarchy of 
+                //menu items is 4 (minimum number of elements to the parent element)
+                if(hierarchy > 4){
+                    var hierarchyLevel = (hierarchy - 4) / 2;
+                    var hierarchyLine = "";
+                    for(var i=0;i<hierarchyLevel;i++){
+                        hierarchyLine += "- ";    
+                    }
+                    var content = hierarchyLine.concat(" ",$this.text());
+                    clonedItems.eq(index).text(content);
+                }
+                clonedItems.eq(index).removeClass();
             });
-            $("#mobile-custommenu").append(items);         
-        }else{
-            $("#page-header .menu-icon").show();
-        }
 
+            $("#mobile-custommenu").append(clonedItems);         
+        }else{
+            pageHeader.find(".menu-icon").show();
+        }
     }else{
         $("#custommenu").removeClass("collapsed");
         mobileCustommenu.hide();
-        $("#page-header .menu-icon").hide();
+        pageHeader.find(".menu-icon").hide();
         $("#mobile-custommenu").addClass("collapsed");
     }
     return viewPortWidth;
@@ -170,9 +190,12 @@ $(function(){
         if(questionBank.length > 0 && !(questionBank.hasClass("collapsed"))){
             expandBank($(".questionbankwindow.block"));
         }
-        $('#page-header').prepend($('div.footer form.adminsearchform')); //add search form to the header page               
-        $("#page-header form.adminsearchform input:regex(type,submit)").remove(); //remove search button                                                                                      
-        $("#adminsearchquery").attr("placeholder",searchTranslation); //add placeholder to search input                                                   
+        //add search form to the header page
+        $('#page-header').prepend($('div.footer form.adminsearchform')); 
+        //remove search button                                   
+        $("#page-header form.adminsearchform input:regex(type,submit)").remove(); 
+        //add placeholder to search input 
+        $("#adminsearchquery").attr("placeholder",searchTranslation); 
         $('#region-post-box').prepend($('.blogsearchform'));
 
     /* --------------------------------------------------------------                               
@@ -299,9 +322,12 @@ $(function(){
     
 });
 
-$(window).resize(function() {
-  //resize just happened, pixels changed
-  checkOnResize();
-});
+if($("#custommenu").length > 0 ){
+    $(window).resize(function() {
+        //resize just happened, pixels changed
+        checkOnResize();
+    });    
+}
+
 
 
