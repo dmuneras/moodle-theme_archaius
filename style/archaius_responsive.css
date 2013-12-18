@@ -4,28 +4,17 @@
 @media screen and (max-width: 768px),
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5){
-    html,
-    body { 
-	     font-size: 2em; 
-	     background: #fff !important;
-    }
     .main-content{
-	     width:100% !important;
-    }
-    #page {
-      	-webkit-box-shadow: none;
-      	-moz-box-shadow: none;
-      	box-shadow: none;
-      	-webkit-border-radius: 0px;
-      	-moz-border-radius: 0px;
-      	border-radius: 0px;
-      	background-color: #fff;
+	     width:95% !important;
     }
     .navbar,
     #regions-control{
         display: none;
     }
 
+    /* -------------------------------------------------------------- 
+        Forcing layout to be one column
+    -------------------------------------------------------------- */
     #region-main-box,
     #page-content #region-main-wrap,
     #page-content #region-post-box,
@@ -51,21 +40,40 @@ only screen and (min-device-pixel-ratio : 1.5){
     /* HEADER PAGE*/
     #page-header .headermenu{
       clear: both;
-      float: none;
+      float: left;
       position: relative;
       background-color: [[setting:themecolor]];
       margin: 0;
-      padding: 0 20px 0 0;
+      padding: 0;
       z-index: 999;
       top:0;
       right: 0;
+      width: 100%;
+      padding-top: 10px;
     }
 
+    #page-header .headermenu img.userpicture,
+    #page-header div.logininfo{
+      margin-right: 10%;
+    }
     #page-header div.logininfo{
       margin-bottom: 0;
     }
 
-    #page-header{
-      margin-bottom: 120px;
+    #header-wrap{
+      background-color: [[setting:themecolor]];
     }
+
+    /* -------------------------------------------------------------- 
+        Form css
+    -------------------------------------------------------------- */
+    #adminsettings .form-item .form-label{
+        width: 100%;
+        float: none;
+        text-align: left;
+    }
+    #adminsettings .form-item .form-setting,
+    #adminsettings .form-item .form-description{
+        margin-left: 0;
+     }
  }

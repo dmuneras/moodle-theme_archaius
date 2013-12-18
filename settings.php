@@ -24,7 +24,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_archaius/bgcolor';
     $title = get_string('bgcolor','theme_archaius');
     $description = get_string('bgcolordesc', 'theme_archaius');
-    $default = '#f5f5f5';
+    $default = '#fff';
     $previewconfig = array('selector'=>'#page-header', 'style'=>'header');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
     $settings->add($setting);

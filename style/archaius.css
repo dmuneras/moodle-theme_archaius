@@ -19,7 +19,6 @@ body {
     top: 0;
     background: [[setting:themecolor]];
     color: #fff;
-    height:150px;
     width:100%;
     float: none; 
     margin-bottom: 60px;   
@@ -661,7 +660,46 @@ a.yui3-menu-label-menuvisible {
 
 }
 
+#custommenu.collapsed,
+#mobile-custommenu.collapsed {
+    display: none;
+}
 
+
+#mobile-custommenu{
+    background-color: [[setting:themecolor]];
+    padding: 20px 0px;
+    clear: both;
+    display: none;
+}
+
+#mobile-custommenu a{
+    display: block;
+    text-decoration: none;
+    padding: 5px 5px;
+}
+#mobile-custommenu a:hover{
+    background-color: #697F6F;
+    border-bottom: 1px solid #888;
+    border-top: 1px solid #888;
+}
+
+#page-header div.menu-icon{
+    cursor: pointer;
+    min-width: 32px;
+    height: 32px;
+    float: right;
+    margin:10px;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+}
+#page-header div.menu-icon.active{
+    background: url([[pix:theme|menu_icon]]);    
+}
+#page-header div.menu-icon.deactive{
+    background: url([[pix:theme|menu_icon]]);
+}
 /* -------------------------------------------------------------- 
    Login
 -------------------------------------------------------------- */

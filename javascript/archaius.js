@@ -113,6 +113,34 @@ function organizeRegionCenter(region){
         region.find("div:regex(id,inst)").show();
     }    
 }
+
+function checkOnResize(){
+    var viewPortWidth = $(window).width();
+    var mobileCustommenu = $("#mobile-custommenu");
+    if(viewPortWidth <= 768){
+        $("#custommenu").addClass("collapsed");
+        if(mobileCustommenu.length == 0 ){
+            $("#page-header").append("<nav id='mobile-custommenu' class='collapsed'></nav>"); 
+            $("#page-header .headermenu").wrap("<div id='header-wrap'></div>");
+            $("#header-wrap").append("<div class='menu-icon deactive'></div>");
+            var items = $("#custommenu ul li a").clone(); 
+            $.each(items,function(){
+                $(this).removeClass();
+            });
+            $("#mobile-custommenu").append(items);         
+        }else{
+            $("#page-header .menu-icon").show();
+        }
+
+    }else{
+        $("#custommenu").removeClass("collapsed");
+        mobileCustommenu.hide();
+        $("#page-header .menu-icon").hide();
+        $("#mobile-custommenu").addClass("collapsed");
+    }
+    return viewPortWidth;
+}
+
 /* --------------------------------------------------------------                             
    DOM is ready to execute everything
    The script is in the footer but is just to be sure
@@ -198,7 +226,7 @@ $(function(){
 
     /* --------------------------------------------------------------                             
        event to show and hide blocks
-    ----------------------------------------------------------------*/                             
+    ----------------------------------------------------------------*/                           
 
     //Adding functionality to hide and show blocks
     if(activateHideAndShowBlocks == true){
@@ -256,4 +284,24 @@ $(function(){
             });
         }
     } 
+    checkOnResize();
+    $("#page-header").on("click",".menu-icon",function(){
+        var $this = $(this);
+        if($this.hasClass("deactive")){
+            $this.removeClass("deactive");
+            $this.addClass("active");
+        }else{
+            $this.removeClass("active");
+            $this.addClass("deactive");
+        }
+        $("#mobile-custommenu").slideToggle();
+    });       
+    
 });
+
+$(window).resize(function() {
+  //resize just happened, pixels changed
+  checkOnResize();
+});
+
+

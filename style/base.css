@@ -13,13 +13,6 @@
 
 
 #page {
-    min-height: 700px;
-    -webkit-box-shadow: #888 0 0 5px 0;
-    -moz-box-shadow:  #888 0 0 5px 0;
-    box-shadow: #888 0 0 5px 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     background-color: #fff;
     margin: 20px auto 50px auto;
 }
