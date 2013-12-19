@@ -4,8 +4,17 @@
 @media screen and (max-width: 768px),
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5){
+    
+
+    table{
+      width: 100% !important;
+    }
     .main-content{
 	     width:95% !important;
+    }
+
+    .main-content img{
+      max-width: 100%;
     }
     .navbar,
     #regions-control{
@@ -34,10 +43,12 @@ only screen and (min-device-pixel-ratio : 1.5){
 
     #logo img.sitelogo{
       height: auto;
-      width: 80%
+      max-width: 80%
     }
 
-    /* HEADER PAGE*/
+    /* -------------------------------------------------------------- 
+        Header page CSS
+    -------------------------------------------------------------- */
     #page-header .headermenu{
       clear: both;
       float: left;
@@ -55,16 +66,24 @@ only screen and (min-device-pixel-ratio : 1.5){
 
     #page-header .headermenu img.userpicture,
     #page-header div.logininfo{
-      margin-right: 10%;
+      margin-right: 70px;
     }
     #page-header div.logininfo{
       margin-bottom: 0;
+      padding-bottom: 10px;
     }
 
     #header-wrap{
       background-color: [[setting:themecolor]];
     }
 
+    #header-wrap div.langmenu{
+      display: none;
+    }
+
+    #page-header .adminsearchform{
+      right: 20px;
+    }
     /* -------------------------------------------------------------- 
         Form css
     -------------------------------------------------------------- */
@@ -90,4 +109,37 @@ only screen and (min-device-pixel-ratio : 1.5){
      .loginbox.twocolumns .signuppanel{
         border-top: 1px solid #888;
      }
+
+     /* -------------------------------------------------------------- 
+        Course CSS
+    -------------------------------------------------------------- */
+    .coursebox > .info > .coursename, 
+    .coursebox .content .teachers, 
+    .coursebox .content .courseimage, 
+    .coursebox .content .coursefile{
+      float: none !important;
+      width: 100% !important;
+    }
+
+    .coursebox .content .summary{
+      width: 95% !important;
+      border-left: 0 !important;
+    }
+    /* -------------------------------------------------------------- 
+        Quiz CSS
+    -------------------------------------------------------------- */
+    .questionbankwindow.block,
+    #page-mod-quiz-edit div.quizcontents{
+      float: none;
+      width: 100%;
+    }
+
+    .editq{
+      min-height: 100px;
+      margin-bottom: 20px;
+    }
+
+    
+
+    
  }

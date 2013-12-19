@@ -1,8 +1,14 @@
 /* Base CSS Archaius theme */
 
-#page, div, p, li, input, option, textarea {
+/*#page, 
+div, 
+p, 
+li, 
+input, 
+option, 
+textarea {
     line-height: 1.5em;
-}
+}*/
 
 .main-content{
     max-width: 1200px;

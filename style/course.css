@@ -19,12 +19,8 @@
 .coursebox{
     width:auto;
     margin-bottom:15px;
-    border: 1px dashed #ddd;
+    background-color: #f5f5f5;
     padding:20px;
-}
-
-.coursebox:hover{
-    background-color:whiteSmoke;
 }
 
 .coursebox .content .teachers {

@@ -54,6 +54,8 @@ body {
     max-height:110px;
     cursor: pointer;
     margin: 30px 0px 0px 10px;
+    height: auto;
+    width: auto;
 }
 
 #logo{
@@ -668,9 +670,10 @@ a.yui3-menu-label-menuvisible {
 
 #mobile-custommenu{
     background-color: [[setting:themecolor]];
-    padding: 20px 0px;
+    padding: 10px;
     clear: both;
     display: none;
+    border-top: 1px solid #888;
 }
 
 #mobile-custommenu a{
@@ -691,7 +694,7 @@ a.yui3-menu-label-menuvisible {
     float: right;
     margin:10px;
     position: absolute;
-    right: 0;
+    right: 10px;
     z-index: 999;
 }
 #page-header div.menu-icon.active{
@@ -703,22 +706,6 @@ a.yui3-menu-label-menuvisible {
 /* -------------------------------------------------------------- 
    Login
 -------------------------------------------------------------- */
-
-div.logininfo{
-    margin-bottom: 20px;
-}
-
-div.logininfo a {
-  color: #fff;
-}
-
-div.logininfo a.login {
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-}
 
 .loginbox{
     border: 1px solid #ccc;
@@ -743,11 +730,22 @@ div.logininfo a.login {
     width:auto;
 }
 
-
+.loginbox.twocolumns{
+    border: 0;
+    background-color: #f5f5f5;
+}
 .loginbox.twocolumns .loginpanel{
     border:0;
 }
 
+.loginerrors{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.loginerrors img.icon{
+    float: left;
+}
 /* -------------------------------------------------------------- 
    Quiz 
 -------------------------------------------------------------- */
@@ -894,6 +892,13 @@ button,
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* -------------------------------------------------------------- 
+   Admin css
+-------------------------------------------------------------- */
+#admindeviceselector img{
+    width:100%;
 }
 
 /* -------------------------------------------------------------- 

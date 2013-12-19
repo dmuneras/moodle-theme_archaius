@@ -63,11 +63,15 @@ function customizeMenu(region,regionLocation){
 }
 //Function to expand and shrink the question bank div.   
 function expandBank(questionBank){
-    questionBank.find('.header').first().find(".title")
-    .append("<a id = 'expand-bank' class='shrink"+
+    var viewPortWidth = $(window).width();
+    if(viewPortWidth <= 768){
+        $("#quizcontentsblock").after($('.questionbankwindow.block'));
+    }else{
+        questionBank.find('.header').first().find(".title")
+        .append("<a id = 'expand-bank' class='shrink"+
         " btn-warning btn pretty-link-button'>expand</input>");
-    var page = $('#page-mod-quiz-edit div.quizcontents');
-    $('#expand-bank').on("click",function(){
+        var page = $('#page-mod-quiz-edit div.quizcontents');
+        $('#expand-bank').on("click",function(){
             var $this = $(this);
             if($this.hasClass("shrink")){
                 questionBank.animate({
@@ -76,10 +80,8 @@ function expandBank(questionBank){
                 page.animate({
                         'width' : '50%'
                             },300,null);
-
                 $this.removeClass("shrink");
                 $this.html("shrink");
-
             }else{
                 questionBank.animate({
                         'width' : '30%'
@@ -91,6 +93,8 @@ function expandBank(questionBank){
                 $this.html("expand");
             }
         });
+    }
+ 
 }
 function organizeBlockSummary(){
     var blockSummary = $('#inst2');
@@ -127,28 +131,35 @@ function checkOnResize(){
         $("#custommenu").addClass("collapsed");
         if(mobileCustommenu.length == 0 ){
             pageHeader.append("<nav id='mobile-custommenu' class='collapsed'></nav>"); 
+            if($("#mobile-custommenu").find("div.langmenu").length == 0 &&
+                $("div.langmenu").length > 0){
+                var clonedLangMenu = $("div.langmenu").clone();
+                $("#mobile-custommenu").prepend(clonedLangMenu);
+            }
             pageHeader.find(".headermenu").wrap("<div id='header-wrap'></div>");
             $("#header-wrap").append("<div class='menu-icon deactive'></div>");
-            var items = $("#custommenu ul li a");
-            var clonedItems = items.clone();
-            $.each(items,function(index){
-                var $this = $(this);
-                var hierarchy = getDistanceToParent($this,"custommenu","div");
-                //Coefficient to calculate the hierarchy of 
-                //menu items is 4 (minimum number of elements to the parent element)
-                if(hierarchy > 4){
-                    var hierarchyLevel = (hierarchy - 4) / 2;
-                    var hierarchyLine = "";
-                    for(var i=0;i<hierarchyLevel;i++){
-                        hierarchyLine += "- ";    
+            if($("#custommenu").length > 0){
+                var items = $("#custommenu ul li a");
+                var clonedItems = items.clone();
+                $.each(items,function(index){
+                    var $this = $(this);
+                    var hierarchy = getDistanceToParent($this,"custommenu","div");
+                    //Coefficient to calculate the hierarchy of 
+                    //menu items is 4 (minimum number of elements to the parent element)
+                    if(hierarchy > 4){
+                        var hierarchyLevel = (hierarchy - 4) / 2;
+                        var hierarchyLine = "";
+                        for(var i=0;i<hierarchyLevel;i++){
+                            hierarchyLine += "- ";    
+                        }
+                        var content = hierarchyLine.concat(" ",$this.text());
+                        clonedItems.eq(index).text(content);
                     }
-                    var content = hierarchyLine.concat(" ",$this.text());
-                    clonedItems.eq(index).text(content);
-                }
-                clonedItems.eq(index).removeClass();
-            });
-
-            $("#mobile-custommenu").append(clonedItems);         
+                    clonedItems.eq(index).removeClass();
+                });
+                $("#mobile-custommenu").append(clonedItems);  
+            }
+ 
         }else{
             pageHeader.find(".menu-icon").show();
         }
@@ -156,7 +167,7 @@ function checkOnResize(){
         $("#custommenu").removeClass("collapsed");
         mobileCustommenu.hide();
         pageHeader.find(".menu-icon").hide();
-        $("#mobile-custommenu").addClass("collapsed");
+        mobileCustommenu.addClass("collapsed");
     }
     return viewPortWidth;
 }
@@ -322,7 +333,7 @@ $(function(){
     
 });
 
-if($("#custommenu").length > 0 ){
+if($("#custommenu").length > 0 || $("div.langmenu").length > 0){
     $(window).resize(function() {
         //resize just happened, pixels changed
         checkOnResize();

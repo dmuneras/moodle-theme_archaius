@@ -27,7 +27,11 @@ body{
 
 table {
 	border-collapse: collapse; 
-	border-spacing: 0; 
+	border-spacing: 0;
+}
+
+iframe{
+	max-width: 100%;
 }
 
 caption,
@@ -50,7 +54,8 @@ q {
 a img { 
 	border: none; 
 }
-input,textarea { 
+input,
+textarea { 
 	margin: 0; 
 }
 
