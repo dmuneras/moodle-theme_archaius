@@ -16,9 +16,9 @@ only screen and (min-device-pixel-ratio : 1.5){
         Forcing layout to be one column
     -------------------------------------------------------------- */
     #region-main-box,
-    #page-content #region-main-wrap,
-    #page-content #region-post-box,
-    #page-content #region-main,
+    #region-main-wrap,
+    #region-post-box,
+    #region-main,
     #region-pre,
     #region-post,
     .generalbox{
@@ -50,6 +50,7 @@ only screen and (min-device-pixel-ratio : 1.5){
       right: 0;
       width: 100%;
       padding-top: 10px;
+      min-height: 40px;
     }
 
     #page-header .headermenu img.userpicture,
@@ -75,5 +76,18 @@ only screen and (min-device-pixel-ratio : 1.5){
     #adminsettings .form-item .form-setting,
     #adminsettings .form-item .form-description{
         margin-left: 0;
+     }
+
+    /* -------------------------------------------------------------- 
+        Login CSS
+    -------------------------------------------------------------- */
+     .loginbox.twocolumns .loginpanel,
+     .loginbox.twocolumns .signuppanel{
+        float:none;
+        width: 100%;
+     }
+
+     .loginbox.twocolumns .signuppanel{
+        border-top: 1px solid #888;
      }
  }

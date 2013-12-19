@@ -744,6 +744,9 @@ div.logininfo a.login {
 }
 
 
+.loginbox.twocolumns .loginpanel{
+    border:0;
+}
 
 /* -------------------------------------------------------------- 
    Quiz 
