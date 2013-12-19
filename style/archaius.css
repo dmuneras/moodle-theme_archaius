@@ -682,7 +682,7 @@ a.yui3-menu-label-menuvisible {
     padding: 5px 5px;
 }
 #mobile-custommenu a:hover{
-    background-color: #697F6F;
+    background-color: [[setting:headercolor]];
     border-bottom: 1px solid #888;
     border-top: 1px solid #888;
 }

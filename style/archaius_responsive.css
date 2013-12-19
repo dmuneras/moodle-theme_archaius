@@ -132,6 +132,7 @@ only screen and (min-device-pixel-ratio : 1.5){
     #page-mod-quiz-edit div.quizcontents{
       float: none;
       width: 100%;
+      clear: both;
     }
 
     .editq{
