@@ -25,10 +25,6 @@ body{
 	margin: 0; 
 }
 
-table {
-	border-collapse: collapse; 
-	border-spacing: 0;
-}
 
 iframe{
 	max-width: 100%;
@@ -160,7 +156,7 @@ tt { display: block; margin: 1.5em 0; line-height: 1.5; }
 
 /* Tables
 -------------------------------------------------------------- */
-
+table { border-collapse: collapse; border-spacing: 0; }
 th { border-bottom: 2px solid #ddd; font-weight: bold; }
 th,td { padding: 4px;vertical-align: middle }
 tfoot { font-style: italic; }

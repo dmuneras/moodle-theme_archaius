@@ -9,12 +9,11 @@ $THEME->name = 'archaius';
 
 $THEME->sheets = array('base',
     'archaius_less',
-    'archaius' , 
     'archaius_responsive',
-    'course',
-    'slideshow', 
-    'home',
-    'boilerplate'
+    'course_less',
+    'home_less',
+    'boilerplate',
+    'custom'
 );
 
 $THEME->doctype = 'html5';
