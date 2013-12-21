@@ -1,0 +1,564 @@
+/* -------------------------------------------------------------- 
+   Layout 
+-------------------------------------------------------------- */
+
+//Variables from moodle
+@background_color : ~"[[setting:bgcolor]]";
+@theme_color : ~"[[setting:themecolor]]";
+@header_color : ~"[[setting:headercolor]]";
+@current_color : ~"[[setting:currentcolor]]";
+@pix_arrow_right : ~"[[pix:theme|arrow_right]]";
+@pix_arrow_left : ~"[[pix:theme|arrow_left]]";
+
+//style variables
+@main_text_color : #222;
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+html, 
+body {
+    font: medium "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+    color: @main_text_color; 
+    background: @background_color !important;
+}
+
+a{
+	&:link, &visited{
+		color: #0088CC;
+	}
+	&:hover{
+		text-decoration:underline;
+	}
+}
+h3.page-subtitle{
+    margin: 10px 0px 10px 10px;
+}
+
+span.error{
+    color:red;
+}
+
+/* -------------------------------------------------------------- 
+   Page Header
+-------------------------------------------------------------- */
+
+#page-header {
+    top: 0;
+    background: @theme_color;
+    color: #fff;
+    width:100%;
+    float: none; 
+    margin-bottom: 60px; 
+    .adminsearchform{
+    	right: 7%;
+    	top: 20px;
+    	position: absolute;
+    	display:block;
+	}
+	form input#adminsearchquery{
+		.rounded-corners;  
+    	border: none;
+    	width: 120px;
+    	height: 25px;
+    	padding-left: 18px;
+    	background: white url(~"[[pix:theme|search]]") 4px 8px no-repeat;
+	}  
+	a{
+		&:link, &:visited{
+			color: whitesmoke;
+		}
+	}
+	h1.headermain {
+    	color: #fff;
+    	font-weight: bold;
+    	font-size: 2em;
+    	margin:20px !important;
+	}
+}
+
+.nobackground{
+    background:none !important;
+}
+
+.adminsearchform{
+    display:none;
+}
+
+#logo{
+    width:500px;
+    height:100%;
+    cursor: pointer;
+    img{
+    	max-height:110px;
+    	cursor: pointer;
+    	margin: 30px 0px 0px 10px;
+    	height: auto;
+    	width: auto;
+    }
+}
+.headermenu{
+    position: absolute;
+    top: 58px;
+    right: 6%;
+}
+.select.menulang{
+    height:20px;
+    border:0;
+    padding:0;
+}
+.navbar{
+    margin: 10px 10px 0px 0;
+    padding: 5px;
+    background: whitesmoke;
+    border: 1px solid #ccc;
+    ul[role="navigation"]{
+    	a {
+   			font-weight: bold;
+   			padding: 5px;
+   			color: @main_text_color;
+		}
+    } 
+}
+
+img.icon{
+    display: block;
+}
+div.singlebutton{
+    padding: 5px;
+}
+.navbutton input[type="submit"]{
+    padding: 0px 3px;
+}
+
+/*--------------------END PAGE-HEADER --------------------*/
+
+table{
+	tr{
+    	border: 1px solid #efefef;
+    	padding: 5px;
+	}
+	tr:nth-child(odd) td{
+    	background-color: #f5f5f5;
+	}
+	tr:nth-child(even) td{
+    	background-color: white; 
+	}	
+} 
+
+#page-content{
+    min-height:500px;
+    min-width: 0px;
+}
+
+/* -------------------------------------------------------------- 
+   Blocks 
+-------------------------------------------------------------- */
+.block {
+    border: none;
+    .content {
+    	background:#EDF0EE;
+    	padding: 5px 10px;
+    	border:none;
+    	-moz-border-radius: 0px 0px 5px 5px;
+    	border-radius: 0px 0px 5px 5px;
+    	select {
+    		width: 150px;
+    		background: transparent;
+		}
+		a{ 
+    		color: @main_text_color;
+		}
+	}
+}
+
+/* Blocks inside region main */
+#region-main{
+	div.header-tab {
+    	background: none repeat scroll 0 0  @theme_color;
+    	color:whiteSmoke;
+    	line-height: 1;
+    	border-bottom: 1px solid @theme_color;
+    	min-height:20px;
+  		.rounded-corners;
+    	-moz-box-shadow: 0px 2px 3px 0px #888;
+    	-webkit-box-shadow: 0px 2px 3px 0px #888;
+    	box-shadow: 0px 2px 3px 0px #888;
+	}
+	div.header-tab .commands{
+    	float: right;
+    	margin-top: -30px;
+    	margin-right: 10px;
+	}
+	.block div.content {
+    	box-shadow: 0px 2px 3px 0px #888;
+    	width: 90%;
+    	margin: 0 auto;
+	}
+	div.header{
+    	display: none;
+	}
+
+	
+} 
+
+div.region-content{
+	div.header-tab {
+    	background: none repeat scroll 0 0 @header_color;
+    	line-height: 1;
+    	border-bottom: 1px solid whiteSmoke;
+    	cursor: pointer !important;
+    	min-height:20px;
+    	color: whiteSmoke;
+    }
+    .header-tab .title {
+    	text-align:center;
+	}
+	.header-tab h2{
+    	font-size: small;
+    	padding: 5px;
+	}
+	div.header-tab h2{ 
+    	cursor: pointer !important;
+	}
+}
+
+#region-post,
+#region-pre{
+	div.region-content div.header-tab:first-child{
+		.rounded-corners
+	}
+	div.region-content .header h2{
+    	display: none;
+	}
+	div.region-content div.current{
+    	background-color: @current_color;
+	}
+	div.region-content div.current h2{
+    	color: whiteSmoke;
+	}
+}
+
+#region-post-box #region-pre , 
+#region-post-box #region-post{
+    display:none;
+}
+
+#region-pre div.region-content .header,
+#region-post div.region-content .header{
+    background-color: #EDF0EE;
+    height: 10px;
+}
+
+#tabs-pre .com,
+#tabs-post .com {
+    text-align: center;
+    background-color: whiteSmoke;
+    border: 1px solid #ddd;
+}
+
+#region-center-pre,
+#reion-center-post{
+    clear:both;
+    margin-bottom: 20px;
+}
+
+#regions-control{
+    position: fixed;
+    width: 100%;
+}
+.move{
+    background-color: #fff;
+    cursor: pointer;
+    height: 40px;
+    width: 30px;
+    margin: 0px 10px 0 10px;
+}
+
+#move-region-right{
+    background: -10px url(@pix_arrow_right);
+    float: right;
+}
+#move-region-right.hidden-region{
+     background: -22px url(@pix_arrow_left) !important; 
+}
+
+#move-region{
+    background: -22px url(@pix_arrow_left);
+    float: left; 
+}
+#move-region.hidden-region{
+    background: -10px url(@pix_arrow_right) !important;   
+}
+
+.block_js_expansion .block_tree {
+    overflow: auto;
+}
+
+.block_recent_activity{
+	h3.main,
+	h2.main {
+    	font-size: 1em;
+    	margin: 0.5em 0;
+	}
+} 
+
+.block_calendar_month{
+	.content{
+		h3.eventskey {
+    		font-size: 1em;
+    		margin: 0.25em 0;
+		}
+	} 	
+} 
+
+.block_action{
+	border:none;
+    background-color: whiteSmoke;
+	img {
+   		border:none;
+   		&.block-hider-hide{
+   			display:none;	
+   		}
+	}	
+}
+
+.minicalendar{
+	td,th{
+		border-color: #f3f8ed;
+	}
+} 
+
+td.eventskey {
+    padding: 0 5px 3px;
+}
+
+.block_comments{
+	textarea {
+    	width: 95%;
+    	margin-bottom: 1em;
+	}
+	.comment-area a {
+    	background: #fff;
+    	padding: 5px;
+    	border: 1px solid #e5e5e5;
+	}
+} 
+
+.comment-delete-confirm {
+    background: #fff;
+}
+
+
+.block_messages{
+	.content {
+    	font-size: 0.95em;
+	}
+	.footer {
+    	text-align: center;
+	}	
+} 
+
+/* -------------------------------------------------------------- 
+   Forum 
+-------------------------------------------------------------- */
+
+#searchforums{
+    margin-left: 10px;
+}
+
+#region-main .forumpost{
+	border:none;	
+	div.header{
+    	background: #efefef !important;
+    	margin-bottom: 5px;
+    	box-shadow: 1px 1px 2px 0px #888;
+    	display: block;
+	}
+} 
+
+.path-mod-forum{
+	.forumheaderlist{
+    	border: 1px solid #ccc;
+	}
+	.forumheaderlist td{
+    	border:none;
+	}
+	.forumheaderlist .replies {
+    	text-align: center;
+	}
+	.forumheaderlist .replies .read {
+    	background: #fcffd8;
+    	padding: 2px;
+	}
+	.unread .content {
+    	background: #f3f8ed;
+	}
+} 
+
+.forumpost{
+    border: 1px dashed #ddd;
+    padding: 10px 10px;
+    .starter {
+    	background: #efefef;
+	}
+	.subject {
+    	font-size: 1.2em;
+    	color: #222;
+    	margin-left: 10px;
+	}
+	.author {
+    	font-style: italic;
+    	color: #555;
+    	font-size: 0.95em;
+    	margin-left: 10px;
+
+    	a{
+    		&:link, &:visited{
+    			text-decoration: underline;	
+    		}
+    		&:hover{
+    			text-decoration: none;
+    		}
+    	}
+	}
+	.no-overflow,
+	.options {
+    	border: 1px solid #ccc;
+    	padding: 5px 10px;
+	}
+	.content .posting {
+    	padding: 5px 10px;
+	}
+}
+
+.forumaddnew,
+.forumnodiscuss {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.path-course-view{
+	.headingblock {
+    	text-align:center;
+	}
+	.section .forum .unread {
+    	margin-left: 20px;
+	}
+	.section .forum .unread{
+		a{
+			&:visited,&:link{
+				    color: #888;
+    				background: #fcffd8;
+    				font-size: small;				
+			}
+		}
+	}
+} 
+
+
+.generalbox {
+    border: none;
+}
+#page-mod-forum-search{
+	.generalbox {
+    	width: 85%;
+	}
+	.searchbox {
+    	margin: 25px auto;
+    	.submit{
+			padding-top: 20px;
+    		text-align: center;    		
+    	}
+	}	
+} 
+
+/* -------------------------------------------------------------- 
+   Page Footer 
+-------------------------------------------------------------- */
+
+#page-footer {
+    padding-top: 10px;
+    background: @theme_color;
+    color: #fff;
+    min-height: 150px;
+    width: 100%;
+    a{
+    	color: white;
+    }
+    .logininfo{  
+    	margin: 10px auto 15px auto;
+	}
+	.sitelink{
+    	clear:both;
+	}
+	.sitelink img {
+    	width:auto !important;
+    	height: auto !important;
+	}
+	#page-footer-bottom {
+    	text-align: center;
+    	margin: 10px 20%;
+	}
+} 
+
+/* -------------------------------------------------------------- 
+   Assigment 
+-------------------------------------------------------------- */
+
+#page-mod-assignment-view{
+	.singlebutton {
+    	margin: 15px;
+	}
+	#online {
+    	margin: 10px auto;
+    	width: 90%;
+	}
+	#online fieldset .fitem {
+    	width: 100%;
+    	.fitemtitle {
+    		width: 15%;
+		}
+	}
+	
+} 
+
+.performanceinfo span {
+    display: block;
+}
+
+.validators {
+    margin-top: 40px;
+    padding-top: 5px;
+    border-top: 1px dotted gray;
+    ul {
+    	margin: 0px;
+    	padding: 0px;
+    	list-style-type: none;
+    	li {
+    		display: inline;
+    		margin-right: 10px;
+    		margin-left: 10px;
+		}
+	}
+}
+
+.myclear {
+	clear: both;
+}
+
+
+
+
+
+
+
