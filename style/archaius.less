@@ -1,4 +1,3 @@
-@import "custom.css";
 /* -------------------------------------------------------------- 
    Layout 
 -------------------------------------------------------------- */
@@ -16,13 +15,20 @@
 //style variables
 @main_text_color : #222;
 
-.rounded-corners (@radius: 5px) {
+.rounded-corners (@radius:5px) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
   -ms-border-radius: @radius;
   -o-border-radius: @radius;
   border-radius: @radius;
 }
+
+.box-shadow{
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);    
+}
+
 
 @-ms-viewport {
   width: device-width;
@@ -210,9 +216,7 @@ table{
     	border-bottom: 1px solid @theme_color;
     	min-height:20px;
   		.rounded-corners;
-    	-moz-box-shadow: 0px 2px 3px 0px #888;
-    	-webkit-box-shadow: 0px 2px 3px 0px #888;
-    	box-shadow: 0px 2px 3px 0px #888;
+        .box-shadow;
 	}
 	div.header-tab .commands{
     	float: right;
@@ -220,7 +224,6 @@ table{
     	margin-right: 10px;
 	}
 	.block div.content {
-    	box-shadow: 0px 2px 3px 0px #888;
     	width: 90%;
     	margin: 0 auto;
 	}
@@ -255,7 +258,7 @@ div.region-content{
 #region-post,
 #region-pre{
 	div.region-content div.header-tab:first-child{
-		.rounded-corners
+		.rounded-corners(5px 5px 0 0);
 	}
 	div.region-content .header h2{
     	display: none;
@@ -790,12 +793,6 @@ div.calendar-controls{
 /* -------------------------------------------------------------- 
    From bootstrap 
 -------------------------------------------------------------- */
-
-.box-shadow{
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);    
-}
 
 .background-image(@initial_color: #444444, @final_color:#222222){
     background-image: -moz-linear-gradient(top, @initial_color, @final_color);

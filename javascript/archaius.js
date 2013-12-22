@@ -128,6 +128,9 @@ function checkOnResize(){
     var mobileCustommenu = $("#mobile-custommenu");
     var pageHeader = $("#page-header");
     if(viewPortWidth <= 768){
+        if(mediaQueries){
+            $("html").addClass("no-media-queries");
+        }
         $("#custommenu").addClass("collapsed");
         if(mobileCustommenu.length == 0 ){
             pageHeader.append("<nav id='mobile-custommenu' class='collapsed'></nav>"); 
@@ -164,6 +167,9 @@ function checkOnResize(){
             pageHeader.find(".menu-icon").show();
         }
     }else{
+        if(mediaQueries){
+            $("html").removeClass("no-media-queries");
+        }
         $("#custommenu").removeClass("collapsed");
         mobileCustommenu.hide();
         pageHeader.find(".menu-icon").hide();
@@ -172,12 +178,21 @@ function checkOnResize(){
     return viewPortWidth;
 }
 
+
+
+if(Modernizr.mq('only all') == false){
+    var mediaQueries = false;
+}else{
+    var mediaQueries = true;
+}
 /* --------------------------------------------------------------                             
    DOM is ready to execute everything
    The script is in the footer but is just to be sure
 --------------------------------------------------------------*/
 
-$(function(){
+//I am using !function(){}(); because (function()()) has problem with
+// Moodle javascript compression.
+(function(window,$, undefined){
 
         var regionPre = $('#region-pre');
         var regionPost = $('#region-post');
@@ -206,7 +221,7 @@ $(function(){
         //remove search button                                   
         $("#page-header form.adminsearchform input:regex(type,submit)").remove(); 
         //add placeholder to search input 
-        $("#adminsearchquery").attr("placeholder",searchTranslation); 
+        $("#adminsearchquery").attr("placeholder", searchTranslation); 
         $('#region-post-box').prepend($('.blogsearchform'));
 
     /* --------------------------------------------------------------                               
@@ -331,7 +346,7 @@ $(function(){
         $("#mobile-custommenu").slideToggle();
     });       
     
-});
+}(this,jQuery));
 
 if($("#custommenu").length > 0 || $("div.langmenu").length > 0){
     $(window).resize(function() {

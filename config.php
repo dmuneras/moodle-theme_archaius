@@ -9,7 +9,7 @@ $THEME->name = 'archaius';
 
 $THEME->sheets = array('base',
     'archaius_less',
-    'archaius_responsive',
+    'archaius_responsive_less',
     'course_less',
     'home_less',
     'boilerplate',
@@ -132,10 +132,14 @@ $THEME->layouts = array(
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
-$THEME->javascripts_footer = array('jquery-1.10.2.min','responsiveslideuglify',
-    'archaius','archaius_home');
 
+$THEME->javascripts_footer = array('jquery-1.10.2.min',
+    'modernizr',
+    'responsiveslideuglify',
+    'archaius'
+);
 
+//$THEME->parents_exclude_javascripts = array("dock");
 $THEME->enable_dock = false;
 
 $THEME->editor_sheets = array('editor');

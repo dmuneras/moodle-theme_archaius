@@ -76,3 +76,4 @@ $string["activateSlideshowdesc"] = 'You can activate or desactivate the frontpag
 //Form exceptions
 $string["positionException"] = "Position is required and it must be higher than 0";
 $string["descriptionEditorException"] = "We don't want an empty slide.";
+

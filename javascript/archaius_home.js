@@ -18,7 +18,7 @@ function startSlideShow(){
     }
 }
 
-$(function(){
+(function(window, $, undefined){
 	if(activateSlideshow == true){
 		startSlideShow();
 		$("#toggle-admin-menu").on("click",function(){
@@ -50,4 +50,4 @@ $(function(){
 			}
 		});
 	}
-});
+}(this,jQuery));

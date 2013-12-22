@@ -28,6 +28,7 @@
     if(! isset($hassidecenterpost)){
         $hassidecenterpost = $PAGE->blocks->region_has_content('side-center-post', $OUTPUT);   
     }
+    $PAGE->requires->js("/theme/archaius/javascript/archaius_home.js");
 ?>
 <div id="regions-control"></div>
 <div id="page" class="main-content">
