@@ -128,7 +128,7 @@ function checkOnResize(){
     var mobileCustommenu = $("#mobile-custommenu");
     var pageHeader = $("#page-header");
     if(viewPortWidth <= 768){
-        if(mediaQueries){
+        if(mediaQueries == false){
             $("html").addClass("no-media-queries");
         }
         $("#custommenu").addClass("collapsed");
@@ -167,7 +167,7 @@ function checkOnResize(){
             pageHeader.find(".menu-icon").show();
         }
     }else{
-        if(mediaQueries){
+        if(mediaQueries == false){
             $("html").removeClass("no-media-queries");
         }
         $("#custommenu").removeClass("collapsed");
