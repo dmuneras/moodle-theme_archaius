@@ -29,3 +29,6 @@ Better slideshow: possibility to activate or deactivate it, side-center-[pre|pos
 
 05.12.2013
 Working on moodle 26 version and general improvements related with javascript.
+
+22.12.2013
+Writing LESS and reviewing CSS and Javascript as well as HTML5 fallback for IE.

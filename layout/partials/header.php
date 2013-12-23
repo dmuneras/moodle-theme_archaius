@@ -35,7 +35,7 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <!--[if lt IE 9]>
-        <script src="<?php echo $CFG->wwwroot ?>/theme/archaius/javascript/html5shiv.min.js" type="text/javascript"></script>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
     <script type = "text/javascript">
         //<![CDATA[
