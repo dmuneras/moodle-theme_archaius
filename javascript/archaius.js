@@ -333,7 +333,10 @@ if(Modernizr.mq('only all') == false){
             });
         }
     } 
-    checkOnResize();
+    var windowSize = checkOnResize();
+    if(windowSize >= 768 ){
+        $("#custommenu").removeClass("collapsed");
+    }
     $("#page-header").on("click",".menu-icon",function(){
         var $this = $(this);
         if($this.hasClass("deactive")){

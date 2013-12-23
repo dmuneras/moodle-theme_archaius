@@ -11,7 +11,6 @@
 }
 html,
 body {
-  font: medium "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
   color: #222222;
   background: [[setting:bgcolor]] !important;
 }
@@ -540,7 +539,7 @@ td.eventskey {
   width: 90%;
   margin: 0 auto;
 }
-#custommenu .collapsed {
+#custommenu.collapsed {
   display: none;
 }
 .arrow {
@@ -582,7 +581,7 @@ td.eventskey {
   border-bottom: 1px solid #888;
   border-top: 1px solid #888;
 }
-#mobile-custommenu .collapsed {
+#mobile-custommenu.collapsed {
   display: none;
 }
 /* -------------------------------------------------------------- 

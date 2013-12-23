@@ -7,7 +7,7 @@
 
 $THEME->name = 'archaius';
 
-$THEME->sheets = array('base',
+$THEME->sheets = array('base_less',
     'archaius_less',
     'archaius_responsive_less',
     'course_less',
