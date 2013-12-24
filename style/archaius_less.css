@@ -215,6 +215,7 @@ div.region-content div.header-tab h2 {
   cursor: pointer !important;
 }
 #region-post div.region-content div.header-tab:first-child,
+#report-region-pre div.region-content div.header-tab:first-child,
 #region-pre div.region-content div.header-tab:first-child {
   -webkit-border-radius: 5px 5px 0 0;
   -moz-border-radius: 5px 5px 0 0;
@@ -223,21 +224,26 @@ div.region-content div.header-tab h2 {
   border-radius: 5px 5px 0 0;
 }
 #region-post div.region-content .header h2,
+#report-region-pre div.region-content .header h2,
 #region-pre div.region-content .header h2 {
   display: none;
 }
 #region-post div.region-content div.current,
+#report-region-pre div.region-content div.current,
 #region-pre div.region-content div.current {
   background-color: [[setting:currentcolor]];
 }
 #region-post div.region-content div.current h2,
+#report-region-pre div.region-content div.current h2,
 #region-pre div.region-content div.current h2 {
   color: whiteSmoke;
 }
+#report-region-pre,
 #region-post-box #region-pre,
 #region-post-box #region-post {
   display: none;
 }
+#report-region-pre div.region-content .header,
 #region-pre div.region-content .header,
 #region-post div.region-content .header {
   background-color: #EDF0EE;
@@ -257,6 +263,7 @@ div.region-content div.header-tab h2 {
 #regions-control {
   position: fixed;
   width: 100%;
+  z-index: 999;
 }
 .move {
   background-color: #fff;

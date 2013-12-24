@@ -255,6 +255,7 @@ div.region-content{
 }
 
 #region-post,
+#report-region-pre,
 #region-pre{
 	div.region-content div.header-tab:first-child{
 		.rounded-corners(5px 5px 0 0);
@@ -269,17 +270,20 @@ div.region-content{
     	color: whiteSmoke;
 	}
 }
-
+#report-region-pre,
 #region-post-box #region-pre , 
 #region-post-box #region-post{
     display:none;
 }
 
-#region-pre div.region-content .header,
-#region-post div.region-content .header{
-    background-color: #EDF0EE;
-    height: 10px;
-}
+#report-region-pre,
+#region-pre,
+#region-post{
+    div.region-content .header{
+        background-color: #EDF0EE;
+        height: 10px;
+    }
+} 
 
 #tabs-pre .com,
 #tabs-post .com {
@@ -297,6 +301,7 @@ div.region-content{
 #regions-control{
     position: fixed;
     width: 100%;
+    z-index:999;
 }
 .move{
     background-color: #fff;

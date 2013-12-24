@@ -44,14 +44,14 @@
 /* ----------------------------------------
  Main page course styles        
 -----------------------------------------*/
-.topics .topic-tab {
+.path-course-view .topics .topic-tab {
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   padding-top: 10px;
   cursor: pointer;
   height: 40px;
 }
-.topics .topic-tab.current {
+.path-course-view .topics .topic-tab.current {
   background-color: whitesmoke;
   border: 1px solid #ccc;
 }
@@ -81,6 +81,9 @@ h2.headingblock {
 }
 .path-course-view .course-content .activity.label.modtype_label {
   margin: 5px auto;
+}
+.path-course-view .course-content ul.topics li.section .content {
+  margin: 0 10px;
 }
 #page-course-view-weeks .weekdates {
   font-size: 1em;

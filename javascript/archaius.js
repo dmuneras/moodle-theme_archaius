@@ -211,6 +211,9 @@ if(Modernizr.mq('only all') == false){
         if(regionPost.length != 0 ){
             customizeMenu(regionPost,"post");
         }
+        if($("#report-region-pre").length > 0){
+            customizeMenu($("#report-region-pre"),"pre");   
+        }
 
         var questionBank = $(".questionbankwindow.block");
         if(questionBank.length > 0 && !(questionBank.hasClass("collapsed"))){
@@ -284,7 +287,38 @@ if(Modernizr.mq('only all') == false){
             Thats way I have to use '-=' and '+=' to move the regions.
         */
         var regionMain = $("#region-main");
-        if(regionPre.length > 0){
+        var reportRegionPre = $("#report-region-pre");
+        if(reportRegionPre.length > 0){
+            var reportRegionContent =  
+                $("#report-main-content").find(".region-content");
+            $("#regions-control").append("<div id='move-region' class='move'></div>");
+            $("#move-region").on("click", { region : reportRegionPre ,
+            main : reportRegionContent },function(event){
+                var data = event.data;
+                if(!($(this).hasClass("hidden-region"))){
+                    $("#move-region").addClass("hidden-region");
+                    data.region.animate({
+                        'margin-left' : '-=200px'
+                            },400,function(){
+                                $(this).hide();
+                            });
+                    data.main.animate({
+                        'margin-left' : '-=200px'
+                            },400,null);
+                }else{
+                    $("#move-region").removeClass("hidden-region");
+                    data.region.animate({
+                        'margin-left' : '+=200px'
+                            },400, function(){
+                                $(this).show();
+                            });
+                    data.main.animate({
+                        'margin-left' : '+=200px'
+                            },400,null);
+                    }
+            });
+        }
+        if(regionPre.length > 0 ){
             $("#regions-control").append("<div id='move-region' class='move'></div>");
             $("#move-region").on("click", { region : regionPre,
 			main : regionMain },function(event){

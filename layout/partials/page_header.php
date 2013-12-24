@@ -17,12 +17,14 @@
   <?php if ($hasheading) { ?>
   <?php if (!empty($PAGE->theme->settings->logo)) { ?>
        <?php $logourl = $PAGE->theme->settings->logo; ?>
-       <div id="logo" class = "nobackground" onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '">
-            <img class="sitelogo" src="<?php echo $logourl;?>" alt="Custom logo here" />
+       <div id="logo" class = "nobackground">
+            <img class="sitelogo" src="<?php echo $logourl;?>" alt="Custom logo here" 
+              onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '"/>
        </div>
   <?php } else { ?>
-    <div id="logo"  onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '">
-        <img class="sitelogo" src="<?php echo $OUTPUT->pix_url('logo','theme')?>" alt="Custom logo here" />
+    <div id="logo">
+        <img class="sitelogo" src="<?php echo $OUTPUT->pix_url('logo','theme')?>" alt="Custom logo here"
+          onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '" />
     </div>
   <?php } ?>
   <div class="headermenu"><?php

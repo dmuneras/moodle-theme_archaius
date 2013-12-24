@@ -4,8 +4,44 @@
 @media screen and (max-width: 768px),
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5){
+
+    input[type=text], 
+    input[type=password], 
+    textarea{
+      width:95%;
+    }
     table{
-      width: 100% !important;
+      max-width: 100%;
+    }
+    table.generaltable{
+      width:95%;
+      thead, tbody, th, td, tr { 
+        display: block; 
+      }
+      thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr { 
+        border: 1px solid #ccc; 
+      }
+      td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+      }
+      td:before { 
+        /*Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+      }
     }
     .main-content{
 	     width:95% !important;

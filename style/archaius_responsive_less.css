@@ -2,8 +2,47 @@
    Small screen
 -------------------------------------------------------------- */
 @media screen and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  input[type=text],
+  input[type=password],
+  textarea {
+    width: 95%;
+  }
   table {
-    width: 100% !important;
+    max-width: 100%;
+  }
+  table.generaltable {
+    width: 95%;
+  }
+  table.generaltable thead,
+  table.generaltable tbody,
+  table.generaltable th,
+  table.generaltable td,
+  table.generaltable tr {
+    display: block;
+  }
+  table.generaltable thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  table.generaltable tr {
+    border: 1px solid #ccc;
+  }
+  table.generaltable td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+  table.generaltable td:before {
+    /*Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
   }
   .main-content {
     width: 95% !important;
@@ -16,8 +55,8 @@
     display: none;
   }
   /* -------------------------------------------------------------- 
-          Forcing layout to be one column
-      -------------------------------------------------------------- */
+        Forcing layout to be one column
+    -------------------------------------------------------------- */
   #region-main-box,
   #region-main-wrap,
   #region-post-box,
@@ -39,8 +78,8 @@
     max-width: 80%;
   }
   /* -------------------------------------------------------------- 
-          Header page CSS
-      -------------------------------------------------------------- */
+        Header page CSS
+    -------------------------------------------------------------- */
   #page-header .headermenu {
     clear: both;
     float: left;
@@ -73,8 +112,8 @@
     right: 20px;
   }
   /* -------------------------------------------------------------- 
-          Form css
-      -------------------------------------------------------------- */
+        Form css
+    -------------------------------------------------------------- */
   #adminsettings .form-item .form-label {
     width: 100%;
     float: none;
@@ -85,8 +124,8 @@
     margin-left: 0;
   }
   /* -------------------------------------------------------------- 
-          Login CSS
-      -------------------------------------------------------------- */
+        Login CSS
+    -------------------------------------------------------------- */
   .loginbox.twocolumns .loginpanel,
   .loginbox.twocolumns .signuppanel {
     float: none;
@@ -96,8 +135,8 @@
     border-top: 1px solid #888;
   }
   /* -------------------------------------------------------------- 
-          Course CSS
-      -------------------------------------------------------------- */
+        Course CSS
+    -------------------------------------------------------------- */
   .coursebox > .info > .coursename,
   .coursebox .content .teachers,
   .coursebox .content .courseimage,
@@ -110,8 +149,8 @@
     border-left: 0 !important;
   }
   /* -------------------------------------------------------------- 
-          Quiz CSS
-      -------------------------------------------------------------- */
+        Quiz CSS
+    -------------------------------------------------------------- */
   .questionbankwindow.block,
   #page-mod-quiz-edit div.quizcontents {
     float: none;
