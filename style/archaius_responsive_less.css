@@ -1,6 +1,12 @@
 /* -------------------------------------------------------------- 
    Small screen
 -------------------------------------------------------------- */
+/* -------------------------------------------------------------- 
+        Min width for ipads is 768px, a lower screen size makes
+        the three column layout looks bad, thats why a screen with 
+        max-width of 768px is gonna be shown with one colum 
+        layout
+-------------------------------------------------------------- */
 @media screen and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   input[type=text],
   input[type=password],
@@ -30,14 +36,17 @@
   }
   table.generaltable td {
     /* Behave  like a "row" */
+  
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
   }
   table.generaltable td:before {
     /*Now like a table header */
+  
     position: absolute;
     /* Top/left values mimic padding */
+  
     top: 6px;
     left: 6px;
     width: 45%;
@@ -55,8 +64,8 @@
     display: none;
   }
   /* -------------------------------------------------------------- 
-        Forcing layout to be one column
-    -------------------------------------------------------------- */
+          Forcing layout to be one column
+      -------------------------------------------------------------- */
   #region-main-box,
   #region-main-wrap,
   #region-post-box,
@@ -78,8 +87,8 @@
     max-width: 80%;
   }
   /* -------------------------------------------------------------- 
-        Header page CSS
-    -------------------------------------------------------------- */
+          Header page CSS
+      -------------------------------------------------------------- */
   #page-header .headermenu {
     clear: both;
     float: left;
@@ -95,25 +104,26 @@
     min-height: 40px;
   }
   #page-header .headermenu img.userpicture,
-  #page-header div.logininfo {
+  #page-header div.logininfo,
+  #page-header div.langmenu {
     margin-right: 70px;
+  }
+  #page-header div.langmenu {
+    padding-bottom: 10px;
   }
   #page-header div.logininfo {
     margin-bottom: 0;
     padding-bottom: 10px;
   }
-  #header-wrap {
+  #page-header #header-wrap {
     background-color: [[setting:themecolor]];
-  }
-  #header-wrap div.langmenu {
-    display: none;
   }
   #page-header .adminsearchform {
     right: 20px;
   }
   /* -------------------------------------------------------------- 
-        Form css
-    -------------------------------------------------------------- */
+          Form css
+      -------------------------------------------------------------- */
   #adminsettings .form-item .form-label {
     width: 100%;
     float: none;
@@ -124,8 +134,8 @@
     margin-left: 0;
   }
   /* -------------------------------------------------------------- 
-        Login CSS
-    -------------------------------------------------------------- */
+          Login CSS
+      -------------------------------------------------------------- */
   .loginbox.twocolumns .loginpanel,
   .loginbox.twocolumns .signuppanel {
     float: none;
@@ -135,8 +145,8 @@
     border-top: 1px solid #888;
   }
   /* -------------------------------------------------------------- 
-        Course CSS
-    -------------------------------------------------------------- */
+          Course CSS
+      -------------------------------------------------------------- */
   .coursebox > .info > .coursename,
   .coursebox .content .teachers,
   .coursebox .content .courseimage,
@@ -149,8 +159,8 @@
     border-left: 0 !important;
   }
   /* -------------------------------------------------------------- 
-        Quiz CSS
-    -------------------------------------------------------------- */
+          Quiz CSS
+      -------------------------------------------------------------- */
   .questionbankwindow.block,
   #page-mod-quiz-edit div.quizcontents {
     float: none;
@@ -161,12 +171,91 @@
     min-height: 100px;
     margin-bottom: 20px;
   }
+  .page-content.report-page {
+    overflow-x: visible;
+  }
+  .page-content.report-page .main-report-content {
+    width: 100%;
+    float: none;
+  }
+  .page-content.report-page #report-region-pre {
+    width: 100%;
+    float: none;
+  }
+  .page-content.report-page table#user-grades {
+    width: 100%;
+  }
 }
-/* -------------------------------------------------------------- 
-    For ie 8 and ie 7 CSS
--------------------------------------------------------------- */
+html.no-media-queries {
+  /* -------------------------------------------------------------- 
+        Forcing layout to be one column
+    -------------------------------------------------------------- */
+
+  /* -------------------------------------------------------------- 
+        Header page CSS
+    -------------------------------------------------------------- */
+
+  /* -------------------------------------------------------------- 
+        Form css
+    -------------------------------------------------------------- */
+
+  /* -------------------------------------------------------------- 
+        Login CSS
+    -------------------------------------------------------------- */
+
+  /* -------------------------------------------------------------- 
+        Course CSS
+    -------------------------------------------------------------- */
+
+  /* -------------------------------------------------------------- 
+        Quiz CSS
+    -------------------------------------------------------------- */
+
+}
+html.no-media-queries input[type=text],
+html.no-media-queries input[type=password],
+html.no-media-queries textarea {
+  width: 95%;
+}
 html.no-media-queries table {
-  width: 100% !important;
+  max-width: 100%;
+}
+html.no-media-queries table.generaltable {
+  width: 95%;
+}
+html.no-media-queries table.generaltable thead,
+html.no-media-queries table.generaltable tbody,
+html.no-media-queries table.generaltable th,
+html.no-media-queries table.generaltable td,
+html.no-media-queries table.generaltable tr {
+  display: block;
+}
+html.no-media-queries table.generaltable thead tr {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+html.no-media-queries table.generaltable tr {
+  border: 1px solid #ccc;
+}
+html.no-media-queries table.generaltable td {
+  /* Behave  like a "row" */
+
+  border: none;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+html.no-media-queries table.generaltable td:before {
+  /*Now like a table header */
+
+  position: absolute;
+  /* Top/left values mimic padding */
+
+  top: 6px;
+  left: 6px;
+  width: 45%;
+  padding-right: 10px;
+  white-space: nowrap;
 }
 html.no-media-queries .main-content {
   width: 95% !important;
@@ -213,18 +302,19 @@ html.no-media-queries #page-header .headermenu {
   min-height: 40px;
 }
 html.no-media-queries #page-header .headermenu img.userpicture,
-html.no-media-queries #page-header div.logininfo {
+html.no-media-queries #page-header div.logininfo,
+html.no-media-queries #page-header div.langmenu {
   margin-right: 70px;
+}
+html.no-media-queries #page-header div.langmenu {
+  padding-bottom: 10px;
 }
 html.no-media-queries #page-header div.logininfo {
   margin-bottom: 0;
   padding-bottom: 10px;
 }
-html.no-media-queries #header-wrap {
+html.no-media-queries #page-header #header-wrap {
   background-color: [[setting:themecolor]];
-}
-html.no-media-queries #header-wrap div.langmenu {
-  display: none;
 }
 html.no-media-queries #page-header .adminsearchform {
   right: 20px;
@@ -266,4 +356,18 @@ html.no-media-queries #page-mod-quiz-edit div.quizcontents {
 html.no-media-queries .editq {
   min-height: 100px;
   margin-bottom: 20px;
+}
+html.no-media-queries .page-content.report-page {
+  overflow-x: visible;
+}
+html.no-media-queries .page-content.report-page .main-report-content {
+  width: 100%;
+  float: none;
+}
+html.no-media-queries .page-content.report-page #report-region-pre {
+  width: 100%;
+  float: none;
+}
+html.no-media-queries .page-content.report-page table#user-grades {
+  width: 100%;
 }

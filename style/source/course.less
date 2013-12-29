@@ -83,6 +83,9 @@ h2.headingblock {
             .side {
                 padding: 5px 0;
             }
+            ul li{
+                clear:both;
+            }
         } 
         .main {
             background:#f3f8ed;
@@ -106,27 +109,28 @@ h2.headingblock {
     padding: 2px;
 }
 
-.triangle {
+
+.base-triangle(@top: 5px solid transparent,@left: 7px solid #999,@bottom: 5px solid transparent,@right:0){
     width: 0;
     height: 0;
-    border-top: 5px solid transparent;
-    border-left: 7px solid #999;
-    border-bottom: 5px solid transparent;
+    border-top: @top;
+    border-left: @left;
+    border-bottom: @bottom;
+    border-right:@right;
+    float: left;  
+}
+
+.triangle {
+    .base-triangle;
     margin-right: 5px;
-    float: left;
     margin-top: 5px;
     margin-left:5px;
 
 }
 
 .current .triangle {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 7px solid #999;
+    .base-triangle(7px solid #999,5px solid transparent,0,5px solid transparent);
     margin-right: 5px;
-    float: left;
     margin-top: 8px;
 }
 

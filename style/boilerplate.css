@@ -96,19 +96,7 @@ body {
 
 
 /* Default fonts and colors. */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-dl,
-input,
-textarea { 
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,input,textarea { 
 	font-family: Helvetica, Arial, sans-serif; 
 }
 

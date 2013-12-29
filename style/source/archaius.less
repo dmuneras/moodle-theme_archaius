@@ -14,6 +14,7 @@
 
 //style variables
 @main_text_color : #222;
+@box_color: #f5f5f5;
 
 .rounded-corners (@radius:5px) {
   -webkit-border-radius: @radius;
@@ -23,12 +24,11 @@
   border-radius: @radius;
 }
 
-.box-shadow{
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);    
+.box-shadow(@shadow: ~"inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)"){
+    -webkit-box-shadow:  @shadow;
+    -moz-box-shadow: @shadow;
+    box-shadow: @shadow;
 }
-
 
 @-ms-viewport {
   width: device-width;
@@ -173,7 +173,7 @@ table{
     	padding: 5px;
 	}
 	tr:nth-child(odd) td{
-    	background-color: #f5f5f5;
+    	background-color: @box_color;
 	}
 	tr:nth-child(even) td{
     	background-color: white; 
@@ -185,17 +185,34 @@ table{
     min-width: 0px;
 }
 
+.page-content{
+    &.report-page{
+        overflow-x:hidden;
+    }
+}
+
+.report-page{
+    .main-report-content{
+        width:75%;
+        float:right;
+        margin-bottom: 20px;
+    }
+    #report-region-pre{
+        width:23%;
+        float:left;
+    }
+}
+
 /* -------------------------------------------------------------- 
    Blocks 
 -------------------------------------------------------------- */
 .block {
     border: none;
     .content {
-    	background:#EDF0EE;
+    	background:@box_color;
     	padding: 5px 10px;
     	border:none;
-    	-moz-border-radius: 0px 0px 5px 5px;
-    	border-radius: 0px 0px 5px 5px;
+        .rounded-corners( 0px 0px 5px 5px);
     	select {
     		width: 150px;
     		background: transparent;
@@ -210,12 +227,11 @@ table{
 #region-main{
 	div.header-tab {
     	background: none repeat scroll 0 0  @theme_color;
-    	color:whiteSmoke;
+    	color:@box_color;
     	line-height: 1;
     	border-bottom: 1px solid @theme_color;
     	min-height:20px;
   		.rounded-corners;
-        .box-shadow;
 	}
 	div.header-tab .commands{
     	float: right;
@@ -280,7 +296,7 @@ div.region-content{
 #region-pre,
 #region-post{
     div.region-content .header{
-        background-color: #EDF0EE;
+        background-color: @box_color;
         height: 10px;
     }
 } 
@@ -288,7 +304,7 @@ div.region-content{
 #tabs-pre .com,
 #tabs-post .com {
     text-align: center;
-    background-color: whiteSmoke;
+    background-color: @box_color;
     border: 1px solid #ddd;
 }
 
@@ -301,7 +317,7 @@ div.region-content{
 #regions-control{
     position: fixed;
     width: 100%;
-    z-index:999;
+    z-index:0;
 }
 .move{
     background-color: #fff;
@@ -350,7 +366,7 @@ div.region-content{
 
 .block_action{
 	border:none;
-    background-color: whiteSmoke;
+    background-color: @box_color;
 	img {
    		border:none;
    		&.block-hider-hide{
@@ -408,7 +424,7 @@ td.eventskey {
 	div.header{
     	background: #efefef !important;
     	margin-bottom: 5px;
-    	box-shadow: 1px 1px 2px 0px #888;
+    	.box-shadow(1px 1px 2px 0px #888);
     	display: block;
 	}
 } 
@@ -697,7 +713,7 @@ td.eventskey {
 .loginbox{
     &.twocolumns{
         border: 0;
-        background-color: #f5f5f5;
+        background-color: @box_color;
         .loginpanel{
             border:0;
         }
@@ -737,7 +753,7 @@ td.eventskey {
 -------------------------------------------------------------- */
 
 .que div.formulation {
- background-color: #EDF0EE;
+ background-color: @box_color;
 }
 
 #page-mod-quiz-attempt .submitbtns,
@@ -765,7 +781,7 @@ td.eventskey {
 
     }
     div.questionbank{
-        background-color: #efefef;
+        background-color: @box_color;
     }
     div.question div.content div.points{
         border-left:none;
@@ -790,7 +806,7 @@ table.minicalendar.calendartable tr{
 }
 
 div.calendar-controls{
-    background-color: #EDF0EE;
+    background-color: @box_color;
 }
 
 
@@ -821,9 +837,7 @@ button,
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     .background-image;
     padding: 3px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    .rounded-corners (4px);
     cursor:pointer;
 }
 

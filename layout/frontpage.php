@@ -11,8 +11,7 @@
         $hassubtitle =  !($PAGE->layout_options['nosubtitle']); 
     }else{
         $hassubtitle = true;
-    }
-    
+    }   
     if(! isset($hasnavbar)){
         $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
     }

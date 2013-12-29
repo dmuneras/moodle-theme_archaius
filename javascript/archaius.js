@@ -21,46 +21,6 @@ $.expr[':'].regex = function(elem, index, match) {
    Definition of functions
 ----------------------------------------------------------------*/
 
-//Script to modify the moodle menu, adding the accodion effect with all tabs on top                                     
-function customizeMenu(region,regionLocation){
-    var $tabsId = "tabs-" + regionLocation;
-    region.find('.region-content').attr('id',$tabsId);
-    var tabs = $("#" + $tabsId);
-    tabs.prepend($('div.header-tab', region));
-    var subcont = region.find("div.block",tabs);
-
-    $(".header-tab", region).on('click',
-                     { blocks : subcont } , function(event){
-        var data = event.data;
-        var $this = $(this);
-        if(!($this.hasClass("current"))){
-            region.find(".header-tab").removeClass("current");
-            $this.addClass("current");
-            var index = region.find("div.header-tab").index($(this)); 
-            data.blocks
-                .slideUp()
-                .eq(index).slideDown();
-        }
-    });
-
-
-    //Avoid first efect when the page is loaded                                                                                                                
-    $(subcont)
-        .css("display","none")
-        .first().css("display","block");
-
-    //add Rounded borders to the first tab and set as current
-    region.find('div.header-tab:first',tabs).addClass("current");
-
-    if($('.commands').length > 0){
-        $.map(region.find(".header .commands") , function(item , index){
-            region.find(".header-tab").eq(index)
-                .after("<div class='com'></div>")
-                .next().append(item);
-        });
-    }
-    region.show();
-}
 //Function to expand and shrink the question bank div.   
 function expandBank(questionBank){
     var viewPortWidth = $(window).width();
@@ -94,7 +54,6 @@ function expandBank(questionBank){
             }
         });
     }
- 
 }
 function organizeBlockSummary(){
     var blockSummary = $('#inst2');
@@ -134,11 +93,6 @@ function checkOnResize(){
         $("#custommenu").addClass("collapsed");
         if(mobileCustommenu.length == 0 ){
             pageHeader.append("<nav id='mobile-custommenu' class='collapsed'></nav>"); 
-            if($("#mobile-custommenu").find("div.langmenu").length == 0 &&
-                $("div.langmenu").length > 0){
-                var clonedLangMenu = $("div.langmenu").clone();
-                $("#mobile-custommenu").prepend(clonedLangMenu);
-            }
             pageHeader.find(".headermenu").wrap("<div id='header-wrap'></div>");
             $("#header-wrap").append("<div class='menu-icon deactive'></div>");
             if($("#custommenu").length > 0){
@@ -162,7 +116,6 @@ function checkOnResize(){
                 });
                 $("#mobile-custommenu").append(clonedItems);  
             }
- 
         }else{
             pageHeader.find(".menu-icon").show();
         }
@@ -206,10 +159,10 @@ if(Modernizr.mq('only all') == false){
 
         organizeBlockSummary();
         if(regionPre.length != 0){
-            customizeMenu(regionPre,"pre");
+            regionPre.archaiusCustomBlocks();
         }
         if(regionPost.length != 0 ){
-            customizeMenu(regionPost,"post");
+            regionPost.archaiusCustomBlocks({regionLocation: "post"});
         }
         if($("#report-region-pre").length > 0){
             customizeMenu($("#report-region-pre"),"pre");   
@@ -253,7 +206,9 @@ if(Modernizr.mq('only all') == false){
                 });
         }
         var topicTab = topics.find(tabSelector);
-        topicTab.addClass("topic-tab");
+        topicTab
+            .addClass("topic-tab")
+            .removeClass("accesshide"); //this hide first tab when it doesnt have title
         topicTab.prepend("<span class='triangle'></span>");
         //update the sections variable after prepend the first section.                                                                                                                   
         sections = topics.find('li.section.main');
@@ -282,15 +237,11 @@ if(Modernizr.mq('only all') == false){
 
     //Adding functionality to hide and show blocks
     if(activateHideAndShowBlocks == true){
-         /*
-            The left and margin is not the same in all mooodle modules,
-            Thats way I have to use '-=' and '+=' to move the regions.
-        */
         var regionMain = $("#region-main");
         var reportRegionPre = $("#report-region-pre");
         if(reportRegionPre.length > 0){
             var reportRegionContent =  
-                $("#report-main-content").find(".region-content");
+                $(".report-page").find(".main-report-content");
             $("#regions-control").append("<div id='move-region' class='move'></div>");
             $("#move-region").on("click", { region : reportRegionPre ,
             main : reportRegionContent },function(event){
@@ -298,24 +249,20 @@ if(Modernizr.mq('only all') == false){
                 if(!($(this).hasClass("hidden-region"))){
                     $("#move-region").addClass("hidden-region");
                     data.region.animate({
-                        'margin-left' : '-=200px'
-                            },400,function(){
-                                $(this).hide();
-                            });
+                        'margin-left' : '-=220px'
+                    },400,null);
                     data.main.animate({
-                        'margin-left' : '-=200px'
-                            },400,null);
+                        'width' : '100%'
+                    },400,null);
                 }else{
                     $("#move-region").removeClass("hidden-region");
                     data.region.animate({
-                        'margin-left' : '+=200px'
-                            },400, function(){
-                                $(this).show();
-                            });
+                        'margin-left' : '+=220px'
+                    },400, null);
                     data.main.animate({
-                        'margin-left' : '+=200px'
-                            },400,null);
-                    }
+                        'width' : '75%'
+                     },400,null);
+                }
             });
         }
         if(regionPre.length > 0 ){
@@ -323,8 +270,9 @@ if(Modernizr.mq('only all') == false){
             $("#move-region").on("click", { region : regionPre,
 			main : regionMain },function(event){
                 var data = event.data;
+                var $this = $(this);
                 if(!($(this).hasClass("hidden-region"))){
-                    $("#move-region").addClass("hidden-region");
+                    $this.addClass("hidden-region");
                     data.region.animate({
                         'left' : '-=200px'
                             },400,null);
@@ -332,14 +280,14 @@ if(Modernizr.mq('only all') == false){
                         'margin-left' : '-=200px'
                             },400,null);
                 }else{
-                    $("#move-region").removeClass("hidden-region");
+                    $this.removeClass("hidden-region");
                     data.region.animate({
                         'left' : '+=200px'
-                            },400, null);
+                    },400, null);
                     data.main.animate({
                         'margin-left' : '+=200px'
-                            },400,null);
-                    }
+                    },400,null);
+                }
             });
         }
         if(regionPost.length > 0){
@@ -347,23 +295,24 @@ if(Modernizr.mq('only all') == false){
             $("#move-region-right").on("click",{ region : regionPost, 
 			main : regionMain },function(event){
                 var data = event.data;
-                if(!($(this).hasClass("hidden-region"))){
-                    $("#move-region-right").addClass("hidden-region");  
+                var $this = $(this);
+                if(!($this.hasClass("hidden-region"))){
+                    $this.addClass("hidden-region");  
                     data.region.animate({
                         'left' : '+=200px'
-                            },400,null);
+                    },400,null);
                     data.main.animate({
                         'margin-right' : '-=200px'
-                            },400,null);
+                    },400,null);
                 }else{
-                    $("#move-region-right").removeClass("hidden-region");
+                    $this.removeClass("hidden-region");
                     data.region.animate({
                         'left' : '-=200px'
-                            },400,null);
+                    },400,null);
                     data.main.animate({
                         'margin-right' : '+=200px'
-                            },400,null);
-                    }
+                    },400,null);
+                }
             });
         }
     } 

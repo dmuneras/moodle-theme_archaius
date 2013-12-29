@@ -1,20 +1,17 @@
 /* -------------------------------------------------------------- 
    Small screen
 -------------------------------------------------------------- */
-@media screen and (max-width: 768px),
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5){
-
+.responsive-view(@container_width: 95%){
     input[type=text], 
     input[type=password], 
     textarea{
-      width:95%;
+      width: @container_width;
     }
     table{
       max-width: 100%;
     }
     table.generaltable{
-      width:95%;
+      width:@container_width;
       thead, tbody, th, td, tr { 
         display: block; 
       }
@@ -44,7 +41,7 @@ only screen and (min-device-pixel-ratio : 1.5){
       }
     }
     .main-content{
-	     width:95% !important;
+       width: @container_width !important;
     }
 
     .main-content img{
@@ -83,40 +80,39 @@ only screen and (min-device-pixel-ratio : 1.5){
     /* -------------------------------------------------------------- 
         Header page CSS
     -------------------------------------------------------------- */
-    #page-header .headermenu{
-      clear: both;
-      float: left;
-      position: relative;
-      background-color: [[setting:themecolor]];
-      margin: 0;
-      padding: 0;
-      z-index: 999;
-      top:0;
-      right: 0;
-      width: 100%;
-      padding-top: 10px;
-      min-height: 40px;
-    }
-
-    #page-header .headermenu img.userpicture,
-    #page-header div.logininfo{
-      margin-right: 70px;
-    }
-    #page-header div.logininfo{
-      margin-bottom: 0;
-      padding-bottom: 10px;
-    }
-
-    #header-wrap{
-      background-color: [[setting:themecolor]];
-    }
-
-    #header-wrap div.langmenu{
-      display: none;
-    }
-
-    #page-header .adminsearchform{
-      right: 20px;
+    #page-header{
+      .headermenu{
+        clear: both;
+        float: left;
+        position: relative;
+        background-color: [[setting:themecolor]];
+        margin: 0;
+        padding: 0;
+        z-index: 999;
+        top:0;
+        right: 0;
+        width: 100%;
+        padding-top: 10px;
+        min-height: 40px;
+      }  
+      .headermenu img.userpicture,
+      div.logininfo,
+      div.langmenu{
+        margin-right: 70px;
+      }
+      div.langmenu{
+        padding-bottom:10px;
+      }
+      div.logininfo{
+        margin-bottom: 0;
+        padding-bottom: 10px;
+      }
+      #header-wrap{
+        background-color: [[setting:themecolor]];
+      }
+      .adminsearchform{
+        right: 20px;
+      }
     }
     /* -------------------------------------------------------------- 
         Form css
@@ -156,7 +152,7 @@ only screen and (min-device-pixel-ratio : 1.5){
     }
 
     .coursebox .content .summary{
-      width: 95% !important;
+      width: @container_width !important;
       border-left: 0 !important;
     }
     /* -------------------------------------------------------------- 
@@ -173,130 +169,37 @@ only screen and (min-device-pixel-ratio : 1.5){
       min-height: 100px;
       margin-bottom: 20px;
     }
+
+    .page-content.report-page{
+      overflow-x:visible;
+      .main-report-content{
+        width:100%;
+        float:none;
+      }
+      #report-region-pre{
+        width:100%;
+        float:none;
+      }
+      table#user-grades{
+        width:100%;
+      }
+    }
 }
+
 
 /* -------------------------------------------------------------- 
-    For ie 8 and ie 7 CSS
+        Min width for ipads is 768px, a lower screen size makes
+        the three column layout looks bad, thats why a screen with 
+        max-width of 768px is gonna be shown with one colum 
+        layout
 -------------------------------------------------------------- */
-html.no-media-queries{
-    table{
-      width: 100% !important;
-    }
-    .main-content{
-       width:95% !important;
-    }
-
-    .main-content img{
-      max-width: 100%;
-    }
-    .navbar,
-    #regions-control{
-        display: none;
-    }
-
-    #region-main-box,
-    #region-main-wrap,
-    #region-post-box,
-    #region-main,
-    #region-pre,
-    #region-post,
-    .generalbox{
-      float: none !important;
-      left: 0 !important;
-      right: 0 !important;
-      width: 100% !important;
-      margin: 0 !important;
-    }
-    #logo{
-      width: 100%;
-    }
-
-    #logo img.sitelogo{
-      height: auto;
-      max-width: 80%
-    }
-
-
-    #page-header .headermenu{
-      clear: both;
-      float: left;
-      position: relative;
-      background-color: [[setting:themecolor]];
-      margin: 0;
-      padding: 0;
-      z-index: 999;
-      top:0;
-      right: 0;
-      width: 100%;
-      padding-top: 10px;
-      min-height: 40px;
-    }
-
-    #page-header .headermenu img.userpicture,
-    #page-header div.logininfo{
-      margin-right: 70px;
-    }
-    #page-header div.logininfo{
-      margin-bottom: 0;
-      padding-bottom: 10px;
-    }
-
-    #header-wrap{
-      background-color: [[setting:themecolor]];
-    }
-
-    #header-wrap div.langmenu{
-      display: none;
-    }
-
-    #page-header .adminsearchform{
-      right: 20px;
-    }
-
-    #adminsettings .form-item .form-label{
-        width: 100%;
-        float: none;
-        text-align: left;
-    }
-    #adminsettings .form-item .form-setting,
-    #adminsettings .form-item .form-description{
-        margin-left: 0;
-     }
-
-
-     .loginbox.twocolumns .loginpanel,
-     .loginbox.twocolumns .signuppanel{
-        float:none;
-        width: 100%;
-     }
-
-     .loginbox.twocolumns .signuppanel{
-        border-top: 1px solid #888;
-     }
-
-
-    .coursebox > .info > .coursename, 
-    .coursebox .content .teachers, 
-    .coursebox .content .courseimage, 
-    .coursebox .content .coursefile{
-      float: none !important;
-      width: 100% !important;
-    }
-
-    .coursebox .content .summary{
-      width: 95% !important;
-      border-left: 0 !important;
-    }
-
-    .questionbankwindow.block,
-    #page-mod-quiz-edit div.quizcontents{
-      float: none;
-      width: 100%;
-      clear: both;
-    }
-
-    .editq{
-      min-height: 100px;
-      margin-bottom: 20px;
-    } 
+@media screen and (max-width: 768px),
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5){
+  .responsive-view;
 }
+
+html.no-media-queries{
+  .responsive-view;
+}
+
