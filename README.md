@@ -1,7 +1,7 @@
 Archaius
 ---------
 
-Archaius is a moodle's theme with several options to customize you Moodle:
+Archaius is a moodle's theme with several options to customize your Moodle:
 
  * Changing logo.
  * Footnote.
