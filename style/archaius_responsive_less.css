@@ -71,6 +71,7 @@
   #region-post-box,
   #region-main,
   #region-pre,
+  #report-region-pre,
   #region-post,
   .generalbox {
     float: none !important;
@@ -78,6 +79,9 @@
     right: 0 !important;
     width: 100% !important;
     margin: 0 !important;
+  }
+  .report-page #report-region-pre {
+    max-width: none;
   }
   #logo {
     width: 100%;
@@ -178,10 +182,6 @@
     width: 100%;
     float: none;
   }
-  .page-content.report-page #report-region-pre {
-    width: 100%;
-    float: none;
-  }
   .page-content.report-page table#user-grades {
     width: 100%;
   }
@@ -272,6 +272,7 @@ html.no-media-queries #region-main-wrap,
 html.no-media-queries #region-post-box,
 html.no-media-queries #region-main,
 html.no-media-queries #region-pre,
+html.no-media-queries #report-region-pre,
 html.no-media-queries #region-post,
 html.no-media-queries .generalbox {
   float: none !important;
@@ -279,6 +280,9 @@ html.no-media-queries .generalbox {
   right: 0 !important;
   width: 100% !important;
   margin: 0 !important;
+}
+html.no-media-queries .report-page #report-region-pre {
+  max-width: none;
 }
 html.no-media-queries #logo {
   width: 100%;
@@ -361,10 +365,6 @@ html.no-media-queries .page-content.report-page {
   overflow-x: visible;
 }
 html.no-media-queries .page-content.report-page .main-report-content {
-  width: 100%;
-  float: none;
-}
-html.no-media-queries .page-content.report-page #report-region-pre {
   width: 100%;
   float: none;
 }
