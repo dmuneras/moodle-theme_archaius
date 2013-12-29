@@ -137,8 +137,8 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->javascripts_footer = array(
     'jquery-1.10.2.min',
     'modernizr',
-    'archaius_custom_blocks_uglify-1.0.0',
-    'responsive_slide_uglify',
+    'archaius_custom_blocks_uglify-1.0.0.min',
+    'responsive_slide_uglify.min',
     'archaius'
 );
 
