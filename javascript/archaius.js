@@ -164,8 +164,8 @@ if(Modernizr.mq('only all') == false){
         if(regionPost.length != 0 ){
             regionPost.archaiusCustomBlocks({regionLocation: "post"});
         }
-        if($("#report-region-pre").length > 0){
-            customizeMenu($("#report-region-pre"),"pre");   
+        if($("#report-region-pre").length > 0){   
+            $("#report-region-pre").archaiusCustomBlocks();
         }
 
         var questionBank = $(".questionbankwindow.block");
