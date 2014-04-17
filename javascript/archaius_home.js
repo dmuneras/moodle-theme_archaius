@@ -22,24 +22,23 @@ a example.
    Javascript functions for the frontpage. I am using responsive
    slides plugin.
 -------------------------------------------------------------- */
-
-//Function to start the slideshow using responsiveSlides 
-//framework.
-function startSlideShow(){
-	if((".rslides").length > 0){
-       $(".rslides").responsiveSlides({
-        auto: false,
-        pager: true,
-        nav: true,
-        speed: 500,
-        maxwidth: 'auto',
-        namespace: "large-btns"
-      }); 
-    }
-}
-
 (function(window, $, undefined){
-	if(activateSlideshow == true){
+    //Function to start the slideshow using responsiveSlides 
+    //framework.
+    function startSlideShow(){
+        if((".rslides").length > 0){
+            $(".rslides").responsiveSlides({
+                auto: false,
+                pager: true,
+                nav: true,
+                speed: 500,
+                maxwidth: 'auto',
+                namespace: "large-btns",
+                callback: function(){ $(".rslides_container").addClass("ready");}
+            });
+        }
+    }
+	if(M.theme_archaius_loader.activateSlideshow == true){
 		startSlideShow();
 		$("#toggle-admin-menu").on("click",function(){
 			$(this).next().slideToggle();

@@ -37,13 +37,25 @@ echo $OUTPUT->doctype() ?>
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <script type = "text/javascript">
-        //<![CDATA[
-        activateTopicsCourseMenu = '<?php echo $PAGE->theme->settings->collasibleTopics ?>';
-        activateSlideshow = '<?php  echo $PAGE->theme->settings->activateSlideshow ?>';
-        activateHideAndShowBlocks = '<?php echo $PAGE->theme->settings->hideShowBlocks ?>';
-        searchTranslation = "<?php echo get_string('search')?>";
-        //]]>
-
-    </script>
+    <?php
+            //Access to JS
+        $archaius_loader = array(
+            'name' => 'theme_archaius_loader',
+            'fullpath' => '/theme/archaius/javascript/archaius_loader.js',
+            'requires' => array(),
+            'strings' => array(
+                array('search'),
+            ),
+        );
+        $arguments = array(      
+            $PAGE->theme->settings->collasibleTopics, 
+            $PAGE->theme->settings->activateSlideshow,
+            $PAGE->theme->settings->hideShowBlocks      
+        );
+        $this->page->requires->js_init_call('M.theme_archaius_loader.init', 
+            $arguments, 
+            false, 
+            $archaius_loader
+        );
+    ?>
 </head>
