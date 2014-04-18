@@ -104,8 +104,13 @@ function theme_archaius_admin_options($contextid,$slides){
 function theme_archaius_get_slide_content($slide,$contextid){
 
     //Take a look in forum lib line 4035
-    $description = file_rewrite_pluginfile_urls($slide->description, 'pluginfile.php',
-    $contextid, 'theme_archaius', 'slides_images_'.$slide->id, $slide->itemid);
+    $description = 
+        file_rewrite_pluginfile_urls(
+            $slide->description, 
+            'pluginfile.php',
+            $contextid, 
+            'theme_archaius', 
+            'slides_images_'.$slide->id, $slide->itemid);
 
     return $description;
 }

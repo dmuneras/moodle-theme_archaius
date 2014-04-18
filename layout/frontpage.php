@@ -98,7 +98,6 @@
   <div class="clearfix"></div>
 </div>
 <?php include 'partials/footer.php' ?>
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
 <script type = "text/javascript">
     //<![CDATA[   
     <?php if (!empty($PAGE->theme->settings->customjs)) {

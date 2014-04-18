@@ -2,7 +2,7 @@ M.theme_archaius_loader = {
     activateTopicsCourseMenu: 1,
     activateSlideshow: 0,
     activateHideAndShowBlocks: 1 ,
-
+    archaius : ArchaiusJSEffects.getInstance(),
     init: function (
         activateTopicsCourseMenu,
         activateSlideshow,
@@ -11,9 +11,11 @@ M.theme_archaius_loader = {
        this.activateTopicsCourseMenu = activateTopicsCourseMenu;
        this.activateSlideshow = activateSlideshow;
        this.activateHideAndShowBlocks = activateHideAndShowBlocks;
-        Y.one("#adminsearchquery")
-            .setAttribute("placeholder", M.str.moodle.search);
-
+       this.archaiusJSEffects = ArchaiusJSEffects.getInstance();
+        
+        if(Y.one("#adminsearchquery") != undefined )
+            Y.one("#adminsearchquery")
+                .setAttribute("placeholder", M.str.moodle.search);
         if(this.activateHideAndShowBlocks)
             this.hideShowBlocks();
 
@@ -22,11 +24,12 @@ M.theme_archaius_loader = {
 
         this.topicsCourseMenu(this.activateTopicsCourseMenu);   
     },
+
     hideShowBlocks: function(){
-        ArchaiusJSEffects.hideShowBlocks();
+        this.archaiusJSEffects.hideShowBlocks();
     },
     topicsCourseMenu: function(active){
-        ArchaiusJSEffects.topicsCourseMenu();
+       this.archaiusJSEffects.topicsCourseMenu(active); 
     },
     startSlideshow: function(){
         // Load a single JavaScript resource.
