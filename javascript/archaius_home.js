@@ -34,7 +34,9 @@ a example.
                 speed: 500,
                 maxwidth: 'auto',
                 namespace: "large-btns",
-                callback: function(){ $(".rslides_container").addClass("ready");}
+                callback: function(){ 
+                    $(".rslides_container").addClass("ready");
+                }
             });
         }
     }
