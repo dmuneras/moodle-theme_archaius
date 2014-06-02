@@ -2,16 +2,13 @@ M.theme_archaius_loader = {
     activateTopicsCourseMenu: 1,
     activateSlideshow: 0,
     activateHideAndShowBlocks: 1 ,
-    archaius : ArchaiusJSEffects.getInstance(),
-    init: function (
-        activateTopicsCourseMenu,
-        activateSlideshow,
-        activateHideAndShowBlocks) {
-
-       this.activateTopicsCourseMenu = activateTopicsCourseMenu;
-       this.activateSlideshow = activateSlideshow;
-       this.activateHideAndShowBlocks = activateHideAndShowBlocks;
-       this.archaiusJSEffects = ArchaiusJSEffects.getInstance();
+    archaiusJSEffects : ArchaiusJSEffects.getInstance(),
+    init: function (trash, params) {
+        if(window.console) console.log(params);
+        window["params"] = params;
+       this.activateSlideshow = params.activateSlideshow;
+       this.activateHideAndShowBlocks = params.hideShowBlocks;
+       this.activateTopicsCourseMenu = params.collasibleTopics;
         
         if(Y.one("#adminsearchquery") != undefined )
             Y.one("#adminsearchquery")

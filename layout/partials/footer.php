@@ -23,24 +23,19 @@ if ($hasfooter) { ?>
 <?php } ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
 <?php
-        //Access to JS
-    $archaius_loader = array(
-        'name' => 'theme_archaius_loader',
-        'fullpath' => '/theme/archaius/javascript/archaius_loader.js',
-        'requires' => array(),
-        'strings' => array(
-            array('search'),
-        ),
-    );
-    $arguments = array(      
-        $PAGE->theme->settings->collasibleTopics, 
-        $PAGE->theme->settings->activateSlideshow,
-        $PAGE->theme->settings->hideShowBlocks      
-    );
-    $this->page->requires->js_init_call('M.theme_archaius_loader.init', 
-        $arguments, 
-        false, 
-        $archaius_loader
-    );
+    $params = array(
+        array(
+            'activateTopicsCourseMenu' => $PAGE->theme->settings->collasibleTopics,
+            'activateSlideshow' => $PAGE->theme->settings->activateSlideshow ,
+            'activateHideAndShowBlocks' => $PAGE->theme->settings->hideShowBlocks 
+        )
+    ); 
+    $PAGE->requires->yui_module("moodle-theme_archaius-archaius", 
+        "M.theme_archaius_loader.init", 
+        $params, 
+        false
+    ); 
+
+
 ?>
 <!-- END FOOTER-->

@@ -1,0 +1,10 @@
+{
+    "name":"moodle-theme_archaius-archaius",
+    "builds":{
+        "moodle-theme_archaius-archaius":{
+            "jsfiles":[
+                "archaius_loader.js"
+            ]
+        }
+    }
+}
