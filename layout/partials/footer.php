@@ -27,7 +27,8 @@ if ($hasfooter) { ?>
         array(
             'activateTopicsCourseMenu' => $PAGE->theme->settings->collasibleTopics,
             'activateSlideshow' => $PAGE->theme->settings->activateSlideshow ,
-            'activateHideAndShowBlocks' => $PAGE->theme->settings->hideShowBlocks 
+            'activateHideAndShowBlocks' => $PAGE->theme->settings->hideShowBlocks,
+            'search' => get_string("search")
         )
     ); 
     $PAGE->requires->yui_module("moodle-theme_archaius-archaius", 

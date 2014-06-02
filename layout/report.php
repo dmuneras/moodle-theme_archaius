@@ -4,6 +4,12 @@
 <?php include 'partials/page_header.php'; ?>
 <div id="regions-control"></div>
 <div id="page" class="main-content clearfix">
+    <?php if ($hasnavbar) { ?>
+        <div class="navbar clearfix">
+            <nav class="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
+            <div class="navbutton"><?php echo $PAGE->button; ?></div>
+        </div>
+    <?php }?>
     <div class="page-content report-page">
         <div class="main-report-content">
             <?php echo $OUTPUT->main_content() ?>

@@ -16,8 +16,9 @@ M.theme_archaius_loader = {
         this.activateSlideshow = params.activateSlideshow;
         this.activateHideAndShowBlocks = params.activateHideAndShowBlocks;
         this.activateTopicsCourseMenu = params.activateTopicsCourseMenu;
-        if(Y.one("#adminsearchquery") !== undefined ){
-            Y.one("#adminsearchquery").setAttribute("placeholder", M.str.moodle.search);
+        if(Y.one("#adminsearchquery") !== null){
+
+            Y.one("#adminsearchquery").setAttribute("placeholder",params.search);
         }
         if(parseInt(this.activateHideAndShowBlocks)){
             this.hideShowBlocks();

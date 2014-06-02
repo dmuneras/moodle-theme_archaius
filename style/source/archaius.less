@@ -188,9 +188,9 @@ table{
 .page-content{
     &.report-page{
         overflow-x:hidden;
+        margin-top: 20px;
     }
 }
-
 .report-page{
     .main-report-content{
         width:75%;
@@ -246,8 +246,11 @@ table{
 	div.header{
     	display: none;
 	}
-
-	
+    div.maincalendar{
+        div.heightcontainer div.header{
+            display: block;
+        }
+    } 	
 } 
 
 div.region-content{
@@ -301,6 +304,13 @@ div.region-content{
         height: 10px;
     }
 } 
+
+#tabs-pre,
+#tabs-post{
+    .block{
+        margin-bottom: 0em;
+    }
+}
 
 #tabs-pre .com,
 #tabs-post .com {
