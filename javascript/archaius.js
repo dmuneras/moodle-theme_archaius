@@ -239,7 +239,6 @@ a example.
 
             var startSlideShow = function(activatePausePlay,slideshowTimeout){
                 var pausePlay = parseInt(activatePausePlay);
-                if(window.console) console.log(slideshowTimeout);
                 if((".rslides").length > 0){
                     var options = {
                         'auto' : true,

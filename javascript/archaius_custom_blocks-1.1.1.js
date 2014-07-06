@@ -12,6 +12,17 @@
                 var o=options;
                 var obj=$(this);
                 var $tabsId="tabs-"+o.regionLocation;
+
+                var cssBordersOn = {
+                    "border-radius":"0px 0px 5px 5px",
+                    "-moz-border-radius":"0px 0px 5px 5px",
+                    "-webkit-border-radius":"0px 0px 5px 5px"
+                };
+                var cssBordersOff = {
+                    "border-radius":"0px",
+                    "-moz-border-radius":"0px",
+                    "-webkit-border-radius":"0px"
+                };
                 obj.find(o.blockContainerClass).attr("id",$tabsId);
                 var tabs=$("#"+$tabsId);tabs.prepend($(o.regionTabClass+":first",obj));
                 var subcont=obj.find("div.block",tabs);
@@ -23,31 +34,22 @@
                             obj.find(o.regionTabClass).removeClass("current");
                             $this.addClass("current");
                             var index=obj.find(o.regionTabClass).index($(this));
-                            data.blocks.slideUp().eq(index).slideDown()
+                            data.blocks.slideUp().eq(index).slideDown();
+                            
                         }else{
                             var index=obj.find(o.regionTabClass).index($this);
-                            console.log(index);
                             $this.removeClass("current");
-                            data.blocks.eq(index).slideUp()
+                            data.blocks.eq(index).slideUp(); 
                         }
-                        obj.find(o.regionTabClass+":last").css({
-                            "border-radius":"0px 0px 5px 5px",
-                            "-moz-border-radius":"0px 0px 5px 5px",
-                            "-webkit-border-radius":"0px 0px 5px 5px"
-                        });
-                        if($this[0]==obj.find(o.regionTabClass+":last")[0]){
-                            $this.css({
-                                "border-radius":"0px",
-                                "-moz-border-radius":"0px",
-                                "-webkit-border-radius":"0px"
-                            })
+                        if($this[0]==obj.find(o.regionTabClass+":last")[0] ){
+                            if($this.hasClass("current")){
+                                $this.css(cssBordersOff);
+                            }else{
+                                $this.css(cssBordersOn);
+                            }
                         }
                     });
-                    obj.find(o.regionTabClass+":last").css({
-                        "border-radius":"0px 0px 5px 5px",
-                        "-moz-border-radius":"0px 0px 5px 5px",
-                        "-webkit-border-radius":"0px 0px 5px 5px"
-                    })
+                    obj.find(o.regionTabClass+":last").css(cssBordersOn);
                 }
                 $(subcont).css("display","none").first().css("display","block");
                 var firstSelector=o.regionTabClass+":first";

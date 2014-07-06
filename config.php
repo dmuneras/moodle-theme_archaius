@@ -156,7 +156,8 @@ $THEME->javascripts_footer = array(
     'modernizr.min',
     'jquery.velocity.min',
     'responsiveslides.min',
-    'archaius.complete.min'
+    'archaius_custom_blocks-1.1.1',
+    'archaius'
 );
 
 $THEME->enable_dock = false;
