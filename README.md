@@ -24,6 +24,11 @@ Archaius uses jQuery as a javascript framework and it is using modernizr and res
 
 Improvements history:
 ------------
+
+06.07.2014
+
+Adding options to manipulate Slideshow.
+
 2.06.2014
 
 Improvements on JS, changing blocks effect.

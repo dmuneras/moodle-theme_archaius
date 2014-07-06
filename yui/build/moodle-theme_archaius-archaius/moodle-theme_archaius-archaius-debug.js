@@ -1,5 +1,23 @@
 YUI.add('moodle-theme_archaius-archaius', function (Y, NAME) {
 
+/*
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+This plugin is part of Archaius theme, if you use it outside the theme
+you should create your own styles. You can use archaius stylesheet as
+a example.
+@copyright  2014 Daniel Munera Sanchez
+
+*/
 M.theme_archaius_loader = M.theme_archaius_loader||{};
 
 M.theme_archaius_loader = {
@@ -10,21 +28,42 @@ M.theme_archaius_loader = {
 
     activateHideAndShowBlocks: 1 ,
 
+    activatePausePlaySlideshow: 0,
+
     archaiusJSEffects : ArchaiusJSEffects.getInstance(),
 
+    slideshowTimeout : 4000,
+
     init: function (params) {
-        this.activateSlideshow = params.activateSlideshow;
-        this.activateHideAndShowBlocks = params.activateHideAndShowBlocks;
-        this.activateTopicsCourseMenu = params.activateTopicsCourseMenu;
+
+        this.activateSlideshow = parseInt(params.activateSlideshow,10);
+
+        this.activateHideAndShowBlocks = parseInt(params.activateHideAndShowBlocks,10);
+
+        this.activateTopicsCourseMenu = parseInt(params.activateTopicsCourseMenu,10);
+
+        this.activatePausePlaySlideshow = parseInt(params.activatePausePlaySlideshow,10);
+
+        this.slideshowTimeout = parseInt(params.slideshowTimeout,10);
+
+        this.confirmationDeleteSlide = params.confirmationDeleteSlide;
+
+        this.noSlides = params.noSlides;
+
         if(Y.one("#adminsearchquery") !== null){
 
             Y.one("#adminsearchquery").setAttribute("placeholder",params.search);
         }
-        if(parseInt(this.activateHideAndShowBlocks)){
+        if(this.activateHideAndShowBlocks){
             this.hideShowBlocks();
         }
-        if(parseInt(this.activateSlideshow)){
-            this.startSlideshow();
+        if(this.activateSlideshow){
+            this.startSlideshow(
+                this.activatePausePlaySlideshow,
+                this.slideshowTimeout,
+                this.confirmationDeleteSlide,
+                this.noSlides
+            );
         }
         this.topicsCourseMenu(this.activateTopicsCourseMenu);
     },
@@ -32,16 +71,18 @@ M.theme_archaius_loader = {
     hideShowBlocks: function(){
         this.archaiusJSEffects.hideShowBlocks();
     },
-
     topicsCourseMenu: function(active){
        this.archaiusJSEffects.topicsCourseMenu(active);
-
     },
-    startSlideshow: function(){
-        // Load a single JavaScript resource.
-        Y.Get.js(
-            M.cfg.wwwroot + "/theme/archaius/javascript/archaius_home.js"
-        );
+    startSlideshow: function(activatePausePlaySlideshow,timeout,confirmationDeleteSlide,noSlides){
+
+        this.archaiusJSEffects
+            .initSlideshow(
+                activatePausePlaySlideshow,
+                timeout,
+                confirmationDeleteSlide,
+                noSlides
+            );
     }
 };
 

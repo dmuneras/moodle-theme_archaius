@@ -2,7 +2,7 @@
     "name":"moodle-theme_archaius-archaius",
     "builds":{
         "moodle-theme_archaius-archaius":{
-            "jsfiles":[
+            "jsfiles":[ 
                 "archaius_loader.js"
             ]
         }

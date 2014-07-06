@@ -89,19 +89,35 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $settings->add($setting);
 
-    //Activate 
+    //Activate Hide Show Blocks 
     $name = "theme_archaius/hideShowBlocks";
     $title = get_string("hideShowBlocks", 'theme_archaius');
     $description = get_string('hideShowBlocksdesc', 'theme_archaius');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
     $settings->add($setting);
 
-    //Activate 
+    //Activate Slideshow
     $name = "theme_archaius/activateSlideshow";
     $title = get_string("activateSlideshow", 'theme_archaius');
     $description = get_string('activateSlideshowdesc', 'theme_archaius');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $settings->add($setting);
+
+    //Activate pause/play Slideshow
+    $name = "theme_archaius/activatePausePlaySlideshow";
+    $title = get_string("activatePausePlaySlideshow", 'theme_archaius');
+    $description = get_string('activatePausePlaySlideshowdesc', 'theme_archaius');
+    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $settings->add($setting);
+
+    // Slideshow Timeout
+    $name = 'theme_archaius/slideshowTimeout';
+    $title = get_string('slideshowTimeout','theme_archaius');
+    $description = get_string('slideshowTimeoutdesc', 'theme_archaius');
+    $default = 1000;
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_INT);
+    $settings->add($setting);
+
 
      // Custom CSS file
     $name = 'theme_archaius/customcss';

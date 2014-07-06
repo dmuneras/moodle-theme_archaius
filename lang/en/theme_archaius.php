@@ -73,7 +73,14 @@ $string["update_description"] = "Update description";
 $string["activateSlideshow"] = 'Activate slideshow';
 $string["activateSlideshowdesc"] = 'You can activate or desactivate the frontpage slideshow, the slide could be, a image or just HTML. The maximun height of the slide is 300px.';
 
+$string["activatePausePlaySlideshow"] = "Activate pause/play button slideshow";
+$string["activatePausePlaySlideshowdesc"] = "Activate pause/play button slideshow to start and stop auto sliding";
+$string["slideshowTimeout"] = "Slideshow time out";
+$string["slideshowTimeoutdesc"] = "Slideshow time out in milliseconds, must be > 800";
+
 //Form exceptions
 $string["positionException"] = "Position is required and it must be higher than 0";
 $string["descriptionEditorException"] = "We don't want an empty slide.";
+$string["confirmationDeleteSlide"] = "Are you sure you want to delete this slide?";
+$string["noSlides"] = "There are no slides at the moment";
 

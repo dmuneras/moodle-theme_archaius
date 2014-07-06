@@ -152,11 +152,11 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 
 $THEME->javascripts_footer = array(
-    'jquery-1.11.0.min',
-    'modernizr',
-    'archaius_custom_blocks-1.1.1.min',
+    'jquery-1.11.1.min',
+    'modernizr.min',
+    'jquery.velocity.min',
     'responsiveslides.min',
-    'archaius'
+    'archaius.complete.min'
 );
 
 $THEME->enable_dock = false;

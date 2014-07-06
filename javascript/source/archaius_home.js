@@ -22,16 +22,17 @@ a example.
    Javascript functions for the frontpage. I am using responsive
    slides plugin.
 -------------------------------------------------------------- */
-(function(window, $, undefined){
+! function(window, $, undefined){
     //Function to start the slideshow using responsiveSlides 
     //framework.
     function startSlideShow(){
         if((".rslides").length > 0){
             $(".rslides").responsiveSlides({
-                auto: false,
+                auto: true,
                 pager: true,
                 nav: true,
-                speed: 500,
+                speed: 1000,
+                pausePlay: M.theme_archaius_loader.activatePausePlaySlideshow,
                 maxwidth: 'auto',
                 namespace: "large-btns",
                 callback: function(){ 
@@ -49,8 +50,7 @@ a example.
 		$(".delete-slide").on("click",function(event){
 			event.preventDefault();
 			$this = $(this);
-			//TODO: The message has to be multilanguage.
-			if(confirm("Really. Do you want to delete this slide?")){
+			if(confirm(M.theme_archaius_loader.confirmationDeleteSlide)){
 				var url = $this.attr("href") + "&ajax=1";
 				$.get(url , function(data) {
 					$(".rslides_container").html("");
@@ -62,7 +62,9 @@ a example.
 						$this.closest("tr").remove();
 					}else{
 						slidesTable.remove();
-						$(".admin-options").append("<h2>There are not slides at the moment</h2>");
+						$(".admin-options").append("<h2>" +
+                            M.theme_archaius_loader.noSlides + 
+                            + "</h2>");
 					}
 					
 					$(".admin-options .notice").show().html("<p>Slide deleted</p>")
@@ -71,4 +73,4 @@ a example.
 			}
 		});
 	}
-}(this,jQuery));
+}(window,jQuery);
