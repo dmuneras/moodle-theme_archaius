@@ -36,17 +36,14 @@
   }
   table.generaltable td {
     /* Behave  like a "row" */
-  
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
   }
   table.generaltable td:before {
     /*Now like a table header */
-  
     position: absolute;
     /* Top/left values mimic padding */
-  
     top: 6px;
     left: 6px;
     width: 45%;
@@ -59,13 +56,15 @@
   .main-content img {
     max-width: 100%;
   }
-  .navbar,
+  .navbar {
+    margin-bottom: 30px;
+  }
   #regions-control {
     display: none;
   }
   /* -------------------------------------------------------------- 
-          Forcing layout to be one column
-      -------------------------------------------------------------- */
+        Forcing layout to be one column
+    -------------------------------------------------------------- */
   #region-main-box,
   #region-main-wrap,
   #region-post-box,
@@ -91,8 +90,8 @@
     max-width: 80%;
   }
   /* -------------------------------------------------------------- 
-          Header page CSS
-      -------------------------------------------------------------- */
+        Header page CSS
+    -------------------------------------------------------------- */
   #page-header .headermenu {
     clear: both;
     float: left;
@@ -126,8 +125,8 @@
     right: 20px;
   }
   /* -------------------------------------------------------------- 
-          Form css
-      -------------------------------------------------------------- */
+        Form css
+    -------------------------------------------------------------- */
   #adminsettings .form-item .form-label {
     width: 100%;
     float: none;
@@ -138,8 +137,8 @@
     margin-left: 0;
   }
   /* -------------------------------------------------------------- 
-          Login CSS
-      -------------------------------------------------------------- */
+        Login CSS
+    -------------------------------------------------------------- */
   .loginbox.twocolumns .loginpanel,
   .loginbox.twocolumns .signuppanel {
     float: none;
@@ -149,8 +148,8 @@
     border-top: 1px solid #888;
   }
   /* -------------------------------------------------------------- 
-          Course CSS
-      -------------------------------------------------------------- */
+        Course CSS
+    -------------------------------------------------------------- */
   .coursebox > .info > .coursename,
   .coursebox .content .teachers,
   .coursebox .content .courseimage,
@@ -163,8 +162,8 @@
     border-left: 0 !important;
   }
   /* -------------------------------------------------------------- 
-          Quiz CSS
-      -------------------------------------------------------------- */
+        Quiz CSS
+    -------------------------------------------------------------- */
   .questionbankwindow.block,
   #page-mod-quiz-edit div.quizcontents {
     float: none;
@@ -190,27 +189,21 @@ html.no-media-queries {
   /* -------------------------------------------------------------- 
         Forcing layout to be one column
     -------------------------------------------------------------- */
-
   /* -------------------------------------------------------------- 
         Header page CSS
     -------------------------------------------------------------- */
-
   /* -------------------------------------------------------------- 
         Form css
     -------------------------------------------------------------- */
-
   /* -------------------------------------------------------------- 
         Login CSS
     -------------------------------------------------------------- */
-
   /* -------------------------------------------------------------- 
         Course CSS
     -------------------------------------------------------------- */
-
   /* -------------------------------------------------------------- 
         Quiz CSS
     -------------------------------------------------------------- */
-
 }
 html.no-media-queries input[type=text],
 html.no-media-queries input[type=password],
@@ -240,17 +233,14 @@ html.no-media-queries table.generaltable tr {
 }
 html.no-media-queries table.generaltable td {
   /* Behave  like a "row" */
-
   border: none;
   border-bottom: 1px solid #eee;
   position: relative;
 }
 html.no-media-queries table.generaltable td:before {
   /*Now like a table header */
-
   position: absolute;
   /* Top/left values mimic padding */
-
   top: 6px;
   left: 6px;
   width: 45%;
@@ -263,7 +253,9 @@ html.no-media-queries .main-content {
 html.no-media-queries .main-content img {
   max-width: 100%;
 }
-html.no-media-queries .navbar,
+html.no-media-queries .navbar {
+  margin-bottom: 30px;
+}
 html.no-media-queries #regions-control {
   display: none;
 }

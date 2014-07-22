@@ -47,6 +47,8 @@
                             }else{
                                 $this.css(cssBordersOn);
                             }
+                        }else{
+                            obj.find(o.regionTabClass+":last").css(cssBordersOn);
                         }
                     });
                     obj.find(o.regionTabClass+":last").css(cssBordersOn);
