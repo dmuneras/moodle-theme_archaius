@@ -1,6 +1,7 @@
 /* -------------------------------------------------------------- 
    Layout 
 -------------------------------------------------------------- */
+/* Useful classes */
 @-ms-viewport {
   width: device-width;
 }
@@ -8,6 +9,7 @@ html,
 body {
   color: #222222;
   background: [[setting:bgcolor]];
+  height: 100%;
 }
 a {
   color: #0088CC;
@@ -35,24 +37,7 @@ span.error {
   width: 100%;
   float: none;
   margin-bottom: 60px;
-}
-#page-header .adminsearchform {
-  right: 7%;
-  top: 20px;
-  position: absolute;
-  display: block;
-}
-#page-header form input#adminsearchquery {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  border: none;
-  width: 120px;
-  height: 25px;
-  padding-left: 18px;
-  background: #ffffff url([[pix:theme|search]]) 4px 8px no-repeat;
+  overflow: auto;
 }
 #page-header a:link,
 #page-header a:visited {
@@ -69,9 +54,7 @@ span.error {
   min-width: 32px;
   height: 32px;
   float: right;
-  margin: 10px;
-  position: absolute;
-  right: 10px;
+  margin: 10px 0px;
   z-index: 999;
 }
 #page-header div.menu-icon.active {
@@ -80,17 +63,24 @@ span.error {
 #page-header div.menu-icon.deactive {
   background: url([[pix:theme|menu_icon]]);
 }
-.nobackground {
-  background: none !important;
+#page-header .page-header-inner {
+  margin: 0 auto;
+  padding-top: 10px;
+  max-width: 1200px;
+  min-height: 110px;
 }
 .adminsearchform {
   display: none;
 }
 #logo {
-  width: 500px;
+  width: 50%;
   height: 100%;
+  float: left;
   max-height: 150px;
   cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #logo img {
   max-height: 110px;
@@ -99,10 +89,67 @@ span.error {
   height: auto;
   width: auto;
 }
+.page-header-info-container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 45%;
+  margin-top: 20px;
+}
+.page-header-top {
+  padding: 0 5%;
+  height: 45px;
+  border-bottom: 1px solid whitesmoke;
+  background: [[setting:themecolor]];
+  top: 0;
+}
+div.top-inner {
+  margin: 0 auto;
+  padding-top: 10px;
+  max-width: 1200px;
+  min-height: 110px;
+}
+div.top-inner div.langmenu {
+  float: right;
+  width: 60%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px 10px;
+  text-align: right;
+}
+div.top-inner .adminsearchform {
+  margin-right: 0;
+  padding-top: 0;
+  float: right;
+  display: block;
+  width: 40%;
+  max-width: 150px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+div.top-inner form input#adminsearchquery {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 120px;
+  height: 25px;
+  padding-left: 18px;
+  background: #ffffff url([[pix:theme|search]]) 4px 8px no-repeat;
+}
+div.top-inner form input[type="submit"] {
+  display: none;
+}
 .headermenu {
-  position: absolute;
-  top: 58px;
-  right: 6%;
+  margin-top: 10px;
+  margin-right: 0;
+  float: right;
+  width: 100%;
 }
 .select.menulang {
   height: 20px;
@@ -562,7 +609,8 @@ td.eventskey {
   background-color: #697F6F !important;
 }
 #custommenu #custom_menu_1 {
-  width: 90%;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 #custommenu.collapsed {

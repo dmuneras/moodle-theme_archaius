@@ -83,7 +83,7 @@
     max-width: none;
   }
   #logo {
-    width: 100%;
+    margin-left: 20px;
   }
   #logo img.sitelogo {
     height: auto;
@@ -106,23 +106,23 @@
     padding-top: 10px;
     min-height: 40px;
   }
-  #page-header .headermenu img.userpicture,
-  #page-header div.logininfo,
-  #page-header div.langmenu {
-    margin-right: 70px;
-  }
   #page-header div.langmenu {
     padding-bottom: 10px;
   }
   #page-header div.logininfo {
     margin-bottom: 0;
     padding-bottom: 10px;
+    float: left;
+    width: 70%;
   }
   #page-header #header-wrap {
     background-color: [[setting:themecolor]];
   }
-  #page-header .adminsearchform {
-    right: 20px;
+  #page-header .page-header-info-container {
+    padding-right: 20px;
+  }
+  #page-header .page-header-info-container img.userpicture {
+    float: right;
   }
   /* -------------------------------------------------------------- 
         Form css
@@ -277,7 +277,7 @@ html.no-media-queries .report-page #report-region-pre {
   max-width: none;
 }
 html.no-media-queries #logo {
-  width: 100%;
+  margin-left: 20px;
 }
 html.no-media-queries #logo img.sitelogo {
   height: auto;
@@ -297,23 +297,23 @@ html.no-media-queries #page-header .headermenu {
   padding-top: 10px;
   min-height: 40px;
 }
-html.no-media-queries #page-header .headermenu img.userpicture,
-html.no-media-queries #page-header div.logininfo,
-html.no-media-queries #page-header div.langmenu {
-  margin-right: 70px;
-}
 html.no-media-queries #page-header div.langmenu {
   padding-bottom: 10px;
 }
 html.no-media-queries #page-header div.logininfo {
   margin-bottom: 0;
   padding-bottom: 10px;
+  float: left;
+  width: 70%;
 }
 html.no-media-queries #page-header #header-wrap {
   background-color: [[setting:themecolor]];
 }
-html.no-media-queries #page-header .adminsearchform {
-  right: 20px;
+html.no-media-queries #page-header .page-header-info-container {
+  padding-right: 20px;
+}
+html.no-media-queries #page-header .page-header-info-container img.userpicture {
+  float: right;
 }
 html.no-media-queries #adminsettings .form-item .form-label {
   width: 100%;

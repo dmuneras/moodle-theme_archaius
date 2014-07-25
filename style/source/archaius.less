@@ -30,6 +30,13 @@
     box-shadow: @shadow;
 }
 
+/* Useful classes */
+.box-sizing(@value : border-box){
+    -webkit-box-sizing: @value; 
+    -moz-box-sizing: @value;    
+    box-sizing: @value; 
+}
+
 @-ms-viewport {
   width: device-width;
 }
@@ -38,6 +45,7 @@ html,
 body {
     color: @main_text_color; 
     background: @background_color;
+    height: 100%;
 }
 
 a{
@@ -68,20 +76,7 @@ span.error{
     width:100%;
     float: none; 
     margin-bottom: 60px; 
-    .adminsearchform{
-    	right: 7%;
-    	top: 20px;
-    	position: absolute;
-    	display:block;
-	}
-	form input#adminsearchquery{
-		.rounded-corners;  
-    	border: none;
-    	width: 120px;
-    	height: 25px;
-    	padding-left: 18px;
-    	background: white url(~"[[pix:theme|search]]") 4px 8px no-repeat;
-	}  
+    overflow: auto;
 	a{
 		&:link, &:visited{
 			color: whitesmoke;
@@ -98,9 +93,7 @@ span.error{
         min-width: 32px;
         height: 32px;
         float: right;
-        margin:10px;
-        position: absolute;
-        right: 10px;
+        margin: 10px 0px;
         z-index: 999;
     }
     div.menu-icon.active{
@@ -109,10 +102,13 @@ span.error{
     div.menu-icon.deactive{
         background: url(@menu_icon);
     }
-}
 
-.nobackground{
-    background:none !important;
+    .page-header-inner{
+        margin: 0 auto;
+        padding-top: 10px;
+        max-width: 1200px;
+        min-height: 110px;
+    }
 }
 
 .adminsearchform{
@@ -120,10 +116,12 @@ span.error{
 }
 
 #logo{
-    width:500px;
+    width:50%;
     height:100%;
+    float: left;
     max-height: 150px;
     cursor: pointer;
+    .box-sizing;
     img{
     	max-height:110px;
     	cursor: pointer;
@@ -132,11 +130,64 @@ span.error{
     	width: auto;
     }
 }
-.headermenu{
-    position: absolute;
-    top: 58px;
-    right: 6%;
+
+.page-header-info-container{
+    .box-sizing;
+    float: left;
+    width:45%;
+    margin-top: 20px;
 }
+
+.page-header-top{
+    padding: 0 5%;
+    height: 45px;
+    border-bottom: 1px solid whitesmoke;
+    background: @theme_color;
+    top: 0;
+}
+
+div.top-inner{
+    margin: 0 auto;
+    padding-top: 10px;
+    max-width: 1200px;
+    min-height: 110px;
+    div.langmenu{
+        float: right;
+        width: 60%;
+        .box-sizing;
+        padding: 0px 10px;
+        text-align: right;
+    }
+    .adminsearchform{
+        margin-right: 0;
+        padding-top: 0;
+        float: right;
+        display:block;
+        width: 40%;
+        max-width: 150px;
+        .box-sizing;
+
+    }
+    form input#adminsearchquery{
+        .rounded-corners;  
+        border: none;
+        width: 120px;
+        height: 25px;
+        padding-left: 18px;
+        background: white url(~"[[pix:theme|search]]") 4px 8px no-repeat;
+    }  
+    form input[type="submit"]{
+        display: none;
+    }
+}
+
+.headermenu{
+    margin-top: 10px;
+    margin-right: 0;
+    float: right;
+    width: 100%;
+}
+
 .select.menulang{
     height:20px;
     border:0;
@@ -666,7 +717,8 @@ td.eventskey {
         background-color: #697F6F !important;
     }
     #custom_menu_1{
-        width:90%;
+        max-width: 1200px;
+        width: 100%;
         margin: 0 auto;
     }
     &.collapsed{

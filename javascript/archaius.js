@@ -302,8 +302,8 @@ a example.
                     $("#custommenu").addClass("collapsed");
                     if(mobileCustommenu.length == 0 ){
                         pageHeader.append("<nav id='mobile-custommenu' class='collapsed'></nav>"); 
-                        pageHeader.find(".headermenu").wrap("<div id='header-wrap'></div>");
-                        $("#header-wrap").append("<div class='menu-icon deactive'></div>");
+                        
+                        $(".wrapper-header-info").append("<div class='menu-icon deactive'></div>");
                         if($("#custommenu").length > 0){
                             var items = $("#custommenu ul li a");
                             var clonedItems = items.clone();
@@ -358,7 +358,7 @@ a example.
                     expandBank($(".questionbankwindow.block"));
                 }
                 //add search form to the header page
-                $('#page-header').prepend($('div.footer form.adminsearchform')); 
+                $('.page-header-top div.top-inner').prepend($('div.footer form.adminsearchform')); 
                 //remove search button                                   
                 $("#page-header form.adminsearchform input:regex(type,submit)").remove(); 
                 $('#region-post-box').prepend($('.blogsearchform'));
