@@ -48,10 +48,6 @@ M.theme_archaius_loader = {
 
         this.noSlides = params.noSlides;
 
-        if(Y.one("#adminsearchquery") !== null){
-
-            Y.one("#adminsearchquery").setAttribute("placeholder",params.search);
-        }
         if(this.activateHideAndShowBlocks){
             this.hideShowBlocks();
         }
@@ -64,6 +60,10 @@ M.theme_archaius_loader = {
             );
         }
         this.topicsCourseMenu(this.activateTopicsCourseMenu);
+
+        if(Y.one("#adminsearchquery") !== null){
+            Y.one("#adminsearchquery").setAttribute("placeholder",params.search);
+        }
     },
 
     hideShowBlocks: function(){

@@ -241,15 +241,15 @@ a example.
                 var pausePlay = parseInt(activatePausePlay);
                 if((".rslides").length > 0){
                     var options = {
-                        'auto' : true,
-                        'speed' : 800,
-                        'timeout' : (slideshowTimeout + 800),
-                        'pausePlay' : pausePlay,
-                        'pager' : true,
-                        'nav' : true,
-                        'maxwidth' : 'auto',
-                        'namespace' : "large-btns",
-                        'callback' : function(){ 
+                        auto : true,
+                        speed : 800,
+                        timeout : (slideshowTimeout + 800),
+                        pausePlay : pausePlay,
+                        pager : true,
+                        nav : true,
+                        maxwidth : 'auto',
+                        namespace : "large-btns",
+                        callback : function(){ 
                             $(".rslides_container").addClass("ready");
                         }
                     }
