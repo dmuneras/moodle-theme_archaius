@@ -76,7 +76,7 @@ $string["activateSlideshowdesc"] = 'You can activate or desactivate the frontpag
 $string["activatePausePlaySlideshow"] = "Activate pause/play button slideshow";
 $string["activatePausePlaySlideshowdesc"] = "Activate pause/play button slideshow to start and stop auto sliding";
 $string["slideshowTimeout"] = "Slideshow time out";
-$string["slideshowTimeoutdesc"] = "Slideshow time out in milliseconds, must be > 800";
+$string["slideshowTimeoutdesc"] = "Slideshow time out in milliseconds, must be > 1500";
 
 //Form exceptions
 $string["positionException"] = "Position is required and it must be higher than 0";

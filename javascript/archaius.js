@@ -239,11 +239,15 @@ a example.
 
             var startSlideShow = function(activatePausePlay,slideshowTimeout){
                 var pausePlay = parseInt(activatePausePlay);
-                if((".rslides").length > 0){
+                if(slideshowTimeout < 1500){
+                    var slideshowTimeout = 1500;
+                }
+                console.log(slideshowTimeout);
+                if($(".rslides").length > 0){
                     var options = {
                         auto : true,
-                        speed : 800,
-                        timeout : (slideshowTimeout + 800),
+                        speed : 1000,
+                        timeout : slideshowTimeout,
                         pausePlay : pausePlay,
                         pager : true,
                         nav : true,

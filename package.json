@@ -1,0 +1,31 @@
+{
+  "name": "theme-archaius-tasks",
+  "version": "0.0.1",
+  "description": "Tasks for archaius moodle theme",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmuneras/moodle-theme_archaius.git"
+  },
+  "keywords": [
+    "Less",
+    "to",
+    "CSS",
+    "archaius",
+    "moodle"
+  ],
+  "author": "dmuneras",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/dmuneras/moodle-theme_archaius/issues"
+  },
+  "homepage": "https://github.com/dmuneras/moodle-theme_archaius",
+  "devDependencies": {
+     "grunt": "~0.4.5",
+     "grunt-contrib-less": "~0.11.0",
+     "grunt-contrib-watch": "~0.6.1"
+  }
+}
