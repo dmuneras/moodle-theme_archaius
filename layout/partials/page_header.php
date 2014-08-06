@@ -41,6 +41,11 @@ if(! isset($hascustommenu)){
           <?php echo $OUTPUT->login_info(); ?>
           <?php echo $PAGE->headingmenu ?>
         </div>
+        <div class='menu-icon deactive'>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar last'></span>
+        </div>
       </div>
     </div>
   </div>

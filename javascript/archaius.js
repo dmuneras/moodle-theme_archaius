@@ -288,7 +288,7 @@ a example.
                     });
             };
 
-            var getDistanceToParent = function(item,parentSelector,KingOfParent){
+            var getDistanceToParent = function(item,KingOfParent){
                 return item.parents(KingOfParent).length;
             };
             var checkOnResize = function(){
@@ -303,25 +303,30 @@ a example.
                     if(mobileCustommenu.length == 0 ){
                         pageHeader.append("<nav id='mobile-custommenu' class='collapsed'></nav>"); 
                         
-                        $(".wrapper-header-info").append("<div class='menu-icon deactive'></div>");
+                        //$(".wrapper-header-info").append("<div class='menu-icon deactive'></div>");
                         if($("#custommenu").length > 0){
                             var items = $("#custommenu ul li a");
                             var clonedItems = items.clone();
                             $.each(items,function(index){
                                 var $this = $(this);
-                                var hierarchy = getDistanceToParent($this,"custommenu","div");
+                                var hierarchyLevel = getDistanceToParent($this,"div") - 4;
                                 //Coefficient to calculate the hierarchy of 
-                                //menu items is 4 (minimum number of elements to the parent element)
-                                if(hierarchy > 4){
-                                    var hierarchyLevel = (hierarchy - 4) / 2;
-                                    var hierarchyLine = "";
-                                    for(var i=0;i<hierarchyLevel;i++){
-                                        hierarchyLine += "- ";    
+                                //menu items is 4 (minimum number of elements to the parent element)    
+                                var hierarchyLine = "";
+                                for(var i=0;i<hierarchyLevel;i++){
+                                    var itemClass = "hierarchy-mark";
+                                    if(i == 0 && hierarchyLevel == 1){
+                                        itemClass += " parent-item";
+                                    }else{
+                                        if(i == hierarchyLevel-1)
+                                            itemClass += " parent-item";
                                     }
-                                    var content = hierarchyLine.concat(" ",$this.text());
-                                    clonedItems.eq(index).text(content);
+                                    hierarchyLine += "<span class='"+ itemClass +"'></span>";    
                                 }
-                                clonedItems.eq(index).removeClass();
+                                var content = hierarchyLine.concat(" ",$this.text());
+                                clonedItems.eq(index)
+                                    .prepend(hierarchyLine)
+                                    .removeClass();
                             });
                             $("#mobile-custommenu").append(clonedItems);  
                         }

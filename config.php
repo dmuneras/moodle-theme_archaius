@@ -152,11 +152,9 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 
 $THEME->javascripts_footer = array(
-    'jquery-1.11.1.min',
-    'modernizr.min',
+    'modernizr-2.7.1',
     'jquery.velocity.min',
     'responsiveslides.min',
-    'archaius_custom_blocks-1.1.1',
     'archaius'
 );
 

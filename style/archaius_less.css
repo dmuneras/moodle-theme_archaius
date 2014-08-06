@@ -51,17 +51,27 @@ span.error {
 }
 #page-header div.menu-icon {
   cursor: pointer;
-  min-width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   float: right;
   margin: 10px 0px;
   z-index: 999;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #page-header div.menu-icon.active {
-  background: url([[pix:theme|menu_icon]]);
+  background: [[setting:bgcolor]];
 }
 #page-header div.menu-icon.deactive {
-  background: url([[pix:theme|menu_icon]]);
+  background: [[setting:bgcolor]];
+}
+#page-header div.menu-icon .icon-bar {
+  display: block;
+  width: 35px;
+  margin: 5px auto;
+  height: 7px;
+  background-color: [[setting:themecolor]];
 }
 #page-header .page-header-inner {
   margin: 0 auto;
@@ -654,6 +664,17 @@ td.eventskey {
   background-color: [[setting:headercolor]];
   border-bottom: 1px solid #888;
   border-top: 1px solid #888;
+}
+#mobile-custommenu a .hierarchy-mark {
+  height: 20px;
+  width: 10px;
+  display: inline-block;
+}
+#mobile-custommenu a .parent-item {
+  border-left: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  display: inline-block;
+  margin-right: 5px;
 }
 #mobile-custommenu.collapsed {
   display: none;

@@ -90,19 +90,27 @@ span.error{
 	}
     div.menu-icon{
         cursor: pointer;
-        min-width: 32px;
-        height: 32px;
+        width: 35px;
+        height: 35px;
         float: right;
         margin: 10px 0px;
-        z-index: 999;
+        z-index: 999; 
+        .box-sizing;
     }
     div.menu-icon.active{
-        background: url(@menu_icon);    
+        background: @background_color;  
     }
     div.menu-icon.deactive{
-        background: url(@menu_icon);
+        background: @background_color;
     }
 
+    div.menu-icon .icon-bar {
+        display: block;
+        width: 35px;
+        margin: 5px auto;
+        height: 7px;
+        background-color: @theme_color;
+    }
     .page-header-inner{
         margin: 0 auto;
         padding-top: 10px;
@@ -763,6 +771,17 @@ td.eventskey {
             background-color: @header_color;
             border-bottom: 1px solid #888;
             border-top: 1px solid #888;            
+        }
+        .hierarchy-mark {
+            height: 20px;
+            width: 10px;
+            display: inline-block;
+        }
+        .parent-item {
+            border-left: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+            display: inline-block;
+            margin-right: 5px;
         }
     }
     &.collapsed {
