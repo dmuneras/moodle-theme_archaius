@@ -9,18 +9,6 @@
     if(! isset($hasnavbar)){
         $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
     }
-    if(! isset($hassidepre)){
-        $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);    
-    }
-    if(! isset($hassidepost)){
-        $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);   
-    }
-    if(! isset($hassidecenterpre)){
-        $hassidecenterpre = $PAGE->blocks->region_has_content('side-center-pre', $OUTPUT);   
-    }
-    if(! isset($hassidecenterpost)){
-        $hassidecenterpost = $PAGE->blocks->region_has_content('side-center-post', $OUTPUT);   
-    }
 ?>
 <div id="regions-control"></div>
 <div id="page" class="main-content">

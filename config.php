@@ -17,12 +17,23 @@ This plugin is part of Archaius theme.
 
 */
 
-////////////////////////////////////////////////////////////////////////////////
-/// This file contains a few configuration variables that control
-/// how Moodle uses this theme.
-////////////////////////////////////////////////////////////////////////////////
+/*
+ This file contains a few configuration variables that control
+ how Moodle uses this theme.
+-----------------------------------------------------------------------------*/
 
 $THEME->name = 'archaius';
+
+$allRegions = 
+    array(
+        'side-pre',
+        'side-post',
+        'side-center-pre',
+        'side-center-post',
+        'footer-left',
+        'footer-center',
+        'footer-right'
+    );
 
 $THEME->sheets = array(
     'base',
@@ -45,29 +56,32 @@ $THEME->parents_exclude_sheets = array(
 $THEME->editor_sheets = array('editor');
 
 $THEME->layouts = array(
-    // Most pages - if we encounter an unknown or a missing page type, this one is used.
+    // Most pages - if we encounter an unknown or 
+    //a missing page type, this one is used.
     'base' => array(
         'file' => 'general.php',
-        'regions' => array()
+        'regions' => $allRegions,
     ),
     'standard' => array(
         'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => array(
+            'side-pre', 
+            'side-post'
+        ),
         'defaultregion' => 'side-post',
         'options' => array('langmenu' => true)
     ),
     // Course page
     'course' => array(
         'file' => 'general.php',
-        'regions' => array('side-pre','side-post',
-            'side-center-pre','side-center-post'),
+        'regions' => $allRegions,
         'defaultregion' => 'side-pre', 
         'options' => array('langmenu' => true, 'nonavbar' => false)
     ),
     // Course page
     'coursecategory' => array(
         'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => $allRegions,
         'defaultregion' => 'side-post',
         'options' => array('langmenu' => true)
     ),
@@ -79,21 +93,19 @@ $THEME->layouts = array(
     ),
     'frontpage' => array(
         'file' => 'frontpage.php',
-        'regions' => array('side-pre', 'side-post',
-            'side-center-pre','side-center-post'),
+        'regions' => $allRegions,
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true, 'nonavbar' => true, 'nosubtitle' => true)
     ),
     'admin' => array(
         'file' => 'general.php',
-        'regions' => array('side-pre'),
+        'regions' => $allRegions ,
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true)
     ),
     'mydashboard' => array(
         'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post',
-            'side-center-pre','side-center-post'),
+        'regions' => $allRegions,
         'defaultregion' => 'side-post',
         'options' => array('langmenu' => true)
     ),

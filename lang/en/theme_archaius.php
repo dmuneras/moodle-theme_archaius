@@ -19,16 +19,22 @@
  * Strings for component 'theme_archaius', language 'en', branch 'MOODLE_20_STABLE'
  *
  * @package   theme_archaius
- * @copyright 2012 onwards Daniel Munera Sanchez  {@link http://moodle.com}
+ * @copyright 2012 onwards Daniel Munera Sanchez  {@link http://dmuneras.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-//PRESENTATION PAGE
+
+//REGIONS
 $string['pluginname'] = 'Archaius';
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 $string['region-side-center-pre'] = "Before center main content";
 $string['region-side-center-post'] = "After center main content";
+$string['region-footer-left'] = "Footer left";
+$string['region-footer-center'] = "Footer center";
+$string['region-footer-right'] = "Footer right";
+
+//PRESENTATION PAGE
 $string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><h2>Archaius</h2>                                                                                      
 <img src="archaius/pix/screenshot.png" />                                                                                                                                             
 <h3>Theme Credits</h3>

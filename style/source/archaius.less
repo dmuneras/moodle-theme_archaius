@@ -17,6 +17,7 @@
 
 /* REUSABLE FUNCTIONS
 -------------------------------------------------------------- */
+
 .rounded-corners (@radius:5px) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
@@ -408,6 +409,19 @@ div.region-content{
     width: 100%;
     z-index:0;
 }
+
+/* BLOCKS FOOTER
+-------------------------------------------------------------- */
+
+#region-footer-left,
+#region-footer-center,
+#region-footer-right{
+    float: left;
+    .box-sizing;
+    width: 33%;
+    padding: 20px;
+}
+
 .move{
     background-color: #fff;
     cursor: pointer;

@@ -1,22 +1,23 @@
 <?php
 
-
+//Check which components are present
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
 $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $hassidecenterpre = $PAGE->blocks->region_has_content('side-center-pre', $OUTPUT);
 $hassidecenterpost = $PAGE->blocks->region_has_content('side-center-post', $OUTPUT);
-$showsidepre = $hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT);
-$showsidepost = $hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT);
+$hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
+
+
 $bodyclasses = array();
-if ($showsidepre && !$showsidepost) {
+if ($hassidepre && !$hassidepost) {
     $bodyclasses[] = 'side-pre-only';
-} else if ($showsidepost && !$showsidepre) {
+} else if ($hassidepost && !$hassidepre) {
     $bodyclasses[] = 'side-post-only';
-} else if (!$showsidepost && !$showsidepre) {
+} else if (!$hassidepost && !$hassidepre) {
     $bodyclasses[] = 'content-only';
 }
 if ($hascustommenu) {
@@ -25,6 +26,8 @@ if ($hascustommenu) {
 if ($hasnavbar) {
     $bodyclasses[] = 'hasnavbar';
 }
+
+
 $context = context_system::instance();
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>

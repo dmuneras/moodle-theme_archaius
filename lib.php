@@ -265,8 +265,8 @@ class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
 //Add jquery using Moodle standard way
 function theme_archaius_page_init(moodle_page $page) { 
     $page->requires->jquery();
-    $page->requires->jquery_plugin('responsive-slides', 'theme_archaius'); 
+    $page->requires->jquery_plugin('responsive-slides', 'theme_archaius');
+    $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius');      
     $page->requires->jquery_plugin('accordion-blocks', 'theme_archaius');
-    $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius'); 
 }
 

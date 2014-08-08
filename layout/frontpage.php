@@ -4,7 +4,6 @@
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <?php include 'partials/page_header.php' ?>
-
 <!-- HOME PAGE ELEMENTS -->
 <?php
     if ( ! empty($PAGE->layout_options['nosubtitle'])){
@@ -15,18 +14,7 @@
     if(! isset($hasnavbar)){
         $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
     }
-    if(! isset($hassidepre)){
-        $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);    
-    }
-    if(! isset($hassidepost)){
-        $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);   
-    }
-    if(! isset($hassidecenterpre)){
-        $hassidecenterpre = $PAGE->blocks->region_has_content('side-center-pre', $OUTPUT);   
-    }
-    if(! isset($hassidecenterpost)){
-        $hassidecenterpost = $PAGE->blocks->region_has_content('side-center-post', $OUTPUT);   
-    }
+    
 ?>
 <div id="regions-control"></div>
 <div id="page" class="main-content">

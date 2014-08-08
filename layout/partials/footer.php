@@ -3,6 +3,26 @@
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
 if ($hasfooter) { ?>
     <footer id="page-footer" class="clearfix">
+        <?php $hasfooterleft = $PAGE->blocks->region_has_content('footer-left', $OUTPUT); ?>
+        <?php $hasfootercenter = $PAGE->blocks->region_has_content('footer-center', $OUTPUT); ?>
+        <?php $hassfooterright = $PAGE->blocks->region_has_content('footer-right', $OUTPUT); ?>
+
+        <?php if($hasfooterleft){ ?>
+            <div id="region-footer-left">
+                <?php echo $OUTPUT->blocks_for_region('footer-left') ?>
+            </div>
+        <?php } ?>
+        <?php if($hasfooterleft){ ?>
+            <div id="region-footer-center">
+                <?php echo $OUTPUT->blocks_for_region('footer-center') ?>
+            </div>
+        <?php } ?>
+        <?php if($hasfooterleft){ ?>
+            <div id="region-footer-right">
+                <?php echo $OUTPUT->blocks_for_region('footer-right') ?>
+            </div>
+        <?php } ?>
+
         <?php if (!empty($PAGE->theme->settings->footnote)) { ?>
             <?php echo $PAGE->theme->settings->footnote; ?>
         <?php }?>

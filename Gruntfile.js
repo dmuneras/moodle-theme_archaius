@@ -1,3 +1,27 @@
+/*  
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+This plugin is part of Archaius theme.
+@copyright  2013 Daniel Munera Sanchez
+
+
+/*
+    GRUNTFILE ARCHAIUS
+    DESCRIPTION:  This file define the needed task to precompile LESS and JS
+    			  jQuery plugins, the JS files are statics because some of
+    			  the plugins are not going to be modified and its compression 
+    			  is not needed. 
+-----------------------------------------------------------------------------*/
+
 module.exports = function(grunt) {
     grunt.initConfig({
 	    less: {
@@ -21,10 +45,16 @@ module.exports = function(grunt) {
 			static_mappings: {
 		      // Because these src-dest file mappings are manually specified, every
 		      // time a new file is added or removed, the Gruntfile has to be updated.
-		      files: [
-		        {src: 'jquery/source/archaius_custom_blocks-1.1.1.js', dest: 'jquery/source/archaius_custom_blocks-1.1.1.min.js'},
-		        {src: 'jquery/source/responsiveslides.js', dest: 'jquery/source/responsiveslides.min.js'},
-		      ],
+				files: [
+			      	{
+			        	src: 'jquery/source/archaius_custom_blocks-1.1.2.js', 
+			        	dest: 'jquery/source/archaius_custom_blocks-1.1.2.min.js'
+			        },
+			        {
+			        	src: 'jquery/source/responsiveslides.js', 
+			        	dest: 'jquery/source/responsiveslides.min.js'
+			        },
+		    	],
 		    },
 	  	},
 	    watch: {

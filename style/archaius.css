@@ -346,6 +346,18 @@ div.region-content div.header-tab h2 {
   width: 100%;
   z-index: 0;
 }
+/* BLOCKS FOOTER
+-------------------------------------------------------------- */
+#region-footer-left,
+#region-footer-center,
+#region-footer-right {
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33%;
+  padding: 20px;
+}
 .move {
   background-color: #fff;
   cursor: pointer;
