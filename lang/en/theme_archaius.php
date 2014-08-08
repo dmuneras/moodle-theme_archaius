@@ -59,26 +59,37 @@ originally designed for Moodle 1.9 by Patrick Malley. Archaius was created by Da
 //THEME OPTIONS
 $string['logo'] = 'logo';
 $string['logodesc'] = 'logo URL';
-$sring['mobilelogo'] = 'Logo for mobile devices';
-$sring['mobilelogodesc'] = 'Logo for mobile devices, it is going to be displayed when display width is < 768px';
+
+$string['mlogo'] = 'Logo for mobile devices';
+$string['mlogodesc'] = 'Logo for mobile devices, it is going to be displayed when display width is < 768px';
+
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'You can add new CSS rules';
+
 $string['customjs'] = 'Javascript';
 $string['customjsdesc'] = 'You can add new javascript code, jQuery is available';
+
 $string['footnote'] = "Foot Note";
 $string['footnotedesc'] = "Foot Note";
+
 $string['themecolor'] = "Header and Footer color";
 $string['themecolordesc'] = "You can choose the color for footer and header";
+
 $string['headercolor'] = "Tabs Color";
 $string['headercolordesc'] = "Color for the tabs of the block";
+
 $string['currentcolor'] = "Color of the current block tab";
 $string['currentcolordesc'] = "Color of the current block tab";
+
 $string['bgcolor'] = "Background color";
 $string['bgcolordesc'] = "Background color";
+
 $string['currentcustommenucolor'] = "Color of the current item in custom menu.";
 $string['currentcustommenucolordesc'] = "Color of the current item of custom menu.";
+
 $string["collapsibleTopics"] = "Collapsible Topics effect";
 $string["collasibleTopicsdesc"] = "Activate or desactivate the collapsible effect for course with topics format.";
+
 $string["hideShowBlocks"] = "Activate hide and show blocks effect";
 $string["hideShowBlocksdesc"] = "Activate or desactivate the hide and how blocks effect, which is useful to see the main content using the 100% of the space of the main container";
 

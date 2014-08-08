@@ -31,8 +31,8 @@ if ($ADMIN->fulltree) {
 
     //Mobile Logo setting
     $name = 'theme_archaius/mobilelogo';
-    $title = get_string('mobilelogo','theme_archaius');
-    $description = get_string('mobilelogodesc', 'theme_archaius');
+    $title = get_string('mlogo','theme_archaius');
+    $description = get_string('mlogodesc', 'theme_archaius');
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'mobilelogo');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);

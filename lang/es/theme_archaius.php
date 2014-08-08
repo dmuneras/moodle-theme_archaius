@@ -53,27 +53,37 @@ Archaius fue creado por Daniel Múnera Sánchez (dmunera119@gmail.com)</p>
 //THEME OPTIONS
 $string['logo'] = 'logo';
 $string['logodesc'] = 'Dirección URL del logo para ser agregado.';
-$sring['mobilelogo'] = 'Logo para dispositivos móviles';
-$sring['mobilelogodesc'] = 'Logo para dispositivos móviles, aparecerá cuando el ancho de la pantalla sea menor que 768px';
+
+$string['mlogo'] = 'Logo para dispositivos móviles';
+$string['mlogodesc'] = 'Logo para dispositivos móviles, aparecerá cuando el ancho de la pantalla sea menor que 768px';
 
 $string['customcss'] = 'Reglas CSS personalizadas.';
 $string['customcssdesc'] = 'Puedes añadir reglas CSS personalizadas para mejorar tu diseño.';
+
 $string['customjs'] = 'Javascript';
 $string['customjsdesc'] = 'Puedes añadir Javacript a tu sitio, jQuery esta disponible.';
+
 $string['footnote'] = "Nota de pie.";
 $string['footnotedesc'] = "Nota de pie.";
+
 $string['themecolor'] = "Color para el Header y el Footer de tu sitio.";
 $string['themecolordesc'] = "Elige el color del Header y el Footer de tu sitio.";
+
 $string['headercolor'] = "Color de los encabezados de los bloques.";
 $string['headercolordesc'] = "Elige el color de los encabezados de los bloques.";
+
 $string['currentcolor'] = "Color del encabezado del bloque actual.";
 $string['currentcolordesc'] = "Color del encabezado actual.";
+
 $string['bgcolor'] = "Color de fondo.";
 $string['bgcolordesc'] = "Elige el Color de fondo de tu sitio.";
+
 $string['currentcustommenucolor'] = "Color del item actual en el menú horizontal.";
 $string['currentcustommenucolordesc'] = "Elige el color del item actual en el menú horizontal.";
+
 $string["collapsibleTopics"] = "Efecto del temario plegable.";
 $string["collasibleTopicsdesc"] = "Activar o desactivar el efecto gráfico del temario plegable.";
+
 $string["hideShowBlocks"] = "Efecto para esconder y mostrar los bloques.";
 $string["hideShowBlocksdesc"] = "Activar o desactivar el efecto para esconder y mostrar los bloques, es muy útil para ver el contenido principal usando el 100% del espacio disponible.";
 
