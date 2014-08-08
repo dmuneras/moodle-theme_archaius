@@ -1,5 +1,4 @@
-/* -------------------------------------------------------------- 
-   Small screen
+/* SMALL SCREENS
 -------------------------------------------------------------- */
 .responsive-view(@container_width: 95%){
     input[type=text], 
@@ -55,8 +54,7 @@
         display: none;
     }
 
-    /* -------------------------------------------------------------- 
-        Forcing layout to be one column
+    /* Forcing layout to be one column
     -------------------------------------------------------------- */
     #region-main-box,
     #region-main-wrap,
@@ -75,17 +73,19 @@
     .report-page #report-region-pre{
       max-width:none;
     }
-
-    #logo{
+    #mobile-logo{
       margin-left: 20px;
+      display: block;
       img.sitelogo{
         height: auto;
         max-width: 80%
       }
     }
+    #logo{
+      display: none;
+    }
 
-    /* -------------------------------------------------------------- 
-        Header page CSS
+    /* Header page CSS
     -------------------------------------------------------------- */
     #page-header{
       .headermenu{
@@ -123,8 +123,7 @@
       }
 
     }
-    /* -------------------------------------------------------------- 
-        Form css
+    /*  Form css
     -------------------------------------------------------------- */
     #adminsettings .form-item .form-label{
         width: 100%;
@@ -136,8 +135,7 @@
         margin-left: 0;
      }
 
-    /* -------------------------------------------------------------- 
-        Login CSS
+    /* Login CSS
     -------------------------------------------------------------- */
      .loginbox.twocolumns .loginpanel,
      .loginbox.twocolumns .signuppanel{
@@ -149,8 +147,7 @@
         border-top: 1px solid #888;
      }
 
-     /* -------------------------------------------------------------- 
-        Course CSS
+     /* Course CSS
     -------------------------------------------------------------- */
     .coursebox > .info > .coursename, 
     .coursebox .content .teachers, 
@@ -164,8 +161,7 @@
       width: @container_width !important;
       border-left: 0 !important;
     }
-    /* -------------------------------------------------------------- 
-        Quiz CSS
+    /* Quiz CSS
     -------------------------------------------------------------- */
     .questionbankwindow.block,
     #page-mod-quiz-edit div.quizcontents{

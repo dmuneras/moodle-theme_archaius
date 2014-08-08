@@ -1,4 +1,26 @@
+/*  
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+This plugin is part of Archaius theme.
+@copyright  2013 Daniel Munera Sanchez
+
+IMPORTANT
+----------
+
+This plugin needs jquery.velocity :  http://julian.com/research/velocity/
+
+*/
 ! function(window,$,undefined){
+    
     $.fn.extend({
         archaiusCustomBlocks:function(options){
             var defaults={
@@ -34,12 +56,15 @@
                             obj.find(o.regionTabClass).removeClass("current");
                             $this.addClass("current");
                             var index=obj.find(o.regionTabClass).index($(this));
-                            data.blocks.slideUp().eq(index).slideDown();
+                            //data.blocks.slideUp().eq(index).slideDown();
+                            data.blocks.velocity("slideUp",{duration : 700});
+                            data.blocks.eq(index).velocity("slideDown",{duration : 700});
                             
                         }else{
                             var index=obj.find(o.regionTabClass).index($this);
                             $this.removeClass("current");
-                            data.blocks.eq(index).slideUp(); 
+                            //data.blocks.eq(index).slideUp(); 
+                            data.blocks.velocity("slideUp",{duration : 700});
                         }
                         if($this[0]==obj.find(o.regionTabClass+":last")[0] ){
                             if($this.hasClass("current")){

@@ -57,6 +57,10 @@ a example.
                 main.velocity(cssRuleMain ,400,null);
 
             }
+
+            var animate = function(region,action,options){
+                region.velocity(action, options);
+            }
             var hideShowBlocks = function(){
                 var regionMain = $("#region-main");
                 var reportRegionPre = $("#report-region-pre");
@@ -242,7 +246,6 @@ a example.
                 if(slideshowTimeout < 1500){
                     var slideshowTimeout = 1500;
                 }
-                console.log(slideshowTimeout);
                 if($(".rslides").length > 0){
                     var options = {
                         auto : true,
@@ -265,7 +268,15 @@ a example.
                 function(activatePausePlay, slideshowTimeout, confirmationDeleteSlide,noSlides){
                     startSlideShow(activatePausePlay,slideshowTimeout);
                     $("#toggle-admin-menu").on("click",function(){
-                        $(this).next().slideToggle();
+                        var action = "slideUp";
+                        $this = $(this);
+                        if(! $this.hasClass("expanded")){
+                            var action = "slideDown"; 
+                            $this.addClass("expanded");
+                        }else{
+                            $this.removeClass("expanded");
+                        } 
+                        animate($this.next(), action, { duration: 500 });       
                     });
                     //Delete slideshow using AJAX to avoid page reload.
                     $(".delete-slide").on("click",function(event){
@@ -394,6 +405,10 @@ a example.
                         checkOnResize();
                     });    
                 }
+                $(".notifysuccess").velocity(
+                    { opacity: 0 }, 
+                    { visibility: "hidden", duration:3000 }
+                );
             };
             return {
                     hideShowBlocks: hideShowBlocks,

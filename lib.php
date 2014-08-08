@@ -27,14 +27,6 @@ This plugin is part of Archaius theme.
 
 function archaius_process_css($css, $theme) {
 
-    // Set the background image for the logo
-    if (!empty($theme->settings->logo)) {
-        $logo = $theme->settings->logo;
-    } else {
-        $logo = null;
-    }
-    $css = archaius_set_logo($css, $logo);
-
     // Set custom CSS
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -82,19 +74,6 @@ function archaius_process_css($css, $theme) {
     }
 
     $css = archaius_set_currentcustommenucolor($css,$currentcustommenucolor);
-
-    return $css;
-}
-
-function archaius_set_logo($css, $logo) {
-    global $OUTPUT;
-    $tag = '[[setting:logo]]';
-    $replacement = $logo;
-    if (is_null($replacement)) {
-        $replacement = $OUTPUT->pix_url('images/logo','theme');
-    }
-
-    $css = str_replace($tag, $replacement, $css);
 
     return $css;
 }
@@ -212,26 +191,47 @@ function archaius_set_bgcolor($css, $bgcolor) {
 
 
 
-//Callback function to get files related with the carousel of information on
-//the frontpage.
+/**
+ * Serves any files associated with the theme settings.
+ * Callback function to get files related with the carousel of information on
+ * the frontpage.
+ *
+ * @param stdClass $course
+ * @param stdClass $cm
+ * @param context $context
+ * @param string $filearea
+ * @param array $args
+ * @param bool $forcedownload
+ * @param array $options
+ * @return bool
+ */
+
+
 function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
                                      $forcedownload, array $options = array()) {
 
     if ($context->contextlevel == CONTEXT_SYSTEM) {
-        $fs = get_file_storage();
-        $relativepath = implode('/', $args);
-        $fullpath = "/$context->id/theme_archaius/$filearea/$relativepath";
-        $hash = sha1($fullpath);
-        $file = $fs->get_file_by_hash($hash);
-        if (!$file or $file->is_directory()) {
-            return false;
-        
-        } else {
-            return send_stored_file($file, 86400, 0, $forcedownload, $options);
+        if ($filearea === 'logo') {
+            $theme = theme_config::load('archaius');
+            return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+        }elseif ($filearea === 'mobilelogo') {
+            $theme = theme_config::load('archaius');
+            return $theme->setting_file_serve('mobilelogo', $args, $forcedownload, $options);
+        }else{
+            $fs = get_file_storage();
+            $relativepath = implode('/', $args);
+            $fullpath = "/$context->id/theme_archaius/$filearea/$relativepath";
+            $hash = sha1($fullpath);
+            $file = $fs->get_file_by_hash($hash);
+            if (!$file or $file->is_directory()) {
+                send_file_not_found();
+            }else {
+                return send_stored_file($file, 86400, 0, $forcedownload, $options);
+            }            
         }
+
     }
 }
-
 
 //To translate items in the customenu, it is from:
 // http://docs.moodle.org/dev/Extending_the_theme_custom_menu
@@ -265,11 +265,8 @@ class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
 //Add jquery using Moodle standard way
 function theme_archaius_page_init(moodle_page $page) { 
     $page->requires->jquery();
-
     $page->requires->jquery_plugin('responsive-slides', 'theme_archaius'); 
-
     $page->requires->jquery_plugin('accordion-blocks', 'theme_archaius');
-
     $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius'); 
 }
 

@@ -1,0 +1,125 @@
+/* COURSE STYLES
+------------------------------------------*/
+/* Course's list frontpage styles        
+-----------------------------------------*/
+#page-course-category .categorypicker {
+  text-align: center;
+  margin: 10px 0 20px;
+}
+.coursebox {
+  width: auto;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+.coursebox .info {
+  width: 100%;
+}
+.coursebox .info .name {
+  width: 100%;
+}
+.coursebox .content .teachers {
+  margin-left: 0.6em;
+  font-size: 0.95em;
+  width: 40%;
+  float: left;
+}
+.coursebox .content .summary {
+  width: 50%;
+  padding-left: 10px;
+  border-left: 1px solid #ddd;
+}
+.coursebox .content .summary .summary-title {
+  margin-left: 15px;
+}
+.coursebox .content .summary .summary-title p {
+  color: #808080;
+}
+.coursebox .content .summary .summary-title span {
+  color: #444;
+  font-size: 1.75em;
+}
+/* ----------------------------------------
+ Main page course styles        
+-----------------------------------------*/
+.path-course-view .topics .topic-tab {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  cursor: pointer;
+  height: 40px;
+}
+.path-course-view .topics .topic-tab.current {
+  background-color: whitesmoke;
+  border: 1px solid #ccc;
+}
+.categorybox {
+  border: none;
+}
+h2.headingblock {
+  font-size: 1.5em;
+}
+.path-course-view .course-content ul.topics li.section.main {
+  background-color: #fff;
+  display: none;
+  padding-top: 5px;
+  list-style-type: none ;
+  margin-top: 0;
+  border: 1px dashed #ddd;
+  border-top: 0;
+}
+.path-course-view .course-content ul.topics li.section.main .side {
+  padding: 5px 0;
+}
+.path-course-view .course-content ul.topics li.section.main ul li {
+  clear: both;
+}
+.path-course-view .course-content .main {
+  background: #f3f8ed;
+}
+.path-course-view .course-content .current {
+  background-color: #fff;
+}
+.path-course-view .course-content .activity.label.modtype_label {
+  margin: 5px auto;
+}
+.path-course-view .course-content ul.topics li.section .content {
+  margin: 0 10px;
+}
+.path-course-view .course-content ul.weeks li.section {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+}
+.path-course-view .course-content ul.weeks li.section.current {
+  background-color: #f5f5f5;
+}
+#page-course-view-weeks .weekdates {
+  font-size: 1em;
+  font-weight: normal;
+  color: #777;
+  padding: 2px;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 7px solid #999999;
+  border-bottom: 5px solid transparent;
+  border-right: 0;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.current .triangle {
+  width: 0;
+  height: 0;
+  border-top: 7px solid #999999;
+  border-left: 5px solid transparent;
+  border-bottom: 0;
+  border-right: 5px solid transparent;
+  float: left;
+  margin-right: 5px;
+  margin-top: 8px;
+}

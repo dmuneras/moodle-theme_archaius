@@ -63,7 +63,7 @@ function theme_archaius_admin_options($contextid,$slides){
     $html_admin_options = "<div class='admin-options'>";    
     $base_link = $CFG->wwwroot;
     $link_to_add = "<div class='main-control'>".
-        "<a class='pretty-button pretty-link-button'".
+        "<a class='pretty-button pretty-link-button btn'".
         " href= '". $base_link ."/theme/archaius/slideshow/controllers/slides_controller.php?".
         "action=add&contextid=" . $contextid . "&userid=" . $USER->id . "&sectionid=2'>". 
         get_string("addSlide","theme_archaius") ."</a></div><div class='notice'></div>";
@@ -71,7 +71,14 @@ function theme_archaius_admin_options($contextid,$slides){
 
     if(sizeof($slides) > 0){
         $table = new html_table();
-        $table->head = array('Position', 'Content', 'Edit','Delete');
+        
+        $table->head = array(
+            get_string('pos','theme_archaius'), 
+            get_string('content'), 
+            get_string('edit'),
+            get_string('delete')
+        );
+
         foreach ($slides as $slide) {
             $base_link = "<a href=". $CFG->wwwroot ."/theme/archaius/slideshow/controllers/".
                         "slides_controller.php?"; 
@@ -91,7 +98,7 @@ function theme_archaius_admin_options($contextid,$slides){
         $html_admin_options .= html_writer::table($table);
 
     }else{
-        $html_admin_options .= "<h2>There are not slides at the moment</h2>";
+        $html_admin_options .= "<h2>" . get_string("noSlides","theme_archaius") . "</h2>";
     }
     $html_admin_options .= "</div>";
     return $html_admin_options;         

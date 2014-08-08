@@ -25,8 +25,16 @@ if ($ADMIN->fulltree) {
     $name = 'theme_archaius/logo';
     $title = get_string('logo','theme_archaius');
     $description = get_string('logodesc', 'theme_archaius');
-    $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+    //Mobile Logo setting
+    $name = 'theme_archaius/mobilelogo';
+    $title = get_string('mobilelogo','theme_archaius');
+    $description = get_string('mobilelogodesc', 'theme_archaius');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'mobilelogo');
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
      // Foot note setting
@@ -35,6 +43,7 @@ if ($ADMIN->fulltree) {
     $description = get_string('footnotedesc', 'theme_archaius');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     //Background color                                                                                                                                                               
@@ -42,8 +51,18 @@ if ($ADMIN->fulltree) {
     $title = get_string('bgcolor','theme_archaius');
     $description = get_string('bgcolordesc', 'theme_archaius');
     $default = '#fff';
-    $previewconfig = array('selector'=>'#page-header', 'style'=>'header');
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $previewconfig = array(
+        'selector'=>'html,body',
+        'style'=>'backgroundColor'
+    );
+    $setting = new admin_setting_configcolourpicker(
+        $name, 
+        $title, 
+        $description, 
+        $default, 
+        $previewconfig
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     // theme color setting
@@ -51,8 +70,18 @@ if ($ADMIN->fulltree) {
     $title = get_string('themecolor','theme_archaius');
     $description = get_string('themecolordesc', 'theme_archaius');
     $default = '#2E3332';
-    $previewconfig = array('selector'=>'#page-header', 'style'=>'header');
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $previewconfig = array(
+        'selector'=>'#page-header,#page-footer',
+        'style'=>'backgroundColor'
+    );
+    $setting = new admin_setting_configcolourpicker(
+        $name, 
+        $title, 
+        $description, 
+        $default, 
+        $previewconfig
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     // blocks header colors
@@ -60,8 +89,18 @@ if ($ADMIN->fulltree) {
     $title = get_string('headercolor','theme_archaius');
     $description = get_string('headercolordesc', 'theme_archaius');
     $default = '#697F6F';
-    $previewconfig = array('selector'=> 'div.region-content div.header', 'style'=>'header');
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $previewconfig = array(
+        'selector'=> '.header-tab', 
+        'style'=>'backgroundColor'
+    );
+    $setting = new admin_setting_configcolourpicker(
+        $name, 
+        $title, 
+        $description, 
+        $default, 
+        $previewconfig
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     // blocks header current colors
@@ -69,8 +108,18 @@ if ($ADMIN->fulltree) {
     $title = get_string('currentcolor','theme_archaius');
     $description = get_string('currentcolordesc', 'theme_archaius');
     $default = '#2E3332';
-    $previewconfig = array('selector'=> 'div.region-content div.header.current', 'style'=>'header');
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $previewconfig = array(
+        'selector'=> '.header-tab.current', 
+        'style'=>'backgroundColor'
+    );
+    $setting = new admin_setting_configcolourpicker(
+        $name, 
+        $title, 
+        $description, 
+        $default, 
+        $previewconfig
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     // custommenucurrent color
@@ -78,29 +127,57 @@ if ($ADMIN->fulltree) {
     $title = get_string('currentcustommenucolor','theme_archaius');
     $description = get_string('currentcustommenucolor', 'theme_archaius');
     $default = '#2E3332';
-    $previewconfig = array('selector'=> 'div.region-content div.header.current', 'style'=>'header');
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+    $previewconfig = array(
+        'selector'=> 'div.region-content div.header.current',
+        'style'=>'header'
+    );
+    $setting = new admin_setting_configcolourpicker(
+        $name, 
+        $title, 
+        $description, 
+        $default, 
+        $previewconfig
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     //Activate 
     $name = "theme_archaius/collasibleTopics";
     $title = get_string("collapsibleTopics", 'theme_archaius');
     $description = get_string('collasibleTopicsdesc', 'theme_archaius');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $setting = new admin_setting_configcheckbox(
+        $name, 
+        $title, 
+        $description, 
+        1
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     //Activate Hide Show Blocks 
     $name = "theme_archaius/hideShowBlocks";
     $title = get_string("hideShowBlocks", 'theme_archaius');
     $description = get_string('hideShowBlocksdesc', 'theme_archaius');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 1);
+    $setting = new admin_setting_configcheckbox(
+        $name, 
+        $title, 
+        $description, 
+        1
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     //Activate Slideshow
     $name = "theme_archaius/activateSlideshow";
     $title = get_string("activateSlideshow", 'theme_archaius');
     $description = get_string('activateSlideshowdesc', 'theme_archaius');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $setting = new admin_setting_configcheckbox(
+        $name, 
+        $title, 
+        $description, 
+        0
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     //Activate pause/play Slideshow
@@ -108,6 +185,7 @@ if ($ADMIN->fulltree) {
     $title = get_string("activatePausePlaySlideshow", 'theme_archaius');
     $description = get_string('activatePausePlaySlideshowdesc', 'theme_archaius');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     // Slideshow Timeout
@@ -115,7 +193,14 @@ if ($ADMIN->fulltree) {
     $title = get_string('slideshowTimeout','theme_archaius');
     $description = get_string('slideshowTimeoutdesc', 'theme_archaius');
     $default = 1000;
-    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_INT);
+    $setting = new admin_setting_configtext(
+        $name, 
+        $title, 
+        $description, 
+        $default, 
+        PARAM_INT
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
 
@@ -124,7 +209,13 @@ if ($ADMIN->fulltree) {
     $title = get_string('customcss','theme_archaius');
     $description = get_string('customcssdesc', 'theme_archaius');
     $default = '';
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting = new admin_setting_configtextarea(
+        $name, 
+        $title, 
+        $description, 
+        $default
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
     // Custom Javascript file
@@ -132,8 +223,12 @@ if ($ADMIN->fulltree) {
     $title = get_string('customjs','theme_archaius');
     $description = get_string('customjsdesc', 'theme_archaius');
     $default = '';
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+    $setting = new admin_setting_configtextarea(
+        $name, 
+        $title, 
+        $description, 
+        $default
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
-
-
 }

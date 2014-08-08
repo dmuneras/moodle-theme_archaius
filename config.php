@@ -25,11 +25,11 @@ This plugin is part of Archaius theme.
 $THEME->name = 'archaius';
 
 $THEME->sheets = array(
-    'base_less',
-    'archaius_less',
-    'archaius_responsive_less',
-    'course_less',
-    'home_less',
+    'base',
+    'archaius',
+    'archaius_responsive',
+    'course',
+    'home',
     'boilerplate',
     'custom'
 );

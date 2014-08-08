@@ -25,6 +25,16 @@ Archaius uses jQuery as a javascript framework and it is using modernizr and res
 Improvements history:
 ------------
 
+07.08.2014
+
+Adding clear cache until theme settings update
+Grunt added
+Preview settings page is now working too.
+Upload logo is possible in setting page
+
+New setting : mobile logo
+
+Velocity added to custom_blocks effect 
 06.07.2014
 
 Adding options to manipulate Slideshow.
