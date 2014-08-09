@@ -23,44 +23,66 @@ Archaius uses jQuery as a javascript framework and it is using modernizr and res
 @copyright  2013 Daniel Munera Sanchez
 
 Improvements history:
-------------
+---------------------
+
+08.08.2014
+----------
+
+* Working on PHP improvements
+* new option to change color of custommenu
+* page header layout change
+* rewriting lib.php
 
 07.08.2014
+----------
 
-Adding clear cache until theme settings update
-Grunt added
-Preview settings page is now working too.
-Upload logo is possible in setting page
+* Adding clear cache until theme settings update
+* Grunt added
+* Preview settings page is now working too.
+* Upload logo is possible in setting page
+* New setting : mobile logo
+* Velocity added to custom_blocks effect 
 
-New setting : mobile logo
-
-Velocity added to custom_blocks effect 
 06.07.2014
+----------
 
-Adding options to manipulate Slideshow.
+* Adding options to manipulate Slideshow.
 
 2.06.2014
+---------
 
-Improvements on JS, changing blocks effect.
+* Improvements on JS, changing blocks effect.
 
 20.06.2013
-Better shape of block in the main content.
-New option in the setting page to activate and desactivate the hide and show blocks effect.
-Link inside main container are now blue to make them easier to find.
+----------
+
+* Better shape of block in the main content.
+* New option in the setting page to activate and desactivate the hide and show blocks effect.
+* Link inside main container are now blue to make them easier to find.
 
 09.09.2013
-New front page with a carousel of information that could be edited by admin users
+----------
+
+* New front page with a carousel of information that could be edited by admin users
 
 21.09.2013
-The creation of tabs for course topics was fixed. Dependencies between tabs and summaries have been erased (reported issue)
+-----------
+
+* The creation of tabs for course topics was fixed. Dependencies between tabs and summaries have been erased (reported issue)
 
 14.10.2013
-Better slideshow: possibility to activate or deactivate it, side-center-[pre|post] added.
+----------
+
+* Better slideshow: possibility to activate or deactivate it, side-center-[pre|post] added.
 
 
 05.12.2013
-Working on moodle 26 version and general improvements related with javascript.
+----------
+
+* Working on moodle 26 version and general improvements related with javascript.
 
 22.12.2013
-Writing LESS and reviewing CSS and Javascript as well as HTML5 fallback for IE.
+----------
+
+* Writing LESS and reviewing CSS and Javascript as well as HTML5 fallback for IE.
 Going responsive without Bootstrap.

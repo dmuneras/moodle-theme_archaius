@@ -2,7 +2,7 @@
 <?php 
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
 if ($hasfooter) { ?>
-    <footer id="page-footer" class="clearfix">
+    <footer id="page-footer">
         <?php $hasfooterleft = $PAGE->blocks->region_has_content('footer-left', $OUTPUT); ?>
         <?php $hasfootercenter = $PAGE->blocks->region_has_content('footer-center', $OUTPUT); ?>
         <?php $hassfooterright = $PAGE->blocks->region_has_content('footer-right', $OUTPUT); ?>
@@ -30,15 +30,12 @@ if ($hasfooter) { ?>
         <?php
         echo $OUTPUT->login_info();
         ?>
-        <p>Supported by 
-        <a href="http://moodle.org" title="Moodle">
+        <p>
+            <a href="http://moodle.org" title="Moodle">
                 <img src="<?php echo $OUTPUT->pix_url('moodle-logo','theme')?>" alt="Moodle logo" />
             </a>
         </p>
-        <?php
-            echo $OUTPUT->standard_footer_html();
-        ?>
-        <div class="clearfix"></div>
+        <?php echo $OUTPUT->standard_footer_html(); ?>
     </footer>
 <?php } ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>

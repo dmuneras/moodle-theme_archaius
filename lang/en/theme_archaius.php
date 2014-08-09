@@ -90,6 +90,9 @@ $string['currentcolordesc'] = "Color of the current block tab";
 $string['bgcolor'] = "Background color";
 $string['bgcolordesc'] = "Background color";
 
+$string['custommenucolor'] = "Color of custom menu.";
+$string['custommenucolordesc'] = "Color of custom menu.";
+
 $string['currentcustommenucolor'] = "Color of the current item in custom menu.";
 $string['currentcustommenucolordesc'] = "Color of the current item of custom menu.";
 
@@ -98,6 +101,9 @@ $string["collasibleTopicsdesc"] = "Activate or desactivate the collapsible effec
 
 $string["hideShowBlocks"] = "Activate hide and show blocks effect";
 $string["hideShowBlocksdesc"] = "Activate or desactivate the hide and how blocks effect, which is useful to see the main content using the 100% of the space of the main container";
+
+$string["slideshowheight"] = "Slideshow height";
+$string["slideshowheightdesc"] = "Slideshow height";
 
 //SLIDESHOW
 $string["description"] = "Insert the HTML to create the slide";

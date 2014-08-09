@@ -87,7 +87,7 @@ $THEME->layouts = array(
     ),
     'incourse' => array(
         'file' => 'general.php',
-        'regions' => array('side-pre'),
+        'regions' => $allRegions,
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true)
     ),
@@ -111,7 +111,7 @@ $THEME->layouts = array(
     ),
     'mypublic' => array(
         'file' => 'general.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => $allRegions,
         'defaultregion' => 'side-post',
         'options' => array('langmenu' => true)
     ),

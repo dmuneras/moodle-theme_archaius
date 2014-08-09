@@ -83,6 +83,9 @@ $string['currentcolordesc'] = "Color del encabezado actual.";
 $string['bgcolor'] = "Color de fondo.";
 $string['bgcolordesc'] = "Elige el Color de fondo de tu sitio.";
 
+$string['custommenucolor'] = "Color del menú horizontal.";
+$string['custommenucolordesc'] = "Color del menú horizontal.";
+
 $string['currentcustommenucolor'] = "Color del item actual en el menú horizontal.";
 $string['currentcustommenucolordesc'] = "Elige el color del item actual en el menú horizontal.";
 
@@ -92,6 +95,8 @@ $string["collasibleTopicsdesc"] = "Activar o desactivar el efecto gráfico del t
 $string["hideShowBlocks"] = "Efecto para esconder y mostrar los bloques.";
 $string["hideShowBlocksdesc"] = "Activar o desactivar el efecto para esconder y mostrar los bloques, es muy útil para ver el contenido principal usando el 100% del espacio disponible.";
 
+$string["slideshowheight"] = "Altura del carusel de la página principal";
+$string["slideshowheightdesc"] = "Altura del carusel de la página principal";
 
 //SLIDESHOW
 $string["description"] = "Insertar HTML para crear un <i>slide</i>.";
@@ -109,7 +114,7 @@ $string["slideshowTimeoutdesc"] = "Tiempo en milisegundos para pasar de <i>slide
 
 //Form exceptions
 $string["positionException"] = "La posición es requerida y tiene que ser mayor que cero.";
-$string["descriptionEditorException"] = "No queremos un <i>slide</i> en blanco.";
+$string["descriptionEditorException"] = "No queremos un slide en blanco.";
 $string["confirmationDeleteSlide"] = "Esta seguro que quiere eliminar este slide?";
 $string["noSlides"] = "No hay ningún <i>slide</i> en el momento.";
 

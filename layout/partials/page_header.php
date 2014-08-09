@@ -59,7 +59,9 @@ if(! isset($hascustommenu)){
     </div>
   </div>
   <?php if ($hascustommenu) { ?>
-    <div id="custommenu" class="collapsed"><?php echo $custommenu; ?></div>  
+    <div id="custommenu" class="collapsed">
+      <div class="custommenu-inner"><?php echo $custommenu; ?></div>
+    </div>  
   <?php } ?>  
 </div>        
 <!-- END OF HEADER -->

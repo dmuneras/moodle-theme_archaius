@@ -37,7 +37,7 @@ span.error {
   color: #fff;
   width: 100%;
   float: none;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   overflow: auto;
 }
 #page-header a:link,
@@ -80,6 +80,10 @@ span.error {
   padding-top: 10px;
   max-width: 1200px;
   min-height: 110px;
+  width: 90%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .adminsearchform {
   display: none;
@@ -111,7 +115,7 @@ span.error {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
-  width: 45%;
+  width: 48%;
   margin-top: 20px;
 }
 .page-header-top {
@@ -358,6 +362,34 @@ div.region-content div.header-tab h2 {
   width: 33%;
   padding: 20px;
 }
+#region-footer-left .header-tab,
+#region-footer-center .header-tab,
+#region-footer-right .header-tab {
+  display: none;
+}
+#region-footer-left .menu-action,
+#region-footer-center .menu-action,
+#region-footer-right .menu-action {
+  color: #222222;
+}
+#region-footer-left .content,
+#region-footer-center .content,
+#region-footer-right .content {
+  background-color: [[setting:themecolor]];
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -ms-border-radius: 0px 0px 0px 0px;
+  -o-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+  text-align: left;
+}
+#region-footer-left .block,
+#region-footer-center .block,
+#region-footer-right .block {
+  min-height: inherit;
+}
+/* END BLOCKS FOOTER
+-------------------------------------------------------------- */
 .move {
   background-color: #fff;
   cursor: pointer;
@@ -540,7 +572,8 @@ td.eventskey {
 #page-footer .logininfo {
   margin: 10px auto 15px auto;
 }
-#page-footer .sitelink {
+#page-footer .sitelink,
+#page-footer .helplink {
   clear: both;
 }
 #page-footer .sitelink img {
@@ -594,8 +627,7 @@ td.eventskey {
 /* CUSTOMMENU
 -------------------------------------------------------------- */
 #custommenu {
-  background-color: #697F6F;
-  border-top: 2px solid #000;
+  background-color: [[setting:custommenucolor]];
   padding: 1px;
   min-height: 36px;
 }
@@ -604,6 +636,10 @@ td.eventskey {
 #custommenu a,
 #custommenu .yui3-menu-content {
   border: none !important;
+}
+#custommenu .custommenu-inner {
+  width: 90%;
+  margin: 0 auto;
 }
 #custommenu .custom_menu_submenu li {
   border-right: 0px;

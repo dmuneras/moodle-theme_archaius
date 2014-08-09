@@ -1,30 +1,32 @@
 <?php
-
-/*  
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-This plugin is part of Archaius theme.
-@copyright  2013 Daniel Munera Sanchez
-
+/*
+*
+*   This program is free software: you can redistribute it and/or modify
+*   it under the terms of the GNU General Public License as published by
+*   the Free Software Foundation, either version 3 of the License, or
+*   (at your option) any later version.
+*
+*   This program is distributed in the hope that it will be useful,
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*   GNU General Public License for more details.
 */
 
-/******************************************************************************
-|                     ADD  SLIDES                                             |   
-******************************************************************************/
+/**
+ * 
+ * @package   theme_archaius
+ * @copyright 2012 onwards Daniel Munera Sanchez  {@link http://dmuneras.com}
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ */
+
+/*   ADD SLIDES                                               
+-----------------------------------------------------------------------------*/
 
 //imports 
 require_once('slide_form.php');
 
-global $DB,$USER;
+global $DB,$USER,$CFG;
 list($context, $course, $cm) = get_context_info_array($contextid);
 
 //Check is user has enough privileges
@@ -42,7 +44,7 @@ if(!(isloggedin() &&
 }
 
 //Set information page
-$PAGE->set_url($url);
+$PAGE->set_url($CFG->wwwroot);
 $PAGE->set_context($context);
 
 

@@ -122,6 +122,26 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
+    // custommenu color
+    $name = 'theme_archaius/custommenucolor';
+    $title = get_string('custommenucolor','theme_archaius');
+    $description = get_string('custommenucolor', 'theme_archaius');
+    $default = '#2E3332';
+    $previewconfig = array(
+        'selector'=> '#custommenu',
+        'style'=>'backgroundColor'
+    );
+    $setting = new admin_setting_configcolourpicker(
+        $name, 
+        $title, 
+        $description, 
+        $default, 
+        $previewconfig
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+
     // custommenucurrent color
     $name = 'theme_archaius/currentcustommenucolor';
     $title = get_string('currentcustommenucolor','theme_archaius');
@@ -129,7 +149,7 @@ if ($ADMIN->fulltree) {
     $default = '#2E3332';
     $previewconfig = array(
         'selector'=> 'div.region-content div.header.current',
-        'style'=>'header'
+        'style'=>'backgroundColor'
     );
     $setting = new admin_setting_configcolourpicker(
         $name, 
@@ -192,13 +212,29 @@ if ($ADMIN->fulltree) {
     $name = 'theme_archaius/slideshowTimeout';
     $title = get_string('slideshowTimeout','theme_archaius');
     $description = get_string('slideshowTimeoutdesc', 'theme_archaius');
-    $default = 1000;
+    $default = 1500;
     $setting = new admin_setting_configtext(
         $name, 
         $title, 
         $description, 
         $default, 
         PARAM_INT
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+
+    // Slideshow height
+    $name = 'theme_archaius/slideshowheight';
+    $title = get_string('slideshowheight','theme_archaius');
+    $description = get_string('slideshowheightdesc', 'theme_archaius');
+    $default = 300;
+    $setting = new admin_setting_configtext(
+        $name, 
+        $title, 
+        $description, 
+        $default, 
+        PARAM_RAW
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);

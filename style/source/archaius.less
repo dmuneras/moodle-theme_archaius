@@ -7,6 +7,7 @@
 @header_color : ~"[[setting:headercolor]]";
 @current_color : ~"[[setting:currentcolor]]";
 @current_custommenu_color : ~"[[setting:currentcustommenucolor]]";
+@custommenu_color : ~"[[setting:custommenucolor]]";
 @pix_arrow_right : ~"[[pix:theme|arrow_right]]";
 @pix_arrow_left : ~"[[pix:theme|arrow_left]]";
 @menu_icon : ~"[[pix:theme|menu_icon]]";
@@ -89,7 +90,7 @@ span.error{
     color: #fff;
     width:100%;
     float: none; 
-    margin-bottom: 60px; 
+    margin-bottom: 30px; 
     overflow: auto;
 	a{
 		&:link, &:visited{
@@ -131,6 +132,8 @@ span.error{
         padding-top: 10px;
         max-width: 1200px;
         min-height: 110px;
+        width: 90%;
+        .box-sizing;
     }
 }
 
@@ -161,7 +164,7 @@ span.error{
 .page-header-info-container{
     .box-sizing;
     float: left;
-    width:45%;
+    width:48%;
     margin-top: 20px;
 }
 
@@ -420,8 +423,26 @@ div.region-content{
     .box-sizing;
     width: 33%;
     padding: 20px;
+    .header-tab{
+        display: none;
+    }
+    .menu-action{
+        color: @main_text_color;
+    }
+    .content{
+        background-color: @theme_color;
+        .rounded-corners(0px 0px 0px 0px);
+        text-align: left;
+    }
+    .block{
+        min-height: inherit;
+    }
 }
 
+
+
+/* END BLOCKS FOOTER
+-------------------------------------------------------------- */
 .move{
     background-color: #fff;
     cursor: pointer;
@@ -647,7 +668,8 @@ td.eventskey {
     .logininfo{  
     	margin: 10px auto 15px auto;
 	}
-	.sitelink{
+	.sitelink,
+    .helplink{
     	clear:both;
 	}
 	.sitelink img {
@@ -715,8 +737,7 @@ td.eventskey {
 
 
 #custommenu{
-    background-color: #697F6F;
-    border-top: 2px solid #000;
+    background-color: @custommenu_color ;
     padding: 1px;
     min-height: 36px;
     ul,
@@ -724,6 +745,10 @@ td.eventskey {
     a, 
     .yui3-menu-content{
         border: none !important;
+    }
+    .custommenu-inner{
+        width: 90%;
+        margin: 0 auto;
     }
     .custom_menu_submenu{
         li{

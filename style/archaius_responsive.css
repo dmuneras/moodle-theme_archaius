@@ -69,6 +69,9 @@
   #region-main,
   #region-pre,
   #report-region-pre,
+  #region-footer-left,
+  #region-footer-center,
+  #region-footer-right,
   #region-post,
   .generalbox {
     float: none !important;
@@ -107,6 +110,9 @@
     padding-top: 10px;
     min-height: 40px;
   }
+  #page-header .page-header-inner {
+    width: 100%;
+  }
   #page-header div.langmenu {
     padding-bottom: 10px;
   }
@@ -121,9 +127,13 @@
   }
   #page-header .page-header-info-container {
     padding-right: 20px;
+    width: 45%;
   }
   #page-header .page-header-info-container img.userpicture {
     float: right;
+  }
+  #page-header div.menu-icon {
+    display: block;
   }
   /*  Form css
     -------------------------------------------------------------- */
@@ -256,6 +266,9 @@ html.no-media-queries #region-post-box,
 html.no-media-queries #region-main,
 html.no-media-queries #region-pre,
 html.no-media-queries #report-region-pre,
+html.no-media-queries #region-footer-left,
+html.no-media-queries #region-footer-center,
+html.no-media-queries #region-footer-right,
 html.no-media-queries #region-post,
 html.no-media-queries .generalbox {
   float: none !important;
@@ -292,6 +305,9 @@ html.no-media-queries #page-header .headermenu {
   padding-top: 10px;
   min-height: 40px;
 }
+html.no-media-queries #page-header .page-header-inner {
+  width: 100%;
+}
 html.no-media-queries #page-header div.langmenu {
   padding-bottom: 10px;
 }
@@ -306,9 +322,13 @@ html.no-media-queries #page-header #header-wrap {
 }
 html.no-media-queries #page-header .page-header-info-container {
   padding-right: 20px;
+  width: 45%;
 }
 html.no-media-queries #page-header .page-header-info-container img.userpicture {
   float: right;
+}
+html.no-media-queries #page-header div.menu-icon {
+  display: block;
 }
 html.no-media-queries #adminsettings .form-item .form-label {
   width: 100%;

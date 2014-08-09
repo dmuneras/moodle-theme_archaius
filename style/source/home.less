@@ -2,6 +2,7 @@
 /* -------------------------------------------
    Home Styles 
 ---------------------------------------------*/
+@slideshow_height : ~"[[setting:slideshowheight]]";
 
 #home-page{
     margin-bottom: 20px;
@@ -84,7 +85,7 @@ h2.lonely-title {
         list-style: none;
         overflow: hidden;  
         width: 100%;
-        min-height: 300px;
+        height: @slideshow_height;
         p{
             max-width: 100%;
         }
@@ -92,6 +93,7 @@ h2.lonely-title {
             width: auto;
             height: auto;
             max-width: 100%;
+            max-height: 100%;
         }
     }
   }

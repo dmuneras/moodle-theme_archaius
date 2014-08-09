@@ -1,28 +1,32 @@
 <?php
-
-/*  
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-This plugin is part of Archaius theme.
-@copyright  2013 Daniel Munera Sanchez
-
+/*
+*
+*   This program is free software: you can redistribute it and/or modify
+*   it under the terms of the GNU General Public License as published by
+*   the Free Software Foundation, either version 3 of the License, or
+*   (at your option) any later version.
+*
+*   This program is distributed in the hope that it will be useful,
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*   GNU General Public License for more details.
 */
 
-/******************************************************************************
-|                     DELETE  SLIDES                                          |   
-******************************************************************************/
+/**
+ * 
+ * @package   theme_archaius
+ * @copyright 2012 onwards Daniel Munera Sanchez  {@link http://dmuneras.com}
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ */
+
+/*    DELETE SLIDES                                               
+-----------------------------------------------------------------------------*/
 
 //imports
-require_once($CFG->dirroot . '/theme/archaius/slideshow/helpers/slider_helper.php'); 
+require_once($CFG->dirroot . 
+	'/theme/archaius/slideshow/helpers/slider_helper.php');
+
 require_once($CFG->dirroot . '/repository/lib.php');
 
 list($context, $course, $cm) = get_context_info_array($contextid);
@@ -33,7 +37,6 @@ if (isguestuser()) {
 }
 
 global $DB, $USER;
-
 
 if(isloggedin() && has_capability('moodle/site:config', 
 											$context, $USER->id, true)){

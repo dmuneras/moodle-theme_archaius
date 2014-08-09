@@ -11,73 +11,76 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
 This plugin is part of Archaius theme.
-@copyright  2013 Daniel Munera Sanchez
 
-*/
+Functions needed by the archaius theme should be put here. 
+Any functions that get created here should ALWAYS contain the theme name
+to reduce complications for other theme designers who may be copying this
+theme.
 
-/*
-*
- * Functions needed by the archaius theme should be put here.
+ */
+
+/**
+ * 
+ * @package   theme_archaius
+ * @copyright 2012 onwards Daniel Munera Sanchez  {@link http://dmuneras.com}
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * Any functions that get created here should ALWAYS contain the theme name
- * to reduce complications for other theme designers who may be copying this theme.
  */
 
 function archaius_process_css($css, $theme) {
 
-    // Set custom CSS
-    if (!empty($theme->settings->customcss)) {
-        $customcss = $theme->settings->customcss;
-    } else {
-        $customcss = null;
-    }
+    $customcss = 
+        check_css_setting($theme->settings->customcss);
     $css = archaius_set_customcss($css, $customcss);
 
-    if (!empty($theme->settings->themecolor)) {
-        $themecolor = $theme->settings->themecolor;
-    } else {
-        $themecolor = null;
-    }
+
+    $themecolor = 
+        check_css_setting($theme->settings->themecolor);
 
     $css = archaius_set_themecolor($css,$themecolor);
 
-    if (!empty($theme->settings->bgcolor)) {
-      $bgcolor = $theme->settings->bgcolor;
-    } else {
-      $bgcolor = null;
-    }
+    $bgcolor = 
+        check_css_setting($theme->settings->bgcolor);
 
     $css = archaius_set_bgcolor($css,$bgcolor);
     
-    if (!empty($theme->settings->headercolor)) {
-        $headercolor = $theme->settings->headercolor;
-    } else {
-        $headercolor = null;
-    }
+
+    $headercolor = 
+        check_css_setting($theme->settings->headercolor);
 
     $css = archaius_set_headercolor($css,$headercolor);
 
-    if (!empty($theme->settings->currentcolor)) {
-        $currentcolor = $theme->settings->currentcolor;
-    } else {
-        $currentcolor = null;
-    }
+    $currentcolor = 
+        check_css_setting($theme->settings->currentcolor);
 
     $css = archaius_set_currentcolor($css,$currentcolor);
 
-    if (!empty($theme->settings->currentcustommenucolor)) {
-        $currentcustommenucolor = $theme->settings->currentcustommenucolor;
-    } else {
-        $currentcustommenucolor = null;
-    }
 
+    $currentcustommenucolor = 
+        check_css_setting($theme->settings->currentcustommenucolor);
+    
     $css = archaius_set_currentcustommenucolor($css,$currentcustommenucolor);
+
+    $custommenucolor =
+        check_css_setting($theme->settings->custommenucolor);
+
+    $css = archaius_set_custommenucolor($css,$custommenucolor);
+
+    $slideshowheight =
+        check_css_setting($theme->settings->slideshowheight);
+
+    $css = archaius_set_slideshowheight($css,$slideshowheight);
 
     return $css;
 }
 
+
+function check_css_setting($setting){
+    if (!empty($setting)) 
+        return $setting;
+    return null;
+}
 
 function archaius_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
@@ -153,7 +156,7 @@ function archaius_set_headercolor($css, $headercolor) {
     $tag = '[[setting:headercolor]]';
     $replacement = $headercolor;
     if (is_null($replacement)) {
-        $replacement = '#A7A39B';
+        $replacement = '#697F6F';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -163,7 +166,17 @@ function archaius_set_currentcolor($css, $currentcolor) {
     $tag = '[[setting:currentcolor]]';
     $replacement = $currentcolor;
     if (is_null($replacement)) {
-        $replacement = '#2E3332';
+        $replacement = '#697F6F';
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+function archaius_set_custommenucolor($css, $currentcustommenucolor) {
+    $tag = '[[setting:custommenucolor]]';
+    $replacement = $currentcustommenucolor;
+    if (is_null($replacement)) {
+        $replacement = '#697F6F';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -173,7 +186,7 @@ function archaius_set_currentcustommenucolor($css, $currentcustommenucolor) {
     $tag = '[[setting:currentcustommenucolor]]';
     $replacement = $currentcustommenucolor;
     if (is_null($replacement)) {
-        $replacement = '#342917';
+        $replacement = '#2E3332';
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
@@ -189,7 +202,16 @@ function archaius_set_bgcolor($css, $bgcolor) {
   return $css;
 }
 
+function archaius_set_slideshowheight($css, $slideshowheight) {
+  $tag = '[[setting:slideshowheight]]';
+  $replacement = $slideshowheight. "px";
+  if (is_null($replacement)) {
+    $replacement = '300';
+  }
 
+  $css = str_replace($tag, $replacement, $css);
+  return $css;
+}
 
 /**
  * Serves any files associated with the theme settings.
@@ -213,10 +235,22 @@ function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         if ($filearea === 'logo') {
             $theme = theme_config::load('archaius');
-            return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+            return $theme->setting_file_serve(
+                'logo', 
+                $args, 
+                $forcedownload, 
+                $options
+            );
+
         }elseif ($filearea === 'mobilelogo') {
             $theme = theme_config::load('archaius');
-            return $theme->setting_file_serve('mobilelogo', $args, $forcedownload, $options);
+            return $theme->setting_file_serve(
+                'mobilelogo', 
+                $args, 
+                $forcedownload, 
+                $options
+            );
+
         }else{
             $fs = get_file_storage();
             $relativepath = implode('/', $args);
@@ -226,7 +260,13 @@ function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
             if (!$file or $file->is_directory()) {
                 send_file_not_found();
             }else {
-                return send_stored_file($file, 86400, 0, $forcedownload, $options);
+                return send_stored_file(
+                    $file, 
+                    86400, 
+                    0, 
+                    $forcedownload, 
+                    $options
+                );
             }            
         }
 
@@ -237,8 +277,13 @@ function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
 // http://docs.moodle.org/dev/Extending_the_theme_custom_menu
 class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
     public function __construct(custom_menu_item $menunode) {
-        parent::__construct($menunode->get_text(), $menunode->get_url(), 
-            $menunode->get_title(), $menunode->get_sort_order(), $menunode->get_parent());
+        parent::__construct(
+            $menunode->get_text(), 
+            $menunode->get_url(), 
+            $menunode->get_title(), 
+            $menunode->get_sort_order(), 
+            $menunode->get_parent()
+        );
         $this->children = $menunode->get_children();
  
         $matches = array();
