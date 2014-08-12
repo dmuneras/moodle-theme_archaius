@@ -208,12 +208,26 @@ function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
 *   @param moodle_page $page
 */
 function theme_archaius_page_init(moodle_page $page) { 
+    global $PAGE;
+
     $page->requires->jquery();
-    $page->requires->jquery_plugin('responsive-slides', 'theme_archaius');
+
+    //Load responsive slideshow only when the effect is active
+    $slideshow_active = intval($PAGE->theme->settings->activateSlideshow);
+    if($slideshow_active)
+        $page->requires->jquery_plugin('responsive-slides', 'theme_archaius');
+
+    //CORE JQUERY PLUGINS
     $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius'); 
     $page->requires->jquery_plugin('waypoints', 'theme_archaius'); 
-    $page->requires->jquery_plugin('waypoints-sticky', 'theme_archaius');    
-    $page->requires->jquery_plugin('accordion-blocks', 'theme_archaius');
+    $page->requires->jquery_plugin('waypoints-sticky', 'theme_archaius');   
+
+    $accordion_blocks_active = 
+         intval($PAGE->theme->settings->accordionBlocks);
+
+    //Load accordion blocks only when the effect is active
+    if($accordion_blocks_active)
+        $page->requires->jquery_plugin('accordion-blocks', 'theme_archaius');
 }
 
 //To translate items in the customenu, it is from:

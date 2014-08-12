@@ -103,7 +103,10 @@ $string["hideShowBlocks"] = "Activate hide and show blocks effect";
 $string["hideShowBlocksdesc"] = "Activate or desactivate the hide and how blocks effect, which is useful to see the main content using the 100% of the space of the main container";
 
 $string["slideshowheight"] = "Slideshow height";
-$string["slideshowheightdesc"] = "Slideshow height";
+$string["slideshowheightdesc"] = "Slideshow height, numeric value (pixels), NOTE: do not add 'px' at the end.";
+
+$string["accordionBlocks"] = "Activate accordion Blocks";
+$string["accordionBlocksdesc"] = "Activate or desactivate accordion Blocks effect";
 
 //SLIDESHOW
 $string["description"] = "Insert the HTML to create the slide";

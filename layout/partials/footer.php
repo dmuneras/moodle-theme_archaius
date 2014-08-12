@@ -42,6 +42,7 @@ if ($hasfooter) { ?>
 <?php
     $params = array(
         array(
+            'accordionBlocks' => $PAGE->theme->settings->accordionBlocks,
             'activateTopicsCourseMenu' => $PAGE->theme->settings->collasibleTopics,
             'activateSlideshow' => $PAGE->theme->settings->activateSlideshow ,
             'activateHideAndShowBlocks' => $PAGE->theme->settings->hideShowBlocks,

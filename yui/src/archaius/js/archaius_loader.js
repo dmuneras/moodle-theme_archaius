@@ -16,9 +16,15 @@ a example.
 @copyright  2014 Daniel Munera Sanchez
 
 */
+
+/* ARCHAIUS LOADER
+-----------------------------------------------------------------------------*/
+
 M.theme_archaius_loader = M.theme_archaius_loader||{};
 
 M.theme_archaius_loader = {
+
+    activateAccordionBlocks:1,
 
     activateTopicsCourseMenu: 1,
 
@@ -34,6 +40,8 @@ M.theme_archaius_loader = {
 
     init: function (params) {
 
+        this.activateAccordionBlocks =  parseInt(params.accordionBlocks,10);
+
         this.activateSlideshow = parseInt(params.activateSlideshow,10);
 
         this.activateHideAndShowBlocks = parseInt(params.activateHideAndShowBlocks,10);
@@ -47,6 +55,12 @@ M.theme_archaius_loader = {
         this.confirmationDeleteSlide = params.confirmationDeleteSlide;
 
         this.noSlides = params.noSlides;
+
+        if(this.activateAccordionBlocks){
+            this.accordionBlocks();
+        }else{
+            this.commonBlocks();
+        }
 
         if(this.activateHideAndShowBlocks){
             this.hideShowBlocks();
@@ -66,6 +80,12 @@ M.theme_archaius_loader = {
         }
     },
 
+    commonBlocks: function(){
+        this.archaiusJSEffects.commonBlocks();
+    },
+    accordionBlocks: function(){
+        this.archaiusJSEffects.accordionBlocks();
+    },
     hideShowBlocks: function(){
         this.archaiusJSEffects.hideShowBlocks();
     },

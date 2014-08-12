@@ -1,6 +1,5 @@
-/* -------------------------------------------
-   Home Styles 
----------------------------------------------*/
+/* HOME STYLES
+-------------------------------------------------------------- */
 #home-page {
   margin-bottom: 20px;
   height: auto;
@@ -59,12 +58,10 @@ h2.lonely-title {
   color: #51a351;
   text-align: center;
 }
-/* -------------------------------------------
-   Slideshow Styles 
-
+/* SLIDESHOW STYLES
    This is from responsive slides. There are just
    small modifications.
----------------------------------------------*/
+-------------------------------------------------------------- */
 .rslides {
   margin: 0 auto;
 }

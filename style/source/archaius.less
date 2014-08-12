@@ -378,6 +378,21 @@ div.region-content{
     display:none;
 }
 
+#report-region-pre.no-accordion,
+#region-post-box #region-pre.no-accordion , 
+#region-post-box #region-post.no-accordion{
+    display: block;
+    div.region-content{
+        div.header-tab{
+            .rounded-corners(5px 5px 0px 0px);
+            &,
+            h2{
+                cursor: initial !important;
+            }
+        }
+    }
+}
+
 #report-region-pre,
 #region-pre,
 #region-post{
@@ -799,7 +814,7 @@ td.eventskey {
     
     &.stuck{
         position: fixed;
-        top: 2;
+        top: 0;
         width: 100%;
         z-index: 999;
     }

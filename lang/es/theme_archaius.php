@@ -95,8 +95,11 @@ $string["collasibleTopicsdesc"] = "Activar o desactivar el efecto gráfico del t
 $string["hideShowBlocks"] = "Efecto para esconder y mostrar los bloques.";
 $string["hideShowBlocksdesc"] = "Activar o desactivar el efecto para esconder y mostrar los bloques, es muy útil para ver el contenido principal usando el 100% del espacio disponible.";
 
+$string["accordionBlocks"] = "Activar efecto acordeón";
+$string["accordionBlocksdesc"] = "Activar efecto acordeón para los bloques laterales";
+
 $string["slideshowheight"] = "Altura del carusel de la página principal";
-$string["slideshowheightdesc"] = "Altura del carusel de la página principal";
+$string["slideshowheightdesc"] = "Altura del carusel de la página principal, Se debe poner solo el número, este será utizado como PIXEL. NO PONER 'px' al final";
 
 //SLIDESHOW
 $string["description"] = "Insertar HTML para crear un <i>slide</i>.";

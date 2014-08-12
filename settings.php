@@ -161,7 +161,21 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
-    //Activate 
+
+    // Activate accordion blocks
+    $name = "theme_archaius/accordionBlocks";
+    $title = get_string("accordionBlocks", 'theme_archaius');
+    $description = get_string('accordionBlocksdesc', 'theme_archaius');
+    $setting = new admin_setting_configcheckbox(
+        $name, 
+        $title, 
+        $description, 
+        1
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+    //Activate collapsible topics
     $name = "theme_archaius/collasibleTopics";
     $title = get_string("collapsibleTopics", 'theme_archaius');
     $description = get_string('collasibleTopicsdesc', 'theme_archaius');

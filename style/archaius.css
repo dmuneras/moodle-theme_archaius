@@ -324,6 +324,28 @@ div.region-content div.header-tab h2 {
 #region-post-box #region-post {
   display: none;
 }
+#report-region-pre.no-accordion,
+#region-post-box #region-pre.no-accordion,
+#region-post-box #region-post.no-accordion {
+  display: block;
+}
+#report-region-pre.no-accordion div.region-content div.header-tab,
+#region-post-box #region-pre.no-accordion div.region-content div.header-tab,
+#region-post-box #region-post.no-accordion div.region-content div.header-tab {
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  -ms-border-radius: 5px 5px 0px 0px;
+  -o-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+}
+#report-region-pre.no-accordion div.region-content div.header-tab,
+#region-post-box #region-pre.no-accordion div.region-content div.header-tab,
+#region-post-box #region-post.no-accordion div.region-content div.header-tab,
+#report-region-pre.no-accordion div.region-content div.header-tab h2,
+#region-post-box #region-pre.no-accordion div.region-content div.header-tab h2,
+#region-post-box #region-post.no-accordion div.region-content div.header-tab h2 {
+  cursor: initial !important;
+}
 #report-region-pre div.region-content .header,
 #region-pre div.region-content .header,
 #region-post div.region-content .header {
@@ -684,6 +706,12 @@ td.eventskey {
 }
 #custommenu.collapsed {
   display: none;
+}
+#custommenu.stuck {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
 .arrow {
   width: 0;

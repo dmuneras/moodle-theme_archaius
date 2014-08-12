@@ -263,7 +263,6 @@ a example.
                     $(".rslides").responsiveSlides(options);
                 }
             };
-
             var initSlideshow = 
                 function(activatePausePlay, slideshowTimeout, confirmationDeleteSlide,noSlides){
                     startSlideShow(activatePausePlay,slideshowTimeout);
@@ -364,12 +363,7 @@ a example.
                     $('#custommenu').waypoint('sticky');
                 }  
             };
-            var initEffects = function(){
-                organizeRegionCenter(regionCenterPre);
-                organizeRegionCenter(regionCenterPost);
-                organizeBlockSummary();
-                stickyCustommenu();
-
+            var accordionBlocks = function(){
                 if(regionPre.length != 0){
                         regionPre.archaiusCustomBlocks();
                 }
@@ -379,6 +373,25 @@ a example.
                 if($("#report-region-pre").length > 0){   
                     $("#report-region-pre").archaiusCustomBlocks();
                 }
+            };
+            var commonBlocks = function(){
+                if(regionPre.length != 0){
+                    regionPre.addClass("no-accordion");
+                }
+                if(regionPost.length != 0 ){
+                    regionPost.addClass("no-accordion");
+                }
+                if($("#report-region-pre").length > 0){   
+                    $("#report-region-pre").addClass("no-accordion");
+                }
+
+            };
+            var initEffects = function(){
+                organizeRegionCenter(regionCenterPre);
+                organizeRegionCenter(regionCenterPost);
+                organizeBlockSummary();
+                stickyCustommenu();
+
                 var questionBank = $(".questionbankwindow.block");
                 if(questionBank.length > 0 && !(questionBank.hasClass("collapsed"))){
                     expandBank($(".questionbankwindow.block"));
@@ -420,6 +433,8 @@ a example.
                     hideShowBlocks: hideShowBlocks,
                     topicsCourseMenu : topicsCourseMenu,
                     initSlideshow :  initSlideshow,
+                    accordionBlocks : accordionBlocks,
+                    commonBlocks : commonBlocks,
                     initEffects: initEffects 
             };
         };

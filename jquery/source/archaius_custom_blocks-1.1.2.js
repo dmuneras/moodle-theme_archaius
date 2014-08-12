@@ -30,7 +30,8 @@ This plugin needs jquery.velocity :  http://julian.com/research/velocity/
                 regionLocation:"pre",
                 regionTabClass:"div.header-tab",
                 blockContainerClass:".region-content",
-                editContainerClass:".commands"
+                editContainerClass:".commands",
+                speed:300
             };
             
             var options=$.extend(defaults,options);
@@ -79,7 +80,7 @@ This plugin needs jquery.velocity :  http://julian.com/research/velocity/
                                     blocks
                                         .eq(getIndex(obj,o.regionTabClass,tab))
                                         .velocity("slideUp",{
-                                            duration : 300
+                                            duration : o.speed
                                         });
                                     tab.removeClass("current");
                                 }
@@ -89,7 +90,7 @@ This plugin needs jquery.velocity :  http://julian.com/research/velocity/
                             blocks
                                 .eq(getIndex(obj,o.regionTabClass,$this))
                                 .velocity("slideDown",{
-                                    duration : 300, 
+                                    duration : o.speed, 
                                     queue : false
                                 });
                             
@@ -99,7 +100,7 @@ This plugin needs jquery.velocity :  http://julian.com/research/velocity/
                         }
                         blocks
                                 .eq(getIndex(obj,o.regionTabClass,$this))
-                                .velocity(action,{duration : 300});
+                                .velocity(action,{duration : o.speed});
 
                         if($this[0]==obj.find(o.regionTabClass+":last")[0] ){
                             if($this.hasClass("current")){

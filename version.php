@@ -24,8 +24,10 @@
  */
 
 defined('MOODLE_INTERNAL') || die;
-
-$plugin->version   = 2014020600; // The current module version (Date: YYYYMMDDXX)
-$plugin->requires  = 2013040500; // Requires this Moodle version
-$plugin->component = 'theme_archaius'; // Full name of the plugin (used for diagnostics)
+// The current module version (Date: YYYYMMDDXX)
+$plugin->version   = 2014020600; 
+// Requires this Moodle version
+$plugin->requires  = 2013040500; 
+// Full name of the plugin (used for diagnostics)
+$plugin->component = 'theme_archaius'; 
 $plugin->maturity = MATURITY_STABLE;

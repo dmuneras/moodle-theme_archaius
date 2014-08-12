@@ -95,7 +95,11 @@ $THEME->layouts = array(
         'file' => 'frontpage.php',
         'regions' => $allRegions,
         'defaultregion' => 'side-pre',
-        'options' => array('langmenu' => true, 'nonavbar' => true, 'nosubtitle' => true)
+        'options' => array(
+            'langmenu' => true, 
+            'nonavbar' => true, 
+            'nosubtitle' => true
+        )
     ),
     'admin' => array(
         'file' => 'general.php',
@@ -123,7 +127,11 @@ $THEME->layouts = array(
     'popup' => array(
         'file' => 'general.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nonavbar'=>true, 'noblocks'=>true),
+        'options' => array(
+            'nofooter'=>true, 
+            'nonavbar'=>true, 
+            'noblocks'=>true
+        ),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
@@ -135,22 +143,36 @@ $THEME->layouts = array(
     'embedded' => array(
         'file' => 'general.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nonavbar'=>true, 'noblocks'=>true),
+        'options' => array(
+            'nofooter'=>true, 
+            'nonavbar'=>true, 
+            'noblocks'=>true
+        ),
     ),
     
-    // Used during upgrade and install, and for the 'This site is undergoing maintenance' message.
-    // This must not have any blocks, and it is good idea if it does not have links to
-    // other places - for example there should not be a home link in the footer...
+    // Used during upgrade and install, and for the 'This site is undergoing 
+    //maintenance' message.
+    // This must not have any blocks, and it is good idea if it does not 
+    //have links to other places - for example there should not be a home 
+    //link in the footer...
     'maintenance' => array(
         'file' => 'general.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nonavbar'=>true, 'noblocks'=>true),
+        'options' => array(
+            'nofooter'=>true, 
+            'nonavbar'=>true, 
+            'noblocks'=>true
+        ),
     ),
     // Should display the content and basic headers only.
     'print' => array(
         'file' => 'general.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nonavbar'=>false, 'noblocks'=>true),
+        'options' => array(
+            'nofooter'=>true, 
+            'nonavbar'=>false, 
+            'noblocks'=>true
+        ),
     ),
     'report' => array(
         'file' => 'report.php',
@@ -162,15 +184,11 @@ $THEME->layouts = array(
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
-
 $THEME->javascripts_footer = array(
     'modernizr-2.7.1',
-    'jquery.velocity.min',
-    'responsiveslides.min',
     'archaius'
 );
 
 $THEME->enable_dock = false;
-
 $THEME->editor_sheets = array('editor');
 $THEME->csspostprocess = 'theme_archaius_process_css';
