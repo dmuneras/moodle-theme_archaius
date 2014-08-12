@@ -19,8 +19,12 @@ if(! isset($hascustommenu)){
 <div id="page-header">
   <div class="page-header-inner">
     <?php if (!empty($PAGE->theme->settings->logo)) { ?>
-         <?php $logourl = $PAGE->theme->setting_file_url('logo', 'logo');?>
-         <?php $mobile_logourl = $PAGE->theme->setting_file_url('mobilelogo', 'mobilelogo');?>         
+        <?php try{ ?>
+          <?php $logourl = $PAGE->theme->setting_file_url('logo', 'logo');?>
+        <?php }catch(Exception $e){ ?>
+          <?php $logourl = $PAGE->theme->settings->logo; ?>
+        <?php } ?>
+        <?php $mobile_logourl = $PAGE->theme->setting_file_url('mobilelogo', 'mobilelogo');?>         
          <div id="logo" class = "nobackground">
               <img class="sitelogo" src="<?php echo $logourl;?>" alt="Custom logo here" 
                 onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '"/>
