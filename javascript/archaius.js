@@ -172,10 +172,10 @@ a example.
                             var content = $(this).next();
                             if($(this).hasClass("current")){
                                 $(this).removeClass("current");
-                                content.slideUp();
+                                content.velocity("slideUp",{duration : 300});
                             } else {
                                 $(this).addClass("current");
-                                content.slideDown();
+                                content.velocity("slideDown",{duration : 300});
                             }
                         });
                 }else if(active == false){
