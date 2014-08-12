@@ -16,7 +16,16 @@ Archaius is a moodle's theme with several options to customize your Moodle:
  * Custom CSS.
  * Custom Javascript in footer.
 
-Archaius uses jQuery as a javascript framework and it is using modernizr and responsive slides as well. it is using LESS to create CSS stylesheets, if you want to modify ir you should use it. For more information about 
+Archaius uses jQuery as a javascript framework and several jQuery plugins as well:
+
+* A modified version of [responsiveslides](https://github.com/dmuneras/ResponsiveSlides.js)
+* VelocityJS
+* Waypoints
+* Modernizr 
+
+It is using LESS to create CSS stylesheets, if you want to modify ir you should use it. For more information about.
+
+If you want to modify the stylesheets, or jquery plugins, you should use the Grunt.
 
 [LESS](http://lesscss.org/)
 
