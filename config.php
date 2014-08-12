@@ -173,4 +173,4 @@ $THEME->javascripts_footer = array(
 $THEME->enable_dock = false;
 
 $THEME->editor_sheets = array('editor');
-$THEME->csspostprocess = 'archaius_process_css';
+$THEME->csspostprocess = 'theme_archaius_process_css';

@@ -359,10 +359,16 @@ a example.
                 }
                 return viewPortWidth;   
             };
+            var stickyCustommenu = function(){
+                if($("#custommenu").length > 0 ){
+                    $('#custommenu').waypoint('sticky');
+                }  
+            };
             var initEffects = function(){
                 organizeRegionCenter(regionCenterPre);
                 organizeRegionCenter(regionCenterPost);
                 organizeBlockSummary();
+                stickyCustommenu();
 
                 if(regionPre.length != 0){
                         regionPre.archaiusCustomBlocks();

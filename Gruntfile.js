@@ -62,15 +62,12 @@ module.exports = function(grunt) {
 			    files: ['style/source/**/*.less'], // which files to watch
 			    tasks: ['less'],
 			    options: {
-				nospawn: true
+				spawn: false
 			    }
 			},
 			scripts: {
 			   files: 'jquery/source/**/*.js',
-			   tasks: 'uglify',
-			   options: {
-			    	nospawn: true
-			   }
+			   tasks: ['uglify']
 			}
 	    }
 	});

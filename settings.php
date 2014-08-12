@@ -126,7 +126,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_archaius/custommenucolor';
     $title = get_string('custommenucolor','theme_archaius');
     $description = get_string('custommenucolor', 'theme_archaius');
-    $default = '#2E3332';
+    $default = '#697F6F';
     $previewconfig = array(
         'selector'=> '#custommenu',
         'style'=>'backgroundColor'
@@ -228,7 +228,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_archaius/slideshowheight';
     $title = get_string('slideshowheight','theme_archaius');
     $description = get_string('slideshowheightdesc', 'theme_archaius');
-    $default = 300;
+    $default = 200;
     $setting = new admin_setting_configtext(
         $name, 
         $title, 

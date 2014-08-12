@@ -28,189 +28,121 @@ theme.
  *
  */
 
-function archaius_process_css($css, $theme) {
+/* ARCHAIUS LIB
+-----------------------------------------------------------------------------*/
+
+/** 
+*   Function to be called for CSS postprocess, this function replace all
+*   CSS tags for their values in the setting page.
+*   @param String $css
+*   @param Object $theme
+*   @return String $css - final CSS of the theme
+*/
+function theme_archaius_process_css($css, $theme) {
 
     $customcss = 
-        check_css_setting($theme->settings->customcss);
-    $css = archaius_set_customcss($css, $customcss);
-
+        theme_archaius_check_css_setting($theme->settings->customcss);
+    $css = 
+        theme_archaius_replace_tag_css(
+            $css,$customcss,'[[setting:customcss]]');
 
     $themecolor = 
-        check_css_setting($theme->settings->themecolor);
+        theme_archaius_check_css_setting($theme->settings->themecolor);
 
-    $css = archaius_set_themecolor($css,$themecolor);
+    $css = 
+        theme_archaius_replace_tag_css(
+            $css,$themecolor,'[[setting:themecolor]]');
 
     $bgcolor = 
-        check_css_setting($theme->settings->bgcolor);
+        theme_archaius_check_css_setting($theme->settings->bgcolor);
 
-    $css = archaius_set_bgcolor($css,$bgcolor);
+    $css = 
+        theme_archaius_replace_tag_css(
+            $css,$bgcolor,'[[setting:bgcolor]]');
     
-
     $headercolor = 
-        check_css_setting($theme->settings->headercolor);
+        theme_archaius_check_css_setting($theme->settings->headercolor);
 
-    $css = archaius_set_headercolor($css,$headercolor);
+    $css = 
+        theme_archaius_replace_tag_css(
+            $css,$headercolor,'[[setting:headercolor]]');
 
     $currentcolor = 
-        check_css_setting($theme->settings->currentcolor);
+        theme_archaius_check_css_setting($theme->settings->currentcolor);
 
-    $css = archaius_set_currentcolor($css,$currentcolor);
-
+    $css = 
+        theme_archaius_replace_tag_css(
+            $css,$currentcolor,'[[setting:currentcolor]]');
 
     $currentcustommenucolor = 
-        check_css_setting($theme->settings->currentcustommenucolor);
+        theme_archaius_check_css_setting($theme->settings->currentcustommenucolor);
     
-    $css = archaius_set_currentcustommenucolor($css,$currentcustommenucolor);
+    $css = 
+        theme_archaius_replace_tag_css(
+            $css,$currentcustommenucolor,'[[setting:currentcustommenucolor]]');
 
     $custommenucolor =
-        check_css_setting($theme->settings->custommenucolor);
+        theme_archaius_check_css_setting($theme->settings->custommenucolor);
 
-    $css = archaius_set_custommenucolor($css,$custommenucolor);
+    $css = 
+        theme_archaius_replace_tag_css(
+            $css,$custommenucolor,'[[setting:custommenucolor]]');
 
     $slideshowheight =
-        check_css_setting($theme->settings->slideshowheight);
+        theme_archaius_check_css_setting($theme->settings->slideshowheight);
 
-    $css = archaius_set_slideshowheight($css,$slideshowheight);
+    $css = theme_archaius_set_slideshowheight($css,$slideshowheight);
 
     return $css;
 }
 
-
-function check_css_setting($setting){
+/** 
+*   Check if a setting is empty or not.
+*   @param $setting Setting name
+*   @return mixed NULL or the setting value
+*/
+function theme_archaius_check_css_setting($setting){
     if (!empty($setting)) 
         return $setting;
     return null;
 }
 
-function archaius_set_customcss($css, $customcss) {
-    $tag = '[[setting:customcss]]';
-    $replacement = $customcss;
+/** 
+*   Replace a specific setting in CSS stylesheets.
+*   @param String $css
+*   @param $setting Setting name
+*   @return String $css
+*/
+function theme_archaius_replace_tag_css($css,$replacement,$tag){
     if (is_null($replacement) ) {
         $replacement = '';
     }
-
     $css = str_replace($tag, $replacement, $css);
-
-    return $css;
+    return $css;    
 }
 
-function archaius_set_customjs($js, $customjs) {
-    $tag = '[[setting:customjs]]';
-    $replacement = $customjs;
-    if (is_null($replacement)) {
-        $replacement = '';
+/** 
+*   Replace slideshow height in CSS files. this is diffent from
+*   the other method because you have to validate that the value
+*   is integer. the value must be numeric and the result is given
+*   in pixels.
+*   @param String $css
+*   @param String $slideshowheight 
+*   @return String $css
+*/
+function theme_archaius_set_slideshowheight($css, $slideshowheight) {
+    $tag = '[[setting:slideshowheight]]';
+    $replacement = $slideshowheight;
+    if (is_null($replacement) || !(is_numeric($replacement))){
+        $replacement = '200';
+    }else{
+        //pixel is used and the can't be float.
+        $replacement = intval($replacement);
+        $replacement = (string)round($replacement);        
     }
-
-    $js = str_replace($tag, $replacement, $js);
-
-    return $js;
-}
-
-function archaius_set_theme_collasibleTopics($js, $collasible) {
-    $tag = '[[theme_archaius/collasibleTopics]]';
-    $replacement = $collasible;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-
-    $js = str_replace($tag, $replacement, $js);
-
-    return $js;
-}
-
-function archaius_set_theme_hideShowBlocks($js, $collasible) {
-    $tag = '[[theme_archaius/hideShowBlocks]]';
-    $replacement = $collasible;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-
-    $js = str_replace($tag, $replacement, $js);
-
-    return $js;
-}
-
-function archaius_set_theme_activateSlideshow($js, $collasible) {
-    $tag = '[[theme_archaius/activateSlideshow]]';
-    $replacement = $collasible;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-
-    $js = str_replace($tag, $replacement, $js);
-
-    return $js;
-}
-
-function archaius_set_themecolor($css, $themecolor) {
-    $tag = '[[setting:themecolor]]';
-    $replacement = $themecolor;
-    if (is_null($replacement)) {
-        $replacement = '#2E3332';
-    }
+    $replacement = $replacement . 'px';
     $css = str_replace($tag, $replacement, $css);
     return $css;
-}
-
-function archaius_set_headercolor($css, $headercolor) {
-    $tag = '[[setting:headercolor]]';
-    $replacement = $headercolor;
-    if (is_null($replacement)) {
-        $replacement = '#697F6F';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function archaius_set_currentcolor($css, $currentcolor) {
-    $tag = '[[setting:currentcolor]]';
-    $replacement = $currentcolor;
-    if (is_null($replacement)) {
-        $replacement = '#697F6F';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function archaius_set_custommenucolor($css, $currentcustommenucolor) {
-    $tag = '[[setting:custommenucolor]]';
-    $replacement = $currentcustommenucolor;
-    if (is_null($replacement)) {
-        $replacement = '#697F6F';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function archaius_set_currentcustommenucolor($css, $currentcustommenucolor) {
-    $tag = '[[setting:currentcustommenucolor]]';
-    $replacement = $currentcustommenucolor;
-    if (is_null($replacement)) {
-        $replacement = '#2E3332';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function archaius_set_bgcolor($css, $bgcolor) {
-  $tag = '[[setting:bgcolor]]';
-  $replacement = $bgcolor;
-  if (is_null($replacement)) {
-    $replacement = '#F5F5F5';
-  }
-  $css = str_replace($tag, $replacement, $css);
-  return $css;
-}
-
-function archaius_set_slideshowheight($css, $slideshowheight) {
-  $tag = '[[setting:slideshowheight]]';
-  $replacement = $slideshowheight. "px";
-  if (is_null($replacement)) {
-    $replacement = '300';
-  }
-
-  $css = str_replace($tag, $replacement, $css);
-  return $css;
 }
 
 /**
@@ -227,8 +159,6 @@ function archaius_set_slideshowheight($css, $slideshowheight) {
  * @param array $options
  * @return bool
  */
-
-
 function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
                                      $forcedownload, array $options = array()) {
 
@@ -273,6 +203,19 @@ function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
     }
 }
 
+/** 
+*   Function to add jQuery and jQuery plugins using Moodle standard way
+*   @param moodle_page $page
+*/
+function theme_archaius_page_init(moodle_page $page) { 
+    $page->requires->jquery();
+    $page->requires->jquery_plugin('responsive-slides', 'theme_archaius');
+    $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius'); 
+    $page->requires->jquery_plugin('waypoints', 'theme_archaius'); 
+    $page->requires->jquery_plugin('waypoints-sticky', 'theme_archaius');    
+    $page->requires->jquery_plugin('accordion-blocks', 'theme_archaius');
+}
+
 //To translate items in the customenu, it is from:
 // http://docs.moodle.org/dev/Extending_the_theme_custom_menu
 class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
@@ -305,13 +248,3 @@ class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
         }
     }
 }
-
-
-//Add jquery using Moodle standard way
-function theme_archaius_page_init(moodle_page $page) { 
-    $page->requires->jquery();
-    $page->requires->jquery_plugin('responsive-slides', 'theme_archaius');
-    $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius');      
-    $page->requires->jquery_plugin('accordion-blocks', 'theme_archaius');
-}
-
