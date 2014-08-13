@@ -1,7 +1,6 @@
 <?php
 
-/*  
-
+/*
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -11,15 +10,19 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
-This plugin is part of Archaius theme.
-@copyright  2013 Daniel Munera Sanchez
-
 */
 
+/**
+ * Archaius slider helper functions, It is used to print slider 
+ * elements in the layouts.
+ *
+ * @package theme_archaius
+ * @copyright 2013 onwards Daniel Munera
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
-//Functions to draw the slideshow.
-
+/* SLIDER HELPER FUNCTIONS
+-----------------------------------------------------------------------------*/
 
 //Imports 
 require_once($CFG->libdir . '/gdlib.php');
@@ -42,7 +45,8 @@ function theme_archaius_add_slideshow($contextid,$slides){
     $html_options = "";
     if(! empty($slides)){
         foreach ($slides as $slide) {            
-            $aux =  "<li>" .  theme_archaius_get_slide_content($slide,$contextid) . "</li>";
+            $aux =  "<li>" .  
+                theme_archaius_get_slide_content($slide,$contextid) . "</li>";
             $html_slider .= $aux; 
         } 
         $html_slider .= "</ul></div>";
@@ -64,9 +68,14 @@ function theme_archaius_admin_options($contextid,$slides){
     $base_link = $CFG->wwwroot;
     $link_to_add = "<div class='main-control'>".
         "<a class='pretty-button pretty-link-button btn'".
-        " href= '". $base_link ."/theme/archaius/slideshow/controllers/slides_controller.php?".
-        "action=add&contextid=" . $contextid . "&userid=" . $USER->id . "&sectionid=2'>". 
-        get_string("addSlide","theme_archaius") ."</a></div><div class='notice'></div>";
+        " href= '". $base_link .
+        "/theme/archaius/slideshow/controllers/slides_controller.php?".
+        "action=add&contextid=" 
+        . $contextid . "&userid=" 
+        . $USER->id . "&sectionid=2'>". 
+        get_string("addSlide","theme_archaius") .
+        "</a></div><div class='notice'></div>";
+
     $html_admin_options .= $link_to_add;
 
     if(sizeof($slides) > 0){
@@ -80,13 +89,19 @@ function theme_archaius_admin_options($contextid,$slides){
         );
 
         foreach ($slides as $slide) {
-            $base_link = "<a href=". $CFG->wwwroot ."/theme/archaius/slideshow/controllers/".
-                        "slides_controller.php?"; 
+            $base_link = 
+                "<a href=". $CFG->wwwroot 
+                ."/theme/archaius/slideshow/controllers/".
+                "slides_controller.php?";
+
             $delete_link =  $base_link . "action=delete&id=" . $slide->id .
             "&contextid=". $contextid . "&userid=" . $USER->id . 
             " class='delete-slide btn-danger btn pretty-link-button'>Delete</a>";
-            $edit_link = $base_link . "action=edit&contextid=" . $contextid . "&userid=" . $USER->id . 
-            "&sectionid=2&id=". $slide->id . " class=' btn-warning btn pretty-link-button'>Edit</a>";
+
+            $edit_link = $base_link . "action=edit&contextid=" . $contextid . 
+            "&userid=" . $USER->id . 
+            "&sectionid=2&id=". $slide->id .
+            " class=' btn-warning btn pretty-link-button'>Edit</a>";
       
             $row = new html_table_row(array($slide->position,
                  theme_archaius_get_slide_content($slide,$contextid),
@@ -98,7 +113,8 @@ function theme_archaius_admin_options($contextid,$slides){
         $html_admin_options .= html_writer::table($table);
 
     }else{
-        $html_admin_options .= "<h2>" . get_string("noSlides","theme_archaius") . "</h2>";
+        $html_admin_options .= "<h2>"; 
+        $html_admin_options .=  get_string("noSlides","theme_archaius") . "</h2>";
     }
     $html_admin_options .= "</div>";
     return $html_admin_options;         

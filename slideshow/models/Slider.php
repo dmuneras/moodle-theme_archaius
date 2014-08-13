@@ -1,5 +1,5 @@
 <?php
-/*  
+/*
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -10,15 +10,16 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
-
-This plugin is part of Archaius theme.
-@copyright  2013 Daniel Munera Sanchez
-
 */
 
 /**
-* Archaius slider from page slider
-*/
+ * Archaius slider from page slider
+ *
+ * @package theme_archaius
+ * @copyright 2013 onwards Daniel Munera
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
 class ArchaiusSlider{
 	
 	private $slides;

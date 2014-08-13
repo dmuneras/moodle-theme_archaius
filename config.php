@@ -61,6 +61,7 @@ $THEME->layouts = array(
     'base' => array(
         'file' => 'general.php',
         'regions' => $allRegions,
+        'defaultregion' => 'side-pre'
     ),
     'standard' => array(
         'file' => 'general.php',

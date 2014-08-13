@@ -42,7 +42,6 @@ if(!(isloggedin() &&
     redirect(new moodle_url($CFG->wwwroot . '/index.php'));
 }
 
-$PAGE->set_url($CFG->wwwroot);
 $PAGE->set_context($context);
 
 

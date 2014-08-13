@@ -84,10 +84,10 @@ h2.lonely-title {
   position: relative;
   width: 100%;
   height: auto;
-  display: none;
+  visibility: hidden;
 }
 .rslides_container.ready {
-  display: block;
+  visibility: visible;
 }
 .centered-btns_nav:active {
   opacity: 1.0;

@@ -56,6 +56,7 @@ span.error {
   height: 35px;
   float: right;
   margin: 10px 0px;
+  padding: 0;
   z-index: 999;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -70,7 +71,7 @@ span.error {
 }
 #page-header div.menu-icon .icon-bar {
   display: block;
-  width: 35px;
+  width: 37px;
   margin: 5px auto;
   height: 7px;
   background-color: [[setting:themecolor]];

@@ -44,7 +44,6 @@ if(!(isloggedin() &&
 }
 
 //Set information page
-$PAGE->set_url($CFG->wwwroot);
 $PAGE->set_context($context);
 
 
