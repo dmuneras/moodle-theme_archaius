@@ -172,6 +172,7 @@ function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
                 $options
             );
 
+
         }elseif ($filearea === 'mobilelogo') {
             $theme = theme_config::load('archaius');
             return $theme->setting_file_serve(

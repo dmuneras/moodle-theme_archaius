@@ -21,7 +21,7 @@ defined('MOODLE_INTERNAL') || die();
 function xmldb_theme_archaius_upgrade($oldversion){
 
     // Define table theme_archaius to be created.
-    global $CFG, $THEME, $DB;
+    global $CFG, $DB, $OUTPUT;
     
 	if ($oldversion < 2013090500) {
 
@@ -47,6 +47,54 @@ function xmldb_theme_archaius_upgrade($oldversion){
 
         // Archaius savepoint reached.
         upgrade_plugin_savepoint(true, 2013090500, 'theme', 'archaius');
+    }
+    //Store logo image in moodledata to avoid problems when upgrade
+    if($oldversion < 2014081300){
+
+        $fs = get_file_storage();
+
+        $config_logo = get_config("theme_archaius","logo");
+
+        $is_url = filter_var($config_logo, FILTER_VALIDATE_URL,
+                FILTER_FLAG_PATH_REQUIRED);
+        echo print_r(gettype($is_url));
+        if($is_url !== false){
+            require_once("$CFG->libdir/filelib.php");
+            $config_logo = clean_param($config_logo, PARAM_URL);
+            $syscontext = context_system::instance();
+            $parse_image_url = pathinfo($config_logo);
+
+            $filename = $parse_image_url['filename'] . ".";
+            $filename .= $parse_image_url['extension'];
+
+            if(!isset($filename)){
+                $filename = 
+                    substr($parse_image_url['basename'], 0, 
+                        strrpos($parse_image_url['basename'], '.'));
+
+            }elseif(!$filename = clean_param($filename, PARAM_FILE)) {
+                    $filename = 'logo.jpg';
+            }
+            $filerecord = array(
+                'contextid' => $syscontext->id,
+                'component' => 'theme_archaius',
+                'filearea'  => 'logo',
+                'itemid'    => 0,
+                'filepath'  => '/',
+                'filename'  => $filename,
+            );
+            $fs->create_file_from_url($filerecord,$config_logo);
+
+            if(! set_config("logo",'/'.$filename,"theme_archaius")){
+                unset_config('theme_archaius', 'logo');
+            }
+
+        }else{
+            unset_config('theme_archaius', 'logo');
+        } 
+        // Archaius savepoint reached.
+        upgrade_plugin_savepoint(true, 2014081300, 'theme', 'archaius');
+  
     }
     return true;
 }
