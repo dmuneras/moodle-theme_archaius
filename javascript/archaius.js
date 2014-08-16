@@ -14,9 +14,12 @@ This plugin is part of Archaius theme, if you use it outside the theme
 you should create your own styles. You can use archaius stylesheet as
 a example.
 
-@copyright  2013 Daniel Munera Sanchez
+@copyright  2013 on wards Daniel Munera Sanchez
 
 */
+
+/* ARCHAIUS JS EFFECTS
+-----------------------------------------------------------------------------*/
 
 //I am using !function(){}(); because (function()()) has problem with
 // Moodle javascript compression.
@@ -37,16 +40,23 @@ a example.
         return regex.test($(elem)[attr.method](attr.property));
     }
 
+    //Archaius effects object to execute JS effects
     window.ArchaiusJSEffects = (function(){
         var ArchaiusJSEffectsInstance;
 
+        //Function to create the unique Archaius effect object
         var createArchaiusJSEffects = function(){
+
+            //Regions of Archaius that can be converted into
+            //accordions of moodle blocks
             var regionPost = $("#region-post");
             var regionPre = $("#region-pre"); 
             var regionCenterPre = $('#region-center-pre');
             var regionCenterPost = $('#region-center-post'); 
             var mediaQueries = Modernizr.mq('only all');
 
+            //Function to animate regions using velocity or
+            //any other jquery plugin in the future. 
             var animateRegion = function(
                 region,
                 main,
@@ -58,19 +68,27 @@ a example.
 
             }
 
+            //Function to animate any DOM element.
             var animate = function(region,action,options){
                 region.velocity(action, options);
             }
+
+            //Hide and show effects for left and right block regions
             var hideShowBlocks = function(){
                 var regionMain = $("#region-main");
+                
                 var reportRegionPre = $("#report-region-pre");
+
+                var moveLeftTrigger = 
+                    "<div id='move-region' class='move'></div>";
+
                 if(reportRegionPre.length > 0){
                     var reportRegionContent =  
                         $(".report-page").find(".main-report-content");
-                    $("#regions-control").append("<div id='move-region' class='move'></div>");
-                    $("#move-region").on("click", { region : reportRegionPre ,
-                    main : reportRegionContent },function(event){
-                        var data = event.data;
+
+                    $("#regions-control").append(moveLeftTrigger);
+
+                    $("#move-region").on("click",function(){
                         if(!($(this).hasClass("hidden-region"))){
                             $("#move-region").addClass("hidden-region");
                             animateRegion(
@@ -91,7 +109,7 @@ a example.
                     });
                 }
                 if(regionPre.length > 0 ){
-                    $("#regions-control").append("<div id='move-region' class='move'></div>");
+                    $("#regions-control").append(moveLeftTrigger);
                     $("#move-region").on("click", function(){
                         var $this = $(this);
                         if(!($(this).hasClass("hidden-region"))){
@@ -138,63 +156,98 @@ a example.
                     });
                 } 
             };
-                
+            
+            //Create collapsible topics effect
             var topicsCourseMenu = function(active){
-                var topics = $('ul.topics'); //unordered list of topics.  
-                var editing = $('div.commands').length > 0;            
-                //Verify if we are in the man view of chapters.                                                                                                                               
+                //unordered list of topics. 
+                var topics = $('ul.topics');  
+                //command is the class of editing containers.
+                var editing = $('div.commands').length > 0;
+
+                //Verify if we are in the main view of chapters. And
+                //check if the effect it need(criteria topics > 2)                                                                                                                              
                 if(($("div.summary").length > 2) && (topics.length != 0)
                     && active != 0 && !(editing)){
 
                     // course sections.                                                                         
                     var sections = topics.find('li.section.main');
+                    //tab selector the create the topic tabs
                     var tabSelector = "h3.sectionname";
-                    if(topics.find(tabSelector).length != topics.find("li.section.main").length ){
+                    if(topics.find(tabSelector).length != 
+                        topics.find("li.section.main").length ){
+
+                        //Create a title for tabs if title is not present
                         sections.each(function(index){
                                 $this = $(this);
                                 if($this.find("h3.sectionname").length == 0){
-                                    $this.find("div.summary").prepend(
-                                        "<h3 class='sectionname'> Topic " + index  + "</h3>");
+                                    var alternativeTabHTML = 
+                                        "<h3 class='sectionname'> Topic " + 
+                                            index  + "</h3>";
+                                    $this
+                                        .find("div.summary")
+                                        .prepend(alternativeTabHTML);
                                 }
 
                             });
                     }
                     var topicTab = topics.find(tabSelector);
+                    
+                    //this hide first tab when it doesnt have title
                     topicTab
                         .addClass("topic-tab")
-                        .removeClass("accesshide"); //this hide first tab when it doesnt have title
+                        .removeClass("accesshide"); 
+
                     topicTab.prepend("<span class='triangle'></span>");
+
                     //update the sections variable after prepend the first section.                                                                                                                   
                     sections = topics.find('li.section.main');
-                    //put each summary as a tab (outside of the container).                                                                                                                           
-                    sections.each(function(){$(this).before($(this).find(tabSelector))});
+
+                    //put each tab outside of the topics container.                                                                                                                           
+                    sections.each(function(){
+                        $(this).before($(this).find(tabSelector));
+                    });
+
+                    //Bind click event to open and close topics
                     topicTab.bind("click", function(){
-                            var content = $(this).next();
-                            if($(this).hasClass("current")){
-                                $(this).removeClass("current");
-                                content.velocity("slideUp",{duration : 300});
-                            } else {
-                                $(this).addClass("current");
-                                content.velocity("slideDown",{duration : 300});
-                            }
-                        });
+                        var content = $(this).next();
+                        if($(this).hasClass("current")){
+                            $(this).removeClass("current");
+                            content.velocity("slideUp",{duration : 300});
+                        } else {
+                            $(this).addClass("current");
+                            content.velocity("slideDown",{duration : 300});
+                        }
+                    });
                 }else if(active == false){
+                        //Show all sections it the effect is deactive
                         topics.find('li.section.main').show();
                 }else{
                     //If there is only one topic, display it.                                                                                                                                         
                     $("li.section.main").css("display","block");
                 }
             };
-
+            //Effect to expand and shrink question bank
             var expandBank = function(questionBank){
+                //If the display if too small, do no attach any
+                //event and put question bank after quiz content
                 var viewPortWidth = $(window).width();
                 if(viewPortWidth <= 768){
-                    $("#quizcontentsblock").after($('.questionbankwindow.block'));
+                    $("#quizcontentsblock")
+                        .after($('.questionbankwindow.block'));
                 }else{
-                    questionBank.find('.header').first().find(".title")
-                    .append("<a id = 'expand-bank' class='shrink"+
-                    " btn-warning btn pretty-link-button'>expand</input>");
+                    //Append button to shrink question bank
+                    var buttonHTML = "<a id = 'expand-bank' class='shrink"+
+                    " btn-warning btn pretty-link-button'>expand</input>";
+
+                    questionBank
+                        .find('.header')
+                        .first()
+                        .find(".title")
+                        .append(buttonHTML);
+
                     var page = $('#page-mod-quiz-edit div.quizcontents');
+
+                    //Bind click event
                     $('#expand-bank').on("click",function(){
                         var $this = $(this);
                         if($this.hasClass("shrink")){
@@ -219,6 +272,8 @@ a example.
                     });
                 }
             };
+            //Function to append header to Block summary in order to
+            //make it works with accordion effect.
             var organizeBlockSummary = function(){
                 var blockSummary = $('#inst2');
                 if(blockSummary.prev(".header-tab").length == 0){
@@ -263,9 +318,14 @@ a example.
                     $(".rslides").responsiveSlides(options);
                 }
             };
-            var initSlideshow = 
-                function(activatePausePlay, slideshowTimeout, confirmationDeleteSlide,noSlides){
+            var initSlideshow = function(
+                activatePausePlay, 
+                slideshowTimeout, 
+                confirmationDeleteSlide,
+                noSlides){
+
                     startSlideShow(activatePausePlay,slideshowTimeout);
+
                     $("#toggle-admin-menu").on("click",function(){
                         var action = "slideUp";
                         $this = $(this);
@@ -293,10 +353,14 @@ a example.
                                     $this.closest("tr").remove();
                                 }else{
                                     slidesTable.remove();
-                                    $(".admin-options").append("<h2>" + noSlides +"</h2>");
+                                    $(".admin-options")
+                                        .append("<h2>" + noSlides +"</h2>");
                                 }
-                                $(".admin-options .notice").show().html("<p>Slide deleted</p>")
-                                    .delay( 1000 ).fadeOut('slow');
+                                $(".admin-options .notice")
+                                    .show()
+                                    .html("<p>Slide deleted</p>")
+                                    .delay( 1000 )
+                                    .fadeOut('slow');
                             });
                         }
                     });
@@ -305,6 +369,8 @@ a example.
             var getDistanceToParent = function(item,KingOfParent){
                 return item.parents(KingOfParent).length;
             };
+
+            //Function to do some DOM transformations with window is resized
             var checkOnResize = function(){
                 var viewPortWidth = $(window).width();
                 var mobileCustommenu = $("#mobile-custommenu");
@@ -315,17 +381,22 @@ a example.
                     }
                     $("#custommenu").addClass("collapsed");
                     if(mobileCustommenu.length == 0 ){
-                        pageHeader.append("<nav id='mobile-custommenu' class='collapsed'></nav>"); 
+                        var nav = 
+                            "<nav id='mobile-custommenu' class='collapsed'></nav>";
+
+                        pageHeader
+                            .append(nav); 
                         
-                        //$(".wrapper-header-info").append("<div class='menu-icon deactive'></div>");
                         if($("#custommenu").length > 0){
                             var items = $("#custommenu ul li a");
                             var clonedItems = items.clone();
                             $.each(items,function(index){
                                 var $this = $(this);
-                                var hierarchyLevel = getDistanceToParent($this,"div") - 4;
+                                var hierarchyLevel = 
+                                    getDistanceToParent($this,"div") - 4;
                                 //Coefficient to calculate the hierarchy of 
-                                //menu items is 4 (minimum number of elements to the parent element)    
+                                //menu items is 4 (minimum number of elements 
+                                //to the parent element)    
                                 var hierarchyLine = "";
                                 for(var i=0;i<hierarchyLevel;i++){
                                     var itemClass = "hierarchy-mark";
@@ -397,7 +468,8 @@ a example.
                     expandBank($(".questionbankwindow.block"));
                 }
                 //add search form to the header page
-                $('.page-header-top div.top-inner').prepend($('div.footer form.adminsearchform')); 
+                $('.page-header-top div.top-inner')
+                    .prepend($('div.footer form.adminsearchform')); 
                 //remove search button                                   
                 $("#page-header form.adminsearchform input:regex(type,submit)").remove(); 
                 $('#region-post-box').prepend($('.blogsearchform'));
@@ -429,6 +501,7 @@ a example.
                     { visibility: "hidden", duration:3000 }
                 );
             };
+            //public functions
             return {
                     hideShowBlocks: hideShowBlocks,
                     topicsCourseMenu : topicsCourseMenu,
@@ -451,4 +524,6 @@ a example.
     })();
 }(window,jQuery);
 
+//Init ArchaiusJSEffects when this JS is loaded!
 ArchaiusJSEffects.getInstance().initEffects();
+

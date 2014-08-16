@@ -19,9 +19,10 @@ GNU General Public License for more details.
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+//TODO : I will implement this logic again, I dont like it.
+
 /* SLIDER CONTROLLER
 -----------------------------------------------------------------------------*/
-//Could be Object Oriented but this is enough for my needs
 
 //Imports
 require_once('../../../../config.php');

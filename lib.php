@@ -12,21 +12,18 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 This plugin is part of Archaius theme.
-
-Functions needed by the archaius theme should be put here. 
-Any functions that get created here should ALWAYS contain the theme name
-to reduce complications for other theme designers who may be copying this
-theme.
-
  */
 
 /**
- * 
- * @package   theme_archaius
- * @copyright 2012 onwards Daniel Munera Sanchez  {@link http://dmuneras.com}
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
- */
+* Functions needed by the archaius theme should be put here. 
+* Any functions that get created here should ALWAYS contain the theme name
+* to reduce complications for other theme designers who may be copying this
+*theme.
+* @package   theme_archaius
+* @copyright 2012 onwards Daniel Munera Sanchez  {@link http://dmuneras.com}
+* @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*
+*/
 
 /* ARCHAIUS LIB
 -----------------------------------------------------------------------------*/
@@ -75,7 +72,8 @@ function theme_archaius_process_css($css, $theme) {
             $css,$currentcolor,'[[setting:currentcolor]]');
 
     $currentcustommenucolor = 
-        theme_archaius_check_css_setting($theme->settings->currentcustommenucolor);
+        theme_archaius_check_css_setting(
+            $theme->settings->currentcustommenucolor);
     
     $css = 
         theme_archaius_replace_tag_css(
@@ -159,8 +157,8 @@ function theme_archaius_set_slideshowheight($css, $slideshowheight) {
  * @param array $options
  * @return bool
  */
-function theme_archaius_pluginfile($course, $cm, $context, $filearea, $args,
-                                     $forcedownload, array $options = array()) {
+function theme_archaius_pluginfile($course, $cm, $context, $filearea, 
+                            $args, $forcedownload, array $options = array()){
 
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         if ($filearea === 'logo') {
@@ -245,7 +243,9 @@ class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
         $this->children = $menunode->get_children();
  
         $matches = array();
-        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', $this->text, $matches)) {
+        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', 
+            $this->text, $matches)) {
+
             try {
                 $this->text = get_string($matches[1], 'theme_archaius');
             } catch (Exception $e) {
@@ -254,7 +254,9 @@ class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
         }
  
         $matches = array();
-        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', $this->title, $matches)) {
+        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', 
+            $this->title, $matches)) {
+
             try {
                 $this->title = get_string($matches[1], 'theme_archaius');
             } catch (Exception $e) {

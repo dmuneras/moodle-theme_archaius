@@ -9,13 +9,17 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
+*/
 
-This plugin is part of Archaius theme.
-@copyright  2013 Daniel Munera Sanchez
+/**
+ * GRUNT FILE
+ *
+ * @package theme_archaius
+ * @copyright 2013 onwards Daniel Munera
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
-
-/*
-    GRUNTFILE ARCHAIUS
+/*	GRUNTFILE ARCHAIUS
     DESCRIPTION:  This file define the needed task to precompile LESS and JS
     			  jQuery plugins, the JS files are statics because some of
     			  the plugins are not going to be modified and its compression 

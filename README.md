@@ -3,7 +3,8 @@ Archaius
 
 Archaius is a moodle's theme with several options to customize your Moodle:
 
- * Changing logo.
+ * Upload logo.
+ * Upload mobile logo.
  * Footnote.
  * Background color.
  * Header and footer color.
@@ -15,6 +16,9 @@ Archaius is a moodle's theme with several options to customize your Moodle:
  * Activation frontpage responsive slideshow.
  * Custom CSS.
  * Custom Javascript in footer.
+ * Color of custom menu.
+ * Set timeout of the slider.
+ * Set height of the front page slider (pixels).
 
 Archaius uses jQuery as a javascript framework and several jQuery plugins as well:
 
@@ -23,13 +27,13 @@ Archaius uses jQuery as a javascript framework and several jQuery plugins as wel
 * Waypoints
 * Modernizr 
 
-It is using LESS to create CSS stylesheets, if you want to modify ir you should use it. For more information about.
+I use LESS to create CSS stylesheets, more information [LESS](http://lesscss.org/).
 
 If you want to modify the stylesheets, or jquery plugins, you should use the Grunt.
 
-[LESS](http://lesscss.org/)
 
-@copyright  2013 Daniel Munera Sanchez
+
+@copyright  2013 onwards Daniel Munera Sanchez
 
 Improvements history:
 ---------------------

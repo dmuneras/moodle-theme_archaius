@@ -40,6 +40,11 @@ class ArchaiusSlider{
         return self::$instance;
     }
 
+    /** 
+    *   Get Slides attribute
+    *   @return Array with available slides
+    */
+
     public function get_slides(){
     	return $this->slides;
     }

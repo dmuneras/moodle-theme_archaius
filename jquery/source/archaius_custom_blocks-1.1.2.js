@@ -11,15 +11,14 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 This plugin is part of Archaius theme.
-@copyright  2013 Daniel Munera Sanchez
+@copyright  2013 onwards Daniel Munera Sanchez
 
 IMPORTANT
 ----------
 
 This plugin needs jquery.velocity :  http://julian.com/research/velocity/
 
-/*
-    ARCHAIUS CUSTOM BLOCKS
+/* ARCHAIUS CUSTOM BLOCKS
 -----------------------------------------------------------------------------*/
 
 ! function(window,$,undefined){
