@@ -111,30 +111,30 @@ class ArchaiusSliderHelper{
      */
     public function admin_options(){
         global $CFG,$USER,$COURSE;
-        $html_admin_options = html_writer::star_tag("div", array(
-            "class" => "admin-options"
-        ));
+        $html_admin_options = html_writer::start_tag("div", 
+            array("class" => "admin-options"));
+
         $base_link = $CFG->wwwroot;
-        $link_to_add = html_writer::star_tag("div", array(
-            "class" => "main-control"
-        ));
-        
-        $parameters = array(
+        $params = array(
             'action' => 'add',
             'userid' => $USER->id,
             'sectionid' => '2', 
             'contextid' => $this->contextid
         );
+        $link_to_add = html_writer::start_tag("div", 
+            array("class" => "main-control"));
 
         $url = $base_link . '/theme/archaius/slideshow/slide_controller.php?';
-        $url .= http_build_query($parameters);
+        $url .= http_build_query($params);
         $link_to_add .= html_writer::start_tag("a", array(
-            "href" => $url
+            "href" => $url,
+            "class" => "pretty-button pretty-link-button btn"
         ));
         $link_to_add .= get_string("addSlide","theme_archaius");
         $link_to_add .= html_writer::end_tag("a");
-        $link_to_add .= html_writer::end_tag("div");        
-        $link_to_add .= html_writer::star_tag("div", array(
+        $link_to_add .= html_writer::end_tag("div");  
+
+        $link_to_add .= html_writer::start_tag("div", array(
             "class" => "notice"
         ));
         $link_to_add .=  html_writer::end_tag("div");
@@ -157,10 +157,10 @@ class ArchaiusSliderHelper{
                     "slides_controller.php?";
 
                 $delete_link =  $base_link . "action=delete&id=" . $slide->id .
-                "&contextid=". $contextid . "&userid=" . $USER->id . 
+                "&contextid=". $this->contextid . "&userid=" . $USER->id . 
                 " class='delete-slide btn-danger btn pretty-link-button'>Delete</a>";
 
-                $edit_link = $base_link . "action=edit&contextid=" . $contextid . 
+                $edit_link = $base_link . "action=edit&contextid=" . $this->contextid . 
                 "&userid=" . $USER->id . 
                 "&sectionid=2&id=". $slide->id .
                 " class=' btn-warning btn pretty-link-button'>Edit</a>";
@@ -178,7 +178,7 @@ class ArchaiusSliderHelper{
             $html_admin_options .= "<h2>"; 
             $html_admin_options .=  get_string("noSlides","theme_archaius") . "</h2>";
         }
-        $html_admin_options .= "</div>";
+        $html_admin_options .=  html_writer::end_tag("div");
         return $html_admin_options;         
     }
 
