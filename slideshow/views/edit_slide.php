@@ -65,7 +65,7 @@ if( sizeof($_POST) == 0 ){
     $slide->context = $context; 
     $slide = file_prepare_standard_editor($slide, 
         'description', $editoroptions, $context, 'theme_archaius',
-                                        'slides_images_'. $slide->id , $slide->itemid );
+                            'slides_images_'. $slide->id , $slide->itemid );
     $itemid = $slide->itemid;
 
 }

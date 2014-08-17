@@ -115,17 +115,15 @@ class ArchaiusSliderHelper{
             array("class" => "admin-options"));
 
         $base_link = $CFG->wwwroot;
-        $params = array(
-            'action' => 'add',
-            'userid' => $USER->id,
-            'sectionid' => '2', 
-            'contextid' => $this->contextid
-        );
+        $params = '&action=add'.'&userid='.$USER->id.
+            '&contextid='.$this->contextid;
+
         $link_to_add = html_writer::start_tag("div", 
             array("class" => "main-control"));
 
-        $url = $base_link . '/theme/archaius/slideshow/slide_controller.php?';
-        $url .= http_build_query($params);
+        $url = $base_link . 
+            '/theme/archaius/slideshow/controllers/slides_controller.php?';
+        $url .= $params;
         $link_to_add .= html_writer::start_tag("a", array(
             "href" => $url,
             "class" => "pretty-button pretty-link-button btn"
