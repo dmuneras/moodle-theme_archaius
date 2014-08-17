@@ -212,7 +212,10 @@ function theme_archaius_page_init(moodle_page $page) {
     $page->requires->jquery();
 
     //Load responsive slideshow only when the effect is active
-    $slideshow_active = intval($PAGE->theme->settings->activateSlideshow);
+    $slideshow_active = 
+        isset($PAGE->theme->settings->activateSlideshow) ?
+            intval($PAGE->theme->settings->activateSlideshow) : 0;
+
     if($slideshow_active)
         $page->requires->jquery_plugin('responsive-slides', 'theme_archaius');
 
@@ -222,7 +225,8 @@ function theme_archaius_page_init(moodle_page $page) {
     $page->requires->jquery_plugin('waypoints-sticky', 'theme_archaius');   
 
     $accordion_blocks_active = 
-         intval($PAGE->theme->settings->accordionBlocks);
+        isset($PAGE->theme->settings->accordionBlocks) ?
+            intval($PAGE->theme->settings->accordionBlocks) : 0;
 
     //Load accordion blocks only when the effect is active
     if($accordion_blocks_active)

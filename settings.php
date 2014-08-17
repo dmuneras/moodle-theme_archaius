@@ -13,7 +13,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 This plugin is part of Archaius theme.
-@copyright  2013 Daniel Munera Sanchez
+@copyright  2013 onwards Daniel Munera Sanchez
 
 */
 

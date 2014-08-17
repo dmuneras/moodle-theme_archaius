@@ -20,25 +20,28 @@ if(! isset($hascustommenu)){
   <div class="page-header-inner">
     <?php if (!empty($PAGE->theme->settings->logo)) { ?>
         
-        <?php $logourl = $PAGE->theme->setting_file_url('logo', 'logo'); ?>
-        <?php $mobile_logourl = $PAGE->theme->setting_file_url('mobilelogo', 'mobilelogo');?>     
+        <?php $logourl = $PAGE->theme->setting_file_url('logo', 'logo'); ?>    
          <div id="logo" class = "nobackground">
               <img class="sitelogo" src="<?php echo $logourl;?>" alt="Custom logo here" 
                 onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '"/>
          </div>
-         <div id="mobile-logo">
-              <img class="sitelogo" src="<?php echo $mobile_logourl;?>" alt="Custom  mobile logo here" 
-                onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '"/>
-        </div>
     <?php } else { ?>
       <div id="logo">
           <img class="sitelogo" src="<?php echo $OUTPUT->pix_url('logo','theme')?>" alt="Custom logo here"
             onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '" />
       </div>
-      <div id="mobile-logo">
+    <?php } ?>
+    <?php if (!empty($PAGE->theme->settings->mobilelogo)) { ?>
+        <?php $mobile_logourl = $PAGE->theme->setting_file_url('mobilelogo', 'mobilelogo');?> 
+        <div id="mobile-logo">
+            <img class="sitelogo" src="<?php echo $mobile_logourl;?>" alt="Custom  mobile logo here" 
+              onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '"/>
+      </div>
+    <?php }else{ ?>
+        <div id="mobile-logo">
           <img class="sitelogo" src="<?php echo $OUTPUT->pix_url('mobileLogo','theme')?>" alt="Custom mobile logo here"
             onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '" />
-      </div>
+        </div>
     <?php } ?>
     <div class="page-header-info-container">
       <div class="wrapper-header-info">
@@ -65,4 +68,4 @@ if(! isset($hascustommenu)){
     </div>  
   <?php } ?>  
 </div>        
-<!-- END OF HEADER -->
+<!-- END PAGE HEADER -->
