@@ -680,7 +680,7 @@ td.eventskey {
 #custommenu .custom_menu_submenu .yui3-menu-content,
 #custommenu .yui3-menu-label-active,
 #custommenu .yui3-menu-label-menuvisible {
-  background-color: #697F6F;
+  background-color: [[setting:custommenucolor]];
 }
 #custommenu .yui3-menu-horizontal .yui3-menu-content ul ul,
 #custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content ul ul {
@@ -698,7 +698,7 @@ td.eventskey {
 }
 #custommenu .yui3-skin-sam .yui3-menu li,
 #custommenu .yui3-skin-sam .yui3-menu .yui3-menu li {
-  background-color: #697F6F !important;
+  background-color: [[setting:custommenucolor]] !important;
 }
 #custommenu #custom_menu_1 {
   max-width: 1200px;
@@ -749,7 +749,7 @@ td.eventskey {
   padding: 5px 5px;
 }
 #mobile-custommenu a:hover {
-  background-color: [[setting:headercolor]];
+  background-color: [[setting:currentcustommenucolor]];
   border-bottom: 1px solid #888;
   border-top: 1px solid #888;
 }
