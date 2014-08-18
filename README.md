@@ -1,5 +1,8 @@
-Archaius
----------
+Archaius Theme
+==============
+
+What is Archaius
+----------------
 
 Archaius is a moodle's theme with several options to customize your Moodle:
 
@@ -9,16 +12,21 @@ Archaius is a moodle's theme with several options to customize your Moodle:
  * Background color.
  * Header and footer color.
  * Tabs color (to be used with blocks titles).
- * Color for the current block tab.
+ * Color for the current block tab (block titles).
  * Color of the current item in custom menu.
  * Activation of the collapsible topics effect.
  * Activation of the hide/show blocks effect.
- * Activation frontpage responsive slideshow.
+ * Activation frontpage slideshow.
  * Custom CSS.
  * Custom Javascript in footer.
  * Color of custom menu.
  * Set timeout of the slider.
  * Set height of the front page slider (pixels).
+
+ @copyright  2013 onwards Daniel Munera Sanchez
+
+Getting Starting
+----------------
 
 Archaius uses jQuery as a javascript framework and several jQuery plugins as well:
 
@@ -27,13 +35,24 @@ Archaius uses jQuery as a javascript framework and several jQuery plugins as wel
 * Waypoints
 * Modernizr 
 
-I use LESS to create CSS stylesheets, more information [LESS](http://lesscss.org/).
-
-If you want to modify the stylesheets, or jquery plugins, you should use the Grunt.
+I have been using [LESS](http://lesscss.org/) to create CSS stylesheets.
 
 
+If you want to modify the stylesheets, or jquery plugins, you should use Grunt. I configured a Gruntfile.js, so, you only need to install it and use it. Take a look of this
+website if you have any problem installing Grunt => [Getting Starting](http://gruntjs.com/getting-started)
 
-@copyright  2013 onwards Daniel Munera Sanchez
+After read the Grunt getting starting, you only have to run the Grunt command in the root
+directory of archaius.
+
+```javascript
+
+grunt
+
+```
+After this any change you do in jQuery plugins or LESS source will be reflected in your CSS
+and Javascript.
+
+
 
 Improvements history:
 ---------------------
