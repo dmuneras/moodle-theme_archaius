@@ -217,12 +217,12 @@ function theme_archaius_page_init(moodle_page $page) {
             intval($PAGE->theme->settings->activateSlideshow) : 0;
 
     if($slideshow_active)
-        $page->requires->jquery_plugin('responsive-slides', 'theme_archaius');
+        $page->requires->jquery_plugin('responsive-slides', 'theme_archaius','footer');
 
     //CORE JQUERY PLUGINS
-    $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius'); 
-    $page->requires->jquery_plugin('waypoints', 'theme_archaius'); 
-    $page->requires->jquery_plugin('waypoints-sticky', 'theme_archaius');   
+    $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius','footer'); 
+    $page->requires->jquery_plugin('waypoints', 'theme_archaius','footer'); 
+    $page->requires->jquery_plugin('waypoints-sticky', 'theme_archaius','footer');   
 
     $accordion_blocks_active = 
         isset($PAGE->theme->settings->accordionBlocks) ?
@@ -230,7 +230,7 @@ function theme_archaius_page_init(moodle_page $page) {
 
     //Load accordion blocks only when the effect is active
     if($accordion_blocks_active)
-        $page->requires->jquery_plugin('accordion-blocks', 'theme_archaius');
+        $page->requires->jquery_plugin('accordion-blocks', 'theme_archaius','footer');
 }
 
 //To translate items in the customenu, it is from:
