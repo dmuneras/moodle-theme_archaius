@@ -138,11 +138,9 @@ class theme_archaius_core_renderer extends core_renderer {
         $course_id = $this->page->course->id;
         if (isloggedin() && $course_id > 1) {
             $branchlabel = get_string('grades');
-            $branchurl   = new moodle_url('/grade/report/index.php?id='. 
-                $this->page->course->id);
-
+            $branchurl   = new moodle_url('/grade/report/index.php?id='.$this->page->course->id);
             $branchtitle = $branchlabel;
-            $branchsort  = 10000;
+            $branchsort  = 9000;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
         }
 
@@ -152,21 +150,22 @@ class theme_archaius_core_renderer extends core_renderer {
         // here. See MDL-39565.
         $addlangmenu = true;
         $langs = get_string_manager()->get_list_of_translations();
-        if (count($langs) < 2
+        if (
+            count($langs) < 2
             or empty($CFG->langmenu)
             or ($this->page->course != SITEID 
             and !empty($this->page->course->lang))) {
+
             $addlangmenu = false;
         }
 
         if ($addlangmenu) {
-            $strlang =  get_string('language');
-            $currentlang = current_language();
-            $this->language = $menu->add($strlang, 
-                        new moodle_url('#'), $strlang, 10000);
+            $branchlabel =  get_string('language');
+            $branchurl = new moodle_url('#');
+            $branch = $menu->add($branchlabel, $branchurl, $branchlabel, 10000);
 
             foreach ($langs as $langtype => $langname) {
-                $this->language->add($langname, 
+                $branch->add($langname, 
                     new moodle_url(
                         $this->page->url, 
                         array('lang' => $langtype)
