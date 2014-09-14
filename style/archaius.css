@@ -42,6 +42,12 @@ h3.page-subtitle {
 span.error {
   color: red;
 }
+input[type=text],
+input[type=password],
+textarea {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
 /* PAGE HEADER
 -------------------------------------------------------------- */
 #page-header {
@@ -91,16 +97,13 @@ span.error {
 }
 #page-header .page-header-inner {
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 30px;
   max-width: 1200px;
   min-height: 110px;
   width: 90%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-.adminsearchform {
-  display: none;
 }
 #logo,
 #mobile-logo {
@@ -132,13 +135,6 @@ span.error {
   width: 48%;
   margin-top: 20px;
 }
-.page-header-top {
-  padding: 0 5%;
-  height: 45px;
-  border-bottom: 1px solid whitesmoke;
-  background: [[setting:themecolor]];
-  top: 0;
-}
 div.top-inner {
   margin: 0 auto;
   padding-top: 10px;
@@ -154,42 +150,11 @@ div.top-inner div.langmenu {
   padding: 0px 10px;
   text-align: right;
 }
-div.top-inner .adminsearchform {
-  margin-right: 0;
-  padding-top: 0;
-  float: right;
-  display: block;
-  width: 40%;
-  max-width: 150px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-div.top-inner form input#adminsearchquery {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  border: none;
-  width: 120px;
-  height: 25px;
-  padding-left: 18px;
-  background: #ffffff url([[pix:theme|search]]) 4px 8px no-repeat;
-}
-div.top-inner form input[type="submit"] {
-  display: none;
-}
 .headermenu {
   margin-top: 10px;
   margin-right: 0;
   float: right;
   width: 100%;
-}
-.select.menulang {
-  height: 20px;
-  border: 0;
-  padding: 0;
 }
 .navbar {
   margin: 10px 10px 0px 0;
@@ -726,6 +691,10 @@ td.eventskey {
   top: 0;
   width: 100%;
   z-index: 999;
+}
+#custommenu div.custommenu-inner > div > div > ul:first-child > li:last-child {
+  float: [[setting|custommenupositionlastchild]];
+  margin-right: [[setting|custommenumarginlastchild]];
 }
 .arrow {
   width: 0;

@@ -80,7 +80,10 @@ $THEME->layouts = array(
         'file' => 'general.php',
         'regions' => $allRegions,
         'defaultregion' => 'side-pre', 
-        'options' => array('langmenu' => true, 'nonavbar' => false)
+        'options' => array(
+            'langmenu' => true, 
+            'nonavbar' => false
+        )
     ),
     // Course page
     'coursecategory' => array(

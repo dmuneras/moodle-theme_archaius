@@ -94,6 +94,22 @@ class theme_archaius_core_renderer extends core_renderer {
     }
 
 
+    /*
+     * From boostrapbase
+     * Overriding the custom_menu function ensures the custom menu is
+     * always shown, even if no menu items are configured in the global
+     * theme settings page.
+     */
+    public function custom_menu($custommenuitems = '') {
+        global $CFG;
+
+        if (!empty($CFG->custommenuitems)) {
+            $custommenuitems .= $CFG->custommenuitems;
+        }
+        $custommenu = new custom_menu($custommenuitems, current_language());
+        return $this->render_custom_menu($custommenu);
+    }
+
     // http://docs.moodle.org/dev/Extending_the_theme_custom_menu
     protected function render_custom_menu(custom_menu $menu) {
  
@@ -122,14 +138,43 @@ class theme_archaius_core_renderer extends core_renderer {
         $course_id = $this->page->course->id;
         if (isloggedin() && $course_id > 1) {
             $branchlabel = get_string('grades');
-            $branchurl   = new moodle_url('/grade/report/index.php?id='. $this->page->course->id);
+            $branchurl   = new moodle_url('/grade/report/index.php?id='. 
+                $this->page->course->id);
+
             $branchtitle = $branchlabel;
             $branchsort  = 10000;
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
         }
- 
-        
- 
+
+        //From boostrapbase
+
+        // TODO: eliminate this duplicated logic, it belongs in core, not
+        // here. See MDL-39565.
+        $addlangmenu = true;
+        $langs = get_string_manager()->get_list_of_translations();
+        if (count($langs) < 2
+            or empty($CFG->langmenu)
+            or ($this->page->course != SITEID 
+            and !empty($this->page->course->lang))) {
+            $addlangmenu = false;
+        }
+
+        if ($addlangmenu) {
+            $strlang =  get_string('language');
+            $currentlang = current_language();
+            $this->language = $menu->add($strlang, 
+                        new moodle_url('#'), $strlang, 10000);
+
+            foreach ($langs as $langtype => $langname) {
+                $this->language->add($langname, 
+                    new moodle_url(
+                        $this->page->url, 
+                        array('lang' => $langtype)
+                    ), 
+                    $langname
+                );
+            }
+        }
         return parent::render_custom_menu($menu);
     }
  

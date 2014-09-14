@@ -9,13 +9,6 @@ if(! isset($hascustommenu)){
   $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 }
 ?>
-<div class="page-header-top">
-      <div class="top-inner">
-        <?php if (!empty($PAGE->layout_options['langmenu'])) { ?>
-          <?php echo $OUTPUT->lang_menu(); ?>
-        <?php } ?>
-      </div>
-  </div>
 <div id="page-header">
   <div class="page-header-inner">
     <?php if (!empty($PAGE->theme->settings->logo)) { ?>
@@ -62,7 +55,8 @@ if(! isset($hascustommenu)){
       </div>
     </div>
   </div>
-  <?php if ($hascustommenu) { ?>
+  <?php $haslangmenu = !empty($PAGE->layout_options['langmenu'])?>
+  <?php if ($hascustommenu || $haslangmenu) { ?>
     <div id="custommenu" class="collapsed">
       <div class="custommenu-inner"><?php echo $custommenu; ?></div>
     </div>  

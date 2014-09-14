@@ -101,7 +101,7 @@ body {
 }
 @font-face {
   font-family: 'OpenSans';
-  src: url([[font:theme|OpenSans-SemiBold.ttf]]);
+  src: url([[font:theme|OpenSans-Semibold.ttf]]);
   font-weight: bold;
   font-style: normal;
 }

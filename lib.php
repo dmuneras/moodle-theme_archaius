@@ -36,7 +36,7 @@ This plugin is part of Archaius theme.
 *   @return String $css - final CSS of the theme
 */
 function theme_archaius_process_css($css, $theme) {
-
+    
     $customcss = 
         theme_archaius_check_css_setting($theme->settings->customcss);
     $css = 
@@ -91,6 +91,13 @@ function theme_archaius_process_css($css, $theme) {
 
     $css = theme_archaius_set_slideshowheight($css,$slideshowheight);
 
+    $langs = get_string_manager()->get_list_of_translations();
+    if(count($langs) > 1){
+        $css = theme_archaius_set_custommenu_last_child($css, 'right', '6%');    
+    }else{
+        $css = theme_archaius_set_custommenu_last_child($css, 'inherit','inherit');
+    }
+    
     return $css;
 }
 
@@ -140,6 +147,29 @@ function theme_archaius_set_slideshowheight($css, $slideshowheight) {
     }
     $replacement = $replacement . 'px';
     $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+/** 
+*   replacement depending of langmenu packs
+* 
+*   @param String $css
+*   @param String $slideshowheight 
+*   @return String $css
+*/
+function theme_archaius_set_custommenu_last_child($css, $position,$margin) {
+    $tag_position = '[[setting|custommenupositionlastchild]]';
+    $replacement_position = $position;
+    $tag_margin = '[[setting|custommenumarginlastchild]]';
+    $replacement_margin = $margin;
+    if (is_null($replacement_position)){
+        $replacement_position = 'left';
+    }
+    if(is_null($replacement_margin)){
+        $replacement_margin = 'inherit';
+    }
+    $css = str_replace($tag_position, $replacement_position, $css);
+    $css = str_replace($tag_margin, $replacement_margin, $css);
     return $css;
 }
 
