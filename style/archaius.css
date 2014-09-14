@@ -7,8 +7,21 @@
 @-ms-viewport {
   width: device-width;
 }
+@font-face {
+  font-family: 'OpenSans';
+  src: url([[font:theme|OpenSans-Regular.ttf]]);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url([[font:theme|OpenSans-Bold.ttf]]);
+  font-weight: bold;
+  font-style: normal;
+}
 html,
 body {
+  font-family: 'OpenSans';
   color: #222222;
   background: [[setting:bgcolor]];
   height: 100%;
@@ -102,9 +115,9 @@ span.error {
 }
 #logo img,
 #mobile-logo img {
-  max-height: 110px;
+  max-height: 70px;
+  margin: 0px 0px 0px 10px;
   cursor: pointer;
-  margin: 30px 0px 0px 10px;
   height: auto;
   width: auto;
 }
