@@ -103,7 +103,7 @@ $THEME->layouts = array(
         'regions' => $allRegions,
         'defaultregion' => 'side-pre',
         'options' => array(
-            'langmenu' => true, 
+            'langmenu' => false, 
             'nonavbar' => true, 
             'nosubtitle' => true
         )

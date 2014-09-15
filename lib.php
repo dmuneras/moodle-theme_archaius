@@ -97,7 +97,7 @@ function theme_archaius_process_css($css, $theme) {
     if(count($langs) > 1){
         $css = theme_archaius_set_custommenu_last_child($css, 'right', '6%');    
     }else{
-        $css = theme_archaius_set_custommenu_last_child($css, 'inherit','inherit');
+        $css = theme_archaius_set_custommenu_last_child($css, 'left','0');
     }
     
     return $css;
