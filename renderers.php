@@ -103,11 +103,16 @@ class theme_archaius_core_renderer extends core_renderer {
     public function custom_menu($custommenuitems = '') {
         global $CFG;
 
-        if (!empty($CFG->custommenuitems)) {
-            $custommenuitems .= $CFG->custommenuitems;
+        //TODO: Check this in a different way
+        $langs = get_string_manager()->get_list_of_translations();
+        if ( (count($langs) < 2) and (empty($CFG->custommenuitems))) {
+            return '';
+        }else{
+            if (!empty($CFG->custommenuitems))
+                $custommenuitems .= $CFG->custommenuitems;
+            $custommenu = new custom_menu($custommenuitems, current_language());
+            return $this->render_custom_menu($custommenu);
         }
-        $custommenu = new custom_menu($custommenuitems, current_language());
-        return $this->render_custom_menu($custommenu);
     }
 
     // http://docs.moodle.org/dev/Extending_the_theme_custom_menu

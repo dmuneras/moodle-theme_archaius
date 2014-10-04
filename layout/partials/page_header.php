@@ -55,8 +55,7 @@ if(! isset($hascustommenu)){
       </div>
     </div>
   </div>
-  <?php $langs = get_string_manager()->get_list_of_translations(); ?>
-  <?php if ($hascustommenu || ($haslangmenu && (count($langs) > 1))) { ?>
+  <?php if ($hascustommenu) { ?>
     <div id="custommenu" class="collapsed">
       <div class="custommenu-inner"><?php echo $custommenu; ?></div>
     </div>  
