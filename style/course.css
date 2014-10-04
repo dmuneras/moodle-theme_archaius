@@ -94,6 +94,9 @@ h2.headingblock {
 .path-course-view .course-content ul.weeks li.section.current {
   background-color: #f5f5f5;
 }
+.path-course-view .course-content ul.weeks li.section.main {
+  display: block;
+}
 #page-course-view-weeks .weekdates {
   font-size: 1em;
   font-weight: normal;

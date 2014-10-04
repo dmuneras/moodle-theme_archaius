@@ -63,6 +63,13 @@ take a look to this: [YUI shifter docs in Moodle](https://docs.moodle.org/dev/YU
 Improvements history:
 ---------------------
 
+03.10.2014
+----------
+
+
+* Display block for weekly format when topics effects is not activate.
+* Adding solutions for issues to core: calendar colors, grades container overflow
+
 13.09.2014
 ----------
 

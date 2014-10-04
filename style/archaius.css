@@ -836,6 +836,18 @@ table.minicalendar.calendartable tr {
 div.calendar-controls {
   background-color: #f5f5f5;
 }
+.day.hasevent.calendar_event_global {
+  background-color: #D6F8CD;
+}
+.day.hasevent.calendar_event_user {
+  background-color: #DCE7EC;
+}
+.day.hasevent.calendar_event_course {
+  background-color: #FFD3BD;
+}
+.day.hasevent {
+  background-color: #D5FC87;
+}
 /* FROM BOOTSTRAP 
 -------------------------------------------------------------- */
 input[type="submit"],
