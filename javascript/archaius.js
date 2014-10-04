@@ -467,13 +467,6 @@ a example.
                 if(questionBank.length > 0 && !(questionBank.hasClass("collapsed"))){
                     expandBank($(".questionbankwindow.block"));
                 }
-                //add search form to the header page
-                $('.page-header-top div.top-inner')
-                    .prepend($('div.footer form.adminsearchform')); 
-                //remove search button                                   
-                $("#page-header form.adminsearchform input:regex(type,submit)").remove(); 
-                $('#region-post-box').prepend($('.blogsearchform'));
-
                 var windowSize = checkOnResize();
                 if(windowSize >= 768 ){
                     $("#custommenu").removeClass("collapsed");

@@ -52,10 +52,22 @@ grunt
 After this any change you do in jQuery plugins or LESS source will be reflected in your CSS
 and Javascript.
 
+If you want to modify the archaius YUI module, yout have to install YUI shifter:
+
+npm install shifter@0.4.6 -g
+
+take a look to this: [YUI shifter docs in Moodle](https://docs.moodle.org/dev/YUI/Shifter)
+
 
 
 Improvements history:
 ---------------------
+
+13.09.2014
+----------
+
+* Adding Open Sans font from google, it is not loaded using google scripts (personal
+decision).
 
 11.08.2014
 ----------

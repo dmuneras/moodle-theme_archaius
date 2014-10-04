@@ -9,6 +9,7 @@ $hassidecenterpost = $PAGE->blocks->region_has_content('side-center-post', $OUTP
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
+$haslangmenu = !(empty($PAGE->layout_options['langmenu']));
 
 //Add classes to body depending on components to be displayed
 $bodyclasses = array();

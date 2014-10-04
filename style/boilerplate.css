@@ -95,13 +95,13 @@ body {
 
 @font-face {
   font-family: 'OpenSans';
-  src: url([[font:theme|OpenSans-Regular.ttf]]);
+  src: url([[font|OpenSans-Regular.ttf]]) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSans';
-  src: url([[font:theme|OpenSans-SemiBold.ttf]]);
+  src: url([[font|OpenSans-Semibold.ttf]]) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
