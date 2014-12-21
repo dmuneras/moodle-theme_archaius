@@ -53,12 +53,11 @@ if ($hasfooter) { ?>
             'noSlides' => get_string("noSlides","theme_archaius")
         )
     );
-    echo "<h1>" . get_class($PAGE->cm) . "</h1>";
+    //Send course module info if current user is inside a course moodle
     if( is_a($PAGE->cm, "cm_info") ){
         $params[0]['currentModuleName'] = $PAGE->cm->__get('modname');
         $params[0]['currentModuleId'] = $PAGE->cm->__get('id');
     }
-    echo "<h1>" . print_r($params) . "</h1>";
     $PAGE->requires->yui_module("moodle-theme_archaius-archaius", 
         "M.theme_archaius_loader.init", 
         $params, 
