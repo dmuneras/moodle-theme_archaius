@@ -278,6 +278,7 @@ function theme_archaius_page_init(moodle_page $page) {
     //Load accordion blocks only when the effect is active
     if($accordion_blocks_active)
         $page->requires->jquery_plugin('accordion-blocks', 'theme_archaius');
+
 }
 
 //To translate items in the customenu, it is from:

@@ -38,6 +38,10 @@ M.theme_archaius_loader = {
 
     slideshowTimeout : 4000,
 
+    currentModuleName : 0,
+
+    currentModuleId: 0,
+
     init: function (params) {
 
         this.activateAccordionBlocks =  parseInt(params.accordionBlocks,10);
@@ -55,6 +59,11 @@ M.theme_archaius_loader = {
         this.confirmationDeleteSlide = params.confirmationDeleteSlide;
 
         this.noSlides = params.noSlides;
+
+        if(params.currentModuleName !== undefined && params.currentModuleId !== undefined){
+            this.currentModuleName = params.currentModuleName;
+            this.currentModuleId = params.currentModuleId;
+        }
 
         if(this.activateAccordionBlocks){
             this.accordionBlocks();
@@ -79,7 +88,6 @@ M.theme_archaius_loader = {
             Y.one("#adminsearchquery").setAttribute("placeholder",params.search);
         }
     },
-
     commonBlocks: function(){
         this.archaiusJSEffects.commonBlocks();
     },
