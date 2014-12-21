@@ -83,10 +83,6 @@ M.theme_archaius_loader = {
             );
         }
         this.topicsCourseMenu(this.activateTopicsCourseMenu);
-
-        if(Y.one("#adminsearchquery") !== null){
-            Y.one("#adminsearchquery").setAttribute("placeholder",params.search);
-        }
     },
     commonBlocks: function(){
         this.archaiusJSEffects.commonBlocks();
