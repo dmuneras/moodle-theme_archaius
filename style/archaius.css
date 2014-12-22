@@ -228,7 +228,7 @@ table tr:nth-child(even) td {
   color: #222222;
 }
 /* Blocks inside region main */
-#region-main div.header-tab {
+#page-content #region-main div.header-tab {
   background: none repeat scroll 0 0 [[setting:themecolor]];
   color: #f5f5f5;
   line-height: 1;
@@ -240,20 +240,43 @@ table tr:nth-child(even) td {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-#region-main div.header-tab .commands {
+#page-content #region-main div.header-tab .commands {
   float: right;
   margin-top: -30px;
   margin-right: 10px;
 }
-#region-main .block div.content {
+#page-content #region-main .block div.content {
   width: 90%;
   margin: 0 auto;
 }
-#region-main div.header {
+#page-content #region-main div.header {
   display: none;
 }
-#region-main div.maincalendar div.heightcontainer div.header {
+#page-content #region-main div.maincalendar div.heightcontainer div.header {
   display: block;
+}
+#page-content #region-main.initial-left-region-hidden {
+  margin-left: 0;
+}
+#page-content #region-main.initial-left-region-hidden.not-hidden-right {
+  margin-left: 200px;
+}
+#page-content #region-main.initial-right-region-hidden {
+  margin-right: -200px;
+}
+#page-content #region-main.initial-right-region-hidden.initial-left-region-hidden {
+  margin-left: 200px;
+  margin-right: -200px;
+}
+#page-content #region-pre.initial-hidden-region {
+  left: -200px;
+}
+#page-content #region-pre.initial-hidden-region.not-hidden-right,
+#page-content #region-pre.initial-hidden-region.both {
+  left: 0;
+}
+#page-content #region-post.initial-hidden-region {
+  left: 200px;
 }
 div.region-content div.header-tab {
   background: none repeat scroll 0 0 [[setting:headercolor]];

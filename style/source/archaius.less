@@ -293,33 +293,62 @@ table{
 }
 
 /* Blocks inside region main */
-#region-main{
-	div.header-tab {
-    	background: none repeat scroll 0 0  @theme_color;
-    	color:@box_color;
-    	line-height: 1;
-    	border-bottom: 1px solid @theme_color;
-    	min-height:20px;
-  		.rounded-corners;
-	}
-	div.header-tab .commands{
-    	float: right;
-    	margin-top: -30px;
-    	margin-right: 10px;
-	}
-	.block div.content {
-    	width: 90%;
-    	margin: 0 auto;
-	}
-	div.header{
-    	display: none;
-	}
-    div.maincalendar{
-        div.heightcontainer div.header{
-            display: block;
+#page-content{
+    #region-main{
+    	div.header-tab {
+        	background: none repeat scroll 0 0  @theme_color;
+        	color:@box_color;
+        	line-height: 1;
+        	border-bottom: 1px solid @theme_color;
+        	min-height:20px;
+      		.rounded-corners;
+    	}
+    	div.header-tab .commands{
+        	float: right;
+        	margin-top: -30px;
+        	margin-right: 10px;
+    	}
+    	.block div.content {
+        	width: 90%;
+        	margin: 0 auto;
+    	}
+    	div.header{
+        	display: none;
+    	}
+        div.maincalendar{
+            div.heightcontainer div.header{
+                display: block;
+            }
+        } 
+        &.initial-left-region-hidden{
+            margin-left: 0;
+            &.not-hidden-right{
+                margin-left:200px;
+            }
         }
-    } 	
-} 
+        &.initial-right-region-hidden{
+            margin-right: -200px;
+        }
+        &.initial-right-region-hidden.initial-left-region-hidden{
+            margin-left: 200px;
+            margin-right: -200px;
+        }
+    }
+    #region-pre{
+        &.initial-hidden-region{
+            left: -200px;
+            &.not-hidden-right,
+            &.both{
+                left:0;
+            }
+        }
+    }
+    #region-post{
+        &.initial-hidden-region{
+            left:200px;  
+        }
+    }
+}
 
 div.region-content{
 	div.header-tab {

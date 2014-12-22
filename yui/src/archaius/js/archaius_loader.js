@@ -42,6 +42,12 @@ M.theme_archaius_loader = {
 
     currentModuleId: 0,
 
+    courseContextId: 0,
+
+    showRegionPre:1,
+
+    showRegionPost:1,
+
     init: function (params) {
 
         this.activateAccordionBlocks =  parseInt(params.accordionBlocks,10);
@@ -59,6 +65,12 @@ M.theme_archaius_loader = {
         this.confirmationDeleteSlide = params.confirmationDeleteSlide;
 
         this.noSlides = params.noSlides;
+
+        this.courseContextId = params.courseContextId;
+
+        this.showRegionPre = parseInt(params.showRegionPre,10);
+
+        this.showRegionPost = parseInt(params.showRegionPost,10);
 
         if(params.currentModuleName !== undefined && params.currentModuleId !== undefined){
             this.currentModuleName = params.currentModuleName;
@@ -97,7 +109,6 @@ M.theme_archaius_loader = {
        this.archaiusJSEffects.topicsCourseMenu(active);
     },
     startSlideshow: function(activatePausePlaySlideshow,timeout,confirmationDeleteSlide,noSlides){
-
         this.archaiusJSEffects
             .initSlideshow(
                 activatePausePlaySlideshow,
@@ -105,5 +116,16 @@ M.theme_archaius_loader = {
                 confirmationDeleteSlide,
                 noSlides
             );
+    },
+    getUserPreferenceName: function(region){
+        var userPreference = "archaius-blocks-region-" + region + "-context-" + this.courseContextId;
+        if(this.currentModuleName !== 0 && this.currentModuleId !== 0){
+            userPreference += "-" + this.currentModuleName + "-" + this.currentModuleId;
+        }
+        return userPreference;
+    },
+    setUserPreference: function(region,value){
+        var preferenceName = this.getUserPreferenceName(region);
+        M.util.set_user_preference(preferenceName, value);
     }
 };

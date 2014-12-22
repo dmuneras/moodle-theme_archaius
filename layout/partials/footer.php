@@ -1,3 +1,24 @@
+<?php
+/*
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+This plugin is part of Archaius theme, if you use it outside the theme
+you should create your own styles. You can use archaius stylesheet as
+a example.
+@copyright  2014 onwards Daniel Munera Sanchez
+
+*/
+?>
+
 <!-- START OF FOOTER -->
 <?php 
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
@@ -39,7 +60,9 @@ if ($hasfooter) { ?>
     </footer>
 <?php } ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+
 <?php
+    $course_context_id = context_course::instance($COURSE->id)->id;
     $params = array(
         array(
             'accordionBlocks' => $PAGE->theme->settings->accordionBlocks,
@@ -47,17 +70,29 @@ if ($hasfooter) { ?>
             'activateSlideshow' => $PAGE->theme->settings->activateSlideshow ,
             'activateHideAndShowBlocks' => $PAGE->theme->settings->hideShowBlocks,
             'slideshowTimeout' => $PAGE->theme->settings->slideshowTimeout,
-            'search' => get_string("search"),
             'activatePausePlaySlideshow' => $PAGE->theme->settings->activatePausePlaySlideshow,
             'confirmationDeleteSlide' => get_string("confirmationDeleteSlide","theme_archaius"),
-            'noSlides' => get_string("noSlides","theme_archaius")
+            'noSlides' => get_string("noSlides","theme_archaius"),
+            'courseContextId' => $course_context_id
         )
     );
+
     //Send course module info if current user is inside a course moodle
+    $side_pre_preference = "archaius-blocks-region-side-pre" . "-context-" . $course_context_id;
+    $side_post_preference = "archaius-blocks-region-side-post" . "-context-" . $course_context_id;
     if( is_a($PAGE->cm, "cm_info") ){
+        $side_pre_preference .= "-" . $PAGE->cm->__get('modname') . "-".$PAGE->cm->__get('id');
+        $side_post_preference .= "-" . $PAGE->cm->__get('modname') . "-".$PAGE->cm->__get('id');
         $params[0]['currentModuleName'] = $PAGE->cm->__get('modname');
-        $params[0]['currentModuleId'] = $PAGE->cm->__get('id');
+        $params[0]['currentModuleId'] = $PAGE->cm->__get('id');     
     }
+
+    //Get user preferences to hide or show lateral regions of Archaius
+    $show_side_pre = get_user_preferences($side_pre_preference,1);
+    $show_side_post = get_user_preferences($side_post_preference,1);
+    $params[0]['showRegionPre'] = $show_side_pre;
+    $params[0]['showRegionPost'] = $show_side_post;
+
     $PAGE->requires->yui_module("moodle-theme_archaius-archaius", 
         "M.theme_archaius_loader.init", 
         $params, 

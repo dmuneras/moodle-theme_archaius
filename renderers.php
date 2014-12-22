@@ -105,7 +105,7 @@ class theme_archaius_core_renderer extends core_renderer {
         if(strcmp($region, "side-pre") == 0  || 
             strcmp($region, "side-post") == 0 ){
             $coursecontextid = context_course::instance($COURSE->id)->id;
-            $user_preference .= "region-" . $region . "-context-".$coursecontextid;
+            $user_preference .= "archaius-blocks-region-" . $region . "-context-".$coursecontextid;
 
             //If the user is inside a module inside a course, store the preference 
             //for that specific page
@@ -117,7 +117,7 @@ class theme_archaius_core_renderer extends core_renderer {
         //Allow user preference update from javascript
         user_preference_allow_ajax_update($user_preference, PARAM_INT);
         $blockcontents = $this->page->blocks->get_content_for_region($region, $this);
-        
+
         $blocks = $this->page->blocks->get_blocks_for_region($region);
         $lastblock = null;
         $zones = array();
