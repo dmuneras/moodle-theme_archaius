@@ -40,11 +40,11 @@ M.theme_archaius_loader = {
 
     slideshowTimeout : 4000,
 
-    currentModuleName : 0,
+    pageType: "",
 
-    currentModuleId: 0,
+    subpage: undefined,
 
-    courseContextId: 0,
+    contextId: 0,
 
     showRegionPre:1,
 
@@ -68,16 +68,17 @@ M.theme_archaius_loader = {
 
         this.noSlides = params.noSlides;
 
-        this.courseContextId = params.courseContextId;
+        this.contextId = params.contextId;
+
+        this.pageType = params.pageType;
+
+        if(params.subpage !== ""){
+            this.subpage = params.subpage;
+        }
 
         this.showRegionPre = parseInt(params.showRegionPre,10);
 
         this.showRegionPost = parseInt(params.showRegionPost,10);
-
-        if(params.currentModuleName !== undefined && params.currentModuleId !== undefined){
-            this.currentModuleName = params.currentModuleName;
-            this.currentModuleId = params.currentModuleId;
-        }
 
         if(this.activateAccordionBlocks){
             this.accordionBlocks();
@@ -120,9 +121,10 @@ M.theme_archaius_loader = {
             );
     },
     getUserPreferenceName: function(region){
-        var userPreference = "archaius-blocks-region-" + region + "-context-" + this.courseContextId;
-        if(this.currentModuleName !== 0 && this.currentModuleId !== 0){
-            userPreference += "-" + this.currentModuleName + "-" + this.currentModuleId;
+        var userPreference = "theme_archaius_blocks_region_" + region + "_context_" 
+            + this.contextId + "_page_type_" + this.pageType;
+        if(this.subpage !== undefined){
+            userPreference += "_sub_" + this.subpage;
         }
         return userPreference;
     },

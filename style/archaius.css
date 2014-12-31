@@ -200,10 +200,16 @@ table tr:nth-child(even) td {
   float: right;
   margin-bottom: 20px;
 }
+.report-page .main-report-content.initial-left-region-hidden {
+  width: 100%;
+}
 .report-page #report-region-pre {
   width: 23%;
   float: left;
   max-width: 200px;
+}
+.report-page #report-region-pre.initial-hidden-region {
+  margin-left: -220px;
 }
 /* BLOCKS
 -------------------------------------------------------------- */

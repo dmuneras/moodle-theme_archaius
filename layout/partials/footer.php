@@ -62,7 +62,6 @@ if ($hasfooter) { ?>
 <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 <?php
-    $course_context_id = context_course::instance($COURSE->id)->id;
     $params = array(
         array(
             'accordionBlocks' => $PAGE->theme->settings->accordionBlocks,
@@ -73,23 +72,31 @@ if ($hasfooter) { ?>
             'activatePausePlaySlideshow' => $PAGE->theme->settings->activatePausePlaySlideshow,
             'confirmationDeleteSlide' => get_string("confirmationDeleteSlide","theme_archaius"),
             'noSlides' => get_string("noSlides","theme_archaius"),
-            'courseContextId' => $course_context_id
+            'contextId' => $PAGE->context->id,
+            'pageType' => $PAGE->pageType,
+            'subpage' => $PAGE->subpage
         )
     );
 
     //Send course module info if current user is inside a course moodle
-    $side_pre_preference = "archaius-blocks-region-side-pre" . "-context-" . $course_context_id;
-    $side_post_preference = "archaius-blocks-region-side-post" . "-context-" . $course_context_id;
-    if( is_a($PAGE->cm, "cm_info") ){
-        $side_pre_preference .= "-" . $PAGE->cm->__get('modname') . "-".$PAGE->cm->__get('id');
-        $side_post_preference .= "-" . $PAGE->cm->__get('modname') . "-".$PAGE->cm->__get('id');
-        $params[0]['currentModuleName'] = $PAGE->cm->__get('modname');
-        $params[0]['currentModuleId'] = $PAGE->cm->__get('id');     
+    //theme_archaius_blocks_region_$regionname_context_$contextid_pagetype_$pagetype_sub_$subpage
+    $last_part_user_preference = $PAGE->context->id . "_page_type_" . $PAGE->pagetype;
+
+    if(! empty($this->page->subpage)){
+        $last_part_user_preference .= "_sub_" . $this->page->subpage;    
     }
 
+    $side_pre_preference = "theme_archaius_blocks_region_side-pre" . 
+        "_context_" . $last_part_user_preference;
+
+    $side_post_preference = "theme_archaius_blocks_region_side-post" . 
+        "_context_" . $last_part_user_preference;
+    
     //Get user preferences to hide or show lateral regions of Archaius
     $show_side_pre = get_user_preferences($side_pre_preference,1);
     $show_side_post = get_user_preferences($side_post_preference,1);
+
+    //Send current user preferences value to JS
     $params[0]['showRegionPre'] = $show_side_pre;
     $params[0]['showRegionPost'] = $show_side_post;
 

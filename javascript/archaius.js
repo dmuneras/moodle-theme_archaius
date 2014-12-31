@@ -87,7 +87,7 @@ window.ArchaiusJSEffects = (function(window,$,undefined){
                 if(M.theme_archaius_loader.showRegionPre === 0){
                     reportRegionPre.addClass('initial-hidden-region');
                     $("#move-region").addClass('hidden-region');
-                    regionMain.addClass('initial-left-region-hidden');
+                    $(".report-page").find(".main-report-content").addClass('initial-left-region-hidden');
                 }
                 var reportRegionContent =  
                     $(".report-page").find(".main-report-content");

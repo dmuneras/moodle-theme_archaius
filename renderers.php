@@ -1,6 +1,6 @@
 <?php
 
-/*  
+/* 
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -95,23 +95,24 @@ class theme_archaius_core_renderer extends core_renderer {
 
     /**
      * Output all the blocks in a particular region.
-     *
+     * NOTE: Here I allow to set user preference using JS, the
+     * preference have the following struture:
+     * theme_archaius_blocks_region_$regionname_context_$contextid_page_type_$pagetype_sub_$subpage
      * @param string $region the name of a region on this page.
      * @return string the HTML to be output.
      */
     public function blocks_for_region($region) {
-        global $CFG, $COURSE;
         $user_preference = '';
         if(strcmp($region, "side-pre") == 0  || 
             strcmp($region, "side-post") == 0 ){
-            $coursecontextid = context_course::instance($COURSE->id)->id;
-            $user_preference .= "archaius-blocks-region-" . $region . "-context-".$coursecontextid;
 
-            //If the user is inside a module inside a course, store the preference 
-            //for that specific page
-            if( $this->page->cm !== null){
-                $user_preference .= "-" . $this->page->cm->__get('modname');
-                $user_preference .= "-" . $this->page->cm->__get('id');
+            $user_preference .= 
+                "theme_archaius_blocks_region_" . $region . 
+                "_context_". $this->page->context->id .
+                "_page_type_" . $this->page->pagetype;
+
+            if(! empty($this->page->subpage)){
+                $user_preference .= "_sub_" . $this->page->subpage;    
             }
         }
         //Allow user preference update from javascript
@@ -133,7 +134,8 @@ class theme_archaius_core_renderer extends core_renderer {
             } else if ($bc instanceof block_move_target) {
                 $output .= $this->block_move_target($bc, $zones, $lastblock, $region);
             } else {
-                throw new coding_exception('Unexpected type of thing (' . get_class($bc) . ') found in list of block contents.');
+                throw new coding_exception('Unexpected type of thing (' . 
+                    get_class($bc) . ') found in list of block contents.');
             }
         }
         return $output;
