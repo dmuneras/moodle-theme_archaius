@@ -63,6 +63,13 @@ take a look to this: [YUI shifter docs in Moodle](https://docs.moodle.org/dev/YU
 Improvements history:
 ---------------------
 
+19.01.2015
+----------
+
+* Thanks to this [interview](https://moodle.org/mod/forum/discuss.php?d=268170#p1196711)
+I solved this: Storing user preferences when user hide or show lateral region (side-pre, side-post)
+* FIX: [Problem with scroll in grades](https://github.com/dmuneras/moodle-theme_archaius/issues/27)
+
 03.10.2014
 ----------
 

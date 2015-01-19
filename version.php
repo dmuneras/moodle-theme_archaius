@@ -29,7 +29,7 @@ a example.
 
 defined('MOODLE_INTERNAL') || die;
 // The current module version (Date: YYYYMMDDXX)
-$plugin->version   = 2014100301; 
+$plugin->version   = 2015011900; 
 // Requires this Moodle version
 $plugin->requires  = 2013040500; 
 // Full name of the plugin (used for diagnostics)
