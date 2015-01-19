@@ -1,10 +1,10 @@
 /* SMALL SCREENS
 -------------------------------------------------------------- */
 /* -------------------------------------------------------------- 
-        Min width for ipads is 768px, a lower screen size makes
-        the three column layout looks bad, thats why a screen with 
-        max-width of 768px is gonna be shown with one colum 
-        layout
+  Min width for ipads is 768px, a lower screen size makes
+  the three column layout looks bad, thats why an screen with 
+  max-width of 768px is gonna be shown with one colum 
+  layout
 -------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
   input[type=text],
@@ -62,7 +62,7 @@
     display: none;
   }
   /* Forcing layout to be one column
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   #region-main-box,
   #region-main-wrap,
   #region-post-box,
@@ -95,7 +95,7 @@
     display: none;
   }
   /* Header page CSS
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   #page-header .headermenu {
     clear: both;
     float: left;
@@ -136,7 +136,7 @@
     display: block;
   }
   /*  Form css
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   #adminsettings .form-item .form-label {
     width: 100%;
     float: none;
@@ -147,7 +147,7 @@
     margin-left: 0;
   }
   /* Login CSS
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   .loginbox.twocolumns .loginpanel,
   .loginbox.twocolumns .signuppanel {
     float: none;
@@ -157,7 +157,7 @@
     border-top: 1px solid #888;
   }
   /* Course CSS
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   .coursebox > .info > .coursename,
   .coursebox .content .teachers,
   .coursebox .content .courseimage,
@@ -170,7 +170,7 @@
     border-left: 0 !important;
   }
   /* Quiz CSS
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   .questionbankwindow.block,
   #page-mod-quiz-edit div.quizcontents {
     float: none;
@@ -191,20 +191,29 @@
   .page-content.report-page table#user-grades {
     width: 100%;
   }
+  /* Legacy tabs CSS
+  -------------------------------------------------------------- */
+  .tabtree .tabrow0 li {
+    display: block;
+    margin: 5px;
+    float: left;
+  }
 }
 html.no-media-queries {
   /* Forcing layout to be one column
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   /* Header page CSS
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   /*  Form css
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   /* Login CSS
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   /* Course CSS
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
   /* Quiz CSS
-    -------------------------------------------------------------- */
+  -------------------------------------------------------------- */
+  /* Legacy tabs CSS
+  -------------------------------------------------------------- */
 }
 html.no-media-queries input[type=text],
 html.no-media-queries input[type=password],
@@ -377,4 +386,9 @@ html.no-media-queries .page-content.report-page .main-report-content {
 }
 html.no-media-queries .page-content.report-page table#user-grades {
   width: 100%;
+}
+html.no-media-queries .tabtree .tabrow0 li {
+  display: block;
+  margin: 5px;
+  float: left;
 }

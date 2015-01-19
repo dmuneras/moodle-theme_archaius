@@ -126,3 +126,9 @@ h2.headingblock {
   margin-right: 5px;
   margin-top: 8px;
 }
+/* ----------------------------------------
+ Grades       
+-----------------------------------------*/
+.path-grade-report-grader .gradeparent {
+  overflow: scroll;
+}

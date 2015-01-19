@@ -117,6 +117,7 @@ class theme_archaius_core_renderer extends core_renderer {
         }
         //Allow user preference update from javascript
         user_preference_allow_ajax_update($user_preference, PARAM_INT);
+
         $blockcontents = $this->page->blocks->get_content_for_region($region, $this);
 
         $blocks = $this->page->blocks->get_blocks_for_region($region);

@@ -25,7 +25,6 @@ a example.
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <?php include 'partials/page_header.php' ?>
-<!-- HOME PAGE ELEMENTS -->
 <?php
     if ( ! empty($PAGE->layout_options['nosubtitle'])){
         $hassubtitle =  !($PAGE->layout_options['nosubtitle']); 
@@ -35,7 +34,6 @@ a example.
     if(! isset($hasnavbar)){
         $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
     }
-    
 ?>
 <div id="regions-control"></div>
 <div id="page" class="main-content">
