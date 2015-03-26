@@ -47,8 +47,18 @@ class theme_archaius_core_renderer extends core_renderer {
             $output = '';
             $skipdest = '';
         } else {
-            $output = html_writer::tag('a', get_string('skipa', 'access', $skiptitle), array('href' => '#sb-' . $bc->skipid, 'class' => 'skip-block'));
-            $skipdest = html_writer::tag('span', '', array('id' => 'sb-' . $bc->skipid, 'class' => 'skip-block-to'));
+            $output = html_writer::tag('a', get_string('skipa', 'access', $skiptitle), 
+                array(
+                    'href' => '#sb-' . $bc->skipid, 
+                    'class' => 'skip-block'
+                )
+            );
+            $skipdest = html_writer::tag('span', '', 
+                array(
+                    'id' => 'sb-' . $bc->skipid, 
+                    'class' => 'skip-block-to'
+                )
+            );
         }
 
          $title = '';
@@ -59,13 +69,18 @@ class theme_archaius_core_renderer extends core_renderer {
         $controlshtml = $this->block_controls($bc->controls);
 
         if ($title || $controlshtml) {
-            $output .= html_writer::tag('div', html_writer::tag('div',  $title , array('class' => 'title')), array('class' => 'header-tab'));
+            $output .= html_writer::tag('div', html_writer::tag('div',  $title , 
+                array('class' => 'title')), 
+                array('class' => 'header-tab')
+            );
         }
 
         $output .= html_writer::start_tag('div', $bc->attributes);
 
         if ($title || $controlshtml) {
-            $output .= html_writer::tag('div', html_writer::tag('div', html_writer::tag('div', '', array('class'=>'block_action')). $title . $controlshtml, array('class' => 'title')), array('class' => 'header'));
+            $output .= html_writer::tag('div', html_writer::tag('div', 
+                html_writer::tag('div', '', array('class'=>'block_action')). $title . $controlshtml, 
+                array('class' => 'title')), array('class' => 'header'));
         }
 
         $output .= html_writer::start_tag('div', array('class' => 'content'));
@@ -84,7 +99,8 @@ class theme_archaius_core_renderer extends core_renderer {
         $output .= html_writer::end_tag('div');
 
         if ($bc->annotation) {
-            $output .= html_writer::tag('div', $bc->annotation, array('class' => 'blockannotation'));
+            $output .= html_writer::tag('div', $bc->annotation, 
+                array('class' => 'blockannotation'));
         }
         $output .= $skipdest;
 
