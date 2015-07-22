@@ -1,16 +1,17 @@
 /* BASE CSS ARCHAIUS THEME
 ------------------------------------------*/
 .main-content{
-    max-width: 1200px;
-    width:90% !important;
-    margin: 20px auto 0px auto;
-    padding: 5px;
+  max-width: 1200px;
+  width:90% !important;
+  margin: 20px auto 0px auto;
+  padding: 5px;
 }
 
 
 #page {
-    background-color: #fff;
-    margin: 20px auto 50px auto;
+  background-color: #fff;
+  margin: 20px auto 50px auto;
+  min-height: 65vh;
 }
 
 h1.main, 
@@ -19,12 +20,12 @@ h3.main,
 h4.main, 
 h5.main, 
 h6.main {
-    text-align: center;
+  text-align: center;
 }
 
 .generalbox {
-    padding: 10px;
-    margin-bottom: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
 /* File manager */
@@ -33,160 +34,157 @@ h6.main {
 .filemanager button,
 .file-picker input[type="submit"], 
 .file-picker button{
-    color: white;
+  color: white;
 }
 
 table{
-    width:100%;
+  width:100%;
 }
 
 #tablecontainer{
-    overflow:scroll;
+  overflow:scroll;
 }
 
 #notice.generalbox, 
 .generaltable,
 .userinfobox {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .notifyproblem, .notifysuccess {
-    padding: 10px;
+  padding: 10px;
 }
 
 .notifyproblem {
-    color: #660000;
+  color: #660000;
 }
 
 .notifysuccess {
-    background-color: #B8D9BA;
-    border-radius: 5px;
-    color: #222;
-    border: 1px solid #8CA383;
+  background-color: #B8D9BA;
+  border-radius: 5px;
+  color: #222;
+  border: 1px solid #8CA383;
 }
 
-
-
 .notifyproblem, .notifysuccess, .paging {
-    text-align: center;
+  text-align: center;
 }
 
 /* Tabs */
 .tabtree {
-    position: relative;
-    margin-bottom: 3.5em;
-    .tabrow0 {
-        text-align: center;
-        width: 100%;
-        margin: 1em 0px;
-        li {
-            display: inline;
-            margin-right: -4px;
-            &.here a{
-                position: relative;
-                z-index: 102;
-            }
-            a{
-                background-image: url(~"[[pix:theme|tab/left]]");
-                padding-left: 14px;
-                padding-top: 10px;
-                background-repeat: no-repeat;
-                padding-bottom: 3px;
-                margin-bottom: -1px;
-                &:hover{
-                   background-image: url(~"[[pix:theme|tab/left_hover]]"); 
-                   span{
-                        background-image: url(~"[[pix:theme|tab/right_hover]]");
-                   }
-                }
-                span {
-                    background-image: url(~"[[pix:theme|tab/right]]");
-                    background-repeat: no-repeat;
-                    background-position: 100% 0%;
-                    padding-right: 14px;
-                    padding-top: 10px;
-                    padding-bottom: 3px;
-                }
-            }
+  position: relative;
+  margin-bottom: 3.5em;
+  .tabrow0 {
+    text-align: center;
+    width: 100%;
+    margin: 1em 0px;
+    li {
+      display: inline;
+      margin-right: -4px;
+      &.here a{
+        position: relative;
+        z-index: 102;
+      }
+      a{
+        background-image: url(~"[[pix:theme|tab/left]]");
+        padding-left: 14px;
+        padding-top: 10px;
+        background-repeat: no-repeat;
+        padding-bottom: 3px;
+        margin-bottom: -1px;
+        &:hover{
+          background-image: url(~"[[pix:theme|tab/left_hover]]"); 
+          span{
+            background-image: url(~"[[pix:theme|tab/right_hover]]");
+          }
         }
-        ul,
-        div{
-            background-image: url(~"[[pix:theme|tab/tabrow1]]");
-            background-position: 0% 50%;
-            position: absolute;
-            width: 100%;
-            border-top: 1px solid #aaa;
-            padding: 0.25em 0px;
-            top: 100%;
-            margin: 0px;  
-        } 
-        .empty {
-            height: 1px;
-            overflow: hidden;
-            padding: 0px;
-            position: absolute;
+        span {
+          background-image: url(~"[[pix:theme|tab/right]]");
+          background-repeat: no-repeat;
+          background-position: 100% 0%;
+          padding-right: 14px;
+          padding-top: 10px;
+          padding-bottom: 3px;
         }
+      }
     }
-    .tabrow1{
-        li{
-            a, 
-            a span,
-            a:hover,
-            a:hover span{
-                background-image: none;
-            }
-        }       
+    ul,
+    div{
+      background-image: url(~"[[pix:theme|tab/tabrow1]]");
+      background-position: 0% 50%;
+      position: absolute;
+      width: 100%;
+      border-top: 1px solid #aaa;
+      padding: 0.25em 0px;
+      top: 100%;
+      margin: 0px;  
+    } 
+    .empty {
+      height: 1px;
+      overflow: hidden;
+      padding: 0px;
+      position: absolute;
     }
-
+  }
+  .tabrow1{
+    li{
+      a, 
+      a span,
+      a:hover,
+      a:hover span{
+        background-image: none;
+      }
+    }       
+  }
 }
 
 
 .groupmanagementtable {
-    width: 90%;
-     td {
-        vertical-align: top;
-        border-width: 0px;
-         p {
-            margin: 0px;
-        }
+  width: 90%;
+   td {
+    vertical-align: top;
+    border-width: 0px;
+    p {
+      margin: 0px;
     }
+  }
 }
 
 /**
  * Themes
  */
 #page-admin-theme-index .generalbox {
-    border: 0 none;
-    background: none;
+  border: 0 none;
+  background: none;
 }
 
 .theme_screenshot {
-    float: left;
-    width: 300px;
-    img {
-        width: 275px;
-    }
-    h2 {
-        font-size: 2em;
-        margin-top: 0;
-    }
-    h3 {
-        font-size: 0.9em;
-        margin: 1em 0 0;
-    }
-    p {
-        font-size: 0.9em;
-        margin: 0 0 1em;
-    }
+  float: left;
+  width: 300px;
+  img {
+    width: 275px;
+  }
+  h2 {
+    font-size: 2em;
+    margin-top: 0;
+  }
+  h3 {
+    font-size: 0.9em;
+    margin: 1em 0 0;
+  }
+  p {
+    font-size: 0.9em;
+    margin: 0 0 1em;
+  }
 
 }
 
 .theme_description {
-    margin-left: 300px;
-    h2 {
-        padding-top: 0.5em;
-    }
+  margin-left: 300px;
+  h2 {
+    padding-top: 0.5em;
+  }
 }
 
 

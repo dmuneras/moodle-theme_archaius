@@ -1,0 +1,126 @@
+#page-header {
+  top: 0;
+  background: @theme_color;
+  color: #fff;
+  width:100%;
+  float: none; 
+  margin-bottom: 30px; 
+	a{
+		&:link, &:visited{
+			color: whitesmoke;
+		}
+	}
+	h1.headermain {
+  	color: #fff;
+  	font-weight: bold;
+  	font-size: 2em;
+  	margin:20px;
+	}
+  div.menu-icon{
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    float: right;
+    margin: 10px 0px;
+    padding: 0;
+    z-index: 999; 
+    .box-sizing;
+    display: none;
+  }
+  div.menu-icon.active{
+    background: @background_color;  
+  }
+  div.menu-icon.deactive{
+    background: @background_color;
+  }
+
+  div.menu-icon .icon-bar {
+    display: block;
+    width: 37px;
+    margin: 5px auto;
+    height: 7px;
+    background-color: @theme_color;
+  }
+  .page-header-inner{
+    margin: 0 auto;
+    padding-top: 30px;
+    max-width: 1200px;
+    min-height: 110px;
+    width: 90%;
+    .box-sizing;
+  }
+  .usermenu{
+    .moodle-actionmenu{
+      &,
+      &:hover{
+        .toggle-display .userbutton .usertext{
+          color: whiteSmoke;
+        }
+      }
+      &[data-enhanced].show .menu{
+        .box-shadow(2px 2px 20px 0 #222);
+      }
+    }
+    .menu-action-text{
+      color: @main_text_color;
+    }
+    .icon.menu-action{
+      &:hover{
+        background: @current_color;
+        span{
+          color: whiteSmoke;
+        }
+      }
+    }
+  }
+}
+
+#logo,
+#mobile-logo{
+  width:45%;
+  height:100%;
+  float: left;
+  max-height: 150px;
+  cursor: pointer;
+  .box-sizing;
+  img{
+    max-height:70px;
+    margin:0px 0px 0px 10px;
+  	cursor: pointer;
+  	height: auto;
+  	width: auto;
+  }
+}
+#mobile-logo{
+  display: none;
+}
+
+.page-header-info-container{
+  .box-sizing;
+  float: left;
+  width:48%;
+}
+
+div.top-inner{
+  margin: 0 auto;
+  padding-top: 10px;
+  max-width: 1200px;
+  min-height: 110px;
+  div.langmenu{
+    float: right;
+    width: 60%;
+    .box-sizing;
+    padding: 0px 10px;
+    text-align: right;
+  }
+}
+
+img.icon{
+  display: block;
+}
+div.singlebutton{
+  padding: 5px;
+}
+.navbutton input[type="submit"]{
+  padding: 0px 3px;
+}

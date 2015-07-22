@@ -34,15 +34,12 @@
     border: 1px solid #ccc;
   }
   table.generaltable td {
-    /* Behave  like a "row" */
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
   }
   table.generaltable td:before {
-    /*Now like a table header */
     position: absolute;
-    /* Top/left values mimic padding */
     top: 6px;
     left: 6px;
     width: 45%;
@@ -86,6 +83,7 @@
   #mobile-logo {
     margin-left: 20px;
     display: block;
+    width: 30%;
   }
   #mobile-logo img.sitelogo {
     height: auto;
@@ -106,9 +104,8 @@
     z-index: 999;
     top: 0;
     right: 0;
-    width: 100%;
-    padding-top: 10px;
     min-height: 40px;
+    width: 80%;
   }
   #page-header .page-header-inner {
     width: 100%;
@@ -127,10 +124,7 @@
   }
   #page-header .page-header-info-container {
     padding-right: 20px;
-    width: 45%;
-  }
-  #page-header .page-header-info-container img.userpicture {
-    float: right;
+    width: 65%;
   }
   #page-header div.menu-icon {
     display: block;
@@ -242,15 +236,12 @@ html.no-media-queries table.generaltable tr {
   border: 1px solid #ccc;
 }
 html.no-media-queries table.generaltable td {
-  /* Behave  like a "row" */
   border: none;
   border-bottom: 1px solid #eee;
   position: relative;
 }
 html.no-media-queries table.generaltable td:before {
-  /*Now like a table header */
   position: absolute;
-  /* Top/left values mimic padding */
   top: 6px;
   left: 6px;
   width: 45%;
@@ -292,6 +283,7 @@ html.no-media-queries .report-page #report-region-pre {
 html.no-media-queries #mobile-logo {
   margin-left: 20px;
   display: block;
+  width: 30%;
 }
 html.no-media-queries #mobile-logo img.sitelogo {
   height: auto;
@@ -310,9 +302,8 @@ html.no-media-queries #page-header .headermenu {
   z-index: 999;
   top: 0;
   right: 0;
-  width: 100%;
-  padding-top: 10px;
   min-height: 40px;
+  width: 80%;
 }
 html.no-media-queries #page-header .page-header-inner {
   width: 100%;
@@ -331,10 +322,7 @@ html.no-media-queries #page-header #header-wrap {
 }
 html.no-media-queries #page-header .page-header-info-container {
   padding-right: 20px;
-  width: 45%;
-}
-html.no-media-queries #page-header .page-header-info-container img.userpicture {
-  float: right;
+  width: 65%;
 }
 html.no-media-queries #page-header div.menu-icon {
   display: block;

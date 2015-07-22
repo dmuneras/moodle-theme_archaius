@@ -9,6 +9,7 @@
 #page {
   background-color: #fff;
   margin: 20px auto 50px auto;
+  min-height: 65vh;
 }
 h1.main,
 h2.main,

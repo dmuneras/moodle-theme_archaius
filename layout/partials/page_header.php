@@ -59,13 +59,7 @@ if(! isset($hascustommenu)){
     <div class="page-header-info-container">
       <div class="wrapper-header-info">
         <div class="headermenu">
-          <?php if(isloggedin()){ ?>
-                <?php global $USER,$COURSE; ?>
-                <?php echo $OUTPUT->user_picture($USER, array('courseid'=>$COURSE->id));?>
-          <?php } ?>
-
-          <?php echo $OUTPUT->login_info(); ?>
-          <?php echo $PAGE->headingmenu ?>
+          <?php echo $OUTPUT->user_menu(); ?>
         </div>
         <div class='menu-icon deactive'>
           <span class='icon-bar'></span>
