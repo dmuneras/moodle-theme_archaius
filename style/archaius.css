@@ -638,10 +638,10 @@ td.eventskey {
 #searchforums {
   margin-left: 10px;
 }
-#region-main .forumpost {
+#page-content #region-main .forumpost {
   border: none;
 }
-#region-main .forumpost div.header {
+#page-content #region-main .forumpost div.header {
   background: #efefef !important;
   margin-bottom: 5px;
   -webkit-box-shadow: 1px 1px 2px 0px #888888;
