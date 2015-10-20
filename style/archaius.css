@@ -20,6 +20,22 @@
   float: none;
   margin-bottom: 30px;
 }
+#page-header #top-page-header {
+  width: 90%;
+  max-width: 1200px;
+  height: 10px;
+  margin: 0 auto;
+}
+#page-header #top-page-header #social-icons {
+  margin: 0 0 0 80%;
+  height: 40px;
+}
+#page-header #top-page-header #social-icons li {
+  float: right;
+  list-style: none;
+  margin-right: 10px;
+  font-size: 2em;
+}
 #page-header a:link,
 #page-header a:visited {
   color: whitesmoke;
@@ -110,7 +126,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  float: left;
+  float: right;
   width: 48%;
 }
 div.top-inner {
@@ -167,6 +183,12 @@ div.singlebutton {
   padding: 1px;
   min-height: 36px;
 }
+#custommenu * {
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
 #custommenu ul,
 #custommenu li,
 #custommenu a,
@@ -180,6 +202,7 @@ div.singlebutton {
 #custommenu .custom_menu_submenu li {
   border-right: 0px;
   min-width: 150px;
+  background-color: [[setting:custommenucolor]];
 }
 #custommenu .custom_menu_submenu .yui3-menu-label-active,
 #custommenu .custom_menu_submenu .yui3-menu-label-menuvisible {
@@ -255,6 +278,7 @@ div.singlebutton {
 }
 #mobile-custommenu {
   background-color: [[setting:themecolor]];
+  position: relative;
   padding: 10px;
   clear: both;
   display: none;
@@ -284,7 +308,7 @@ div.singlebutton {
 #mobile-custommenu.collapsed {
   display: none;
 }
-/* FROM BOOTSTRAP 
+/* FROM BOOTSTRAP
 -------------------------------------------------------------- */
 input[type="submit"],
 button,
@@ -312,6 +336,10 @@ button,
   cursor: pointer;
   word-wrap: break-word;
   max-width: 100%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .btn-danger {
   color: #ffffff;
@@ -327,6 +355,10 @@ button,
   background-repeat: repeat-x;
   border-color: #bd362f #bd362f #802420;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .btn-warning {
   color: #ffffff;
@@ -342,6 +374,10 @@ button,
   background-repeat: repeat-x;
   border-color: #f89406 #f89406 #ad6704;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .btn {
   display: inline-block;
@@ -359,6 +395,10 @@ button,
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 /* END BOOTSTRAP
 -------------------------------------------------------------- */
@@ -813,12 +853,139 @@ div.calendar-controls {
 #expand-bank {
   color: white;
 }
-.loginbox {
-  border: 1px solid #ccc;
+#page-login-index #social-icons {
+  position: absolute;
+  right: 0;
+  margin-top: -10px;
+}
+#page-login-index #social-icons li {
+  float: left;
+  list-style: none;
+  margin-right: 10px;
+  font-size: 3em;
+}
+#page-login-index #page {
+  width: [[setting|loginboxwidth]] !important;
+  max-width: [[setting|loginboxmaxwidth]];
+  min-height: 200px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 10px 0px #222222;
+  -moz-box-shadow: 1px 1px 10px 0px #222222;
+  box-shadow: 1px 1px 10px 0px #222222;
+}
+#page-login-index #page-content {
+  min-height: 200px;
+}
+#page-login-index #page-header.login,
+#page-login-index #page-header.login .page-header-inner {
+  padding-top: 10px;
+  min-height: 80px;
+  max-width: 100%;
+}
+#page-login-index #page-header.login #logo,
+#page-login-index #page-header.login .page-header-inner #logo,
+#page-login-index #page-header.login #mobile-logo,
+#page-login-index #page-header.login .page-header-inner #mobile-logo {
+  max-width: 300px;
+}
+#page-login-index #page-header.login #logo img,
+#page-login-index #page-header.login .page-header-inner #logo img,
+#page-login-index #page-header.login #mobile-logo img,
+#page-login-index #page-header.login .page-header-inner #mobile-logo img {
+  max-width: 50%;
+}
+#page-login-index #page-header.login .page-header-info-container {
+  float: left;
+}
+#page-login-index #custommenu {
+  float: left;
+  margin-top: -20px;
+  background: [[setting:themecolor]];
+}
+#page-login-index #custommenu li {
+  padding: 0px 5px;
+  background: [[setting:themecolor]];
+}
+#page-login-index #custommenu ul > li a {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+#page-login-index #custommenu div {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+#page-login-index #custommenu .custom_menu_submenu .yui3-menu-label-active,
+#page-login-index #custommenu .custom_menu_submenu .yui3-menu-label-menuvisible {
+  background-color: [[setting:custommenucolor]];
+}
+#page-login-index #custommenu .yui3-menu .yui3-menu .yui3-menuitem-active .yui3-menuitem-content,
+#page-login-index #custommenu .yui3-menuitem-content:hover,
+#page-login-index #custommenu .yui3-menu-label-menuvisible:hover {
+  background-color: [[setting:custommenucolor]];
+}
+#page-login-index #custommenu .custom_menu_submenu .yui3-menu-content,
+#page-login-index #custommenu .yui3-menu-label-active,
+#page-login-index #custommenu .yui3-menu-label-menuvisible {
+  background-color: [[setting:themecolor]];
+}
+#page-login-index #custommenu .yui3-menu-horizontal .yui3-menu-content ul ul,
+#page-login-index #custommenu .yui3-menu-horizontal.javascript-disabled .yui3-menu-content ul ul {
+  padding-bottom: 3px;
+}
+#page-login-index #custommenu .yui3-menu-horizontal .yui3-menu-content li a {
+  cursor: pointer;
+  color: white;
+  padding: 10px;
+}
+#page-login-index #custommenu .yui3-menu-horizontal .yui3-menu-content li.yui3-menuitem-active a,
+#page-login-index #custommenu a.yui3-menu-label-active,
+#page-login-index #custommenu a.yui3-menu-label-menuvisible {
+  color: white !important;
+}
+#page-login-index #custommenu .yui3-skin-sam .yui3-menu li,
+#page-login-index #custommenu .yui3-skin-sam .yui3-menu .yui3-menu li {
+  background-color: [[setting:themecolor]] !important;
+}
+#login-content {
+  max-width: 100%;
+  margin-top: -30px;
+  width: 100%;
+  padding: 80px 0 20px 0;
+  text-align: center;
+  overflow: auto;
+  display: block;
+  position: relative;
+  min-height: 65vh;
+}
+#login-content:before {
+  background: url([[setting|loginbackgroundimage]]) no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 0;
+  content: "";
+  display: block;
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .loginbox.twocolumns {
   border: 0;
-  background-color: #f5f5f5;
 }
 .loginbox.twocolumns .loginpanel {
   border: 0;
@@ -828,6 +995,16 @@ div.calendar-controls {
   text-align: center;
   width: auto;
   float: none;
+}
+.loginbox .loginform .form-input input {
+  width: 85%;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #999;
 }
 .loginbox .loginform .form-input #loginbtn {
   display: block;

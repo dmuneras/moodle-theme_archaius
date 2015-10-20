@@ -34,23 +34,23 @@ $string['region-footer-center'] = "Centro footer";
 $string['region-footer-right'] = "Derecha footer";
 
 //PRESENTATION PAGE
-$string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><h2>Archaius</h2>                                                                                      
-<img src="archaius/pix/screenshot.png" />                                                                                                                                             
-<h3>Créditos</h3><p><a href="http://docs.moodle.org/en/Theme_credits">http://docs.moodle.org/en/Theme_credits</a></p>                                                           
+$string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><h2>Archaius</h2>
+<img src="archaius/pix/screenshot.png" />
+<h3>Créditos</h3><p><a href="http://docs.moodle.org/en/Theme_credits">http://docs.moodle.org/en/Theme_credits</a></p>
 <h3>Documentación</h3>
-<p><a href="http://docs.moodle.org/en/Themes">http://docs.moodle.org/en/Themes</a></p>    
-<p><a href="https://github.com/dmuneras/moodle-theme_archaius/wiki">Archaius wiki</a></p>                                                               
+<p><a href="http://docs.moodle.org/en/Themes">http://docs.moodle.org/en/Themes</a></p>
+<p><a href="https://github.com/dmuneras/moodle-theme_archaius/wiki">Archaius wiki</a></p>
 <h3>Reportar un error o proponer una mejora</h3>
 <p><a href="http://tracker.moodle.org">http://tracker.moodle.org</a></p>
 <p><a href="https://github.com/dmuneras/moodle-theme_archaius/issues">Proyecto en Github</a></p>
-</div>                                                                                 
+</div>
 <div class="theme_description"><h2>Acerca de</h2><p>Archaius es un tema gráfico de tres columnas que se caracteriza por sus bloques y temario en los cursos.
 Es muy flexible, cuenta con diferentes opciones para el cambio de apariencia y con poco conocimiento en desarrollo para web se pueden lograr grandes resultados.</p>
-<p>Propongo una solución diferentes para \'Docking blocks\'.</p>                                                                                                                  
+<p>Propongo una solución diferentes para \'Docking blocks\'.</p>
 <h2>Tweaks</h2>
-<p>Si piensas modificar el tema es recomendable que lo dupliques primero y le cambies el nombre. Esto evitará que sus cambios sean sobreescritos por actualizaciones, y vas a tener los archivos originales por si algo malo ocurre.                                                                                                                                                                       
-Más información para la modificación de temas puede ser encontrada en: <a href="http://docs.moodle.org/en/Theme">MoodleDocs</a>.</p>                                                               
-<h2>Créditos</h2><p>Este tema fue inspirado por Anomaly, que fue diseñado originalmente para Moodle 1.9 por Patrick Malley.                                                                                                                     
+<p>Si piensas modificar el tema es recomendable que lo dupliques primero y le cambies el nombre. Esto evitará que sus cambios sean sobreescritos por actualizaciones, y vas a tener los archivos originales por si algo malo ocurre.
+Más información para la modificación de temas puede ser encontrada en: <a href="http://docs.moodle.org/en/Theme">MoodleDocs</a>.</p>
+<h2>Créditos</h2><p>Este tema fue inspirado por Anomaly, que fue diseñado originalmente para Moodle 1.9 por Patrick Malley.
 Archaius fue creado por Daniel Múnera Sánchez (dmunera119@gmail.com)</p>
  <p>El logo fue una contribución de Juan Pablo Londoño Bastidas, diseñador gráfico de la Universidad EAFIT de Colombia.</p>
  <p>Finalmente, muchas gracias a Ana Beatriz Chiquito por el apoyo para crear el primer prototipo.</p>';
@@ -100,6 +100,19 @@ $string["accordionBlocksdesc"] = "Activar efecto acordeón para los bloques late
 
 $string["slideshowheight"] = "Altura del carusel de la página principal";
 $string["slideshowheightdesc"] = "Altura del carusel de la página principal, Se debe poner solo el número, este será utizado como PIXEL. NO PONER 'px' al final";
+
+//SOCIAL ICONS
+$string["facebook"] = "Dirección web del perfil de facebook de la institución";
+$string["facebookdesc"] = "Dirección web del perfil de facebook de la institución";
+
+$string["twitter"] = "Dirección web del perfil de twitter de la institución";
+$string["twitterdesc"] = "Dirección web del perfil de facebook de la institución";
+
+$string["youtube"] = "Dirección web del perfil de youtube de la institución";
+$string["youtubedesc"] = "Dirección web del perfil de youtube de la institución";
+
+$string["linkedin"] = "Dirección web del perfil de linkedin de la institución";
+$string["linkedindesc"] = "Dirección web del perfil de linkedin de la institución";
 
 //SLIDESHOW
 $string["description"] = "Insertar HTML para crear un <i>slide</i>.";

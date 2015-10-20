@@ -20,7 +20,7 @@ a example.
 ?>
 <!-- PAGE HEADER -->
 
-<?php 
+<?php
 //Check if the variable exists, if not you have to create it.
 if(! isset($custommenu)){
   $custommenu = $OUTPUT->custom_menu();
@@ -30,12 +30,44 @@ if(! isset($hascustommenu)){
 }
 ?>
 <div id="page-header">
+  <div id="top-page-header">
+    <ul id='social-icons'>
+      <?php if(! empty($PAGE->theme->settings->facebook)){ ?>
+        <li>
+          <a href='<?php echo ArchaiusViewHelper::add_protocole_to_url($PAGE->theme->settings->facebook) ?>' target="_blank">
+            <i class="fa fa-facebook-official"></i>
+          </a>
+        </li>
+      <?php } ?>
+      <?php if(! empty($PAGE->theme->settings->twitter)){ ?>
+        <li>
+          <a href='<?php echo ArchaiusViewHelper::add_protocole_to_url($PAGE->theme->settings->twitter) ?>' target='_blank'>
+            <i class="fa fa-twitter-square"></i>
+          </a>
+        </li>
+      <?php } ?>
+      <?php if(! empty($PAGE->theme->settings->youtube)){ ?>
+        <li>
+          <a href='<?php echo ArchaiusViewHelper::add_protocole_to_url($PAGE->theme->settings->youtube) ?>' target="_blank">
+            <i class="fa fa-youtube-square"></i>
+          </a>
+        </li>
+      <?php } ?>
+      <?php if(! empty($PAGE->theme->settings->linkedin)){ ?>
+        <li>
+          <a href='<?php echo ArchaiusViewHelper::add_protocole_to_url($PAGE->theme->settings->linkedin) ?>' target="_blank">
+            <i class="fa fa-linkedin-square"></i>
+          </a>
+        </li>
+      <?php } ?>
+    </ul>
+  </div>
   <div class="page-header-inner">
     <?php if (!empty($PAGE->theme->settings->logo)) { ?>
-        
-        <?php $logourl = $PAGE->theme->setting_file_url('logo', 'logo'); ?>    
+
+        <?php $logourl = $PAGE->theme->setting_file_url('logo', 'logo'); ?>
          <div id="logo" class = "nobackground">
-              <img class="sitelogo" src="<?php echo $logourl;?>" alt="Custom logo here" 
+              <img class="sitelogo" src="<?php echo $logourl;?>" alt="Custom logo here"
                 onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '"/>
          </div>
     <?php } else { ?>
@@ -45,9 +77,9 @@ if(! isset($hascustommenu)){
       </div>
     <?php } ?>
     <?php if (!empty($PAGE->theme->settings->mobilelogo)) { ?>
-        <?php $mobile_logourl = $PAGE->theme->setting_file_url('mobilelogo', 'mobilelogo');?> 
+        <?php $mobile_logourl = $PAGE->theme->setting_file_url('mobilelogo', 'mobilelogo');?>
         <div id="mobile-logo">
-            <img class="sitelogo" src="<?php echo $mobile_logourl;?>" alt="Custom  mobile logo here" 
+            <img class="sitelogo" src="<?php echo $mobile_logourl;?>" alt="Custom  mobile logo here"
               onclick = "document.location.href = ' <?php echo $CFG->wwwroot ?> '"/>
       </div>
     <?php }else{ ?>
@@ -72,7 +104,7 @@ if(! isset($hascustommenu)){
   <?php if ($hascustommenu) { ?>
     <div id="custommenu" class="collapsed">
       <div class="custommenu-inner"><?php echo $custommenu; ?></div>
-    </div>  
-  <?php } ?>  
-</div>        
+    </div>
+  <?php } ?>
+</div>
 <!-- END PAGE HEADER -->

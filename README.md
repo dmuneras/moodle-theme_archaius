@@ -33,7 +33,7 @@ Archaius uses jQuery as a javascript framework and several jQuery plugins as wel
 * A modified version of [responsiveslides](https://github.com/dmuneras/ResponsiveSlides.js)
 * VelocityJS
 * Waypoints
-* Modernizr 
+* Modernizr
 
 I have been using [LESS](http://lesscss.org/) to create CSS stylesheets.
 
@@ -62,6 +62,14 @@ take a look to this: [YUI shifter docs in Moodle](https://docs.moodle.org/dev/YU
 
 Improvements history:
 ---------------------
+
+25.10.2015
+----------
+
+* Add opacity to topic tab when admin mark the topic as hidden, for student is doesn't appear
+* Highlighting topic working again. Highlighted topic will be automatically open.
+* Adding option to add background image to login page
+* Adding social icons options
 
 19.01.2015
 ----------
@@ -107,7 +115,7 @@ decision).
 * Preview settings page is now working too.
 * Upload logo is possible in setting page
 * New setting : mobile logo
-* Velocity added to custom_blocks effect 
+* Velocity added to custom_blocks effect
 
 06.07.2014
 ----------
