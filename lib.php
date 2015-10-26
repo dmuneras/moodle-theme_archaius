@@ -1,6 +1,6 @@
 <?php
 
-/*  
+/*
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@ This plugin is part of Archaius theme.
  */
 
 /**
-* Functions needed by the archaius theme should be put here. 
+* Functions needed by the archaius theme should be put here.
 * Any functions that get created here should ALWAYS contain the theme name
 * to reduce complications for other theme designers who may be copying this
 *theme.
@@ -28,7 +28,7 @@ This plugin is part of Archaius theme.
 /* ARCHAIUS LIB
 -----------------------------------------------------------------------------*/
 
-/** 
+/**
 *   Function to be called for CSS postprocess, this function replace all
 *   CSS tags for their values in the setting page.
 *   @param String $css
@@ -36,53 +36,53 @@ This plugin is part of Archaius theme.
 *   @return String $css - final CSS of the theme
 */
 function theme_archaius_process_css($css, $theme) {
-    
-    $customcss = 
+
+    $customcss =
         theme_archaius_check_css_setting($theme->settings->customcss);
-    $css = 
+    $css =
         theme_archaius_replace_tag_css(
             $css,$customcss,'[[setting:customcss]]');
 
-    $themecolor = 
+    $themecolor =
         theme_archaius_check_css_setting($theme->settings->themecolor);
 
-    $css = 
+    $css =
         theme_archaius_replace_tag_css(
             $css,$themecolor,'[[setting:themecolor]]');
 
-    $bgcolor = 
+    $bgcolor =
         theme_archaius_check_css_setting($theme->settings->bgcolor);
 
-    $css = 
+    $css =
         theme_archaius_replace_tag_css(
             $css,$bgcolor,'[[setting:bgcolor]]');
-    
-    $headercolor = 
+
+    $headercolor =
         theme_archaius_check_css_setting($theme->settings->headercolor);
 
-    $css = 
+    $css =
         theme_archaius_replace_tag_css(
             $css,$headercolor,'[[setting:headercolor]]');
 
-    $currentcolor = 
+    $currentcolor =
         theme_archaius_check_css_setting($theme->settings->currentcolor);
 
-    $css = 
+    $css =
         theme_archaius_replace_tag_css(
             $css,$currentcolor,'[[setting:currentcolor]]');
 
-    $currentcustommenucolor = 
+    $currentcustommenucolor =
         theme_archaius_check_css_setting(
             $theme->settings->currentcustommenucolor);
-    
-    $css = 
+
+    $css =
         theme_archaius_replace_tag_css(
             $css,$currentcustommenucolor,'[[setting:currentcustommenucolor]]');
 
     $custommenucolor =
         theme_archaius_check_css_setting($theme->settings->custommenucolor);
 
-    $css = 
+    $css =
         theme_archaius_replace_tag_css(
             $css,$custommenucolor,'[[setting:custommenucolor]]');
 
@@ -93,28 +93,32 @@ function theme_archaius_process_css($css, $theme) {
 
     $css = theme_archaius_set_css_font_replacement($css);
 
+    $css = theme_archaius_set_login_background_image($css);
+
+    $css = theme_archaius_set_login_box_width($css);
+
     $langs = get_string_manager()->get_list_of_translations();
     if(count($langs) > 1){
-        $css = theme_archaius_set_custommenu_last_child($css, 'right', '6%');    
+        $css = theme_archaius_set_custommenu_last_child($css, 'right', '6%');
     }else{
         $css = theme_archaius_set_custommenu_last_child($css, 'left','0');
     }
-    
+
     return $css;
 }
 
-/** 
+/**
 *   Check if a setting is empty or not.
 *   @param $setting Setting name
 *   @return mixed NULL or the setting value
 */
 function theme_archaius_check_css_setting($setting){
-    if (!empty($setting)) 
+    if (!empty($setting))
         return $setting;
     return null;
 }
 
-/** 
+/**
 *   Replace a specific setting in CSS stylesheets.
 *   @param String $css
 *   @param $setting Setting name
@@ -125,16 +129,16 @@ function theme_archaius_replace_tag_css($css,$replacement,$tag){
         $replacement = '';
     }
     $css = str_replace($tag, $replacement, $css);
-    return $css;    
+    return $css;
 }
 
-/** 
+/**
 *   Replace slideshow height in CSS files. this is diffent from
 *   the other method because you have to validate that the value
 *   is integer. the value must be numeric and the result is given
 *   in pixels.
 *   @param String $css
-*   @param String $slideshowheight 
+*   @param String $slideshowheight
 *   @return String $css
 */
 function theme_archaius_set_slideshowheight($css, $slideshowheight) {
@@ -145,16 +149,16 @@ function theme_archaius_set_slideshowheight($css, $slideshowheight) {
     }else{
         //pixel is used and the can't be float.
         $replacement = intval($replacement);
-        $replacement = (string)round($replacement);        
+        $replacement = (string)round($replacement);
     }
     $replacement = $replacement . 'px';
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
 
-/** 
+/**
 *   replacement depending of langmenu packs
-* 
+*
 *   @param String $css
 *   @param String $position
 *   @param String $margin
@@ -176,7 +180,7 @@ function theme_archaius_set_custommenu_last_child($css, $position,$margin) {
     return $css;
 }
 
-/** 
+/**
 *   Font replacement
 *   Find fonts to be replaced in CSS files.
 *   @param String $css
@@ -204,29 +208,35 @@ function theme_archaius_set_css_font_replacement($css){
  * @param array $options
  * @return bool
  */
-function theme_archaius_pluginfile($course, $cm, $context, $filearea, 
+function theme_archaius_pluginfile($course, $cm, $context, $filearea,
                             $args, $forcedownload, array $options = array()){
 
     if ($context->contextlevel == CONTEXT_SYSTEM) {
+
         if ($filearea === 'logo') {
             $theme = theme_config::load('archaius');
             return $theme->setting_file_serve(
-                'logo', 
-                $args, 
-                $forcedownload, 
+                'logo',
+                $args,
+                $forcedownload,
                 $options
             );
-
-
         }elseif ($filearea === 'mobilelogo') {
             $theme = theme_config::load('archaius');
             return $theme->setting_file_serve(
-                'mobilelogo', 
-                $args, 
-                $forcedownload, 
+                'mobilelogo',
+                $args,
+                $forcedownload,
                 $options
             );
-
+        }elseif($filearea === 'loginbackgroundimage'){
+            $theme = theme_config::load('archaius');
+            return $theme->setting_file_serve(
+                'loginbackgroundimage',
+                $args,
+                $forcedownload,
+                $options
+            );
         }else{
             $fs = get_file_storage();
             $relativepath = implode('/', $args);
@@ -237,29 +247,67 @@ function theme_archaius_pluginfile($course, $cm, $context, $filearea,
                 send_file_not_found();
             }else {
                 return send_stored_file(
-                    $file, 
-                    86400, 
-                    0, 
-                    $forcedownload, 
+                    $file,
+                    86400,
+                    0,
+                    $forcedownload,
                     $options
                 );
-            }            
+            }
         }
 
     }
 }
 
-/** 
+/**
+*   sets the login background image
+*
+*   @param String $css
+*   @return String $css
+*/
+function theme_archaius_set_login_background_image($css){
+    global $PAGE, $OUTPUT;
+    $tag = '[[setting|loginbackgroundimage]]';
+    $image_url = $PAGE->theme->setting_file_url('loginbackgroundimage', 'loginbackgroundimage');
+    $replacement = "";
+    if (! is_null($image_url)){
+        $replacement = $image_url ;
+    }else{
+        $replacement = $OUTPUT->pix_url('login_background','theme');
+    }
+    $css = str_replace($tag, $replacement, $css);
+    return $css;
+}
+
+/**
+*   sets the box login width
+*
+*   @param String $css
+*   @return String $css
+*/
+function theme_archaius_set_login_box_width($css){
+    global $CFG;
+    $replacement_width = '400px';
+    $replacement_max_width = '90% !important';
+    if($CFG->registerauth === "email"){
+        $replacement_width = '70%';
+        $replacement_max_width = 'auto';
+    }
+    $css = str_replace('[[setting|loginboxwidth]]', $replacement_width, $css);
+    $css = str_replace('[[setting|loginboxmaxwidth]]', $replacement_max_width, $css);
+    return $css;
+}
+/**
 *   Function to add jQuery and jQuery plugins using Moodle standard way
 *   @param moodle_page $page
 */
-function theme_archaius_page_init(moodle_page $page) { 
+function theme_archaius_page_init(moodle_page $page) {
     global $PAGE;
 
     $page->requires->jquery();
 
     //Load responsive slideshow only when the effect is active
-    $slideshow_active = 
+    $slideshow_active =
         isset($PAGE->theme->settings->activateSlideshow) ?
             intval($PAGE->theme->settings->activateSlideshow) : 0;
 
@@ -267,11 +315,11 @@ function theme_archaius_page_init(moodle_page $page) {
         $page->requires->jquery_plugin('responsive-slides', 'theme_archaius');
 
     //CORE JQUERY PLUGINS
-    $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius'); 
-    $page->requires->jquery_plugin('waypoints', 'theme_archaius'); 
-    $page->requires->jquery_plugin('waypoints-sticky', 'theme_archaius');   
+    $page->requires->jquery_plugin('velocity-jquery', 'theme_archaius');
+    $page->requires->jquery_plugin('waypoints', 'theme_archaius');
+    $page->requires->jquery_plugin('waypoints-sticky', 'theme_archaius');
 
-    $accordion_blocks_active = 
+    $accordion_blocks_active =
         isset($PAGE->theme->settings->accordionBlocks) ?
             intval($PAGE->theme->settings->accordionBlocks) : 0;
 
@@ -286,16 +334,16 @@ function theme_archaius_page_init(moodle_page $page) {
 class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
     public function __construct(custom_menu_item $menunode) {
         parent::__construct(
-            $menunode->get_text(), 
-            $menunode->get_url(), 
-            $menunode->get_title(), 
-            $menunode->get_sort_order(), 
+            $menunode->get_text(),
+            $menunode->get_url(),
+            $menunode->get_title(),
+            $menunode->get_sort_order(),
             $menunode->get_parent()
         );
         $this->children = $menunode->get_children();
- 
+
         $matches = array();
-        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', 
+        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/',
             $this->text, $matches)) {
 
             try {
@@ -304,9 +352,9 @@ class theme_archaius_transmuted_custom_menu_item extends custom_menu_item {
                 $this->text = $matches[1];
             }
         }
- 
+
         $matches = array();
-        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/', 
+        if (preg_match('/^\[\[([a-zA-Z0-9\-\_\:]+)\]\]$/',
             $this->title, $matches)) {
 
             try {

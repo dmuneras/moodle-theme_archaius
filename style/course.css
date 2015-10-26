@@ -1,6 +1,6 @@
 /* COURSE STYLES
 ------------------------------------------*/
-/* Course's list frontpage styles        
+/* Course's list frontpage styles
 -----------------------------------------*/
 #page-course-category .categorypicker {
   text-align: center;
@@ -40,7 +40,7 @@
   font-size: 1.75em;
 }
 /* ----------------------------------------
- Main page course styles        
+ Main page course styles
 -----------------------------------------*/
 .path-course-view .topics .topic-tab {
   border-bottom: 1px solid #ccc;
@@ -52,6 +52,9 @@
 .path-course-view .topics .topic-tab.current {
   background-color: whitesmoke;
   border: 1px solid #ccc;
+}
+.path-course-view .topics .topic-tab.hidden {
+  opacity: 0.5;
 }
 .categorybox {
   border: none;
@@ -127,7 +130,7 @@ h2.headingblock {
   margin-top: 8px;
 }
 /* ----------------------------------------
- Grades       
+ Grades
 -----------------------------------------*/
 .path-grade-report-grader .gradeparent {
   overflow: scroll;

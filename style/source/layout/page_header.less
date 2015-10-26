@@ -3,8 +3,25 @@
   background: @theme_color;
   color: #fff;
   width:100%;
-  float: none; 
-  margin-bottom: 30px; 
+  float: none;
+  margin-bottom: 30px;
+  #top-page-header{
+    width: 90%;
+    max-width: 1200px;
+    height: 10px;
+    margin: 0 auto;
+    #social-icons{
+    margin: 0 0 0 80%;
+    height: 40px;
+      li{
+        float: right;
+        list-style: none;
+        margin-right: 10px;
+        font-size: 2em;
+      }
+    }
+  }
+
 	a{
 		&:link, &:visited{
 			color: whitesmoke;
@@ -23,12 +40,12 @@
     float: right;
     margin: 10px 0px;
     padding: 0;
-    z-index: 999; 
+    z-index: 999;
     .box-sizing;
     display: none;
   }
   div.menu-icon.active{
-    background: @background_color;  
+    background: @background_color;
   }
   div.menu-icon.deactive{
     background: @background_color;
@@ -97,7 +114,7 @@
 
 .page-header-info-container{
   .box-sizing;
-  float: left;
+  float: right;
   width:48%;
 }
 

@@ -21,6 +21,8 @@ a example.
 
 <?php
 
+require_once($CFG->dirroot . '/theme/archaius/helpers/ArchaiusViewHelper.class.php');
+
 //Check which components are present
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
@@ -58,6 +60,7 @@ echo $OUTPUT->doctype() ?>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->

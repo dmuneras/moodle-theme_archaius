@@ -1,18 +1,139 @@
+#page-login-index{
+  #social-icons{
+    position: absolute;
+    right: 0;
+    margin-top: -10px;
+    li{
+      float: left;
+      list-style: none;
+      margin-right: 10px;
+      font-size: 3em;
+    }
+  }
+  #page{
+    width: [[setting|loginboxwidth]] !important;
+    max-width: [[setting|loginboxmaxwidth]];
+    min-height: 200px;
+    .rounded-corners;
+    .box-shadow(1px 1px 10px 0px #222);
+  }
+  #page-content{
+    min-height: 200px;
+  }
+  #page-header.login{
+    &,
+    .page-header-inner{
+      padding-top: 10px;
+      min-height: 80px;
+      max-width: 100%;
+      #logo,
+      #mobile-logo{
+        max-width: 300px;
+        img{
+          max-width: 50%;
+        }
+      }
+    }
+    .page-header-info-container{
+      float: left;
+    }
+  }
+  #custommenu{
+    float: left;
+    margin-top: -20px;
+    background: @theme_color;
+    li{
+      padding: 0px 5px;
+      background: @theme_color;
+    }
+    & ul > li a{
+      .rounded-corners;
+    }
+    div{
+      .rounded-corners;
+    }
+    .custom_menu_submenu{
+      .yui3-menu-label-active,
+      .yui3-menu-label-menuvisible{
+        background-color: @custommenu_color;
+      }
+    }
+    .yui3-menu .yui3-menu .yui3-menuitem-active .yui3-menuitem-content,
+    .yui3-menuitem-content:hover ,
+    .yui3-menu-label-menuvisible:hover{
+      background-color: @custommenu_color;
+    }
+    .custom_menu_submenu .yui3-menu-content,
+    .yui3-menu-label-active,
+    .yui3-menu-label-menuvisible{
+      background-color: @theme_color;
+    }
+    .yui3-menu-horizontal .yui3-menu-content ul ul,
+    .yui3-menu-horizontal.javascript-disabled .yui3-menu-content ul ul{
+      padding-bottom:3px;
+    }
+    .yui3-menu-horizontal .yui3-menu-content li a {
+      cursor:pointer;
+      color: white;
+      padding: 10px;
+    }
+    .yui3-menu-horizontal .yui3-menu-content li.yui3-menuitem-active a,
+    a.yui3-menu-label-active,
+    a.yui3-menu-label-menuvisible {
+      color:white !important;
+    }
+    .yui3-skin-sam .yui3-menu li,
+    .yui3-skin-sam .yui3-menu .yui3-menu li{
+      background-color: @theme_color !important;
+    }
+  }
+}
+
+#login-content{
+  max-width: 100%;
+  margin-top: -30px;
+  width: 100%;
+  padding: 80px 0 20px 0;
+  text-align: center;
+  overflow: auto;
+  display: block;
+  position: relative;
+  min-height: 65vh;
+  &:before{
+      background: url([[setting|loginbackgroundimage]]) no-repeat;
+      background-size: cover;
+      opacity: 0.8;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: 0;
+      content: "";
+      display: block;
+      min-height: 100%;
+      .box-sizing;
+  }
+}
 .loginbox{
   &.twocolumns{
     border: 0;
-    background-color: @box_color;
     .loginpanel{
       border:0;
     }
   }
-  border: 1px solid #ccc;
   .loginform{
     .form-input{
       margin-bottom:5px;
       text-align: center;
       width:auto;
       float: none;
+      input {
+        width: 85%;
+        padding: 5px;
+        .rounded-corners;
+        border: 1px solid #999;
+      }
       #loginbtn{
         display: block;
         text-align: center;

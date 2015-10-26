@@ -1,8 +1,8 @@
 /* SMALL SCREENS
 -------------------------------------------------------------- */
 .responsive-view(@container_width: 95%){
-  input[type=text], 
-  input[type=password], 
+  input[type=text],
+  input[type=password],
   textarea{
     width: @container_width;
   }
@@ -11,28 +11,28 @@
   }
   table.generaltable{
     width:@container_width;
-    thead, tbody, th, td, tr { 
-      display: block; 
+    thead, tbody, th, td, tr {
+      display: block;
     }
-    thead tr { 
+    thead tr {
       position: absolute;
       top: -9999px;
       left: -9999px;
     }
-    tr { 
-      border: 1px solid #ccc; 
+    tr {
+      border: 1px solid #ccc;
     }
-    td { 
+    td {
       border: none;
-      border-bottom: 1px solid #eee; 
+      border-bottom: 1px solid #eee;
       position: relative;
     }
-    td:before { 
+    td:before {
       position: absolute;
       top: 6px;
       left: 6px;
-      width: 45%; 
-      padding-right: 10px; 
+      width: 45%;
+      padding-right: 10px;
       white-space: nowrap;
     }
   }
@@ -102,6 +102,9 @@
       min-height: 40px;
       width: 80%;
     }
+    #top-page-header{
+      display: none;
+    }
     .page-header-inner{
       width: 100%;
     }
@@ -152,9 +155,9 @@
 
    /* Course CSS
   -------------------------------------------------------------- */
-  .coursebox > .info > .coursename, 
-  .coursebox .content .teachers, 
-  .coursebox .content .courseimage, 
+  .coursebox > .info > .coursename,
+  .coursebox .content .teachers,
+  .coursebox .content .courseimage,
   .coursebox .content .coursefile{
     float: none !important;
     width: 100% !important;
@@ -198,10 +201,10 @@
 }
 
 
-/* -------------------------------------------------------------- 
+/* --------------------------------------------------------------
   Min width for ipads is 768px, a lower screen size makes
-  the three column layout looks bad, thats why an screen with 
-  max-width of 768px is gonna be shown with one colum 
+  the three column layout looks bad, thats why an screen with
+  max-width of 768px is gonna be shown with one colum
   layout
 -------------------------------------------------------------- */
 @media screen and (max-width: 768px){

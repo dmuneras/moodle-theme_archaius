@@ -1,9 +1,9 @@
 /* SMALL SCREENS
 -------------------------------------------------------------- */
-/* -------------------------------------------------------------- 
+/* --------------------------------------------------------------
   Min width for ipads is 768px, a lower screen size makes
-  the three column layout looks bad, thats why an screen with 
-  max-width of 768px is gonna be shown with one colum 
+  the three column layout looks bad, thats why an screen with
+  max-width of 768px is gonna be shown with one colum
   layout
 -------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
@@ -106,6 +106,9 @@
     right: 0;
     min-height: 40px;
     width: 80%;
+  }
+  #page-header #top-page-header {
+    display: none;
   }
   #page-header .page-header-inner {
     width: 100%;
@@ -304,6 +307,9 @@ html.no-media-queries #page-header .headermenu {
   right: 0;
   min-height: 40px;
   width: 80%;
+}
+html.no-media-queries #page-header #top-page-header {
+  display: none;
 }
 html.no-media-queries #page-header .page-header-inner {
   width: 100%;

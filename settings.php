@@ -1,6 +1,6 @@
 <?php
 
-/*  
+/*
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -37,7 +37,15 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
-     // Foot note setting
+    // Login background image
+    $name = 'theme_archaius/loginbackgroundimage';
+    $title = get_string('loginbackgroundimage','theme_archaius');
+    $description = get_string('loginbackgroundimagedesc', 'theme_archaius');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'loginbackgroundimage');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+    // Foot note setting
     $name = 'theme_archaius/footnote';
     $title = get_string('footnote','theme_archaius');
     $description = get_string('footnotedesc', 'theme_archaius');
@@ -46,7 +54,7 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
-    //Background color                                                                                                                                                               
+    //Background color
     $name = 'theme_archaius/bgcolor';
     $title = get_string('bgcolor','theme_archaius');
     $description = get_string('bgcolordesc', 'theme_archaius');
@@ -56,10 +64,10 @@ if ($ADMIN->fulltree) {
         'style'=>'backgroundColor'
     );
     $setting = new admin_setting_configcolourpicker(
-        $name, 
-        $title, 
-        $description, 
-        $default, 
+        $name,
+        $title,
+        $description,
+        $default,
         $previewconfig
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -75,10 +83,10 @@ if ($ADMIN->fulltree) {
         'style'=>'backgroundColor'
     );
     $setting = new admin_setting_configcolourpicker(
-        $name, 
-        $title, 
-        $description, 
-        $default, 
+        $name,
+        $title,
+        $description,
+        $default,
         $previewconfig
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -90,14 +98,14 @@ if ($ADMIN->fulltree) {
     $description = get_string('headercolordesc', 'theme_archaius');
     $default = '#697F6F';
     $previewconfig = array(
-        'selector'=> '.header-tab', 
+        'selector'=> '.header-tab',
         'style'=>'backgroundColor'
     );
     $setting = new admin_setting_configcolourpicker(
-        $name, 
-        $title, 
-        $description, 
-        $default, 
+        $name,
+        $title,
+        $description,
+        $default,
         $previewconfig
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -109,14 +117,14 @@ if ($ADMIN->fulltree) {
     $description = get_string('currentcolordesc', 'theme_archaius');
     $default = '#2E3332';
     $previewconfig = array(
-        'selector'=> '.header-tab.current', 
+        'selector'=> '.header-tab.current',
         'style'=>'backgroundColor'
     );
     $setting = new admin_setting_configcolourpicker(
-        $name, 
-        $title, 
-        $description, 
-        $default, 
+        $name,
+        $title,
+        $description,
+        $default,
         $previewconfig
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -132,10 +140,10 @@ if ($ADMIN->fulltree) {
         'style'=>'backgroundColor'
     );
     $setting = new admin_setting_configcolourpicker(
-        $name, 
-        $title, 
-        $description, 
-        $default, 
+        $name,
+        $title,
+        $description,
+        $default,
         $previewconfig
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -152,10 +160,10 @@ if ($ADMIN->fulltree) {
         'style'=>'backgroundColor'
     );
     $setting = new admin_setting_configcolourpicker(
-        $name, 
-        $title, 
-        $description, 
-        $default, 
+        $name,
+        $title,
+        $description,
+        $default,
         $previewconfig
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -167,9 +175,9 @@ if ($ADMIN->fulltree) {
     $title = get_string("accordionBlocks", 'theme_archaius');
     $description = get_string('accordionBlocksdesc', 'theme_archaius');
     $setting = new admin_setting_configcheckbox(
-        $name, 
-        $title, 
-        $description, 
+        $name,
+        $title,
+        $description,
         1
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -180,22 +188,22 @@ if ($ADMIN->fulltree) {
     $title = get_string("collapsibleTopics", 'theme_archaius');
     $description = get_string('collasibleTopicsdesc', 'theme_archaius');
     $setting = new admin_setting_configcheckbox(
-        $name, 
-        $title, 
-        $description, 
+        $name,
+        $title,
+        $description,
         1
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
-    //Activate Hide Show Blocks 
+    //Activate Hide Show Blocks
     $name = "theme_archaius/hideShowBlocks";
     $title = get_string("hideShowBlocks", 'theme_archaius');
     $description = get_string('hideShowBlocksdesc', 'theme_archaius');
     $setting = new admin_setting_configcheckbox(
-        $name, 
-        $title, 
-        $description, 
+        $name,
+        $title,
+        $description,
         1
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -206,9 +214,9 @@ if ($ADMIN->fulltree) {
     $title = get_string("activateSlideshow", 'theme_archaius');
     $description = get_string('activateSlideshowdesc', 'theme_archaius');
     $setting = new admin_setting_configcheckbox(
-        $name, 
-        $title, 
-        $description, 
+        $name,
+        $title,
+        $description,
         0
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -228,10 +236,10 @@ if ($ADMIN->fulltree) {
     $description = get_string('slideshowTimeoutdesc', 'theme_archaius');
     $default = 1500;
     $setting = new admin_setting_configtext(
-        $name, 
-        $title, 
-        $description, 
-        $default, 
+        $name,
+        $title,
+        $description,
+        $default,
         PARAM_INT
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -244,10 +252,10 @@ if ($ADMIN->fulltree) {
     $description = get_string('slideshowheightdesc', 'theme_archaius');
     $default = 200;
     $setting = new admin_setting_configtext(
-        $name, 
-        $title, 
-        $description, 
-        $default, 
+        $name,
+        $title,
+        $description,
+        $default,
         PARAM_RAW
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -260,9 +268,9 @@ if ($ADMIN->fulltree) {
     $description = get_string('customcssdesc', 'theme_archaius');
     $default = '';
     $setting = new admin_setting_configtextarea(
-        $name, 
-        $title, 
-        $description, 
+        $name,
+        $title,
+        $description,
         $default
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -274,10 +282,73 @@ if ($ADMIN->fulltree) {
     $description = get_string('customjsdesc', 'theme_archaius');
     $default = '';
     $setting = new admin_setting_configtextarea(
-        $name, 
-        $title, 
-        $description, 
+        $name,
+        $title,
+        $description,
         $default
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+
+    //Social icons
+
+    // facebook
+    $name = 'theme_archaius/facebook';
+    $title = get_string('facebook','theme_archaius');
+    $description = get_string('facebookdesc', 'theme_archaius');
+    $default = null;
+    $setting = new admin_setting_configtext(
+        $name,
+        $title,
+        $description,
+        $default,
+        PARAM_TEXT
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+    // twitter
+    $name = 'theme_archaius/twitter';
+    $title = get_string('twitter','theme_archaius');
+    $description = get_string('twitterdesc', 'theme_archaius');
+    $default = null;
+    $setting = new admin_setting_configtext(
+        $name,
+        $title,
+        $description,
+        $default,
+        PARAM_TEXT
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+    // youtube
+    $name = 'theme_archaius/youtube';
+    $title = get_string('youtube','theme_archaius');
+    $description = get_string('youtubedesc', 'theme_archaius');
+    $default = null;
+    $setting = new admin_setting_configtext(
+        $name,
+        $title,
+        $description,
+        $default,
+        PARAM_TEXT
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+    // linkedin
+    $name = 'theme_archaius/linkedin';
+    $title = get_string('linkedin','theme_archaius');
+    $description = get_string('linkedindesc', 'theme_archaius');
+    $default = null;
+    $setting = new admin_setting_configtext(
+        $name,
+        $title,
+        $description,
+        $default,
+        PARAM_TEXT
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
