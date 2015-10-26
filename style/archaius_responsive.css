@@ -127,7 +127,7 @@
   }
   #page-header .page-header-info-container {
     padding-right: 20px;
-    width: 65%;
+    width: 60%;
     float: left;
   }
   #page-header div.menu-icon {
@@ -332,7 +332,7 @@ html.no-media-queries #page-header #header-wrap {
 }
 html.no-media-queries #page-header .page-header-info-container {
   padding-right: 20px;
-  width: 65%;
+  width: 60%;
   float: left;
 }
 html.no-media-queries #page-header div.menu-icon {
