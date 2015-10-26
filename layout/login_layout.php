@@ -106,12 +106,12 @@ echo $OUTPUT->doctype() ?>
               <?php echo $custommenu; ?>
             </div>
           </div>
+          <div class='menu-icon deactive'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar last'></span>
+          </div>
         <?php } ?>
-        <div class='menu-icon deactive'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar last'></span>
-        </div>
       </div>
     </div>
   </div>

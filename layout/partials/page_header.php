@@ -93,11 +93,13 @@ if(! isset($hascustommenu)){
         <div class="headermenu">
           <?php echo $OUTPUT->user_menu(); ?>
         </div>
-        <div class='menu-icon deactive'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar last'></span>
-        </div>
+        <?php if ($hascustommenu) { ?>
+          <div class='menu-icon deactive'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar last'></span>
+          </div>
+        <?php } ?>
       </div>
     </div>
   </div>

@@ -128,9 +128,13 @@
   #page-header .page-header-info-container {
     padding-right: 20px;
     width: 65%;
+    float: left;
   }
   #page-header div.menu-icon {
     display: block;
+  }
+  #page-header #social-icons {
+    display: none;
   }
   /*  Form css
   -------------------------------------------------------------- */
@@ -329,9 +333,13 @@ html.no-media-queries #page-header #header-wrap {
 html.no-media-queries #page-header .page-header-info-container {
   padding-right: 20px;
   width: 65%;
+  float: left;
 }
 html.no-media-queries #page-header div.menu-icon {
   display: block;
+}
+html.no-media-queries #page-header #social-icons {
+  display: none;
 }
 html.no-media-queries #adminsettings .form-item .form-label {
   width: 100%;
