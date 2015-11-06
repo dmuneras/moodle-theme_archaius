@@ -63,6 +63,11 @@ take a look to this: [YUI shifter docs in Moodle](https://docs.moodle.org/dev/YU
 Improvements history:
 ---------------------
 
+05.11.2015
+----------
+
+* Better way to display theme options.
+
 25.10.2015
 ----------
 

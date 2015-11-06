@@ -29,10 +29,10 @@ a example.
 
 defined('MOODLE_INTERNAL') || die;
 // The current module version (Date: YYYYMMDDXX)
-$plugin->version   = 2015102502;
+$plugin->version   = 2015110501;
 // Requires this Moodle version
 $plugin->requires  = 2015050500;
 // Full name of the plugin (used for diagnostics)
 $plugin->component = 'theme_archaius';
-$plugin->release = 'Archaius Tigris v-1.3.0';
+$plugin->release = 'Archaius Tigris v-1.4.3';
 $plugin->maturity = MATURITY_BETA;

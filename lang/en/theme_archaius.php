@@ -63,6 +63,40 @@ originally designed for Moodle 1.9 by Patrick Malley. Archaius was created by Da
  <p>Thanks to Ana Beatriz Chiquito for her support at the beginning of the project.</p>';
 
 //THEME OPTIONS
+
+//TITLES
+$string['logossectiontitle'] = 'Logos';
+$string['logossectiondesc'] = 'Logos Customization';
+$string['logossectionsub'] = 'Options to modify logos';
+
+$string['layoutcolorssectiontitle'] = 'Layout';
+$string['layoutcolorssectiondesc'] = 'Layout Customization';
+$string['layoutcolorssectionsub'] = 'Layout Customization';
+
+
+$string['footersectiontitle'] = 'Footer';
+$string['footersectionsub'] = 'Footer Customization';
+$string['footersectiondesc'] = 'Add custom HTML to your moodle footer, you can use blocks in footer seciton as well';
+
+$string['jssectiontitle'] = 'Effects';
+$string['jssectionsub'] = 'Activate or deactivate theme effects';
+$string['jssectiondesc'] = 'Activate or deactivate custom effects using the following options';
+
+$string['slideshowsectiontitle'] = 'Slideshow';
+$string['slideshowsectionsub'] = 'Slideshow Customization';
+$string['slideshowsectiondesc'] = 'Modify the home page slideshow behavior by using the following options';
+
+$string['developersectiontitle'] = 'Advance';
+$string['developersectionsub'] = 'Advace Customization';
+$string['developersectiondesc'] = 'Adding custom css and custom javascript using the following options, but be careful, you should have knowledge of js and css to use this options';
+
+$string['socialsectiontitle'] = 'Social';
+$string['socialsectionsub'] = 'Social options';
+$string['socialsectiondesc'] = 'Add social icons to your Moodle using the following options. If you leave the option link empty, the icon is not going to appear.';
+
+
+
+//OPTIONS
 $string['logo'] = 'logo';
 $string['logodesc'] = 'logo URL';
 

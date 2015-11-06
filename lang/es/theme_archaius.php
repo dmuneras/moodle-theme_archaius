@@ -56,6 +56,40 @@ Archaius fue creado por Daniel Múnera Sánchez (dmunera119@gmail.com)</p>
  <p>Finalmente, muchas gracias a Ana Beatriz Chiquito por el apoyo para crear el primer prototipo.</p>';
 
 //THEME OPTIONS
+
+
+//TITLES
+$string['logossectiontitle'] = 'Logos';
+$string['logossectiondesc'] = 'Personalización de logos';
+$string['logossectionsub'] = 'Opciones para modificar los logos';
+
+$string['layoutcolorssectiontitle'] = 'Layout';
+$string['layoutcolorssectiondesc'] = 'Personalización del Layout';
+$string['layoutcolorssectionsub'] = 'Personalización del layout';
+
+
+$string['footersectiontitle'] = 'Pie de página';
+$string['footersectionsub'] = 'Personalización del Pie de página';
+$string['footersectiondesc'] = 'Adiciona HTML a tu pie de página usando el editor, o puedes utlizar bloques en el pie de página, puedes ver esta opción cuando quieres añadir un bloque en una página.';
+
+$string['jssectiontitle'] = 'Efectos';
+$string['jssectionsub'] = 'Activar o desactivar los efectos del tema';
+$string['jssectiondesc'] = 'Active o desactive los efectos del tema utilizando las siguientes opciones';
+
+$string['slideshowsectiontitle'] = 'Carrusel';
+$string['slideshowsectionsub'] = 'Personalización del carrusel';
+$string['slideshowsectiondesc'] = 'Personalice el carrusel de la página principal utilizando las siguientes opciones';
+
+$string['developersectiontitle'] = 'Avanzado';
+$string['developersectionsub'] = 'Opciones avanzadas';
+$string['developersectiondesc'] = 'Adicione reglas CSS o código javascript. Se recomienda que tenga mucho cuidado en esta sección debido a que son para usuarios con conocimiento sobre desarrollo web';
+
+$string['socialsectiontitle'] = 'Social';
+$string['socialsectionsub'] = 'Opciones Sociales';
+$string['socialsectiondesc'] = 'Agrege los iconos de sus redes sociales al tema. Si se deja la opción en blanco, el logo de la red social no aparecerá';
+
+
+
 $string['logo'] = 'logo';
 $string['logodesc'] = 'Dirección URL del logo para ser agregado.';
 
