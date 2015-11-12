@@ -32,4 +32,5 @@ if ( is_siteadmin() ) {
   include 'settings/archaius_slideshow_settings.php';
   include 'settings/archaius_javascript_effects_settings.php';
   include 'settings/archaius_social_settings.php';
+  include 'settings/archaius_developer_settings.php';
 }

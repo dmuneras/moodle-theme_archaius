@@ -1,6 +1,11 @@
 Archaius Theme
 ==============
 
+Official Moodle page
+--------------------
+
+[Moodle plugin page](https://moodle.org/plugins/view/theme_archaius)
+
 What is Archaius
 ----------------
 
