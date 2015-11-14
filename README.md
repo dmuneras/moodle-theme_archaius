@@ -68,6 +68,12 @@ take a look to this: [YUI shifter docs in Moodle](https://docs.moodle.org/dev/YU
 Improvements history:
 ---------------------
 
+14.11.2015
+----------
+
+* Options to change footer and header page text color
+* Social icons in footer as well
+
 05.11.2015
 ----------
 

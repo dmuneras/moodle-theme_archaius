@@ -148,8 +148,28 @@ if ( is_siteadmin() ) {
   $setting->set_updatedcallback('theme_reset_all_caches');
   $layout_color_options->add($setting);
 
+  // header text color
+  $name = 'theme_archaius/headertextcolor';
+  $title = get_string('headertextcolor','theme_archaius');
+  $description = get_string('headertextcolordesc', 'theme_archaius');
+  $default = '#F5F5F5';
+  $previewconfig = array(
+    'selector'=> '#page-header, #page-header a:link, #page-header a:visited, #page-header .usermenu .moodle-actionmenu .toggle-display .userbutton .usertext, #page-header .usermenu .moodle-actionmenu:hover .toggle-display .userbutton .usertext',
+    'style'=>'color'
+  );
+  $setting = new admin_setting_configcolourpicker(
+    $name,
+    $title,
+    $description,
+    $default,
+    $previewconfig
+  );
+  $setting->set_updatedcallback('theme_reset_all_caches');
+  $layout_color_options->add($setting);
+
   //Add options to admin tree
   $ADMIN->add('theme_archaius', $layout_color_options);
+
 
 }
 

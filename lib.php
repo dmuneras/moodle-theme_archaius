@@ -57,6 +57,21 @@ function theme_archaius_process_css($css, $theme) {
         theme_archaius_replace_tag_css(
             $css,$bgcolor,'[[setting:bgcolor]]');
 
+    $page_header_text_color =
+        theme_archaius_check_css_setting($theme->settings->headertextcolor);
+
+    $css =
+        theme_archaius_replace_tag_css(
+            $css,$page_header_text_color,'[[setting:headertextcolor]]');
+
+
+    $page_footer_text_color =
+        theme_archaius_check_css_setting($theme->settings->footertextcolor);
+
+    $css =
+        theme_archaius_replace_tag_css(
+            $css,$page_footer_text_color,'[[setting:footertextcolor]]');
+
     $headercolor =
         theme_archaius_check_css_setting($theme->settings->headercolor);
 

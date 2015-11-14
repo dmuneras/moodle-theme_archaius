@@ -15,7 +15,7 @@
 #page-header {
   top: 0;
   background: [[setting:themecolor]];
-  color: #fff;
+  color: [[setting:headertextcolor]];
   width: 100%;
   float: none;
   margin-bottom: 30px;
@@ -27,11 +27,11 @@
   margin: 0 auto;
   padding-top: 10px;
 }
-#page-header #top-page-header #social-icons {
+#page-header #top-page-header .social-icons {
   margin: 0 0 0 80%;
   height: 40px;
 }
-#page-header #top-page-header #social-icons li {
+#page-header #top-page-header .social-icons li {
   float: right;
   list-style: none;
   margin-right: 10px;
@@ -39,7 +39,7 @@
 }
 #page-header a:link,
 #page-header a:visited {
-  color: whitesmoke;
+  color: [[setting:headertextcolor]];
 }
 #page-header h1.headermain {
   color: #fff;
@@ -85,7 +85,7 @@
 }
 #page-header .usermenu .moodle-actionmenu .toggle-display .userbutton .usertext,
 #page-header .usermenu .moodle-actionmenu:hover .toggle-display .userbutton .usertext {
-  color: whiteSmoke;
+  color: [[setting:headertextcolor]];
 }
 #page-header .usermenu .moodle-actionmenu[data-enhanced].show .menu {
   -webkit-box-shadow: 2px 2px 20px 0 #222222;
@@ -99,7 +99,7 @@
   background: [[setting:currentcolor]];
 }
 #page-header .usermenu .icon.menu-action:hover span {
-  color: whiteSmoke;
+  color: [[setting:headertextcolor]];
 }
 #logo,
 #mobile-logo {
@@ -157,12 +157,12 @@ div.singlebutton {
 #page-footer {
   padding-top: 10px;
   background: [[setting:themecolor]];
-  color: #fff;
+  color: [[setting:footertextcolor]];
   min-height: 150px;
   width: 100%;
 }
 #page-footer a {
-  color: white;
+  color: [[setting:footertextcolor]];
 }
 #page-footer .logininfo {
   margin: 10px auto 15px auto;
@@ -178,6 +178,11 @@ div.singlebutton {
 #page-footer #page-footer-bottom {
   text-align: center;
   margin: 10px 20%;
+}
+#page-footer .social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 2em;
 }
 #custommenu {
   background-color: [[setting:custommenucolor]];

@@ -1,13 +1,13 @@
 #page-footer {
   padding-top: 10px;
   background: @theme_color;
-  color: #fff;
+  color: @footer_text_color;
   min-height: 150px;
   width: 100%;
   a{
-  	color: white;
+  	color: @footer_text_color;
   }
-  .logininfo{  
+  .logininfo{
     margin: 10px auto 15px auto;
 	}
 	.sitelink,
@@ -22,4 +22,11 @@
     text-align: center;
     margin: 10px 20%;
 	}
-} 
+  .social-icons{
+    li{
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 2em;
+    }
+  }
+}

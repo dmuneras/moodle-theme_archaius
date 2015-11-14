@@ -142,6 +142,12 @@ $string["slideshowheightdesc"] = "Slideshow height, numeric value (pixels), NOTE
 $string["accordionBlocks"] = "Activate accordion Blocks";
 $string["accordionBlocksdesc"] = "Activate or desactivate accordion Blocks effect";
 
+$string["headertextcolor"] = "page header text color";
+$string["headertextcolordesc"] = "Color of text inside page header";
+
+$string["footertextcolor"] = "page footer text color";
+$string["footertextcolordesc"] = "Color of text inside page footer";
+
 $string["loginbackgroundimage"] = "Background image for login";
 $string["loginbackgroundimagedesc"] = "Background image for login should be big at least with a width > 1200px";
 

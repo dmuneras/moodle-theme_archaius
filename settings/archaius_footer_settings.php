@@ -34,6 +34,25 @@ if ( is_siteadmin() ) {
   $setting->set_updatedcallback('theme_reset_all_caches');
   $footer_options->add($setting);
 
+   // footer text color
+  $name = 'theme_archaius/footertextcolor';
+  $title = get_string('footertextcolor','theme_archaius');
+  $description = get_string('footertextcolordesc', 'theme_archaius');
+  $default = '#F5F5F5';
+  $previewconfig = array(
+    'selector'=> '#page-footer, #page-footer a',
+    'style'=>'color'
+  );
+  $setting = new admin_setting_configcolourpicker(
+    $name,
+    $title,
+    $description,
+    $default,
+    $previewconfig
+  );
+  $setting->set_updatedcallback('theme_reset_all_caches');
+  $footer_options->add($setting);
+
   //Add options to admin tree
   $ADMIN->add('theme_archaius', $footer_options);
 }

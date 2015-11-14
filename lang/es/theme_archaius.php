@@ -135,6 +135,12 @@ $string["accordionBlocksdesc"] = "Activar efecto acordeón para los bloques late
 $string["slideshowheight"] = "Altura del carusel de la página principal";
 $string["slideshowheightdesc"] = "Altura del carusel de la página principal, Se debe poner solo el número, este será utizado como PIXEL. NO PONER 'px' al final";
 
+$string["headertextcolor"] = "Color del texto en el encabezado del sitio";
+$string["headertextcolordesc"] = "Color del texto en el encabezado del sitio";
+
+$string["footertextcolor"] = "Color del texto en el pie de página del sitio";
+$string["footertextcolordesc"] = "Color del texto en el pie de página del sitio";
+
 //SOCIAL ICONS
 $string["facebook"] = "Dirección web del perfil de facebook de la institución";
 $string["facebookdesc"] = "Dirección web del perfil de facebook de la institución";
