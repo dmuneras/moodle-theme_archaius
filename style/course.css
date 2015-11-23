@@ -77,6 +77,9 @@ h2.headingblock {
 .path-course-view .course-content ul.topics li.section.main ul li {
   clear: both;
 }
+.path-course-view .course-content ul.topics li.section.main .sectionname.hidden {
+  display: none;
+}
 .path-course-view .course-content .main {
   background: #f3f8ed;
 }
