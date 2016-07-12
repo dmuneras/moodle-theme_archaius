@@ -12,8 +12,8 @@
     	width: 15%;
 		}
 	}
-	
-} 
+
+}
 
 .performanceinfo span {
   display: block;
@@ -35,6 +35,20 @@
   }
 }
 
+/* Fix problem with grader inside assign*/
+.path-mod-assign [data-region="grade-panel"]{
+  position: relative;
+  margin-top: 50px;
+}
+
 .myclear {
 	clear: both;
+}
+.path-mod-assign.pagelayout-embedded{
+  overflow: auto;
+}
+
+.path-mod-assign [data-region="grade-actions-panel"]{
+  position: fixed;
+  background: #fbfbfb;
 }
