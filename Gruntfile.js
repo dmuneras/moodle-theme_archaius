@@ -1,4 +1,4 @@
-/*  
+/*
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -22,8 +22,8 @@ GNU General Public License for more details.
 /*	GRUNTFILE ARCHAIUS
     DESCRIPTION:  This file define the needed task to precompile LESS and JS
     			  jQuery plugins, the JS files are statics because some of
-    			  the plugins are not going to be modified and its compression 
-    			  is not needed. 
+    			  the plugins are not going to be modified and its compression
+    			  is not needed.
 -----------------------------------------------------------------------------*/
 
 module.exports = function(grunt) {
@@ -41,7 +41,8 @@ module.exports = function(grunt) {
 					"style/base.css": "style/source/base.less",
 					"style/archaius.css": "style/source/archaius.less",
 					"style/archaius_responsive.css": "style/source/archaius_responsive.less",
-					"style/home.css": "style/source/home.less"
+					"style/home.css": "style/source/home.less",
+					"style/base_page_layout.css" : "style/source/layout/base_page_layout.less"
 			    }
 			}
 		},
@@ -51,11 +52,11 @@ module.exports = function(grunt) {
 		      // time a new file is added or removed, the Gruntfile has to be updated.
 				files: [
 			      	{
-			        	src: 'jquery/source/archaius_custom_blocks-1.1.2.js', 
+			        	src: 'jquery/source/archaius_custom_blocks-1.1.2.js',
 			        	dest: 'jquery/source/archaius_custom_blocks-1.1.2.min.js'
 			        },
 			        {
-			        	src: 'jquery/source/responsiveslides.js', 
+			        	src: 'jquery/source/responsiveslides.js',
 			        	dest: 'jquery/source/responsiveslides.min.js'
 			        },
 		    	],

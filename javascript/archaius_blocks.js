@@ -44,7 +44,7 @@ window.ArchaiusBlocks = (function(window,$,undefined){
 
   //Hide and show effects for left and right block regions
   var hideShowBlocks = function(){
-    var regionMain = $("#region-main"),
+    var regionMiddle = $("#region-middle"),
     reportRegionPre = $("#report-region-pre"),
     moveLeftTrigger =
       "<div id='move-region' class='move'></div>";
@@ -64,7 +64,7 @@ window.ArchaiusBlocks = (function(window,$,undefined){
           _animateRegion(
             reportRegionPre,
             reportRegionContent,
-            {'margin-left':'-=220px'},
+            {'width':'0%'},
             {'width':'100%'}
           );
           M.theme_archaius_loader.setUserPreference('side-pre',0);
@@ -73,7 +73,7 @@ window.ArchaiusBlocks = (function(window,$,undefined){
           _animateRegion(
             reportRegionPre,
             reportRegionContent,
-            {'margin-left' : '+=220px'},
+            {'width' : '20%'},
             {'width' : '75%'}
           );
           M.theme_archaius_loader.setUserPreference('side-pre',1);
@@ -85,7 +85,7 @@ window.ArchaiusBlocks = (function(window,$,undefined){
       if(M.theme_archaius_loader.showRegionPre === 0){
         regionPre.addClass('initial-hidden-region');
         $("#move-region").addClass('hidden-region');
-        regionMain.addClass('initial-left-region-hidden');
+        regionMiddle.addClass('initial-left-region-hidden');
       }
       $("#move-region").on("click", function(){
         var $this = $(this);
@@ -93,18 +93,18 @@ window.ArchaiusBlocks = (function(window,$,undefined){
             $this.addClass("hidden-region");
             _animateRegion(
                 regionPre,
-                regionMain,
-                {'left' : '-=200px'},
-                {'margin-left' :'-=200px'}
+                regionMiddle,
+                {'width' : '0%'},
+                {'width' :'+=20%'}
             );
             M.theme_archaius_loader.setUserPreference('side-pre',0);
         }else{
             $this.removeClass("hidden-region");
             _animateRegion(
                 regionPre,
-                regionMain,
-                {'left':'+=200px'},
-                {'margin-left':'+=200'}
+                regionMiddle,
+                {'width':'20%'},
+                {'width':'-=20%'}
             );
             M.theme_archaius_loader.setUserPreference('side-pre',1);
         }
@@ -114,11 +114,11 @@ window.ArchaiusBlocks = (function(window,$,undefined){
       $("#regions-control").append("<div id='move-region-right' class='move'></div>");
       if(M.theme_archaius_loader.showRegionPost === 0){
         regionPost.addClass('initial-hidden-region');
-        regionMain.addClass('initial-right-region-hidden');
+        regionMiddle.addClass('initial-right-region-hidden');
         $("#move-region-right").addClass('hidden-region');
       }else{
         if(M.theme_archaius_loader.showRegionPre === 0){
-          regionMain.addClass('not-hidden-right');
+          regionMiddle.addClass('not-hidden-right');
           regionPre.addClass('not-hidden-right');
         }
       }
@@ -132,7 +132,7 @@ window.ArchaiusBlocks = (function(window,$,undefined){
           $this.addClass("hidden-region");
           _animateRegion(
             regionPost,
-            regionMain,
+            regionMiddle,
             {'left':'+=200px'},
             {'margin-right' : '-=200px'}
           );
@@ -141,7 +141,7 @@ window.ArchaiusBlocks = (function(window,$,undefined){
           $this.removeClass("hidden-region");
           _animateRegion(
             regionPost,
-            regionMain,
+            regionMiddle,
             {'left' : '-=200px'},
             {'margin-right' : '+=200px'}
           );

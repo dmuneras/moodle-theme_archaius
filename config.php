@@ -40,6 +40,7 @@ $allRegions =
 
 $THEME->sheets = array(
     'base',
+    'base_page_layout',
     'archaius',
     'archaius_responsive',
     'course',
@@ -52,7 +53,8 @@ $THEME->doctype = 'html5';
 $THEME->parents = array('base');
 $THEME->parents_exclude_sheets = array(
     'base'=>array(
-        'dock'
+        'dock',
+        'pagelayout'
     )
 );
 
