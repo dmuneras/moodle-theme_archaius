@@ -184,7 +184,7 @@ $THEME->layouts = array(
         ),
     ),
     'report' => array(
-        'file' => 'report.php',
+        'file' => 'general.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu' => true)

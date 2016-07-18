@@ -77,6 +77,14 @@
     width: 100% !important;
     margin: 0 !important;
   }
+  #page #page-content #region-middle,
+  #page #page-content #region-pre,
+  #page #page-content #region-post {
+    width: 100% !important;
+    float: none;
+    max-width: 100%;
+    display: block;
+  }
   .report-page #report-region-pre {
     max-width: none;
   }
@@ -283,6 +291,14 @@ html.no-media-queries .generalbox {
   right: 0 !important;
   width: 100% !important;
   margin: 0 !important;
+}
+html.no-media-queries #page #page-content #region-middle,
+html.no-media-queries #page #page-content #region-pre,
+html.no-media-queries #page #page-content #region-post {
+  width: 100% !important;
+  float: none;
+  max-width: 100%;
+  display: block;
 }
 html.no-media-queries .report-page #report-region-pre {
   max-width: none;

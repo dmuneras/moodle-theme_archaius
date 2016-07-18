@@ -34,24 +34,17 @@ a example.
 <div id="regions-control"></div>
 <div id="page" class="main-content">
   <div id="page-content">
-    <?php if($hassubtitle){?>
-      <h3 class = "page-subtitle"><?php echo $PAGE->heading;?></h3>
-    <?php } ?>
-    <?php if ($hasnavbar) { ?>
-      <div class="navbar clearfix">
-      <nav class="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
-      <div class="navbutton"><?php echo $PAGE->button; ?></div>
-      </div>
-    <?php }?>
     <div id="region-main">
-      <?php if ($hassidepre){ ?>
-        <div id="region-pre" class="block-region">
-          <div class="region-content">
-            <?php echo $OUTPUT->blocks_for_region('side-pre') ?>
-          </div>
-        </div>
-      <?php } ?>
       <div id="region-middle">
+        <?php if($hassubtitle){?>
+          <h3 class = "page-subtitle"><?php echo $PAGE->heading;?></h3>
+        <?php } ?>
+        <?php if ($hasnavbar) { ?>
+          <div class="navbar clearfix">
+          <nav class="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
+          <div class="navbutton"><?php echo $PAGE->button; ?></div>
+          </div>
+        <?php }?>
         <?php if ( $hassidecenterpre) { ?>
           <div id = "region-center-pre">
             <?php echo $OUTPUT->blocks_for_region('side-center-pre') ?>
@@ -64,6 +57,13 @@ a example.
           </div>
         <?php } ?>
       </div>
+      <?php if ($hassidepre){ ?>
+        <div id="region-pre" class="block-region">
+          <div class="region-content">
+            <?php echo $OUTPUT->blocks_for_region('side-pre') ?>
+          </div>
+        </div>
+      <?php } ?>
       <?php if ($hassidepost){  ?>
         <div id="region-post" class="block-region">
           <div class="region-content">

@@ -45,56 +45,24 @@ window.ArchaiusBlocks = (function(window,$,undefined){
   //Hide and show effects for left and right block regions
   var hideShowBlocks = function(){
     var regionMiddle = $("#region-middle"),
-    reportRegionPre = $("#report-region-pre"),
     moveLeftTrigger =
-      "<div id='move-region' class='move'></div>";
+      "<div id='move-region-left' class='move fa fa-bars'></div>";
 
-    if(reportRegionPre.length > 0){
-      $("#regions-control").append(moveLeftTrigger);
-      if(M.theme_archaius_loader.showRegionPre === 0){
-        reportRegionPre.addClass('initial-hidden-region');
-        $("#move-region").addClass('hidden-region');
-        $(".report-page").find(".main-report-content").addClass('initial-left-region-hidden');
-      }
-      var reportRegionContent = $(".report-page").find(".main-report-content");
-
-      $("#move-region").on("click",function(){
-        if(!($(this).hasClass("hidden-region"))){
-          $("#move-region").addClass("hidden-region");
-          _animateRegion(
-            reportRegionPre,
-            reportRegionContent,
-            {'width':'0%'},
-            {'width':'100%'}
-          );
-          M.theme_archaius_loader.setUserPreference('side-pre',0);
-        }else{
-          $("#move-region").removeClass("hidden-region");
-          _animateRegion(
-            reportRegionPre,
-            reportRegionContent,
-            {'width' : '20%'},
-            {'width' : '75%'}
-          );
-          M.theme_archaius_loader.setUserPreference('side-pre',1);
-        }
-      });
-    }
     if(regionPre.length > 0 ){
       $("#regions-control").append(moveLeftTrigger);
       if(M.theme_archaius_loader.showRegionPre === 0){
         regionPre.addClass('initial-hidden-region');
-        $("#move-region").addClass('hidden-region');
+        $("#move-region-left").addClass('hidden-region');
         regionMiddle.addClass('initial-left-region-hidden');
       }
-      $("#move-region").on("click", function(){
+      $("#move-region-left").on("click", function(){
         var $this = $(this);
         if(!($(this).hasClass("hidden-region"))){
             $this.addClass("hidden-region");
             _animateRegion(
                 regionPre,
                 regionMiddle,
-                {'width' : '0%'},
+                {'margin-left' : '-=20%'},
                 {'width' :'+=20%'}
             );
             M.theme_archaius_loader.setUserPreference('side-pre',0);
@@ -103,7 +71,7 @@ window.ArchaiusBlocks = (function(window,$,undefined){
             _animateRegion(
                 regionPre,
                 regionMiddle,
-                {'width':'20%'},
+                {'margin-left':'+=20%'},
                 {'width':'-=20%'}
             );
             M.theme_archaius_loader.setUserPreference('side-pre',1);
@@ -111,7 +79,7 @@ window.ArchaiusBlocks = (function(window,$,undefined){
       });
     }
     if(regionPost.length > 0){
-      $("#regions-control").append("<div id='move-region-right' class='move'></div>");
+      $("#regions-control").append("<div id='move-region-right' class='move fa fa-bars'></div>");
       if(M.theme_archaius_loader.showRegionPost === 0){
         regionPost.addClass('initial-hidden-region');
         regionMiddle.addClass('initial-right-region-hidden');
@@ -133,8 +101,8 @@ window.ArchaiusBlocks = (function(window,$,undefined){
           _animateRegion(
             regionPost,
             regionMiddle,
-            {'left':'+=200px'},
-            {'margin-right' : '-=200px'}
+            {'margin-right':'-=20%'},
+            {'width' : '+=20%'}
           );
           M.theme_archaius_loader.setUserPreference('side-post',0);
         }else{
@@ -142,8 +110,8 @@ window.ArchaiusBlocks = (function(window,$,undefined){
           _animateRegion(
             regionPost,
             regionMiddle,
-            {'left' : '-=200px'},
-            {'margin-right' : '+=200px'}
+            {'margin-right' : '+=20%'},
+            {'width' : '-=20%'}
           );
           M.theme_archaius_loader.setUserPreference('side-post',1);
         }

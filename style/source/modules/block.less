@@ -1,4 +1,5 @@
-.block {
+
+#page-content #region-main div.header-tab.block {
   border: none;
   .content {
     	background:@box_color;
@@ -9,7 +10,7 @@
     		width: 150px;
     		background: transparent;
       }
-  	a{ 
+  	a{
     	color: @main_text_color;
   	}
   }
@@ -17,107 +18,75 @@
 
 #page-content{
   #region-main{
-  	div.header-tab {
-    	background: none repeat scroll 0 0  @theme_color;
-    	color:@box_color;
-    	line-height: 1;
-    	border-bottom: 1px solid @theme_color;
-    	min-height:20px;
-  		.rounded-corners;
-  	}
-  	div.header-tab .commands{
-    	float: right;
-    	margin-top: -30px;
-    	margin-right: 10px;
-  	}
-  	.block div.content {
-    	width: 90%;
-    	margin: 0 auto;
-  	}
-  	div.header{
+    div.header-tab {
+      background: none repeat scroll 0 0  @theme_color;
+      color:@box_color;
+      line-height: 1;
+      border-bottom: 1px solid @theme_color;
+      min-height:20px;
+      .rounded-corners;
+    }
+    div.header-tab .commands{
+      float: right;
+      margin-top: -30px;
+      margin-right: 10px;
+    }
+    .block div.content {
+      width: 90%;
+      margin: 0 auto;
+    }
+    div.header{
       display: none;
-  	}
+    }
     div.maincalendar{
       div.heightcontainer div.header{
         display: block;
       }
-    } 
-    &.initial-left-region-hidden{
-      margin-left: 0;
-      &.not-hidden-right{
-        margin-left:200px;
+    }
+    #region-post,
+    #region-pre{
+      min-height: 84vh;
+      display:none;
+
+      .block{
+        border: none;
+        background: @box_color;
+      }
+      div.region-content div.header-tab{
+        .rounded-corners(0px 0px 0px 0px);
+        background: none repeat scroll 0 0 @header_color;
+        line-height: 1;
+        border-bottom: 1px solid whiteSmoke;
+        cursor: pointer !important;
+        min-height:20px;
+        color: whiteSmoke;
+        &:first-child{
+         .rounded-corners(5px 5px 0 0);
+        }
+        .title {
+          text-align:center;
+        }
+        h2{
+          font-size: small;
+          padding: 5px;
+          cursor: pointer !important;
+        }
+      }
+      div.region-content .header h2{
+        display: none;
+      }
+      div.region-content div.current{
+        background-color: @current_color;
+      }
+      div.region-content div.current h2{
+        color: whiteSmoke;
       }
     }
-    &.initial-right-region-hidden{
-      margin-right: -200px;
-    }
-    &.initial-right-region-hidden.initial-left-region-hidden{
-      margin-left: 200px;
-      margin-right: -200px;
-    }
-  }
-  #region-pre{
-    &.initial-hidden-region{
-      left: -200px;
-      &.not-hidden-right,
-      &.both{
-          left:0;
-      }
-    }
-  }
-  #region-post{
-    &.initial-hidden-region{
-      left:200px;  
-    }
   }
 }
 
-div.region-content{
-	div.header-tab {
-  	background: none repeat scroll 0 0 @header_color;
-  	line-height: 1;
-  	border-bottom: 1px solid whiteSmoke;
-  	cursor: pointer !important;
-  	min-height:20px;
-  	color: whiteSmoke;
-  }
-  .header-tab .title {
-    text-align:center;
-	}
-	.header-tab h2{
-  	font-size: small;
-  	padding: 5px;
-	}
-	div.header-tab h2{ 
-    cursor: pointer !important;
-	}
-}
-
-#region-post,
-#report-region-pre,
-#region-pre{
-	div.region-content div.header-tab:first-child{
-		.rounded-corners(5px 5px 0 0);
-	}
-	div.region-content .header h2{
-    display: none;
-	}
-	div.region-content div.current{
-    background-color: @current_color;
-	}
-	div.region-content div.current h2{
-    color: whiteSmoke;
-	}
-}
-#report-region-pre,
-#region-post-box #region-pre , 
-#region-post-box #region-post{
-  display:none;
-}
-
-#report-region-pre.no-accordion,
-#region-post-box #region-pre.no-accordion , 
-#region-post-box #region-post.no-accordion{
+#region-pre.no-accordion ,
+#region-post.no-accordion{
   display: block;
   div.region-content{
     div.header-tab{
@@ -130,37 +99,40 @@ div.region-content{
   }
 }
 
-#report-region-pre,
-#region-pre,
-#region-post{
-  div.region-content .header{
-    background-color: @box_color;
-    height: 10px;
-  }
-} 
-
 #tabs-pre,
 #tabs-post{
   .block{
     margin-bottom: 0em;
   }
-}
-
-#tabs-pre .com,
-#tabs-post .com {
-  text-align: center;
-  background-color: @box_color;
-  border: 1px solid #ddd;
+  .com{
+    text-align: center;
+    background-color: @box_color;
+    border: 1px solid #ddd;
+  }
 }
 
 #region-center-pre,
-#reion-center-post{
+#region-center-post{
   clear:both;
   margin-bottom: 20px;
+  .header-tab{
+    padding:10px;
+    cursor: pointer;
+    h2{
+      margin: 0;
+    }
+  }
+
+  .block{
+    border: none;
+    width: 98%;
+    margin: 0 auto;
+    background: @box_color;
+    .rounded-corners(0px 0px 5px 5px);
+  }
 }
 
 #regions-control{
-  position: fixed;
   width: 100%;
   z-index:0;
 }
@@ -198,22 +170,18 @@ div.region-content{
   height: 40px;
   width: 30px;
   margin: 0px 10px 0 10px;
+  position: fixed;
+  z-index: 2;
 }
 
 #move-region-right{
-  background: -10px url(@pix_arrow_right);
-  float: right;
-  &.hidden-region{
-    background: -22px url(@pix_arrow_left) !important; 
-  }
+  right: 0;
+  font-size: 30px;
 }
 
-#move-region{
-  background: -22px url(@pix_arrow_left);
-  float: left; 
-  &.hidden-region{
-    background: -10px url(@pix_arrow_right) !important; 
-  }  
+#move-region-left{
+  left: 0;
+  font-size: 30px;
 }
 
 .block_js_expansion .block_tree {
@@ -226,7 +194,7 @@ div.region-content{
     font-size: 1em;
     margin: 0.5em 0;
 	}
-} 
+}
 
 .block_calendar_month{
 	.content{
@@ -234,8 +202,8 @@ div.region-content{
     	font-size: 1em;
     	margin: 0.25em 0;
 		}
-	} 	
-} 
+	}
+}
 
 .block_action{
 	border:none;
@@ -243,16 +211,16 @@ div.region-content{
 	img {
  		border:none;
  		&.block-hider-hide{
- 			display:none;	
+ 			display:none;
  		}
-	}	
+	}
 }
 
 .minicalendar{
 	td,th{
 		border-color: #f3f8ed;
 	}
-} 
+}
 
 td.eventskey {
   padding: 0 5px 3px;
@@ -268,7 +236,7 @@ td.eventskey {
     padding: 5px;
     border: 1px solid #e5e5e5;
 	}
-} 
+}
 
 .comment-delete-confirm {
   background: #fff;
@@ -280,5 +248,9 @@ td.eventskey {
 	}
 	.footer {
     text-align: center;
-	}	
-} 
+	}
+}
+
+.block_navigation .block_tree .tree_item{
+  overflow-wrap: break-word;
+}

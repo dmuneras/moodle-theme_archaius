@@ -119,7 +119,7 @@ M.theme_archaius_loader = {
             );
     },
     getUserPreferenceName: function(region){
-        var userPreference = "theme_archaius_blocks_region_" + region + "_context_" 
+        var userPreference = "theme_archaius_blocks_region_" + region + "_context_"
             + this.contextId + "_page_type_" + this.pageType;
         if(this.subpage !== undefined){
             userPreference += "_sub_" + this.subpage;

@@ -25,7 +25,7 @@ a example.
 <?php include 'partials/page_content.php' ?>
 <?php include 'partials/footer.php' ?>
 <script type = "text/javascript">
-    //<![CDATA[   
+    //<![CDATA[
     <?php if (!empty($PAGE->theme->settings->customjs)) {
         echo $PAGE->theme->settings->customjs;
     } ?>

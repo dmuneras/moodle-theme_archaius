@@ -8,7 +8,7 @@ $plugins = array(
         'files' => array('source/responsiveslides.min.js')
     ),
     'velocity-jquery' => array(
-        'files' => array('source/jquery_velocity-0.4.1.js')
+        'files' => array('source/jquery_velocity-1.2.3.js')
     ),
     'waypoints' => array(
         'files' => array('source/waypoints-2.0.5.min.js')
